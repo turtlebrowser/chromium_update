@@ -11,7 +11,7 @@ git clone --depth=1 git@github.com:turtlebrowser/chromium.git
 cd ~
 mkdir qt5-build
 cd qt5-build
-../qt-everywhere-src-5.15.2/configure -developer-build -opensource -nomake examples -nomake tests
+../qt-everywhere-src-5.15.2/configure -platform linux-clang -developer-build -opensource -confirm-license -nomake examples -nomake tests
 export NINJAFLAGS="-v -k 0"
 make -j 8
 ```
