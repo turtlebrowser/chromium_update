@@ -24,7 +24,7 @@ gclient runhooks
 cd ~
 mkdir qt5-build
 cd qt5-build
-../qt-everywhere-src-5.15.2/configure -platform linux-clang-libc++ -developer-build -opensource -confirm-license -nomake examples -nomake tests
 export NINJAFLAGS="-v -k 0"
+../qt-everywhere-src-5.15.2/configure -platform linux-clang-libc++ -developer-build -opensource -confirm-license -nomake examples -nomake tests
 make -j 8
 ```
