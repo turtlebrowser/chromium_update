@@ -1,18 +1,18 @@
 # MAKING THE CHROMIUM BRANCH
 
 # Find the appropriate SHAs from the previous branch
-Commit before first (80be7c815b015808bca11ef45cb54eb5ce2f34b0) : https://github.com/turtlebrowser/chromium/commit/80be7c815b015808bca11ef45cb54eb5ce2f34b0
-First branch commit (74bcb7c4bc8dbb689af74e3e46ea91e645c7f418) : https://github.com/turtlebrowser/chromium/commit/74bcb7c4bc8dbb689af74e3e46ea91e645c7f418
-Last branch commit  (1e39c7ef2481f67739393523854a60442b378b34) : https://github.com/turtlebrowser/chromium/commit/1e39c7ef2481f67739393523854a60442b378b34
+Commit before first (fdb69d03ecaef1b9b9873585e54e1aa05abaa3c8) : https://github.com/turtlebrowser/chromium/commit/fdb69d03ecaef1b9b9873585e54e1aa05abaa3c8
+First branch commit (70d1078965b2e4b2576d96631d9c04a673916551) : https://github.com/turtlebrowser/chromium/commit/70d1078965b2e4b2576d96631d9c04a673916551
+Last branch commit  (b973ef94f3c5ceec71084a19f9d7d6b77f38a542) : https://github.com/turtlebrowser/chromium/commit/b973ef94f3c5ceec71084a19f9d7d6b77f38a542
 
 # Get the previous branch
-# git checkout turtlebrowser_integration_chromium_84.0.4147.135_qt_5.15.2
-git clone --depth 1 -b turtlebrowser_integration_chromium_84.0.4147.135_qt_5.15.2 git@github.com:turtlebrowser/chromium.git
+# git checkout turtlebrowser_integration_chromium_85.0.4183.121_qt_5.15.2
+git clone --depth 1 -b turtlebrowser_integration_chromium_85.0.4183.121_qt_5.15.2 git@github.com:turtlebrowser/chromium.git
 cd chromium
 git fetch --unshallow
 
 # Get the commit log <Chromium tag>..<Last branch commit>
-git log --ancestry-path 80be7c815b015808bca11ef45cb54eb5ce2f34b0..1e39c7ef2481f67739393523854a60442b378b34 --pretty=format:"git cherry-pick --strategy=recursive -X patience %h%x09 # %ae%x09%ad%x09%s" > commit_log.txt
+git log --ancestry-path fdb69d03ecaef1b9b9873585e54e1aa05abaa3c8..b973ef94f3c5ceec71084a19f9d7d6b77f38a542 --pretty=format:"git cherry-pick --strategy=recursive -X patience %h%x09 # %ae%x09%ad%x09%s" > commit_log.txt
 
 # Get the cherry pick log (reverse commit log)
 tac commit_log.txt > cherry_pick_log.txt
@@ -21,16 +21,16 @@ tac commit_log.txt > cherry_pick_log.txt
 
 #!/bin/bash
 set -e
-# Based on branch: turtlebrowser_integration_chromium_84.0.4147.135_qt_5.15.2
+# Based on branch: turtlebrowser_integration_chromium_85.0.4183.121_qt_5.15.2
 
 # Find the tag: https://chromereleases.googleblog.com/search/label/Stable%20updates
 # Check out the tag
-# Closest release for (85.0.4183.121) : https://chromereleases.googleblog.com/2020/09/stable-channel-update-for-desktop_21.html
+# Closest release for (86.0.4240.198) : https://chromereleases.googleblog.com/2020/11/stable-channel-update-for-desktop_11.html
 git fetch --tags
-git checkout tags/85.0.4183.121
+git checkout tags/86.0.4240.198
 
 # Make the new branch
-git checkout -b turtlebrowser_integration_85.0.4183.121_testing
+git checkout -b turtlebrowser_integration_86.0.4240.198_testing
 
 # Edit turtlebrowser_readme.txt if needed (Remove all DEPS + .gitignore + adding of modules + docs : these have to be done by hand, see below)
 # Fix the DEPS file (use_relative_paths = True and remove "src/")
@@ -68,7 +68,7 @@ git add .
 git commit -m "Add all modules"
 
 # Push the branch 
-git push -u origin turtlebrowser_integration_85.0.4183.121_testing
+git push -u origin turtlebrowser_integration_86.0.4240.198_testing
 
 # Test build chromium
 
@@ -79,7 +79,7 @@ cp ../turtlebrowser_readme.txt turtlebrowser_readme.sh && bash turtlebrowser_rea
 git show  --name-only --format="" f793ac8396ba9
 
 # Push the branch
-git push -u origin turtlebrowser_integration_85.0.4183.121_testing
+git push -u origin turtlebrowser_integration_86.0.4240.198_testing
 
 # Test build within qt-everywhere-src-5.15.2 and with chromium
 
