@@ -15,9 +15,9 @@ wget https://download.qt.io/archive/qt/5.15/5.15.2/single/qt-everywhere-src-5.15
 tar xf qt-everywhere-src-5.15.2.tar.xz
 cd qt-everywhere-src-5.15.2
 rm -rf qtwebengine
-git clone git@github.com:turtlebrowser/qtwebengine.git
+git clone --depth 1 git@github.com:turtlebrowser/qtwebengine.git
 cd qtwebengine/src/3rdparty
-git clone git@github.com:turtlebrowser/chromium.git
+git clone --depth 1 git@github.com:turtlebrowser/chromium.git
 cd chromium/
 export PATH="$PATH:${HOME}/depot_tools"
 gclient runhooks

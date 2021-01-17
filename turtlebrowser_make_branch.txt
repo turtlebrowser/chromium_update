@@ -1,15 +1,18 @@
 # MAKING THE CHROMIUM BRANCH
 
 # Find the appropriate SHAs from the previous branch
-Chromium tag (894fb9eb56c6) : https://github.com/turtlebrowser/chromium/commit/894fb9eb56c6cbda65e3c3ae9ada6d4cb5850cc9
-First branch commit (edadc2c08a5b) : https://github.com/turtlebrowser/chromium/commit/edadc2c08a5b95afb9f25aba76a39e3a6f539917
-Last branch commit (d36179b4991c) : https://github.com/turtlebrowser/chromium/commit/d36179b4991c024137ca4fa45623aff1f6face41
+Commit before first (80be7c815b015808bca11ef45cb54eb5ce2f34b0) : https://github.com/turtlebrowser/chromium/commit/80be7c815b015808bca11ef45cb54eb5ce2f34b0
+First branch commit (74bcb7c4bc8dbb689af74e3e46ea91e645c7f418) : https://github.com/turtlebrowser/chromium/commit/74bcb7c4bc8dbb689af74e3e46ea91e645c7f418
+Last branch commit  (1e39c7ef2481f67739393523854a60442b378b34) : https://github.com/turtlebrowser/chromium/commit/1e39c7ef2481f67739393523854a60442b378b34
 
 # Get the previous branch
-git checkout turtlebrowser_integration_83.0.4103.122_qt_5.15.2
+# git checkout turtlebrowser_integration_chromium_84.0.4147.135_qt_5.15.2
+git clone --depth 1 -b turtlebrowser_integration_chromium_84.0.4147.135_qt_5.15.2 git@github.com:turtlebrowser/chromium.git
+cd chromium
+git fetch --unshallow
 
 # Get the commit log <Chromium tag>..<Last branch commit>
-git log --ancestry-path 894fb9eb56c6..d36179b4991c --pretty=format:"git cherry-pick --strategy=recursive -X patience %h%x09 # %ae%x09%ad%x09%s" > commit_log.txt
+git log --ancestry-path 80be7c815b015808bca11ef45cb54eb5ce2f34b0..1e39c7ef2481f67739393523854a60442b378b34 --pretty=format:"git cherry-pick --strategy=recursive -X patience %h%x09 # %ae%x09%ad%x09%s" > commit_log.txt
 
 # Get the cherry pick log (reverse commit log)
 tac commit_log.txt > cherry_pick_log.txt
@@ -18,32 +21,31 @@ tac commit_log.txt > cherry_pick_log.txt
 
 #!/bin/bash
 set -e
-
-# Edit turtlebrowser_readme.txt if needed (Remove all DEPS + .gitignore + adding of modules + docs : these have to be done by hand, see below)
-# Fix the profile cherry-pick THEIRS - git cherry-pick --strategy=recursive -X theirs d0bac46bcca2
+# Based on branch: turtlebrowser_integration_chromium_84.0.4147.135_qt_5.15.2
 
 # Find the tag: https://chromereleases.googleblog.com/search/label/Stable%20updates
 # Check out the tag
-# Closest release for (84.0.4147.135) : https://chromereleases.googleblog.com/2020/08/stable-channel-update-for-desktop_18.html
-git checkout tags/84.0.4147.135
+# Closest release for (85.0.4183.121) : https://chromereleases.googleblog.com/2020/09/stable-channel-update-for-desktop_21.html
+git fetch --tags
+git checkout tags/85.0.4183.121
 
 # Make the new branch
-git checkout -b turtlebrowser_integration_84.0.4147.135_testing
+git checkout -b turtlebrowser_integration_85.0.4183.121_testing
 
+# Edit turtlebrowser_readme.txt if needed (Remove all DEPS + .gitignore + adding of modules + docs : these have to be done by hand, see below)
 # Fix the DEPS file (use_relative_paths = True and remove "src/")
-# git show 0ff8a2482fa74
-git cherry-pick --strategy=recursive -X patience 0ff8a2482fa74	 # psmaas@gmail.com	Tue Dec 22 21:03:16 2020 +0100	Fix DEPS
 
-# GClient: config
-cd ..
-export PATH="$PATH:${HOME}/Code/depot_tools"
-gclient config git@github.com:turtlebrowser/chromium.git
-
+# Skip : GClient: config
+# gclient config git@github.com:turtlebrowser/chromium.git
 # Set managed to False:
-nano .gclient
+# nano .gclient
 
 # GClient: get DEPS
+export PATH="$PATH:${HOME}/Code/depot_tools"
 gclient sync --with_branch_heads --with_tags -vvv
+
+Might be useful for windows:
+https://chromium.googlesource.com/chromium/src/+/HEAD/docs/win_cross.md
 
 # Make sure the Chromium tag is sane
 cd chromium
@@ -57,170 +59,31 @@ git fetch qt
 git cherry-pick -Xsubtree=chromium --strategy=recursive -X patience SHA
 
 # Remove all the modules we need from .gitignore
-# Remember: ./third_party/angle/.gitignore:/third_party/vulkan-tools/src
-git cherry-pick --strategy=recursive -X patience 2fddc8ef4e201	 # psmaas@gmail.com	Wed Dec 23 12:14:23 2020 +0100	Don't ignore patched modules
+bash turtlebrowser_prep_branch.sh
+git add <git ignores>
+git commit -m "Unignore modules"
 
 # Add every module that we will patch
-
-1. [x] net/third_party/quiche/src
-git add net/third_party/quiche/src/*
-git commit -m "Add net/third_party/quiche/src/"
-
-2. [x] third_party/boringssl/src
-git add third_party/boringssl/src/*
-git add third_party/boringssl/src/.clang-format third_party/boringssl/src/.github/* third_party/boringssl/src/.gitignore
-git commit -m "Add third_party/boringssl/src"
-
-3. [x] third_party/ced/src
-git add third_party/ced/src/*
-git commit -m "Add third_party/ced/src/"
-
-4. [x] third_party/devtools-frontend/src
-git add third_party/devtools-frontend/src/*
-git add third_party/devtools-frontend/src/.clang-format third_party/devtools-frontend/src/.editorconfig third_party/devtools-frontend/src/.eslintignore third_party/devtools-frontend/src/.eslintrc.js third_party/devtools-frontend/src/.gitattributes third_party/devtools-frontend/src/.gitignore third_party/devtools-frontend/src/.gn third_party/devtools-frontend/src/.npmignore third_party/devtools-frontend/src/.style.yapf
-git commit -m "Add third_party/devtools-frontend/src"
-
-5. [x] third_party/ffmpeg
-git add third_party/ffmpeg/*
-git add third_party/ffmpeg/.gitattributes third_party/ffmpeg/.gitignore third_party/ffmpeg/.travis.yml third_party/ffmpeg/.mailmap
-git commit -m "Add third_party/ffmpeg"
-
-6. [x] third_party/flac
-git add third_party/flac/*
-git commit -m "Add third_party/flac"
-
-7. [x] third_party/harfbuzz-ng/src
-git add -f third_party/harfbuzz-ng/src/*
-#git add third_party/harfbuzz-ng/src/.*
-git commit -m "Add third_party/harfbuzz-ng/src"
-
-8. [x] third_party/icu
-git add third_party/icu/*
-git commit -m "Add third_party/icu/"
-
-9. [x] third_party/libjpeg_turbo
-git add third_party/libjpeg_turbo/*
-git commit -m "Add third_party/libjpeg_turbo/"
-
-10. [x] third_party/libvpx/source/libvpx
-git add -f third_party/libvpx/source/libvpx/*
-#git add third_party/libvpx/source/libvpx/.*
-git commit -m "Add third_party/libvpx/source/libvpx"
-
-11. [x] third_party/libyuv
-git add -f third_party/libyuv/*
-git add third_party/libyuv/.clang-format third_party/libyuv/.gitignore third_party/libyuv/.gn third_party/libyuv/.vpython
-git commit -m "Add third_party/libyuv/"
-
-12. [x] third_party/openh264/src
-git add third_party/openh264/src/*
-git add third_party/openh264/src/.gitignore third_party/openh264/src/.reviewboardrc third_party/openh264/src/.travis.yml
-git commit -m "Add third_party/openh264/src"
-
-13. [x] third_party/pdfium
-git add third_party/pdfium/*
-git add third_party/pdfium/.clang-format third_party/pdfium/.gitattributes third_party/pdfium/.gitignore third_party/pdfium/.gn third_party/pdfium/.vpython third_party/pdfium/.style.yapf
-git commit -m "Add third_party/pdfium"
-
-14. [x] third_party/perfetto
-git add third_party/perfetto/*
-git add third_party/perfetto/.clang-format third_party/perfetto/.gitignore third_party/perfetto/.gn third_party/perfetto/.style.yapf
-git commit -m "Add third_party/perfetto"
-
-15. [x] third_party/re2/src
-git add third_party/re2/src/*
-git add third_party/re2/src/.gitignore third_party/re2/src/.travis.yml
-git commit -m "Add third_party/re2/src"
-
-16. [x] third_party/skia
-git add third_party/skia/*
-git add third_party/skia/.clang-format third_party/skia/.clang-tidy third_party/skia/.gitignore third_party/skia/.gn
-git commit -m "Add third_party/skia"
-
-17. [x] third_party/snappy/src
-git add third_party/snappy/src/*
-git add third_party/snappy/src/.appveyor.yml third_party/snappy/src/.gitignore third_party/snappy/src/.travis.yml
-git commit -m "Add third_party/snappy/src"
-
-18. [x] third_party/webrtc
-git add third_party/webrtc/*
-git add third_party/webrtc/.clang-format third_party/webrtc/.git-blame-ignore-revs third_party/webrtc/.gitignore third_party/webrtc/.gn third_party/webrtc/.vpython
-git commit -m "Add third_party/webrtc"
-
-19. [x] v8
-git add v8/*
-git add v8/.clang-format v8/.clang-tidy v8/.editorconfig v8/.flake8 v8/.git-blame-ignore-revs v8/.gitattributes v8/.gitignore v8/.gn v8/.vpython v8/.ycm_extra_conf.py
-git commit -m "Add v8"
-
-20. [x] third_party/angle
-git add third_party/angle/*
-git add third_party/angle/.clang-format third_party/angle/.gitattributes third_party/angle/.gitignore third_party/angle/.gn third_party/angle/.style.yapf third_party/angle/.yapfignore
-git commit -m "Add third_party/angle/"
-
-21. [x] third_party/angle/third_party/vulkan-tools/src
-git add -f third_party/angle/third_party/vulkan-tools/src/*
-git commit -m "Add third_party/angle/third_party/vulkan-tools/src/"
-
-# run gclient
-cd ..
-gclient sync --with_branch_heads --with_tags
+git add .
+git commit -m "Add all modules"
 
 # Push the branch 
-git push -u origin turtlebrowser_integration_84.0.4147.135_testing
+git push -u origin turtlebrowser_integration_85.0.4183.121_testing
 
 # Test build chromium
 
-# Apply the patches
+# Apply the patches - Also look at Qts branches
 cp ../turtlebrowser_readme.txt turtlebrowser_readme.sh && bash turtlebrowser_readme.sh
 
-# Comment out the conflicting patches and get an overview
-# Which files are in a commit
+# NOTE: Which files are in a commit?
 git show  --name-only --format="" f793ac8396ba9
 
 # Push the branch
-git push -u origin turtlebrowser_integration_84.0.4147.135_testing
+git push -u origin turtlebrowser_integration_85.0.4183.121_testing
 
-# Test build within qt-everywhere-src-5.15.2 - see turtlebrowser_setup.txt
+# Test build within qt-everywhere-src-5.15.2 and with chromium
 
-# Add all notes to the branch
-
-./net/third_party/quiche/src/.git
-./tools/page_cycler/acid3/.git
-./tools/swarming_client/.git
-./native_client/.git
-./chrome/test/data/xr/webvr_info/.git
-./chrome/test/data/perf/canvas_bench/.git
-./chrome/test/data/perf/frame_rate/content/.git
-./chrome/browser/resources/media_router/extension/src/.git
-./media/cdm/api/.git
-./buildtools/third_party/libc++/trunk/.git
-./buildtools/third_party/libunwind/trunk/.git
-./buildtools/third_party/libc++abi/trunk/.git
-./buildtools/clang_format/script/.git
-./v8/.git
-
-# SKIPPING
-# rm -rf buildtools/linux64:gn/gn/linux-amd64
-# rm -rf third_party/blink/web_tests/wpt_internal/webgpu/third_party/glslang_js:chromium/third_party/glslang_js
-# rm -rf third_party/checkstyle:chromium/third_party/checkstyle
-# rm -rf third_party/jdk:chromium/third_party/jdk
-# rm -rf third_party/jdk:chromium/third_party/jdk/extras
-# rm -rf tools/luci-go:infra/tools/luci/isolate/${platform} -> ../../../.cipd/pkgs/5/_current/isolate
-# rm -rf tools/luci-go:infra/tools/luci/isolated/${platform} -> ../../../.cipd/pkgs/5/_current/isolated
-# rm -rf tools/luci-go:infra/tools/luci/swarming/${platform} #  -> ../../../.cipd/pkgs/7/_current/swarming
-# rm -rf tools/skia_goldctl/linux # :skia/tools/goldctl/linux-amd64 EXECUTABLE
-
-# SKIPPING
-# git subtree add --prefix buildtools/linux64:gn/gn/linux-amd64 https://chrome-infra-packages.appspot.com/gn/gn/linux-amd64 git_revision:ab32747ae7a399c57b04280f38e49b8fdf237a8a --squash
-# git subtree add --prefix third_party/blink/web_tests/wpt_internal/webgpu/third_party/glslang_js:chromium/third_party/glslang_js https://chrome-infra-packages.appspot.com/chromium/third_party/glslang_js Zka0-f53_HEAZ1bpsxr9BSi7P51-4bzYwSMg0RMKX1AC --squash
-# git subtree add --prefix third_party/checkstyle:chromium/third_party/checkstyle https://chrome-infra-packages.appspot.com/chromium/third_party/checkstyle UAf8iarsiPx9B6ClHuyeRNM6py76TUVdylyGLTmpb4IC --squash
-# git subtree add --prefix third_party/jdk:chromium/third_party/jdk https://chrome-infra-packages.appspot.com/chromium/third_party/jdk PfRSnxe8Od6WU4zBXomq-zsgcJgWmm3z4gMQNB-r2QcC --squash
-# git subtree add --prefix third_party/jdk:chromium/third_party/jdk/extras https://chrome-infra-packages.appspot.com/chromium/third_party/jdk/extras fkhuOQ3r-zKtWEdKplpo6k0vKkjl-LY_rJTmtzFCQN4C --squash
-# git subtree add --prefix tools/luci-go:infra/tools/luci/isolate/${platform} https://chrome-infra-packages.appspot.com/infra/tools/luci/isolate/${platform} git_revision:56ae79476e3caf14da59d75118408aa778637936 --squash
-# git subtree add --prefix tools/luci-go:infra/tools/luci/isolated/${platform} https://chrome-infra-packages.appspot.com/infra/tools/luci/isolated/${platform} git_revision:56ae79476e3caf14da59d75118408aa778637936 --squash
-# git subtree add --prefix tools/luci-go:infra/tools/luci/swarming/${platform} https://chrome-infra-packages.appspot.com/infra/tools/luci/swarming/${platform} git_revision:56ae79476e3caf14da59d75118408aa778637936 --squash
-# git subtree add --prefix tools/skia_goldctl/linux:skia/tools/goldctl/linux-amd64 https://chrome-infra-packages.appspot.com/skia/tools/goldctl/linux-amd64 git_revision:e0376578f2f33586b6ac283a0787582c4678ecb1 --squash
-
+# Notes:
 # export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig/
 # sudo apt install xcb-proto
 # sudo apt install python-xcbgen
