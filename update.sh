@@ -209,6 +209,22 @@ add_chromium_modules() {
     cd $CHROMIUM_DIR
     git add .
     git commit -m "Add all modules"
+    subheader "Checked-in all modules"
+}
+
+push_branch_remotes() {
+    cd $CHROMIUM_DIR
+    git push -u old $NEW_BRANCH
+    git push gitea $NEW_BRANCH
+    subheader "Branch pushed to remotes"
+}
+
+build_chromium() {
+    cd $CHROMIUM_DIR
+    gclient runhooks
+    gn gen out/Default
+    autoninja -C out/Default chrome
+    subheader "Chromium built successfully"
 }
 
 header "Update Chromium"
@@ -230,3 +246,5 @@ confirm "14. Get Chromium deps [y/N]" && get_chromium_deps
 confirm "15. Un-ignore Chromium deps [y/N]" && unignore_chromium_deps
 confirm "16. Check-in .gitignore files [y/N]" && commit_dot_ignore_files
 confirm "17. Check-in Chromium modules [y/N]" && add_chromium_modules
+confirm "18. Push new branch to remotes (and track) [y/N]" && push_branch_remotes
+confirm "19. Build Chromium [y/N]" && build_chromium
