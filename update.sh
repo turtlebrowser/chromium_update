@@ -104,6 +104,8 @@ update_webengine() {
     WEB_ENGINE_BRANCH="turtlebrowser_integration_5.15"
     git checkout $WEB_ENGINE_BRANCH
     git pull
+    git remote add qt https://code.qt.io/qt/qtwebengine.git
+    git fetch qt
     subheader "QtWebEngine updated to : $WEB_ENGINE_BRANCH"
 }
 
