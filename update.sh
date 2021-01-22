@@ -2,7 +2,8 @@
 set -e
 
 BUILD_CLEAN=true
-BUILD_VERBOSE=true
+BUILD_VERBOSE=false
+BUILD_CONTINUE=true
 
 QT_VERSION="5.15.2"
 QT_PACKAGE_NAME="qt-everywhere-src-${QT_VERSION}"
@@ -28,10 +29,15 @@ CHROMIUM_DIR="$THIRD_PARTY_DIR/chromium"
 
 PATH="$PATH:${DEPOT_TOOLS_DIR}"
 
+# NINJAFLAGS have to be set before configure is run to affect Qt builds, and cannot be changed after
+NINJAFLAGS=""
+
 if [ "$BUILD_VERBOSE" = true ] ; then
-    NINJAFLAGS="-v -k 0"
-else
-    NINJAFLAGS="-k 0"
+    NINJAFLAGS="$NINJAFLAGS -v"
+fi
+
+if [ "$BUILD_CONTINUE" = true ] ; then
+    NINJAFLAGS="$NINJAFLAGS -k 0"
 fi
 
 confirm() {
@@ -246,7 +252,7 @@ clean_chromium_build() {
 
 build_chromium() {
     cd $CHROMIUM_DIR
-    time autoninja -k 0 -C out/Default chrome
+    time autoninja $NINJAFLAGS -C out/Default chrome
     subheader "Chromium built successfully"
 }
 
