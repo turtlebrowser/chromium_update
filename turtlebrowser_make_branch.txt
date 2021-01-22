@@ -1,23 +1,55 @@
 # MAKING THE CHROMIUM BRANCH
 
+# Make work directory
+mkdir ~/Code
+cd ~/Code
+
+# Get the Chromium Update repo
+git clone git@github.com:turtlebrowser/chromium_update.git
+
+# Get the depot_tools
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+
+# Get the Qt release tar ball
+wget https://download.qt.io/archive/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz
+
+# Extract the tar ball
+tar xf qt-everywhere-src-5.15.2.tar.xz
+
+# Replace the QtWebEngine with the TurtleBrowser release
+cd qt-everywhere-src-5.15.2
+rm -rf qtwebengine
+git clone git@github.com:turtlebrowser/qtwebengine.git
+
+# Clone the TurtleBrowser chromium repository
+cd qtwebengine/src/3rdparty
+git clone git@github.com:turtlebrowser/chromium_turtlebrowser.git chromium
+
+# Add the remotes
+cd chromium
+git remote add google https://github.com/chromium/chromium.git
+git remote add qt https://code.qt.io/qt/qtwebengine-chromium.git
+git remote add old git@github.com:turtlebrowser/chromium.git
+git remote add gitea git@libc.dev:patricia-gallardo/chromium.git
+
+# Fetch all the remotes
+git -c core.deltaBaseCacheLimit=2g fetch --all --tags --verbose
+
+# Get the previous branch
+git checkout -t old/turtlebrowser_integration_chromium_85.0.4183.121_qt_5.15.2
+
 # Find the appropriate SHAs from the previous branch
 Commit before first (fdb69d03ecaef1b9b9873585e54e1aa05abaa3c8) : https://github.com/turtlebrowser/chromium/commit/fdb69d03ecaef1b9b9873585e54e1aa05abaa3c8
 First branch commit (70d1078965b2e4b2576d96631d9c04a673916551) : https://github.com/turtlebrowser/chromium/commit/70d1078965b2e4b2576d96631d9c04a673916551
 Last branch commit  (b973ef94f3c5ceec71084a19f9d7d6b77f38a542) : https://github.com/turtlebrowser/chromium/commit/b973ef94f3c5ceec71084a19f9d7d6b77f38a542
 
-# Get the previous branch
-# git checkout turtlebrowser_integration_chromium_85.0.4183.121_qt_5.15.2
-git clone --depth 1 -b turtlebrowser_integration_chromium_85.0.4183.121_qt_5.15.2 git@github.com:turtlebrowser/chromium.git
-cd chromium
-git fetch --unshallow
-
 # Get the commit log <Chromium tag>..<Last branch commit>
-git log --ancestry-path fdb69d03ecaef1b9b9873585e54e1aa05abaa3c8..b973ef94f3c5ceec71084a19f9d7d6b77f38a542 --pretty=format:"git cherry-pick --strategy=recursive -X patience %h%x09 # %ae%x09%ad%x09%s" > commit_log.txt
-
+git log --ancestry-path fdb69d03ecaef1b9b9873585e54e1aa05abaa3c8..b973ef94f3c5ceec71084a19f9d7d6b77f38a542 --pretty=format:"git cherry-pick --strategy=recursive -X patience %h%x09 # %ae%x09%ad%x09%s" > commit_log.tx
 # Get the cherry pick log (reverse commit log)
 tac commit_log.txt > cherry_pick_log.txt
+cp cherry_pick_log.txt ~/Code/chromium_update/turtlebrowser_readme.txt
 
-# Make it a script: turtlebrowser_readme.txt
+# Make it a script: append this to turtlebrowser_readme.txt
 
 #!/bin/bash
 set -e
@@ -26,14 +58,14 @@ set -e
 # Find the tag: https://chromereleases.googleblog.com/search/label/Stable%20updates
 # Check out the tag
 # Closest release for (86.0.4240.198) : https://chromereleases.googleblog.com/2020/11/stable-channel-update-for-desktop_11.html
-git fetch --tags
 git checkout tags/86.0.4240.198
 
 # Make the new branch
 git checkout -b turtlebrowser_integration_86.0.4240.198_testing
 
-# Edit turtlebrowser_readme.txt if needed (Remove all DEPS + .gitignore + adding of modules + docs : these have to be done by hand, see below)
 # Fix the DEPS file (use_relative_paths = True and remove "src/")
+git add DEPS
+git commit -m "Fix DEPS"
 
 # Skip : GClient: config
 # gclient config git@github.com:turtlebrowser/chromium.git
@@ -43,43 +75,35 @@ git checkout -b turtlebrowser_integration_86.0.4240.198_testing
 # GClient: get DEPS
 export PATH="$PATH:${HOME}/Code/depot_tools"
 gclient sync --with_branch_heads --with_tags -vvv
-
-Might be useful for windows:
-https://chromium.googlesource.com/chromium/src/+/HEAD/docs/win_cross.md
-
-# Make sure the Chromium tag is sane
-cd chromium
 gclient runhooks
-gn gen out/Default
-autoninja -C out/Default chrome
-
-# If you need new patches from Qt - for a Qt release
-git remote add qt https://code.qt.io/qt/qtwebengine-chromium.git
-git fetch qt
-git cherry-pick -Xsubtree=chromium --strategy=recursive -X patience SHA
 
 # Remove all the modules we need from .gitignore
-bash turtlebrowser_prep_branch.sh
-git add <git ignores>
+cp ~/Code/chromium_update/turtlebrowser_prep_branch.sh . && bash turtlebrowser_prep_branch.sh
+git add -u .
 git commit -m "Unignore modules"
 
 # Add every module that we will patch
 git add .
 git commit -m "Add all modules"
 
+# Make sure the Chromium tag is sane
+gclient runhooks
+gn gen out/Default
+autoninja -C out/Default chrome
+
 # Push the branch 
-git push -u origin turtlebrowser_integration_86.0.4240.198_testing
+git push -u old turtlebrowser_integration_86.0.4240.198_testing
 
 # Test build chromium
 
 # Apply the patches - Also look at Qts branches
-cp ../turtlebrowser_readme.txt turtlebrowser_readme.sh && bash turtlebrowser_readme.sh
+cp ~/Code/chromium_update/turtlebrowser_readme.txt turtlebrowser_readme.sh && bash turtlebrowser_readme.sh
 
-# NOTE: Which files are in a commit?
-git show  --name-only --format="" f793ac8396ba9
+# If you need new patches from Qt - for a Qt release
+git cherry-pick -Xsubtree=chromium --strategy=recursive -X patience SHA
 
 # Push the branch
-git push -u origin turtlebrowser_integration_86.0.4240.198_testing
+git push -u old turtlebrowser_integration_86.0.4240.198_testing
 
 # Test build within qt-everywhere-src-5.15.2 and with chromium
 
@@ -87,3 +111,9 @@ git push -u origin turtlebrowser_integration_86.0.4240.198_testing
 # export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig/
 # sudo apt install xcb-proto
 # sudo apt install python-xcbgen
+
+Might be useful for windows:
+https://chromium.googlesource.com/chromium/src/+/HEAD/docs/win_cross.md
+
+# NOTE: Which files are in a commit?
+git show  --name-only --format="" f793ac8396ba9
