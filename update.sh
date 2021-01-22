@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+BUILD_CLEAN=true
+BUILD_VERBOSE=true
+
 QT_VERSION="5.15.2"
 QT_PACKAGE_NAME="qt-everywhere-src-${QT_VERSION}"
 
@@ -16,12 +19,20 @@ README_FILENAME="turtlebrowser_readme_${OLD_TAG}.txt"
 
 WORK_DIR="$HOME/Code"
 DEPOT_TOOLS_DIR="$WORK_DIR/depot_tools"
+CHROMIUM_UPDATE_DIR="$WORK_DIR/chromium_update"
 QT_DIR="$WORK_DIR/${QT_PACKAGE_NAME}"
+QT_BUILD_DIR="$WORK_DIR/qt5-build"
 WEB_ENGINE_DIR="$QT_DIR/qtwebengine"
 THIRD_PARTY_DIR="$WEB_ENGINE_DIR/src/3rdparty/"
 CHROMIUM_DIR="$THIRD_PARTY_DIR/chromium"
 
 PATH="$PATH:${DEPOT_TOOLS_DIR}"
+
+if [ "$BUILD_VERBOSE" = true ] ; then
+    NINJAFLAGS="-v -k 0"
+else
+    NINJAFLAGS="-k 0"
+fi
 
 confirm() {
     read -r -p "${1:-Are you sure? [y/N]} " response
@@ -219,12 +230,47 @@ push_branch_remotes() {
     subheader "Branch pushed to remotes"
 }
 
+clean_chromium_build() {
+    if [ "$BUILD_CLEAN" = true ] ; then
+        cd $CHROMIUM_DIR
+        gclient runhooks
+        mv out out_old
+        info "Existing Chromium build moved to : ${CHROMIUM_DIR}/out_old"
+        gn gen out/Default
+        cp $CHROMIUM_UPDATE_DIR/args.gn out/Default/
+        subheader "CLEANED Chromium build successfully"
+    else
+        subheader "SKIPPED cleaning of Chromium build"
+    fi
+}
+
 build_chromium() {
     cd $CHROMIUM_DIR
-    gclient runhooks
-    gn gen out/Default
-    autoninja -C out/Default chrome
+    time autoninja -k 0 -C out/Default chrome
     subheader "Chromium built successfully"
+}
+
+clean_qt_build() {
+    if [ "$BUILD_CLEAN" = true ] ; then
+        cd $WORK_DIR
+        if [ -d "$QT_BUILD_DIR" ]
+        then
+            mv ${QT_BUILD_DIR} ${QT_BUILD_DIR}_old
+            info "Existing Qt build moved to : ${QT_BUILD_DIR}_old"
+        fi
+        mkdir -p ${QT_BUILD_DIR}
+        cd $QT_BUILD_DIR
+        ../qt-everywhere-src-5.15.2/configure -platform linux-clang-libc++ -developer-build -opensource -confirm-license -nomake examples -nomake tests
+        subheader "CLEANED Qt build successfully : $QT_BUILD_DIR"
+    else
+        subheader "SKIPPED cleaning of Qt build : $QT_BUILD_DIR"
+    fi
+}
+
+build_qt() {
+    cd $QT_BUILD_DIR
+    time make -j 8
+    subheader "Qt built successfully"
 }
 
 header "Update Chromium"
@@ -247,4 +293,7 @@ confirm "15. Un-ignore Chromium deps [y/N]" && unignore_chromium_deps
 confirm "16. Check-in .gitignore files [y/N]" && commit_dot_ignore_files
 confirm "17. Check-in Chromium modules [y/N]" && add_chromium_modules
 confirm "18. Push new branch to remotes (and track) [y/N]" && push_branch_remotes
-confirm "19. Build Chromium [y/N]" && build_chromium
+confirm "19. CLEAN Chromium build [y/N]" && clean_chromium_build
+confirm "20. Build Chromium [y/N]" && build_chromium
+confirm "21. CLEAN Qt build [y/N]" && clean_qt_build
+confirm "22. Build Qt [y/N]" && build_qt
