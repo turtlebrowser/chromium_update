@@ -81,7 +81,7 @@ jobs:
       - name: 6.  Get Chromium
         shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
-        run: git clone https://github.com/chromium/chromium.git chromium
+        run: git clone --depth 350 https://github.com/chromium/chromium.git chromium
 
       - name: 7.  Add remote
         shell: bash
