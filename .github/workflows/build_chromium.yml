@@ -59,6 +59,18 @@ jobs:
           echo "THIRD_PARTY_DIR:        ${{ env.THIRD_PARTY_DIR }}"
           echo "CHROMIUM_DIR:           ${{ env.CHROMIUM_DIR }}"
 
+      - name: 0. [Windows] List big things
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          $path = "$Env:Programfiles"
+          $colItems = Get-ChildItem $path | Where-Object {$_.PSIsContainer -eq $true} | Sort-Object
+          foreach ($i in $colItems)
+          {
+          $subFolderItems = Get-ChildItem $i.FullName -recurse -force | Where-Object {$_.PSIsContainer -eq $false} | Measure-Object -property Length -sum | Select-Object Sum
+          $i.FullName + " -- " + "{0:N2}" -f ($subFolderItems.sum / 1MB) + " MB"
+          }
+
       - name: 1.  [All] Make work directory
         shell: bash
         run: mkdir -p Code
