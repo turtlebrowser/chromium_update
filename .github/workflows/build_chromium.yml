@@ -82,8 +82,8 @@ jobs:
         shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
         run: |
-          curl -LO https://github.com/turtlebrowser/chromium/archive/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3.zip
-          unzip -q turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3.zip
+          curl -sSL -o chromium.tar.gz https://api.github.com/repos/turtlebrowser/chromium/tarball/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3
+          tar xf chromium.tar.gz
           mv chromium-turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3 chromium
 
       - name: 7.  Make Qt build directory
