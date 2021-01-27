@@ -71,7 +71,7 @@ jobs:
 #          run: echo "" >> $GITHUB_PATH
 
       - name: 3.  Get Qt
-#        shell: bash
+        shell: bash
         working-directory: ${{ env.WORK_DIR }}
         run: |
           curl -sSL https://download.qt.io/archive/qt/5.15/${{ env.QT_VERSION }}/single/${{ env.QT_PACKAGE_NAME }}.tar.xz | tar xJf -
@@ -94,7 +94,7 @@ jobs:
         shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
         run: |
-          curl -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3 | tar xzf -
+          curl -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3 | tar xf -
           mv turtlebrowser-chromium-* chromium
 
       - name: 7.  Make Qt build directory
