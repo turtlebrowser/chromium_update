@@ -90,14 +90,23 @@ jobs:
           git checkout ${{ env.WEB_ENGINE_BRANCH }}
           git pull
 
-      - name: 6.  Get Chromium
+      - name: 6.  Get Chromium (Windows)
+        if: matrix.os == 'windows-latest'
         shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
         run: |
-          curl -sSL -o chromium.tar.gz https://api.github.com/repos/turtlebrowser/chromium/tarball/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3
-          tar xf chromium.tar.gz
+          curl -sSL -o chromium.zip https://github.com/turtlebrowser/chromium/archive/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3.zip
+          unzip chromium.zip
+          mv chromium-turtlebrowser_integration_chromium* chromium
+          rm chromium.zip
+
+      - name: 6.  Get Chromium (MacOS + Linux)
+        if: matrix.os != 'windows-latest'
+        shell: bash
+        working-directory: ${{ env.THIRD_PARTY_DIR }}
+        run: |
+          curl -sSL -o chromium.tar.gz https://api.github.com/repos/turtlebrowser/chromium/tarball/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3 | tar xzf -
           mv turtlebrowser-chromium-* chromium
-          rm chromium.tar.gz
 
       - name: 7.  Make Qt build directory
         shell: bash
