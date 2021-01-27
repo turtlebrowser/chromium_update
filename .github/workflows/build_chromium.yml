@@ -74,7 +74,7 @@ jobs:
         shell: bash
         working-directory: ${{ env.WORK_DIR }}
         run: |
-          curl -sSL https://download.qt.io/archive/qt/5.15/${{ env.QT_VERSION }}/single/${{ env.QT_PACKAGE_NAME }}.tar.xz | tar xf -
+          curl -sSL https://download.qt.io/archive/qt/5.15/${{ env.QT_VERSION }}/single/${{ env.QT_PACKAGE_NAME }}.tar.xz | tar xJf -
 
       - name: 4.  Get QtWebEngine
         shell: bash
