@@ -21,7 +21,7 @@ jobs:
       CHROMIUM_UPDATE_DIR: "$WORK_DIR/chromium_update"
       QT_DIR: "$WORK_DIR/$QT_PACKAGE_NAME"
       QT_BUILD_DIR: "$WORK_DIR/qt5-build"
-      WEB_ENGINE_DIR: "$QT_DIR/qtwebengine"
+      WEB_ENGINE_DIR: "${{ env.QT_DIR }}/qtwebengine"
       THIRD_PARTY_DIR: "$WEB_ENGINE_DIR/src/3rdparty/"
       CHROMIUM_DIR: "$THIRD_PARTY_DIR/chromium"
 
