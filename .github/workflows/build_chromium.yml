@@ -68,8 +68,8 @@ jobs:
         shell: cmd
         run: |
           rmdir /s /q "%Programfiles%\dotnet"
-          rmdir /s /q "%Programfiles%\Unity"
-          rmdir /s /q "%Programfiles%\Boost"
+#          rmdir /s /q "%Programfiles%\Unity"
+#          rmdir /s /q "%Programfiles%\Boost"
 
 #      - name: 2.  Get Depot Tools
 #        shell: bash
