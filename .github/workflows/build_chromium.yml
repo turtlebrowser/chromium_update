@@ -69,18 +69,6 @@ jobs:
         run: |
           rmdir /s /q "%Programfiles%\dotnet"
 
-#      - name: 2.  [Windows] Free Up Disk - Unity
-#        if: matrix.os == 'windows-latest'
-#        shell: cmd
-#        run: |
-#          rmdir /s /q "%Programfiles%\Unity"
-
-      - name: 2.  [Windows] Free Up Disk - Boost
-        if: matrix.os == 'windows-latest'
-        shell: cmd
-        run: |
-          rmdir /s /q "%Programfiles%\Boost"
-
 #      - name: 2.  Get Depot Tools
 #        shell: bash
 #        working-directory: ${{ env.WORK_DIR }}
