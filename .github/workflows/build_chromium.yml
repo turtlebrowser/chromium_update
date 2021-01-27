@@ -85,7 +85,6 @@ jobs:
         if: matrix.os == 'windows-latest'
         shell: cmd
         run: |
-          rmdir /s /q "%Programfiles%\MongoDB"         # 702.06 MB
           rmdir /s /q "%Programfiles%\Java"            # 953.35 MB
           rmdir /s /q "%Programfiles%\PostgreSQL"      # 585.22 MB
           rmdir /s /q "%Programfiles%\Mozilla Firefox" # 206.22 MB
