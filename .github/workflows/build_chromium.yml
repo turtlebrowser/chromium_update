@@ -13,14 +13,30 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
+    env:
+      QT_VERSION: "5.15.2"
+      QT_PACKAGE_NAME: "qt-everywhere-src-${QT_VERSION}"
+      WORK_DIR: "$HOME/Code"
+      DEPOT_TOOLS_DIR: "$WORK_DIR/depot_tools"
+      CHROMIUM_UPDATE_DIR: "$WORK_DIR/chromium_update"
+      QT_DIR: "$WORK_DIR/${QT_PACKAGE_NAME}"
+      QT_BUILD_DIR: "$WORK_DIR/qt5-build"
+      WEB_ENGINE_DIR: "$QT_DIR/qtwebengine"
+      THIRD_PARTY_DIR: "$WEB_ENGINE_DIR/src/3rdparty/"
+      CHROMIUM_DIR: "$THIRD_PARTY_DIR/chromium"
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Run a multi-line script
+      - name: Print environment
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo ${{ env.QT_VERSION }}
+          echo ${{ env.QT_PACKAGE_NAME }}
+          echo ${{ env.WORK_DIR }}
+          echo ${{ env.DEPOT_TOOLS_DIR }}
+          echo ${{ env.CHROMIUM_UPDATE_DIR }}
+          echo ${{ env.QT_DIR }}
+          echo ${{ env.QT_BUILD_DIR }}
+          echo ${{ env.WEB_ENGINE_DIR }}
+          echo ${{ env.THIRD_PARTY_DIR }}
+          echo ${{ env.CHROMIUM_DIR }}
