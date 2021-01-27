@@ -50,3 +50,10 @@ jobs:
         working-directory: ${{ env.WORK_DIR }}
         run: git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
+      - name: 3.  Get Qt
+        shell: bash
+        working-directory: ${{ env.WORK_DIR }}
+        run: |
+          wget https://download.qt.io/archive/qt/5.15/${{ env.QT_VERSION }}/single/${{ env.QT_PACKAGE_NAME }}.tar.xz
+          tar xf ${{ env.QT_PACKAGE_NAME }}.tar.xz
+
