@@ -15,11 +15,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     env:
       QT_VERSION: "5.15.2"
-      QT_PACKAGE_NAME: "qt-everywhere-src-${QT_VERSION}"
+      QT_PACKAGE_NAME: "qt-everywhere-src-$QT_VERSION"
       WORK_DIR: "$HOME/Code"
       DEPOT_TOOLS_DIR: "$WORK_DIR/depot_tools"
       CHROMIUM_UPDATE_DIR: "$WORK_DIR/chromium_update"
-      QT_DIR: "$WORK_DIR/${QT_PACKAGE_NAME}"
+      QT_DIR: "$WORK_DIR/$QT_PACKAGE_NAME"
       QT_BUILD_DIR: "$WORK_DIR/qt5-build"
       WEB_ENGINE_DIR: "$QT_DIR/qtwebengine"
       THIRD_PARTY_DIR: "$WEB_ENGINE_DIR/src/3rdparty/"
