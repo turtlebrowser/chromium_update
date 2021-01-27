@@ -16,13 +16,13 @@ jobs:
     env:
       QT_VERSION: "5.15.2"
       QT_PACKAGE_NAME: "qt-everywhere-src-$QT_VERSION"
-      WORK_DIR: "$HOME/Code"
-      DEPOT_TOOLS_DIR: "$HOME/Code/depot_tools"
-      QT_DIR: "$HOME/Code/qt-everywhere-src-$QT_VERSION"
-      QT_BUILD_DIR: "$HOME/Code/qt5-build"
-      WEB_ENGINE_DIR: "$HOME/Code/qt-everywhere-src-$QT_VERSION/qtwebengine"
-      THIRD_PARTY_DIR: "$HOME/Code/qt-everywhere-src-$QT_VERSION/qtwebengine/src/3rdparty"
-      CHROMIUM_DIR: "$HOME/Code/qt-everywhere-src-$QT_VERSION/qtwebengine/src/3rdparty/chromium"
+      WORK_DIR: "~/Code"
+      DEPOT_TOOLS_DIR: "~/Code/depot_tools"
+      QT_DIR: "~/Code/qt-everywhere-src-$QT_VERSION"
+      QT_BUILD_DIR: "~/Code/qt5-build"
+      WEB_ENGINE_DIR: "~/Code/qt-everywhere-src-$QT_VERSION/qtwebengine"
+      THIRD_PARTY_DIR: "~/Code/qt-everywhere-src-$QT_VERSION/qtwebengine/src/3rdparty"
+      CHROMIUM_DIR: "~/Code/qt-everywhere-src-$QT_VERSION/qtwebengine/src/3rdparty/chromium"
 
     steps:
       - uses: actions/checkout@v2
