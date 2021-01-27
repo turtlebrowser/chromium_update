@@ -29,6 +29,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Print environment
+        shell: bash
         run: |
           echo ${{ env.QT_VERSION }}
           echo ${{ env.QT_PACKAGE_NAME }}
