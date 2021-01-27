@@ -39,3 +39,8 @@ jobs:
           echo "WEB_ENGINE_DIR:       ${{ env.WEB_ENGINE_DIR }}"
           echo "WEB_ENGINE_DIR:       ${{ env.THIRD_PARTY_DIR }}"
           echo "CHROMIUM_DIR:         ${{ env.CHROMIUM_DIR }}"
+
+      - name: 1.  Make work directory
+        shell: bash
+        working-directory: ${{ env.HOME }}
+        run: mkdir -p ${{ env.WORK_DIR }}
