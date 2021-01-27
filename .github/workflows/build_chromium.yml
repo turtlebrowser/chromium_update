@@ -81,29 +81,17 @@ jobs:
       - name: 6.  Get Chromium
         shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
-        run: git clone -c core.longpaths=true --depth 1 https://github.com/chromium/chromium.git chromium
+        run: |
+          curl -LO https://github.com/turtlebrowser/chromium/archive/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3.zip
+          unzip -q turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3.zip
+          mv chromium-turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3 chromium
 
-      - name: 7.  Add remote
-        shell: bash
-        working-directory: ${{ env.CHROMIUM_DIR }}
-        run: git remote add old https://github.com/turtlebrowser/chromium.git
-
-      - name: 8.  Fetch remotes
-        shell: bash
-        working-directory: ${{ env.CHROMIUM_DIR }}
-        run: git -c core.deltaBaseCacheLimit=2g fetch --all --tags --verbose
-
-      - name: 9.  Get the Chromium branch
-        shell: bash
-        working-directory: ${{ env.CHROMIUM_DIR }}
-        run: git checkout ${{ env.CHROMIUM_BRANCH }}
-
-      - name: 10.  Make Qt build directory
+      - name: 7.  Make Qt build directory
         shell: bash
         working-directory: ${{ env.WORK_DIR }}
         run: mkdir -p ${{ env.QT_BUILD_DIR }}
 
-      - name: 11.  Linux - Prepare Qt build directory
+      - name: 8.  Linux - Prepare Qt build directory
         if: matrix.os == 'ubuntu-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
@@ -111,7 +99,7 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform linux-clang-libc++
 
-      - name: 11.  Windows - Prepare Qt build directory
+      - name: 8.  Windows - Prepare Qt build directory
         if: matrix.os == 'windows-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
@@ -119,7 +107,7 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform win32-clang-msvc
 
-      - name: 11.  Mac - Prepare Qt build directory
+      - name: 8.  Mac - Prepare Qt build directory
         if: matrix.os == 'macos-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
@@ -127,7 +115,7 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform macx-clang
 
-      - name: 12.  Prepare Qt build directory
+      - name: 9.  Prepare Qt build directory
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
         run: time make -j 8
