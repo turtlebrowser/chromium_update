@@ -88,7 +88,6 @@ jobs:
 
       - name: 7.  Make Qt build directory
         shell: bash
-        working-directory: ${{ env.WORK_DIR }}
         run: mkdir -p ${{ env.QT_BUILD_DIR }}
 
       - name: 8.  Linux - Prepare Qt build directory
