@@ -43,7 +43,7 @@ jobs:
 #          path: ${{ env.QT_BUILD_DIR }}
 #          key: host-${{ runner.os }}-target-${{ runner.os }}-${{ matrix.os }}
 
-      - name: Print environment
+      - name: 0.  [All] Print environment
         shell: bash
         run: |
           echo "QT_VERSION:             ${{ env.QT_VERSION }}"
@@ -59,11 +59,11 @@ jobs:
           echo "THIRD_PARTY_DIR:        ${{ env.THIRD_PARTY_DIR }}"
           echo "CHROMIUM_DIR:           ${{ env.CHROMIUM_DIR }}"
 
-      - name: 1.  Make work directory
+      - name: 1.  [All] Make work directory
         shell: bash
         run: mkdir -p Code
 
-      - name: 2.  Windows Free Up Disk
+      - name: 2.  [Windows] Free Up Disk
         if: matrix.os == 'windows-latest'
         shell: cmd
         run: |
@@ -78,27 +78,27 @@ jobs:
 #          git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 #          run: echo "" >> $GITHUB_PATH
 
-      - name: 3.  Get Qt
+      - name: 3.  [All] Get Qt
         shell: bash
         working-directory: ${{ env.WORK_DIR }}
         run: |
           curl -sSL https://download.qt.io/archive/qt/5.15/${{ env.QT_VERSION }}/single/${{ env.QT_PACKAGE_NAME }}.tar.xz | tar xJf -
 
-      - name: 4.  Get QtWebEngine
+      - name: 4.  [All] Get QtWebEngine
         shell: bash
         working-directory: ${{ env.QT_DIR }}
         run: |
           rm -rf qtwebengine
           git clone https://github.com/turtlebrowser/qtwebengine.git
 
-      - name: 5.  Checkout the QtWebEngine branch
+      - name: 5.  [All] Checkout the QtWebEngine branch
         shell: bash
         working-directory: ${{ env.WEB_ENGINE_DIR }}
         run: |
           git checkout ${{ env.WEB_ENGINE_BRANCH }}
           git pull
 
-      - name: 6.  Get Chromium (Windows)
+      - name: 6.  [Windows] Get Chromium
         if: matrix.os == 'windows-latest'
 #        shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
@@ -108,7 +108,7 @@ jobs:
           mv chromium-turtlebrowser_integration_chromium* chromium
           rm chromium.zip
 
-      - name: 6.  Get Chromium (MacOS + Linux)
+      - name: 6.  [MacOS Linux] Get Chromium
         if: matrix.os != 'windows-latest'
         shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
@@ -116,14 +116,14 @@ jobs:
           curl -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3 | tar xzf -
           mv turtlebrowser-chromium-* chromium
 
-      - name: 7.  Make Qt build directory
+      - name: 7.  [All] Make Qt build directory
         shell: bash
         run: mkdir -p ${{ env.QT_BUILD_DIR }}
       
 # Debian Dependencies
 # https://wiki.qt.io/Building_Qt_5_from_Git
 
-      - name: 8.  Linux - Add Build Dependencies
+      - name: 8.  [Linux] Add Build Dependencies
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
@@ -137,7 +137,7 @@ jobs:
           sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 100
           sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 100
 
-      - name: 9.  Linux - Prepare Qt build directory
+      - name: 9.  [Linux] Prepare Qt build directory
         if: matrix.os == 'ubuntu-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
@@ -145,7 +145,7 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform linux-clang-libc++
 
-      - name: 9.  Windows - Prepare Qt build directory
+      - name: 9.  [Windows] Prepare Qt build directory
         if: matrix.os == 'windows-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
@@ -153,7 +153,7 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform win32-clang-msvc
 
-      - name: 9.  Mac - Prepare Qt build directory
+      - name: 9.  [Mac] Prepare Qt build directory
         if: matrix.os == 'macos-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
@@ -161,7 +161,7 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform macx-clang
 
-      - name: 10.  Build Qt
+      - name: 10. [All] Build Qt
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
         run: time make -j 8
