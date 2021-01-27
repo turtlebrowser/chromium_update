@@ -71,7 +71,7 @@ jobs:
 #          run: echo "" >> $GITHUB_PATH
 
       - name: 3.  Get Qt
-        shell: bash
+#        shell: bash
         working-directory: ${{ env.WORK_DIR }}
         run: |
           curl -sSL https://download.qt.io/archive/qt/5.15/${{ env.QT_VERSION }}/single/${{ env.QT_PACKAGE_NAME }}.tar.xz | tar xJf -
