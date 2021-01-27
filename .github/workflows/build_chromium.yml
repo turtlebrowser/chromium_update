@@ -92,7 +92,7 @@ jobs:
 
       - name: 6.  Get Chromium (Windows)
         if: matrix.os == 'windows-latest'
-        shell: bash
+#        shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
         run: |
           curl -sSL -o chromium.zip https://github.com/turtlebrowser/chromium/archive/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3.zip
