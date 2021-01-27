@@ -75,7 +75,7 @@ jobs:
         if: matrix.os == 'windows-latest'
         shell: pwsh
         run: |
-          $colItems = Get-ChildItem -Path D:\a | Where-Object {$_.PSIsContainer -eq $true} | Sort-Object
+          $colItems = Get-ChildItem -Path D:\ | Where-Object {$_.PSIsContainer -eq $true} | Sort-Object
           foreach ($i in $colItems)
           {
           $subFolderItems = Get-ChildItem $i.FullName -recurse -force -EA 0 | Where-Object {$_.PSIsContainer -eq $false} | Measure-Object -property Length -sum | Select-Object Sum
