@@ -42,8 +42,8 @@ jobs:
 
       - name: 1.  Make work directory
         shell: bash
-        working-directory: ${{ env.HOME }}
-        run: mkdir -p ${{ env.WORK_DIR }}
+        working-directory: "~"
+        run: mkdir -p Code
 
       - name: 2.  Get Depot Tools
         shell: bash
