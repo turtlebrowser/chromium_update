@@ -90,11 +90,11 @@ jobs:
         if: matrix.os == 'windows-latest'
         shell: cmd
         run: |
-          rmdir /s /q "%Programfiles%\Java"            # 953.35 MB
-          rmdir /s /q "%Programfiles%\PostgreSQL"      # 585.22 MB
-          rmdir /s /q "%Programfiles%\Mozilla Firefox" # 206.22 MB
-          rmdir /s /q "%Programfiles%\Google"          # 447.60 MB
-          rmdir /s /q "%Programfiles%\Unity Hub"       # 200.81 MB
+          rmdir /s /q "%Programfiles%\Java"
+          rmdir /s /q "%Programfiles%\PostgreSQL"
+          rmdir /s /q "%Programfiles%\Mozilla Firefox"
+          rmdir /s /q "%Programfiles%\Google"
+          rmdir /s /q "%Programfiles%\Unity Hub"
 
       - name: 2.  [Windows] Free Up Disk - dotnet
         if: matrix.os == 'windows-latest'
