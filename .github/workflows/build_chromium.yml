@@ -84,7 +84,7 @@ jobs:
         run: |
           curl -sSL -o chromium.tar.gz https://api.github.com/repos/turtlebrowser/chromium/tarball/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3
           tar xf chromium.tar.gz
-          mv chromium-turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3 chromium
+          mv turtlebrowser-chromium-* chromium
 
       - name: 7.  Make Qt build directory
         shell: bash
