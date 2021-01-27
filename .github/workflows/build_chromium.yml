@@ -63,11 +63,11 @@ jobs:
         shell: bash
         run: mkdir -p Code
 
-      - name: 2.  Get Depot Tools
-        shell: bash
-        working-directory: ${{ env.WORK_DIR }}
-        run: |
-          git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+#      - name: 2.  Get Depot Tools
+#        shell: bash
+#        working-directory: ${{ env.WORK_DIR }}
+#        run: |
+#          git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 #          run: echo "" >> $GITHUB_PATH
 
       - name: 3.  Get Qt
@@ -94,8 +94,10 @@ jobs:
         shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
         run: |
-          curl -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3 | tar xfz -
+          curl -sSL -o chromium.tar.gz https://api.github.com/repos/turtlebrowser/chromium/tarball/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3
+          tar xf chromium.tar.gz
           mv turtlebrowser-chromium-* chromium
+          rm chromium.tar.gz
 
       - name: 7.  Make Qt build directory
         shell: bash
