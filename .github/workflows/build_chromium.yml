@@ -15,6 +15,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     env:
       QT_VERSION: "5.15.2"
+      WEB_ENGINE_BRANCH: "turtlebrowser_integration_5.15"
+      CHROMIUM_BRANCH: "old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3"
+      COMMON_CONFIGURE_FLAGS: "-developer-build -opensource -confirm-license -nomake examples -nomake tests"
       QT_PACKAGE_NAME: "qt-everywhere-src-$QT_VERSION"
       WORK_DIR: "Code"
       DEPOT_TOOLS_DIR: "Code/depot_tools"
@@ -30,15 +33,18 @@ jobs:
       - name: Print environment
         shell: bash
         run: |
-          echo "QT_VERSION:           ${{ env.QT_VERSION }}"
-          echo "QT_PACKAGE_NAME :     ${{ env.QT_PACKAGE_NAME }}"
-          echo "WORK_DIR:             ${{ env.WORK_DIR }}"
-          echo "DEPOT_TOOLS_DIR:      ${{ env.DEPOT_TOOLS_DIR }}"
-          echo "QT_DIR:               ${{ env.QT_DIR }}"
-          echo "QT_BUILD_DIR:         ${{ env.QT_BUILD_DIR }}"
-          echo "WEB_ENGINE_DIR:       ${{ env.WEB_ENGINE_DIR }}"
-          echo "WEB_ENGINE_DIR:       ${{ env.THIRD_PARTY_DIR }}"
-          echo "CHROMIUM_DIR:         ${{ env.CHROMIUM_DIR }}"
+          echo "QT_VERSION:             ${{ env.QT_VERSION }}"
+          echo "WEB_ENGINE_BRANCH:      ${{ env.WEB_ENGINE_BRANCH }}"
+          echo "CHROMIUM_BRANCH:        ${{ env.CHROMIUM_BRANCH }}"
+          echo "COMMON_CONFIGURE_FLAGS: ${{ env.COMMON_CONFIGURE_FLAGS }}"
+          echo "QT_PACKAGE_NAME :       ${{ env.QT_PACKAGE_NAME }}"
+          echo "WORK_DIR:               ${{ env.WORK_DIR }}"
+          echo "DEPOT_TOOLS_DIR:        ${{ env.DEPOT_TOOLS_DIR }}"
+          echo "QT_DIR:                 ${{ env.QT_DIR }}"
+          echo "QT_BUILD_DIR:           ${{ env.QT_BUILD_DIR }}"
+          echo "WEB_ENGINE_DIR:         ${{ env.WEB_ENGINE_DIR }}"
+          echo "THIRD_PARTY_DIR:        ${{ env.THIRD_PARTY_DIR }}"
+          echo "CHROMIUM_DIR:           ${{ env.CHROMIUM_DIR }}"
 
       - name: 1.  Make work directory
         shell: bash
@@ -47,7 +53,9 @@ jobs:
       - name: 2.  Get Depot Tools
         shell: bash
         working-directory: ${{ env.WORK_DIR }}
-        run: git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+        run: |
+          git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+#          run: echo "" >> $GITHUB_PATH
 
       - name: 3.  Get Qt
         shell: bash
@@ -56,3 +64,71 @@ jobs:
           curl -O -L https://download.qt.io/archive/qt/5.15/${{ env.QT_VERSION }}/single/${{ env.QT_PACKAGE_NAME }}.tar.xz
           tar xf ${{ env.QT_PACKAGE_NAME }}.tar.xz
 
+      - name: 4.  Get QtWebEngine
+        shell: bash
+        working-directory: ${{ env.QT_DIR }}
+        run: |
+          mv qtwebengine old_qtwebengine
+          git clone git@github.com:turtlebrowser/qtwebengine.git
+
+      - name: 5.  Checkout the QtWebEngine branch
+        shell: bash
+        working-directory: ${{ env.WEB_ENGINE_DIR }}
+        run: |
+          git checkout ${{ env.WEB_ENGINE_BRANCH }}
+          git pull
+
+      - name: 6.  Get Chromium
+        shell: bash
+        working-directory: ${{ env.THIRD_PARTY_DIR }}
+        run: git clone https://github.com/chromium/chromium.git chromium
+
+      - name: 7.  Add remote
+        shell: bash
+        working-directory: ${{ env.CHROMIUM_DIR }}
+        run: git remote add old git@github.com:turtlebrowser/chromium.git
+
+      - name: 8.  Fetch remotes
+        shell: bash
+        working-directory: ${{ env.CHROMIUM_DIR }}
+        run: git -c core.deltaBaseCacheLimit=2g fetch --all --tags --verbose
+
+      - name: 9.  Get the Chromium branch
+        shell: bash
+        working-directory: ${{ env.CHROMIUM_DIR }}
+        run: git checkout ${{ env.CHROMIUM_BRANCH }}
+
+      - name: 10.  Make Qt build directory
+        shell: bash
+        working-directory: ${{ env.WORK_DIR }}
+        run: mkdir -p ${{ env.QT_BUILD_DIR }}
+
+      - name: 11.  Linux - Prepare Qt build directory
+        if: matrix.os != 'ubuntu-latest'
+        shell: bash
+        working-directory: ${{ env.QT_BUILD_DIR }}
+        env:
+          NINJAFLAGS: "-k 0"
+        run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform linux-clang-libc++
+
+      - name: 11.  Windows - Prepare Qt build directory
+        if: matrix.os != 'windows-latest'
+        shell: bash
+        working-directory: ${{ env.QT_BUILD_DIR }}
+        env:
+          NINJAFLAGS: "-k 0"
+        run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform win32-clang-msvc
+
+      - name: 11.  Mac - Prepare Qt build directory
+        if: matrix.os != 'macos-latest'
+        shell: bash
+        working-directory: ${{ env.QT_BUILD_DIR }}
+        env:
+          NINJAFLAGS: "-k 0"
+        run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform macx-clang
+
+      - name: 12.  Prepare Qt build directory
+        shell: bash
+        working-directory: ${{ env.QT_BUILD_DIR }}
+        run: time make -j 8
+        
