@@ -89,8 +89,25 @@ jobs:
       - name: 7.  Make Qt build directory
         shell: bash
         run: mkdir -p ${{ env.QT_BUILD_DIR }}
+      
+# Debian Dependencies
+# https://wiki.qt.io/Building_Qt_5_from_Git
 
-      - name: 8.  Linux - Prepare Qt build directory
+      - name: 8.  Linux - Add Build Dependencies
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
+          sudo apt-get update
+          sudo apt-get build-dep qt5-default
+          sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+          sudo apt-get install libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdbus-1-dev libfontconfig1-dev libcap-dev libxtst-dev libpulse-dev libudev-dev libpci-dev libnss3-dev libasound2-dev libxss-dev libegl1-mesa-dev gperf bison
+          sudo apt-get install libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+          sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+          sudo apt install libc++-dev libc++abi-dev
+          sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 100
+          sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 100
+
+      - name: 9.  Linux - Prepare Qt build directory
         if: matrix.os == 'ubuntu-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
@@ -98,7 +115,7 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform linux-clang-libc++
 
-      - name: 8.  Windows - Prepare Qt build directory
+      - name: 9.  Windows - Prepare Qt build directory
         if: matrix.os == 'windows-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
@@ -106,7 +123,7 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform win32-clang-msvc
 
-      - name: 8.  Mac - Prepare Qt build directory
+      - name: 9.  Mac - Prepare Qt build directory
         if: matrix.os == 'macos-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
@@ -114,8 +131,7 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform macx-clang
 
-      - name: 9.  Prepare Qt build directory
+      - name: 10.  Build Qt
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
         run: time make -j 8
-        
