@@ -81,7 +81,7 @@ jobs:
       - name: 6.  Get Chromium
         shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
-        run: git clone --depth 350 https://github.com/chromium/chromium.git chromium
+        run: git clone --depth 1 https://github.com/chromium/chromium.git chromium
 
       - name: 7.  Add remote
         shell: bash
@@ -104,7 +104,7 @@ jobs:
         run: mkdir -p ${{ env.QT_BUILD_DIR }}
 
       - name: 11.  Linux - Prepare Qt build directory
-        if: matrix.os != 'ubuntu-latest'
+        if: matrix.os == 'ubuntu-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
         env:
@@ -112,7 +112,7 @@ jobs:
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform linux-clang-libc++
 
       - name: 11.  Windows - Prepare Qt build directory
-        if: matrix.os != 'windows-latest'
+        if: matrix.os == 'windows-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
         env:
@@ -120,7 +120,7 @@ jobs:
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform win32-clang-msvc
 
       - name: 11.  Mac - Prepare Qt build directory
-        if: matrix.os != 'macos-latest'
+        if: matrix.os == 'macos-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
         env:
