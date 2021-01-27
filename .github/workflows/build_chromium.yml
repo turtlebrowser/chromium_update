@@ -18,14 +18,14 @@ jobs:
       WEB_ENGINE_BRANCH: "turtlebrowser_integration_5.15"
       CHROMIUM_BRANCH: "old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3"
       COMMON_CONFIGURE_FLAGS: "-developer-build -opensource -confirm-license -nomake examples -nomake tests"
-      QT_PACKAGE_NAME: "qt-everywhere-src-$QT_VERSION"
+      QT_PACKAGE_NAME: "qt-everywhere-src-5.15.2"
       WORK_DIR: "Code"
       DEPOT_TOOLS_DIR: "Code/depot_tools"
-      QT_DIR: "Code/qt-everywhere-src-$QT_VERSION"
+      QT_DIR: "Code/qt-everywhere-src-5.15.2"
       QT_BUILD_DIR: "Code/qt5-build"
-      WEB_ENGINE_DIR: "Code/qt-everywhere-src-$QT_VERSION/qtwebengine"
-      THIRD_PARTY_DIR: "Code/qt-everywhere-src-$QT_VERSION/qtwebengine/src/3rdparty"
-      CHROMIUM_DIR: "Code/qt-everywhere-src-$QT_VERSION/qtwebengine/src/3rdparty/chromium"
+      WEB_ENGINE_DIR: "Code/qt-everywhere-src-5.15.2/qtwebengine"
+      THIRD_PARTY_DIR: "Code/qt-everywhere-src-5.15.2/qtwebengine/src/3rdparty"
+      CHROMIUM_DIR: "Code/qt-everywhere-src-5.15.2/qtwebengine/src/3rdparty/chromium"
 
     steps:
       - uses: actions/checkout@v2
