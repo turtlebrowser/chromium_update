@@ -31,13 +31,13 @@ jobs:
       - name: Print environment
         shell: bash
         run: |
-          echo ${{ env.QT_VERSION }}
-          echo ${{ env.QT_PACKAGE_NAME }}
-          echo ${{ env.WORK_DIR }}
-          echo ${{ env.DEPOT_TOOLS_DIR }}
-          echo ${{ env.CHROMIUM_UPDATE_DIR }}
-          echo ${{ env.QT_DIR }}
-          echo ${{ env.QT_BUILD_DIR }}
-          echo ${{ env.WEB_ENGINE_DIR }}
-          echo ${{ env.THIRD_PARTY_DIR }}
-          echo ${{ env.CHROMIUM_DIR }}
+          echo "QT_VERSION:           ${{ env.QT_VERSION }}"
+          echo "T_PACKAGE_NAME :      ${{ env.QT_PACKAGE_NAME }}"
+          echo "WORK_DIR:             ${{ env.WORK_DIR }}"
+          echo "DEPOT_TOOLS_DIR:      ${{ env.DEPOT_TOOLS_DIR }}"
+          echo "CHROMIUM_UPDATE_DIR:  ${{ env.CHROMIUM_UPDATE_DIR }}"
+          echo "QT_DIR:               ${{ env.QT_DIR }}"
+          echo "QT_BUILD_DIR:         ${{ env.QT_BUILD_DIR }}"
+          echo "WEB_ENGINE_DIR:       ${{ env.WEB_ENGINE_DIR }}"
+          echo "WEB_ENGINE_DIR:       ${{ env.THIRD_PARTY_DIR }}"
+          echo "CHROMIUM_DIR:         ${{ env.CHROMIUM_DIR }}"
