@@ -96,7 +96,7 @@ jobs:
         working-directory: ${{ env.THIRD_PARTY_DIR }}
         run: |
           curl -sSL -o chromium.zip https://github.com/turtlebrowser/chromium/archive/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3.zip
-          unzip chromium.zip
+          unzip -q chromium.zip
           mv chromium-turtlebrowser_integration_chromium* chromium
           rm chromium.zip
 
