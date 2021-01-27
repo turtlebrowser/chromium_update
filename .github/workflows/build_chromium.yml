@@ -59,7 +59,7 @@ jobs:
           echo "THIRD_PARTY_DIR:        ${{ env.THIRD_PARTY_DIR }}"
           echo "CHROMIUM_DIR:           ${{ env.CHROMIUM_DIR }}"
 
-      - name: 0. [Windows] List big things
+      - name: 0. [Windows] List big things - program files
         if: matrix.os == 'windows-latest'
         shell: pwsh
         run: |
@@ -71,15 +71,20 @@ jobs:
           $i.FullName + " -- " + "{0:N2}" -f ($subFolderItems.sum / 1MB) + " MB"
           }
 
+      - name: 0. [Windows] List big things - D drive
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          $colItems = Get-ChildItem -Path D:\a | Where-Object {$_.PSIsContainer -eq $true} | Sort-Object
+          foreach ($i in $colItems)
+          {
+          $subFolderItems = Get-ChildItem $i.FullName -recurse -force -EA 0 | Where-Object {$_.PSIsContainer -eq $false} | Measure-Object -property Length -sum | Select-Object Sum
+          $i.FullName + " -- " + "{0:N2}" -f ($subFolderItems.sum / 1MB) + " MB"
+          }
+
       - name: 1.  [All] Make work directory
         shell: bash
         run: mkdir -p Code
-
-      - name: 2.  [Windows] Free Up Disk - dotnet
-        if: matrix.os == 'windows-latest'
-        shell: cmd
-        run: |
-          rmdir /s /q "%Programfiles%\dotnet"
 
       - name: 2.  [Windows] Free Up Disk - others
         if: matrix.os == 'windows-latest'
@@ -89,6 +94,13 @@ jobs:
           rmdir /s /q "%Programfiles%\PostgreSQL"      # 585.22 MB
           rmdir /s /q "%Programfiles%\Mozilla Firefox" # 206.22 MB
           rmdir /s /q "%Programfiles%\Google"          # 447.60 MB
+          rmdir /s /q "%Programfiles%\Unity Hub"       # 200.81 MB
+
+      - name: 2.  [Windows] Free Up Disk - dotnet
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: |
+          rmdir /s /q "%Programfiles%\dotnet"
 
 #      - name: 2.  Get Depot Tools
 #        shell: bash
