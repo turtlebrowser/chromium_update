@@ -32,7 +32,7 @@ jobs:
         shell: bash
         run: |
           echo "QT_VERSION:           ${{ env.QT_VERSION }}"
-          echo "QT_PACKAGE_NAME :      ${{ env.QT_PACKAGE_NAME }}"
+          echo "QT_PACKAGE_NAME :     ${{ env.QT_PACKAGE_NAME }}"
           echo "WORK_DIR:             ${{ env.WORK_DIR }}"
           echo "DEPOT_TOOLS_DIR:      ${{ env.DEPOT_TOOLS_DIR }}"
           echo "CHROMIUM_UPDATE_DIR:  ${{ env.CHROMIUM_UPDATE_DIR }}"
