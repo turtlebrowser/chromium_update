@@ -30,6 +30,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Print current working dir
+        shell: bash
+        run: pwd
+
+#      - name: Using the builtin GitHub Cache Action for QT_BUILD_DIR
+#        id: github-cache-qt5-build
+#        uses: actions/cache@v2
+#        env:
+#          cache-name: cache-qt5-build
+#        with:
+#          path: ${{ env.QT_BUILD_DIR }}
+#          key: host-${{ runner.os }}-target-${{ runner.os }}-${{ matrix.os }}
+
       - name: Print environment
         shell: bash
         run: |
