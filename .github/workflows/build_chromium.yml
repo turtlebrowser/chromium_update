@@ -80,7 +80,7 @@ jobs:
         shell: bash
         working-directory: ${{ env.QT_DIR }}
         run: |
-          mv qtwebengine old_qtwebengine
+          rm -rf qtwebengine
           git clone https://github.com/turtlebrowser/qtwebengine.git
 
       - name: 5.  Checkout the QtWebEngine branch
