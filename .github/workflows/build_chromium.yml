@@ -41,9 +41,9 @@ jobs:
         shell: bash
         run: mkdir -p Code
 
-#      - name: 1.  [All] Make cache directory
-#        shell: bash
-#        run: mkdir -p Code
+      - name: 1.  [All] Make cache directory
+        shell: bash
+        run: mkdir -p Code/github_cache
         
       - name: Using the builtin GitHub Cache Action for QT_BUILD_DIR
         id: github-cache
