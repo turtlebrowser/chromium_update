@@ -92,8 +92,7 @@ get_qt() {
     then
       subheader "Qt found at : $QT_DIR"
     else
-      wget https://download.qt.io/archive/qt/5.15/${QT_VERSION}/single/${QT_PACKAGE_NAME}.tar.xz
-      tar xf ${QT_PACKAGE_NAME}.tar.xz
+      curl -sSL https://download.qt.io/archive/qt/5.15/${QT_VERSION}/single/${QT_PACKAGE_NAME}.tar.xz | tar xJf -
       subheader "Qt extracted at : $QT_DIR"
     fi
 }
