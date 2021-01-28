@@ -75,6 +75,8 @@ jobs:
         shell: bash
         working-directory: ${{ env.DEPOT_TOOLS_DIR }}/win_toolchain
         run: |
+          sed -i '/if len(matches)/s/^/#/g' package_from_installed.py #comment
+          sed -i '/  raise Exception('%s h/s/^/#/g' package_from_installed.py #comment
           python package_from_installed.py 2019 -w ${{ env.WINDOWS_SDK_VERSION }}
 
       - name: 0. [Windows] List big things - program files
