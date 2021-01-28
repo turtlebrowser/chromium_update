@@ -140,15 +140,15 @@ jobs:
           git checkout ${{ env.WEB_ENGINE_BRANCH }}
           git pull
 
-      - name: 6.  [Windows] Get Chromium
-        if: matrix.os == 'windows-latest'
-#        shell: bash
-        working-directory: ${{ env.THIRD_PARTY_DIR }}
-        run: |
-          curl -sSL -o chromium.zip https://github.com/turtlebrowser/chromium/archive/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3.zip
-          unzip -q chromium.zip
-          mv chromium-turtlebrowser_integration_chromium* chromium
-          rm chromium.zip
+#      - name: 6.  [Windows] Get Chromium
+#        if: matrix.os == 'windows-latest'
+##        shell: bash
+#        working-directory: ${{ env.THIRD_PARTY_DIR }}
+#        run: |
+#          curl -sSL -o chromium.zip https://github.com/turtlebrowser/chromium/archive/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3.zip
+#          unzip -q chromium.zip
+#          mv chromium-turtlebrowser_integration_chromium* chromium
+#          rm chromium.zip
 
       - name: 6.  [MacOS Linux] Get Chromium
         if: matrix.os != 'windows-latest'
