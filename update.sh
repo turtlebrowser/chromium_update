@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+# Use cases:
+# A) Get up a branch for a new release of Chromium
+# B) Applying patches and fixing conflicts
+# C) Building the current branch Qt+Chromium
+# D) Check out and build a certain branch
+
 BUILD_CLEAN=true
 BUILD_VERBOSE=false
 BUILD_CONTINUE=true
@@ -283,6 +289,7 @@ build_qt() {
 
 header "Update Chromium"
 
+confirm "0.  Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
 confirm "1.  Make work directory? [y/N]" && make_work_dir
 confirm "2.  Get Depot Tools? [y/N]" && get_depot_tools
 confirm "3.  Get Qt? [y/N]" && get_qt
