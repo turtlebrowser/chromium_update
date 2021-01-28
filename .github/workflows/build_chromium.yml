@@ -17,7 +17,7 @@ jobs:
       QT_VERSION: "5.15.2"
       WEB_ENGINE_BRANCH: "turtlebrowser_integration_5.15"
       CHROMIUM_BRANCH: "old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3"
-      COMMON_CONFIGURE_FLAGS: "-developer-build -opensource -confirm-license -nomake examples -nomake tests"
+      COMMON_CONFIGURE_FLAGS: "-developer-build -opensource -confirm-license -silent -nomake examples -nomake tests"
       QT_PACKAGE_NAME: "qt-everywhere-src-5.15.2"
       WORK_DIR: "Code"
       DEPOT_TOOLS_DIR: "Code/depot_tools"
