@@ -63,19 +63,8 @@ jobs:
         if: matrix.os == 'windows-latest'
         shell: pwsh
         run: |
-          $path = "$Env:Programfiles"
+          $path = "$Env:ProgramFiles(x86)"
           $colItems = Get-ChildItem $path | Where-Object {$_.PSIsContainer -eq $true} | Sort-Object
-          foreach ($i in $colItems)
-          {
-          $subFolderItems = Get-ChildItem $i.FullName -recurse -force -EA 0 | Where-Object {$_.PSIsContainer -eq $false} | Measure-Object -property Length -sum | Select-Object Sum
-          $i.FullName + " -- " + "{0:N2}" -f ($subFolderItems.sum / 1MB) + " MB"
-          }
-
-      - name: 0. [Windows] List big things - C drive
-        if: matrix.os == 'windows-latest'
-        shell: pwsh
-        run: |
-          $colItems = Get-ChildItem -Path C:\ | Where-Object {$_.PSIsContainer -eq $true} | Sort-Object
           foreach ($i in $colItems)
           {
           $subFolderItems = Get-ChildItem $i.FullName -recurse -force -EA 0 | Where-Object {$_.PSIsContainer -eq $false} | Measure-Object -property Length -sum | Select-Object Sum
