@@ -29,6 +29,7 @@ Add switch option for using OpenGL Core Profile in Chromium
 Add user script data mojo interface and traits
 Add WebEngine classes as RunLoop/MessageLoop friends.
 Add WebEnginePageRenderFrame mojo interface
+#TURTLE Add xcb dependencies
 Allow changing user-agent without replace the entire network context
 Allow --disable-gpu to disable gpu thread/process
 Allow disabling SurfaceLayer for videos on non-Android platforms
@@ -40,6 +41,7 @@ Allow shims in official builds
 #QT PICKED Allow the embedder to suppress an error page for http errors
 Allow us to set cookie_manager like android_webview
 Also remove debug-symbols from the platform subdir of blink
+#TURTLE DROP Avoid conflict between vulkan.h definitions
 #QT DROP A small Profile class
 Avoid using libdrm
 #QT DROP [Backport] Add a .gitattributes file to force LF line-endings in .pins files.
@@ -60,6 +62,7 @@ Build devtools modules with system nodejs
 #QT GN Build without last-commit header
 #QT DROP ICU Built with ICU 65 and 66
 Bump maximum number of custom isolated world ids
+#TURTLE C++17 (?) compile fix
 #QT DROP Cast the right side of a left shift
 <chromium> Add a hook to provide our own icu data file path
 <chromium> Add enable_error_page to web preferences
@@ -67,6 +70,8 @@ Bump maximum number of custom isolated world ids
 #TURTLE Chromium and Qt both compile at this point
 <chromium> BrowserAccessibilityManager::Create is implemented in Qt sources.
 <chromium> Do not directly override libc symbols from the library.
+#TURTLE Compile fixes 84
+#TURTLE Compilefixes for 85
 Convert asserts to logs and returns in the PpapiHost
 Declare a Qt IPC message class
 Decouple payment from content
@@ -77,6 +82,7 @@ Disable alternate window station of Windows sandbox
 Disable crash-reports when reporting is disabled
 Disable download and print buttons in PDF viewer
 #QT FIXED Disable dumb code
+#TURTLE DROP Disable font subsetting to support system harfbuzz < 2.4.0
 Disable location requests to the geolocation google API
 Disable long presentation time DCHECK
 Disable NetworkServiceSandbox on macOS by default
@@ -104,6 +110,7 @@ Don't build Aura's gesture_nav_simple
 Don't generate Java bindings
 #TURTLE Don't ignore gclient_args.gni
 Don't use Chromium's OSExchangeDataProviderFactory::CreateProvider()
+#TURTLE DROP Don't use harfbuzz-subset
 Don't use the gesture detector for scrolls and flings on macOS
 Drop constexpr from constructors in pdfium StringView
 Enable android-specific fields of RenderFrameMetadata
@@ -141,7 +148,7 @@ Fix building on windows without toolkit_views
 Fix building without WebSpeech
 #QT DROP Fix building zlib on arm32 and aarch64 (non-clang)
 #QT DROP Fix build on RHEL 7.6
-#QT PICKED Fix build on windows
+#QT DROP PARTIALLY Fix build on windows
 Fix build to have spellchecker compilation optional
 #QT DROP Fix build with GCC 10
 #QT DROP Fix build with gcc5 post 83 merge
@@ -178,6 +185,7 @@ Fix dependencies on ANGLE
 #TURTLE Fix DEPS
 Fix embedded builds with printing enabled
 #QT DROP Fixes for building with MSVC
+#TURTLE SQUASHED Fixes for post 79-merge
 #QT SQUASHED Fixes for jumbo build
 Fix FlingScheduler in viz mode
 Fix FORTIFY redefined warnings
@@ -234,6 +242,7 @@ FIXUP: Don't use the gesture detector for scrolls and flings on macOS
 #QT PICKED FIXUP: Qt GN integration
 Fixup rtc_use_x11
 Fixup select elements.
+#TURTLE SQUASHED Fixups post 77-merge
 #QT DROP Fixups for RHEL 7.6 after 87 merge
 Fixups post 83-merge for Windows
 #QT PICKED Fixups post 87
@@ -272,6 +281,7 @@ Make navigation on back/forward mouse buttons optional
 Make optimize_for_size an arg again
 Make scroll animation less "drunk"
 Make text selection handles available on macOS too
+#TURTLE SQUASHED Make XScrnSaver optional
 Make XScrnSaver optional and work under ozone
 #QT DROP Merge "Merge remote-tracking branch 'origin/upstream-master' into 87-based" into 87-based
 #QT DROP Merge remote-tracking branch 'origin/upstream-master' into 87-based
@@ -287,7 +297,7 @@ Pass Qt Prefix path to the macOS V2 Seatbelt Sandbox
 Pass through a new application name argument to utility processes
 Pass virtual url of data url request back to the UI
 Post 67-merge, 71-merge, 73-merge and 75-merge fixups
-Post 77-merge and 79-merge fixups
+#QT PICKED SQUASHED Post 77-merge and 79-merge fixups
 Prevent a python IOError on Windows due to MAX_PATH
 Protect against nullptr dereference in GetSelectedText
 Qt GN integration
