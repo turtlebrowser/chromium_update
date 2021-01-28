@@ -108,18 +108,17 @@ jobs:
           rmdir /s /q "%Programfiles%\Google"
           rmdir /s /q "%Programfiles%\Unity Hub"
 
+      - name: 2.  [Windows] Free Up Disk - Microsoft Visual Studio
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: |
+          rmdir /s /q "C:\Program Files (x86)\Microsoft Visual Studio"
+
       - name: 2.  [Windows] Free Up Disk - dotnet
         if: matrix.os == 'windows-latest'
         shell: cmd
         run: |
           rmdir /s /q "%Programfiles%\dotnet"
-
-#      - name: 2.  Get Depot Tools
-#        shell: bash
-#        working-directory: ${{ env.WORK_DIR }}
-#        run: |
-#          git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-#          run: echo "" >> $GITHUB_PATH
 
       - name: 3.  [All] Get Qt
         shell: bash
@@ -188,13 +187,13 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform linux-clang-libc++
 
-      - name: 9.  [Windows] Prepare Qt build directory
-        if: matrix.os == 'windows-latest'
-        shell: bash
-        working-directory: ${{ env.QT_BUILD_DIR }}
-        env:
-          NINJAFLAGS: "-k 0"
-        run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform win32-clang-msvc
+#      - name: 9.  [Windows] Prepare Qt build directory
+#        if: matrix.os == 'windows-latest'
+#        shell: bash
+#        working-directory: ${{ env.QT_BUILD_DIR }}
+#        env:
+#          NINJAFLAGS: "-k 0"
+#        run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform win32-clang-msvc
 
       - name: 9.  [Mac] Prepare Qt build directory
         if: matrix.os == 'macos-latest'
@@ -205,6 +204,7 @@ jobs:
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform macx-clang
 
       - name: 10. [All] Build Qt
+        if: matrix.os != 'windows-latest' # DISABLED FOR NOW
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
         run: time make -j 8
