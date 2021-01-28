@@ -64,7 +64,7 @@ jobs:
         shell: pwsh
         run: |
           $path = "$Env:ProgramFiles(x86)"
-          $colItems = Get-ChildItem $path | Where-Object {$_.PSIsContainer -eq $true} | Sort-Object
+          $colItems = Get-ChildItem -Path "C:\Program Files (x86)" | Where-Object {$_.PSIsContainer -eq $true} | Sort-Object
           foreach ($i in $colItems)
           {
           $subFolderItems = Get-ChildItem $i.FullName -recurse -force -EA 0 | Where-Object {$_.PSIsContainer -eq $false} | Measure-Object -property Length -sum | Select-Object Sum
