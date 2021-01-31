@@ -1,32 +1,71 @@
 #!/bin/bash
 set -e
 
-# Use cases:
-# A) Get up a branch for a new release of Chromium
-# B) Applying patches and fixing conflicts
-# C) Building the current branch Qt+Chromium
-# D) Check out and build a certain branch
+echo "TurtleBrowser Chromium update script, running on $OSTYPE"
 
-BUILD_CLEAN=true
-BUILD_VERBOSE=false
+# Config Options
+# 0) Workfolw type (WORKFLOW)
+# 1) Target platforms (TARGET_OS_LIST)
+# 2) Verbose output (BUILD_VERBOSE)
+# 3) Continue on error (BUILD_CONTINUE)
+# 4) Qt version (QT_VERSION)
+# 5) Previous tag and branch (OLD_TAG, OLD_BRANCH)
+# 6) New tag and branch (NEW_TAG, NEW_BRANCH)
+# 7) Root work directory (WORK_DIR)
+# 8) Windows Toolchain (DEPOT_TOOLS_WIN_TOOLCHAIN ++)
+
+# 0) Workfolw type (WORKFLOW)
+# workflow selects which options are available
+WORKFLOW_DEV="Dev"              # Building the current branch Qt+Chromium
+WORKFLOW_ENV="Environment"      # Get the source for a prepared branch
+WORKFLOW_UPD="Update"           # Get up a new branch for a new release of Chromium
+WORKFLOW_PCH="Patching"         # Applying patches and fixing conflicts
+
+WORKFLOW=$WORKFLOW_PCH
+
+# 1) Target platforms (TARGET_OS_LIST)
+# gclient target_os options:
+TARGET_OS_WINDOWS="win"
+TARGET_OS_LINUX="linux"
+TARGET_OS_MACOS="mac"
+
+#echo 'target_os = ["linux", "mac", "win"]' >> .gclient
+TARGET_OS_LIST="$TARGET_OS_WINDOWS"
+
+# 2) Verbose output (BUILD_VERBOSE)
+BUILD_VERBOSE=true
+
+# 3) Continue on error (BUILD_CONTINUE)
 BUILD_CONTINUE=true
 
+# 4) Qt version (QT_VERSION)
 QT_VERSION="5.15.2"
 QT_PACKAGE_NAME="qt-everywhere-src-${QT_VERSION}"
 
-# Previous tag and branch
-OLD_TAG="86.0.4240.198"
-OLD_BRANCH="gitea/turtlebrowser_integration_chromium_${OLD_TAG}_qt_${QT_VERSION}"
-
-# New tag and branch
-NEW_TAG="87.0.4280.144"
-NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_testing"
-
+# 5) Previous tag and branch (OLD_TAG, OLD_BRANCH)
+OLD_TAG="87.0.4280.144"
+OLD_BRANCH="old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3"
 README_FILENAME="turtlebrowser_readme_${OLD_TAG}.txt"
 
-WORK_DIR="$HOME/Code"
+# 6) New tag and branch (NEW_TAG, NEW_BRANCH)
+NEW_TAG="87.0.4280.144"
+NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_testing_win"
+
+# 7) Root work directory (WORK_DIR)
+if [ "$OSTYPE" = "msys" ] ; then
+    WORK_DIR="/c/Code"
+else
+    WORK_DIR="$HOME/Code"
+fi
+
+# 8) Windows Toolchain (DEPOT_TOOLS_WIN_TOOLCHAIN ++)
+#export DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL="${DEPOT_TOOLS_DIR}/win_toolchain/"
+#export GYP_MSVS_HASH_a687d8e2e4114d9015eb550e1b156af21381faac="740070ef26"
+export DEPOT_TOOLS_WIN_TOOLCHAIN=0
+
+# Paths
+CHROMIUM_UPDATE_DIR="$HOME/Code/chromium_update"
 DEPOT_TOOLS_DIR="$WORK_DIR/depot_tools"
-CHROMIUM_UPDATE_DIR="$WORK_DIR/chromium_update"
 QT_DIR="$WORK_DIR/${QT_PACKAGE_NAME}"
 QT_BUILD_DIR="$WORK_DIR/qt5-build"
 WEB_ENGINE_DIR="$QT_DIR/qtwebengine"
