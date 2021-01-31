@@ -247,7 +247,7 @@ fix_DEPS_file() {
 
 get_chromium_deps() {
     cd $CHROMIUM_DIR
-    gclient sync --with_branch_heads --with_tags -vvv
+    gclient sync --with_branch_heads --with_tags -vvv --force
     gclient runhooks
     subheader "Fetched chromium deps"
 }
