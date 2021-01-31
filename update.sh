@@ -293,22 +293,20 @@ add_chromium_modules() {
 push_branch_remotes() {
     cd $CHROMIUM_DIR
     git push -u old $NEW_BRANCH
-    git push gitea $NEW_BRANCH
     subheader "Branch pushed to remotes"
 }
 
 clean_chromium_build() {
-    if [ "$BUILD_CLEAN" = true ] ; then
-        cd $CHROMIUM_DIR
-        gclient runhooks
+    cd $CHROMIUM_DIR
+    gclient runhooks
+    if [ -d "out" ]
+    then
         mv out out_old
         info "Existing Chromium build moved to : ${CHROMIUM_DIR}/out_old"
-        gn gen out/Default
-        cp $CHROMIUM_UPDATE_DIR/args.gn out/Default/
-        subheader "CLEANED Chromium build successfully"
-    else
-        subheader "SKIPPED cleaning of Chromium build"
     fi
+    gn gen out/Default
+    cp $CHROMIUM_UPDATE_DIR/args.gn out/Default/
+    subheader "CLEANED Chromium build successfully"
 }
 
 build_chromium() {
