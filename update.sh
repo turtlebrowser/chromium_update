@@ -352,28 +352,71 @@ build_qt() {
     subheader "Qt built successfully"
 }
 
-header "Update Chromium"
+apply_patches() {
+    cd $CHROMIUM_DIR
+    cp ${CHROMIUM_UPDATE_DIR}/${README_FILENAME} apply_patches.sh && bash apply_patches.sh
+    subheader "Patches Applied"
+}
 
-confirm "0.  Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
-confirm "1.  Make work directory? [y/N]" && make_work_dir
-confirm "2.  Get Depot Tools? [y/N]" && get_depot_tools
-confirm "3.  Get Qt? [y/N]" && get_qt
-confirm "4.  Get QtWebEngine? [y/N]" && get_webengine
-confirm "5.  Checkout the QtWebEngine branch? [y/N]" && update_webengine
-confirm "6.  Get Chromium? [y/N]" && get_chromium
-confirm "7.  Add remotes? [y/N]" && add_remotes
-confirm "8.  Fetch remotes? [y/N]" && fetch_remotes
-confirm "9.  Get the old branch? [y/N]" && get_old_branch
-confirm "10. Create cherry pick script [y/N]" && create_script
-confirm "11. Checkout new tag [y/N]" && get_new_tag
-confirm "12. Checkout new branch [y/N]" && create_new_branch
-confirm "13. Fix DEPS file [y/N]" && fix_DEPS_file
-confirm "14. Get Chromium deps [y/N]" && get_chromium_deps
-confirm "15. Un-ignore Chromium deps [y/N]" && unignore_chromium_deps
-confirm "16. Check-in .gitignore files [y/N]" && commit_dot_ignore_files
-confirm "17. Check-in Chromium modules [y/N]" && add_chromium_modules
-confirm "18. Push new branch to remotes (and track) [y/N]" && push_branch_remotes
-confirm "19. CLEAN Chromium build [y/N]" && clean_chromium_build
-confirm "20. Build Chromium [y/N]" && build_chromium
-confirm "21. CLEAN Qt build [y/N]" && clean_qt_build
-confirm "22. Build Qt [y/N]" && build_qt
+case $WORKFLOW in
+
+  $WORKFLOW_DEV)
+    header "Dev Workflow"
+
+    confirm "1.  Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
+    confirm "2.  Build Qt [y/N]" && build_qt
+    confirm "3.  Build Chromium [y/N]" && build_chromium
+
+    ;;
+
+  $WORKFLOW_ENV)
+    header "Dev Bring Up Workflow"
+
+    confirm "1.  Make work directory? [y/N]" && make_work_dir
+    confirm "2.  Get Depot Tools? [y/N]" && get_depot_tools
+    confirm "3.  Get Qt? [y/N]" && get_qt
+    confirm "4.  Get QtWebEngine? [y/N]" && get_webengine
+    confirm "5.  Checkout the QtWebEngine branch? [y/N]" && update_webengine
+    confirm "6.  Get TurtleBrowser Chromium? [y/N]" && get_chromium
+    confirm "7.  Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
+
+    ;;
+
+  $WORKFLOW_UPD)
+    header "Chromium Update Workflow"
+
+    confirm "1.  Make work directory? [y/N]" && make_work_dir
+    confirm "2.  Get Depot Tools? [y/N]" && get_depot_tools
+    confirm "3.  Get Qt? [y/N]" && get_qt
+    confirm "4.  Get QtWebEngine? [y/N]" && get_webengine
+    confirm "5.  Checkout the QtWebEngine branch? [y/N]" && update_webengine
+    confirm "6.  Get Upstream Chromium? [y/N]" && get_upstream_chromium
+    confirm "7.  Add remotes? [y/N]" && add_remotes
+    confirm "8.  Fetch remotes? [y/N]" && fetch_remotes
+    confirm "9.  Get the old branch? [y/N]" && get_old_branch
+    confirm "10. Create cherry pick script [y/N]" && create_script
+    confirm "11. Checkout new tag [y/N]" && get_new_tag
+    confirm "12. Checkout new branch [y/N]" && create_new_branch
+    confirm "13. Fix DEPS file [y/N]" && fix_DEPS_file
+    confirm "14. Get Chromium deps [y/N]" && get_chromium_deps
+    confirm "15. Un-ignore Chromium deps [y/N]" && unignore_chromium_deps
+    confirm "16. Check-in .gitignore files [y/N]" && commit_dot_ignore_files
+    confirm "17. Check-in Chromium modules [y/N]" && add_chromium_modules
+    confirm "18. Push new branch to remotes (and track) [y/N]" && push_branch_remotes
+    confirm "19. CLEAN Chromium build [y/N]" && clean_chromium_build
+    confirm "20. Build Chromium [y/N]" && build_chromium
+
+    ;;
+
+  $WORKFLOW_PCH)
+    header "Chromium Cherry-Pick Workflow"
+
+    confirm "1.  Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
+    confirm "2.  Apply Patches? [y/N]" && apply_patches
+    confirm "3.  CLEAN Qt build [y/N]" && clean_qt_build
+    confirm "4.  Build Qt [y/N]" && build_qt
+    confirm "5.  CLEAN Chromium build [y/N]" && clean_chromium_build
+    confirm "6.  Build Chromium [y/N]" && build_chromium
+
+    ;;
+esac
