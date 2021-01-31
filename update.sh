@@ -316,20 +316,34 @@ build_chromium() {
 }
 
 clean_qt_build() {
-    if [ "$BUILD_CLEAN" = true ] ; then
-        cd $WORK_DIR
-        if [ -d "$QT_BUILD_DIR" ]
-        then
-            mv ${QT_BUILD_DIR} ${QT_BUILD_DIR}_old
-            info "Existing Qt build moved to : ${QT_BUILD_DIR}_old"
-        fi
-        mkdir -p ${QT_BUILD_DIR}
-        cd $QT_BUILD_DIR
-        ../qt-everywhere-src-5.15.2/configure -platform linux-clang-libc++ -developer-build -opensource -confirm-license -nomake examples -nomake tests
-        subheader "CLEANED Qt build successfully : $QT_BUILD_DIR"
-    else
-        subheader "SKIPPED cleaning of Qt build : $QT_BUILD_DIR"
+    cd $WORK_DIR
+    if [ -d "$QT_BUILD_DIR" ]
+    then
+        mv ${QT_BUILD_DIR} ${QT_BUILD_DIR}_old
+        info "Existing Qt build moved to : ${QT_BUILD_DIR}_old"
     fi
+    mkdir -p ${QT_BUILD_DIR}
+    cd $QT_BUILD_DIR
+
+    case $OSTYPE in
+
+    "msys")
+        # "Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+        # cd /c/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Auxiliary/Build
+        # ./vcvars64.bat
+        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
+        ../qt-everywhere-src-5.15.2/configure.bat ${COMMON_CONFIGURE_FLAGS} -platform win32-clang-msvc
+        ;;
+
+    "linux-gnu")
+        # NINJAFLAGS have to be set before configure is run to affect Qt builds, and cannot be changed after
+        export NINJAFLAGS=$NINJAFLAGS
+        ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -platform linux-clang-libc++
+        ;;
+
+    esac
+
+    subheader "CLEANED Qt build successfully : $QT_BUILD_DIR"
 }
 
 build_qt() {
