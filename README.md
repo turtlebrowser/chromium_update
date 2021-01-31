@@ -1,11 +1,18 @@
 # chromium_update
 
-Get clang 11
+Linux, Get clang 11
 ```
 sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
 sudo apt install libc++-dev libc++abi-dev
 sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 100
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 100
+```
+
+Windows, Get clang 11
+```
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+scoop install llvm
+clang --version
 ```
 
 ```
