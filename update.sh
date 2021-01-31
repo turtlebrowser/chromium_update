@@ -173,19 +173,27 @@ get_chromium() {
     subheader "Chromium cloned at : $CHROMIUM_DIR"
 }
 
+get_upstream_chromium() {
+    cd $THIRD_PARTY_DIR
+    gclient config --verbose --name chromium --unmanaged --custom-var checkout_nacl=False https://github.com/chromium/chromium.git
+    echo 'target_os = ["win"]' >> .gclient
+    gclient sync || {
+        info "Ignore error for missing gclient_args.gni - Need to fix DEPS to get the right path"
+    }
+    subheader "Chromium sync'ed at : $CHROMIUM_DIR"
+}
+
 add_remotes() {
     cd $CHROMIUM_DIR
-    #git remote add google https://github.com/chromium/chromium.git
     git remote add qt https://code.qt.io/qt/qtwebengine-chromium.git
     git remote add old git@github.com:turtlebrowser/chromium.git
-    git remote add gitea git@libc.dev:patricia-gallardo/chromium.git
-    subheader "Remotes added : qt, old, gitea"
+    subheader "Remotes added : qt, old"
 }
 
 fetch_remotes() {
     cd $CHROMIUM_DIR
     git -c core.deltaBaseCacheLimit=2g fetch --all --tags --verbose
-    subheader "Remotes fetched : qt, old, gitea"
+    subheader "Remotes fetched : qt, old"
 }
 
 get_old_branch() {
