@@ -74,9 +74,8 @@ CHROMIUM_DIR="$THIRD_PARTY_DIR/chromium"
 
 PATH="$PATH:${DEPOT_TOOLS_DIR}"
 
-# NINJAFLAGS have to be set before configure is run to affect Qt builds, and cannot be changed after
+# Build flags passed to both Qt and Chromium builds
 NINJAFLAGS=""
-
 if [ "$BUILD_VERBOSE" = true ] ; then
     NINJAFLAGS="$NINJAFLAGS -v"
 fi
