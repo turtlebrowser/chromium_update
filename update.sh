@@ -84,6 +84,14 @@ if [ "$BUILD_CONTINUE" = true ] ; then
     NINJAFLAGS="$NINJAFLAGS -k 0"
 fi
 
+COMMON_CONFIGURE_FLAGS="-developer-build -opensource -confirm-license -nomake examples -nomake tests"
+
+if [ "$BUILD_VERBOSE" = true ] ; then
+    COMMON_CONFIGURE_FLAGS="${COMMON_CONFIGURE_FLAGS} -verbose"
+else
+    COMMON_CONFIGURE_FLAGS="${COMMON_CONFIGURE_FLAGS} -silent"
+fi
+
 confirm() {
     read -r -p "${1:-Are you sure? [y/N]} " response
     case "$response" in
