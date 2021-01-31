@@ -328,11 +328,7 @@ clean_qt_build() {
     case $OSTYPE in
 
     "msys")
-        # "Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
-        # cd /c/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Auxiliary/Build
-        # ./vcvars64.bat
-        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
-        ../qt-everywhere-src-5.15.2/configure.bat ${COMMON_CONFIGURE_FLAGS} -platform win32-clang-msvc
+        $CHROMIUM_UPDATE_DIR/configure_qt.bat
         ;;
 
     "linux-gnu")
@@ -348,7 +344,11 @@ clean_qt_build() {
 
 build_qt() {
     cd $QT_BUILD_DIR
-    time make -j 8
+    if [ "$OSTYPE" = "msys" ] ; then
+        $CHROMIUM_UPDATE_DIR/build_qt.bat
+    else
+        time make -j 8
+    fi
     subheader "Qt built successfully"
 }
 
