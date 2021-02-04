@@ -73,15 +73,22 @@ jobs:
           brew install -v llvm
           LLVMDIR="$(brew --prefix)/opt/llvm"
           echo "${LLVMDIR}/bin/" >> $GITHUB_PATH
-          echo "LDFLAGS=${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib" >> $GITHUB_ENV
-          echo "CC=${LLVMDIR}/bin/clang" >> $GITHUB_ENV
-          echo "CXX=${LLVMDIR}/bin/clang++" >> $GITHUB_ENV
+          CC_COMPILER="${LLVMDIR}/bin/clang"
+          CXX_COMPILER="${LLVMDIR}/bin/clang++"
+          LINKER_FLAGS="${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib"
+          echo "CC=${CC_COMPILER}" >> $GITHUB_ENV
+          echo "CXX=${CXX_COMPILER}" >> $GITHUB_ENV
+          echo "LDFLAGS=${LINKER_FLAGS}" >> $GITHUB_ENV
+          echo "QMAKE_CC=${CC_COMPILER}" >> $GITHUB_ENV
+          echo "QMAKE_CXX=${CXX_COMPILER}" >> $GITHUB_ENV
+          echo "QMAKE_LFLAGS=${LINKER_FLAGS}" >> $GITHUB_ENV
 
       - name: 2.  [All] Test clang
         run: |
           echo "PATH : $PATH"
           echo "LDFLAGS : ${{ env.LDFLAGS }}"
           clang --version
+          ${{ env.QMAKE_CXX }} --version
 
       - name: 3.  [All] Make work directory
         shell: bash
