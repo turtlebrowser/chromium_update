@@ -65,6 +65,8 @@ jobs:
           sudo apt install libc++-dev libc++abi-dev
           sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 100
           sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 100
+          sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-10 100
+          echo "/usr/bin/" >> $GITHUB_PATH
 
       - name: 1.  [MacOS] Add Build Dependencies
         if: matrix.os == 'macos-latest'
@@ -73,8 +75,6 @@ jobs:
           LLVMDIR="$(brew --prefix)/opt/llvm"
           echo "${LLVMDIR}/bin/" >> $GITHUB_PATH
           echo "LDFLAGS=${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib" >> $GITHUB_ENV
-#          export PATH="${LLVMDIR}/bin/:$PATH"
-#          export LDFLAGS="${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib"
 
       - name: 2.  [All] Test clang
         run: |
