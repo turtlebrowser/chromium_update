@@ -118,6 +118,17 @@ jobs:
           sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 100
           sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 100
 
+      - name: 8.  [MacOS] Add Build Dependencies
+        if: matrix.os == 'macos-latest'
+        run: |
+          brew install llvm
+          LLVMDIR="$(brew --prefix)/opt/llvm"
+          export PATH="${LLVMDIR}/bin/:$PATH"
+          export LDFLAGS="${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib"
+
+      - name: 8.  [All] Test clang
+        run: clang --version
+
       - name: 9.  [Linux] Prepare Qt build directory
         if: matrix.os == 'ubuntu-latest'
         shell: bash
