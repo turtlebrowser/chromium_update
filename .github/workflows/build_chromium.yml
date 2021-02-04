@@ -121,7 +121,7 @@ jobs:
       - name: 8.  [MacOS] Add Build Dependencies
         if: matrix.os == 'macos-latest'
         run: |
-          brew install llvm
+          brew install --with-clang llvm
           LLVMDIR="$(brew --prefix)/opt/llvm"
           export PATH="${LLVMDIR}/bin/:$PATH"
           export LDFLAGS="${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib"
