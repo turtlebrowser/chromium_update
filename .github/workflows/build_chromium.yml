@@ -70,7 +70,6 @@ jobs:
       - name: 1.  [MacOS] Add Build Dependencies
         if: matrix.os == 'macos-latest'
         run: |
-          sudo mv /usr/bin/clang /usr/bin/apple-clang
           brew install -v llvm
           LLVMDIR="$(brew --prefix)/opt/llvm"
           sudo ln -s ${LLVMDIR}/bin/clang /usr/bin/clang
