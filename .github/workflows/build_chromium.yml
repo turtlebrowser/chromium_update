@@ -63,9 +63,15 @@ jobs:
           sudo apt-get install libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
           sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
           sudo apt install libc++-dev libc++abi-dev
-          sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 100
-          sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 100
+          CC_COMPILER="/usr/bin/clang-11"
+          CXX_COMPILER="/usr/bin/clang++-11"
+          sudo update-alternatives --install /usr/bin/clang clang ${CC_COMPILER} 100
+          sudo update-alternatives --install /usr/bin/clang++ clang++ ${CXX_COMPILER} 100
           echo "/usr/bin/" >> $GITHUB_PATH
+          echo "CC=${CC_COMPILER}" >> $GITHUB_ENV
+          echo "CXX=${CXX_COMPILER}" >> $GITHUB_ENV
+          echo "QMAKE_CC=${CC_COMPILER}" >> $GITHUB_ENV
+          echo "QMAKE_CXX=${CXX_COMPILER}" >> $GITHUB_ENV
 
       - name: 1.  [MacOS] Add Build Dependencies
         if: matrix.os == 'macos-latest'
