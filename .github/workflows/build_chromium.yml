@@ -11,14 +11,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     env:
       QT_VERSION: "5.15.2"
       WINDOWS_SDK_VERSION: "10.0.19041.0" # see build/toolchain/win/setup_toolchain.py
       WINDOWS_TOOLCHAIN_HASH: "fdfc420dcd"
       WEB_ENGINE_BRANCH: "turtlebrowser_integration_5.15"
-      CHROMIUM_BRANCH: "old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3"
+      CHROMIUM_BRANCH: "old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing_win2"
       COMMON_CONFIGURE_FLAGS: "-developer-build -opensource -confirm-license -silent -nomake examples -nomake tests"
       QT_PACKAGE_NAME: "qt-everywhere-src-5.15.2"
       WORK_DIR: "Code"
@@ -32,27 +32,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Print current working dir
-        shell: bash
-        run: pwd
-
-      - name: 1.  [All] Make work directory
-        shell: bash
-        run: mkdir -p Code
-
-      - name: 1.  [All] Make cache directory
-        shell: bash
-        run: mkdir -p Code/github_cache
-        
-      - name: Using the builtin GitHub Cache Action for QT_BUILD_DIR
-        id: github-cache
-        uses: actions/cache@v2
-        env:
-          cache-name: chromium-cache
-        with:
-          path: ${{ env.CACHE_DIR }}
-          key: host-${{ runner.os }}-target-${{ runner.os }}-${{ matrix.os }}
 
       - name: 0.  [All] Print environment
         shell: bash
@@ -70,55 +49,25 @@ jobs:
           echo "THIRD_PARTY_DIR:        ${{ env.THIRD_PARTY_DIR }}"
           echo "CHROMIUM_DIR:           ${{ env.CHROMIUM_DIR }}"
 
+      - name: 1.  [All] Make work directory
+        shell: bash
+        run: mkdir -p Code
+
       - name: 2.  Get Depot Tools
         shell: bash
         working-directory: ${{ env.WORK_DIR }}
         run: |
           git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
           
-      - name: 3.  [Windows] Make SDK toolchain zip
-        if: matrix.os == 'windows-latest' && steps.github-cache.outputs.cache-hit != 'true'
-        shell: bash
-        working-directory: ${{ env.DEPOT_TOOLS_DIR }}/win_toolchain
-        run: |
-          sed -i "/if len(matches)/s/^/#/g" package_from_installed.py #comment
-          sed -i "/  raise Exception('%s h/s/^/#/g" package_from_installed.py #comment
-          python package_from_installed.py 2019 -w ${{ env.WINDOWS_SDK_VERSION }}
-          cp *.zip ../../github_cache/
-
-      - name: 0. [Windows] List big things - program files
-        if: matrix.os == 'windows-latest'
-        shell: pwsh
-        run: |
-          $path = "$Env:ProgramFiles(x86)"
-          $colItems = Get-ChildItem -Path "C:\Program Files (x86)" | Where-Object {$_.PSIsContainer -eq $true} | Sort-Object
-          foreach ($i in $colItems)
-          {
-          $subFolderItems = Get-ChildItem $i.FullName -recurse -force -EA 0 | Where-Object {$_.PSIsContainer -eq $false} | Measure-Object -property Length -sum | Select-Object Sum
-          $i.FullName + " -- " + "{0:N2}" -f ($subFolderItems.sum / 1MB) + " MB"
-          }
-
-      - name: 2.  [Windows] Free Up Disk - others
-        if: matrix.os == 'windows-latest'
-        shell: cmd
-        run: |
-          rmdir /s /q "%Programfiles%\Java"
-          rmdir /s /q "%Programfiles%\PostgreSQL"
-          rmdir /s /q "%Programfiles%\Mozilla Firefox"
-          rmdir /s /q "%Programfiles%\Google"
-          rmdir /s /q "%Programfiles%\Unity Hub"
-
-      - name: 2.  [Windows] Free Up Disk - Microsoft Visual Studio
-        if: matrix.os == 'windows-latest'
-        shell: cmd
-        run: |
-          rmdir /s /q "C:\Program Files (x86)\Microsoft Visual Studio"
-
-      - name: 2.  [Windows] Free Up Disk - dotnet
-        if: matrix.os == 'windows-latest'
-        shell: cmd
-        run: |
-          rmdir /s /q "%Programfiles%\dotnet"
+#      - name: 3.  [Windows] Make SDK toolchain zip
+#        if: matrix.os == 'windows-latest' && steps.github-cache.outputs.cache-hit != 'true'
+#        shell: bash
+#        working-directory: ${{ env.DEPOT_TOOLS_DIR }}/win_toolchain
+#        run: |
+#          sed -i "/if len(matches)/s/^/#/g" package_from_installed.py #comment
+#          sed -i "/  raise Exception('%s h/s/^/#/g" package_from_installed.py #comment
+#          python package_from_installed.py 2019 -w ${{ env.WINDOWS_SDK_VERSION }}
+#          cp *.zip ../../github_cache/
 
       - name: 3.  [All] Get Qt
         shell: bash
@@ -140,17 +89,7 @@ jobs:
           git checkout ${{ env.WEB_ENGINE_BRANCH }}
           git pull
 
-#      - name: 6.  [Windows] Get Chromium
-#        if: matrix.os == 'windows-latest'
-##        shell: bash
-#        working-directory: ${{ env.THIRD_PARTY_DIR }}
-#        run: |
-#          curl -sSL -o chromium.zip https://github.com/turtlebrowser/chromium/archive/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3.zip
-#          unzip -q chromium.zip
-#          mv chromium-turtlebrowser_integration_chromium* chromium
-#          rm chromium.zip
-
-      - name: 6.  [MacOS Linux] Get Chromium
+      - name: 6.  [All] Get Chromium
         if: matrix.os != 'windows-latest'
         shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
@@ -187,14 +126,6 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform linux-clang-libc++
 
-#      - name: 9.  [Windows] Prepare Qt build directory
-#        if: matrix.os == 'windows-latest'
-#        shell: bash
-#        working-directory: ${{ env.QT_BUILD_DIR }}
-#        env:
-#          NINJAFLAGS: "-k 0"
-#        run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform win32-clang-msvc
-
       - name: 9.  [Mac] Prepare Qt build directory
         if: matrix.os == 'macos-latest'
         shell: bash
@@ -204,7 +135,6 @@ jobs:
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform macx-clang
 
       - name: 10. [All] Build Qt
-        if: matrix.os != 'windows-latest' # DISABLED FOR NOW
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
         run: time make -j 8
