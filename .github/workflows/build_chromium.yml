@@ -67,6 +67,8 @@ jobs:
           CXX_COMPILER="/usr/bin/clang++-11"
           sudo update-alternatives --install /usr/bin/clang clang ${CC_COMPILER} 100
           sudo update-alternatives --install /usr/bin/clang++ clang++ ${CXX_COMPILER} 100
+          sudo update-alternatives --config clang
+          sudo update-alternatives --config clang++
           echo "/usr/bin/" >> $GITHUB_PATH
           echo "CC=${CC_COMPILER}" >> $GITHUB_ENV
           echo "CXX=${CXX_COMPILER}" >> $GITHUB_ENV
