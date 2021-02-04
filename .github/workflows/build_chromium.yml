@@ -124,11 +124,15 @@ jobs:
           brew install -v llvm
           LLVMDIR="$(brew --prefix)/opt/llvm"
           echo "${LLVMDIR}/bin/" >> $GITHUB_PATH
-          export PATH="${LLVMDIR}/bin/:$PATH"
-          export LDFLAGS="${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib"
+          echo "LDFLAGS=${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib" >> $GITHUB_ENV
+#          export PATH="${LLVMDIR}/bin/:$PATH"
+#          export LDFLAGS="${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib"
 
       - name: 8.  [All] Test clang
-        run: clang --version
+        run: |
+          echo "PATH : $PATH"
+          echo "LDFLAGS : ${{ env.LDFLAGS }}"
+          clang --version
 
       - name: 9.  [Linux] Prepare Qt build directory
         if: matrix.os == 'ubuntu-latest'
