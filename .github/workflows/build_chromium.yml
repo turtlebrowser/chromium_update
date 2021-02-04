@@ -18,7 +18,7 @@ jobs:
       WINDOWS_SDK_VERSION: "10.0.19041.0" # see build/toolchain/win/setup_toolchain.py
       WINDOWS_TOOLCHAIN_HASH: "fdfc420dcd"
       WEB_ENGINE_BRANCH: "turtlebrowser_integration_5.15"
-      CHROMIUM_BRANCH: "old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing_win2"
+      CHROMIUM_BRANCH: "turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing_win2"
       COMMON_CONFIGURE_FLAGS: "-developer-build -opensource -confirm-license -silent -nomake examples -nomake tests"
       QT_PACKAGE_NAME: "qt-everywhere-src-5.15.2"
       WORK_DIR: "Code"
@@ -94,7 +94,7 @@ jobs:
         shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
         run: |
-          curl -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing3 | tar xzf -
+          curl -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/${{ env.CHROMIUM_BRANCH }} | tar xzf -
           mv turtlebrowser-chromium-* chromium
 
       - name: 7.  [All] Make Qt build directory
