@@ -72,9 +72,10 @@ jobs:
         run: |
           brew install -v llvm
           LLVMDIR="$(brew --prefix)/opt/llvm"
-          sudo ln -s ${LLVMDIR}/bin/clang /usr/bin/clang
           echo "${LLVMDIR}/bin/" >> $GITHUB_PATH
           echo "LDFLAGS=${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib" >> $GITHUB_ENV
+          echo "CC=${LLVMDIR}/bin/clang" >> $GITHUB_ENV
+          echo "CXX=${LLVMDIR}/bin/clang++" >> $GITHUB_ENV
 
       - name: 2.  [All] Test clang
         run: |
