@@ -49,11 +49,44 @@ jobs:
           echo "THIRD_PARTY_DIR:        ${{ env.THIRD_PARTY_DIR }}"
           echo "CHROMIUM_DIR:           ${{ env.CHROMIUM_DIR }}"
 
-      - name: 1.  [All] Make work directory
+# Debian Dependencies
+# https://wiki.qt.io/Building_Qt_5_from_Git
+
+      - name: 1.  [Linux] Add Build Dependencies
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
+          sudo apt-get update
+          sudo apt-get build-dep qt5-default
+          sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+          sudo apt-get install libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdbus-1-dev libfontconfig1-dev libcap-dev libxtst-dev libpulse-dev libudev-dev libpci-dev libnss3-dev libasound2-dev libxss-dev libegl1-mesa-dev gperf bison
+          sudo apt-get install libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+          sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+          sudo apt install libc++-dev libc++abi-dev
+          sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 100
+          sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 100
+
+      - name: 1.  [MacOS] Add Build Dependencies
+        if: matrix.os == 'macos-latest'
+        run: |
+          brew install -v llvm
+          LLVMDIR="$(brew --prefix)/opt/llvm"
+          echo "${LLVMDIR}/bin/" >> $GITHUB_PATH
+          echo "LDFLAGS=${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib" >> $GITHUB_ENV
+#          export PATH="${LLVMDIR}/bin/:$PATH"
+#          export LDFLAGS="${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib"
+
+      - name: 2.  [All] Test clang
+        run: |
+          echo "PATH : $PATH"
+          echo "LDFLAGS : ${{ env.LDFLAGS }}"
+          clang --version
+
+      - name: 3.  [All] Make work directory
         shell: bash
         run: mkdir -p Code
 
-      - name: 2.  Get Depot Tools
+      - name: 4.  Get Depot Tools
         shell: bash
         working-directory: ${{ env.WORK_DIR }}
         run: |
@@ -69,27 +102,27 @@ jobs:
 #          python package_from_installed.py 2019 -w ${{ env.WINDOWS_SDK_VERSION }}
 #          cp *.zip ../../github_cache/
 
-      - name: 3.  [All] Get Qt
+      - name: 5.  [All] Get Qt
         shell: bash
         working-directory: ${{ env.WORK_DIR }}
         run: |
           curl -sSL https://download.qt.io/archive/qt/5.15/${{ env.QT_VERSION }}/single/${{ env.QT_PACKAGE_NAME }}.tar.xz | tar xJf -
 
-      - name: 4.  [All] Get QtWebEngine
+      - name: 6.  [All] Get QtWebEngine
         shell: bash
         working-directory: ${{ env.QT_DIR }}
         run: |
           rm -rf qtwebengine
           git clone https://github.com/turtlebrowser/qtwebengine.git
 
-      - name: 5.  [All] Checkout the QtWebEngine branch
+      - name: 7.  [All] Checkout the QtWebEngine branch
         shell: bash
         working-directory: ${{ env.WEB_ENGINE_DIR }}
         run: |
           git checkout ${{ env.WEB_ENGINE_BRANCH }}
           git pull
 
-      - name: 6.  [All] Get Chromium
+      - name: 8.  [All] Get Chromium
         if: matrix.os != 'windows-latest'
         shell: bash
         working-directory: ${{ env.THIRD_PARTY_DIR }}
@@ -97,44 +130,11 @@ jobs:
           curl -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/${{ env.CHROMIUM_BRANCH }} | tar xzf -
           mv turtlebrowser-chromium-* chromium
 
-      - name: 7.  [All] Make Qt build directory
+      - name: 9.  [All] Make Qt build directory
         shell: bash
         run: mkdir -p ${{ env.QT_BUILD_DIR }}
-      
-# Debian Dependencies
-# https://wiki.qt.io/Building_Qt_5_from_Git
 
-      - name: 8.  [Linux] Add Build Dependencies
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          sudo sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
-          sudo apt-get update
-          sudo apt-get build-dep qt5-default
-          sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
-          sudo apt-get install libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdbus-1-dev libfontconfig1-dev libcap-dev libxtst-dev libpulse-dev libudev-dev libpci-dev libnss3-dev libasound2-dev libxss-dev libegl1-mesa-dev gperf bison
-          sudo apt-get install libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
-          sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-          sudo apt install libc++-dev libc++abi-dev
-          sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 100
-          sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 100
-
-      - name: 8.  [MacOS] Add Build Dependencies
-        if: matrix.os == 'macos-latest'
-        run: |
-          brew install -v llvm
-          LLVMDIR="$(brew --prefix)/opt/llvm"
-          echo "${LLVMDIR}/bin/" >> $GITHUB_PATH
-          echo "LDFLAGS=${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib" >> $GITHUB_ENV
-#          export PATH="${LLVMDIR}/bin/:$PATH"
-#          export LDFLAGS="${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib"
-
-      - name: 8.  [All] Test clang
-        run: |
-          echo "PATH : $PATH"
-          echo "LDFLAGS : ${{ env.LDFLAGS }}"
-          clang --version
-
-      - name: 9.  [Linux] Prepare Qt build directory
+      - name: 10.  [Linux] Prepare Qt build directory
         if: matrix.os == 'ubuntu-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
@@ -142,7 +142,7 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform linux-clang-libc++
 
-      - name: 9.  [Mac] Prepare Qt build directory
+      - name: 10.  [Mac] Prepare Qt build directory
         if: matrix.os == 'macos-latest'
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
@@ -150,7 +150,7 @@ jobs:
           NINJAFLAGS: "-k 0"
         run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform macx-clang
 
-      - name: 10. [All] Build Qt
+      - name: 11. [All] Build Qt
         shell: bash
         working-directory: ${{ env.QT_BUILD_DIR }}
         run: time make -j 8
