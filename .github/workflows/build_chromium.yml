@@ -90,6 +90,7 @@ jobs:
           echo "QMAKE_CC=${CC_COMPILER}" >> $GITHUB_ENV
           echo "QMAKE_CXX=${CXX_COMPILER}" >> $GITHUB_ENV
           echo "QMAKE_LFLAGS=${LINKER_FLAGS}" >> $GITHUB_ENV
+          xcode-select --install
 
       - name: 2.  [All] Test clang
         run: |
