@@ -314,6 +314,30 @@ add_chromium_modules() {
     subheader "Checked-in all modules"
 }
 
+unignore_generated_files() {
+    cd $CHROMIUM_DIR
+    info "Un-ignore: /config/gclient_args.gni"
+    sed -i "s+^/config/gclient_args.gni+#/config/gclient_args.gni+g" build/.gitignore
+    info "Un-ignore: /util/LASTCHANGE*"
+    sed -i "s+^/util/LASTCHANGE*+#/util/LASTCHANGE*+g" build/.gitignore
+    subheader "Un-ignored generated files"
+}
+
+commit_generated_files() {
+    cd $CHROMIUM_DIR
+    git add build/.gitignore
+    git commit -m "Un-ignore generated files"
+    subheader "Checked-in build/.gitignore to un-ignore generated files"
+}
+
+add_generated_files() {
+    cd $CHROMIUM_DIR
+    git add build/config/gclient_args.gni # TODO : Not sure what makes this?
+    git add build/util/LASTCHANGE*
+    git commit -m "Add generated files"
+    subheader "Checked-in all generated files"
+}
+
 push_branch_remotes() {
     cd $CHROMIUM_DIR
     git push -u old $NEW_BRANCH
@@ -434,9 +458,12 @@ case $WORKFLOW in
     confirm "15. Un-ignore Chromium deps [y/N]" && unignore_chromium_deps
     confirm "16. Check-in .gitignore files [y/N]" && commit_dot_ignore_files
     confirm "17. Check-in Chromium modules [y/N]" && add_chromium_modules
-    confirm "18. Push new branch to remotes (and track) [y/N]" && push_branch_remotes
-    confirm "19. CLEAN Chromium build [y/N]" && clean_chromium_build
-    confirm "20. Build Chromium [y/N]" && build_chromium
+    confirm "18. Un-ignore generated files? [y/N]" && unignore_generated_files
+    confirm "19. Check-in build/.gitignore to un-ignore generated files? [y/N]" && commit_generated_files
+    confirm "20. Check-in all generated files [y/N]" && add_generated_files
+    confirm "21. Push new branch to remotes (and track) [y/N]" && push_branch_remotes
+    confirm "22. CLEAN Chromium build [y/N]" && clean_chromium_build
+    confirm "23. Build Chromium [y/N]" && build_chromium
 
     ;;
 
