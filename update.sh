@@ -415,11 +415,11 @@ case $WORKFLOW in
     header "Chromium Cherry-Pick Workflow"
 
     confirm "1.  Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
-    confirm "2.  Apply Patches? [y/N]" && apply_patches
-    confirm "3.  CLEAN Qt build [y/N]" && clean_qt_build
-    confirm "4.  Build Qt [y/N]" && build_qt
-    confirm "5.  CLEAN Chromium build [y/N]" && clean_chromium_build
-    confirm "6.  Build Chromium [y/N]" && build_chromium
+    confirm "2.  Build Qt [y/N]" && build_qt
+    confirm "3.  Build Chromium [y/N]" && build_chromium
+    confirm "4.  Apply Patches? [y/N]" && apply_patches
+    confirm "5.  CLEAN Qt build [y/N]" && clean_qt_build
+    confirm "6.  CLEAN Chromium build [y/N]" && clean_chromium_build
 
     ;;
 esac
