@@ -239,7 +239,10 @@ create_script() {
     echo -e "# Based on branch: ${OLD_BRANCH}" >> $README_FILENAME
     cat cherry_pick_log.txt >> $README_FILENAME
 
-    subheader "Script found at: $CHROMIUM_DIR/$README_FILENAME"
+    rm commit_log.txt cherry_pick_log.txt
+    mv $README_FILENAME ${CHROMIUM_UPDATE_DIR}/${README_FILENAME}
+
+    subheader "Script found at: ${CHROMIUM_UPDATE_DIR}/$README_FILENAME"
 }
 
 get_new_tag() {
