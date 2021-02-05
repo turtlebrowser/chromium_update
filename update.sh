@@ -322,12 +322,12 @@ push_branch_remotes() {
 
 clean_chromium_build() {
     cd $CHROMIUM_DIR
-    gclient runhooks
     if [ -d "out" ]
     then
         mv out out_old
         info "Existing Chromium build moved to : ${CHROMIUM_DIR}/out_old"
     fi
+    gclient runhooks
     gn gen out/Default
     cp $CHROMIUM_UPDATE_DIR/args.gn out/Default/
     subheader "CLEANED Chromium build successfully"
