@@ -346,7 +346,9 @@ clean_qt_build() {
 build_qt() {
     cd $QT_BUILD_DIR
     if [ "$OSTYPE" = "msys" ] ; then
-        $CHROMIUM_UPDATE_DIR/build_qt.bat
+        $CHROMIUM_UPDATE_DIR/build_qt.bat || {
+            info "Continue on error"
+        }
     else
         time make -j 8
     fi
@@ -364,7 +366,7 @@ case $WORKFLOW in
   $WORKFLOW_DEV)
     header "Dev Workflow"
 
-    confirm "1.  Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
+    confirm "1.  Build both Qt and Chromium? [y/N]" && (build_qt && build_chromium)
     confirm "2.  Build Qt [y/N]" && build_qt
     confirm "3.  Build Chromium [y/N]" && build_chromium
 
