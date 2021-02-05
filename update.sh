@@ -172,7 +172,7 @@ get_chromium() {
       subheader "Existing chromium moved to : $THIRD_PARTY_DIR/chromium_old"
     fi
 
-    git clone https://github.com/chromium/chromium.git chromium
+    time git clone https://github.com/chromium/chromium.git chromium
     subheader "Chromium cloned at : $CHROMIUM_DIR"
 }
 
@@ -194,8 +194,8 @@ make_platform_gclient() {
 
 get_upstream_chromium() {
     cd $THIRD_PARTY_DIR
-    gclient config --verbose --name chromium --unmanaged --custom-var checkout_nacl=False https://github.com/chromium/chromium.git
-    echo 'target_os = ["win"]' >> .gclient
+    time gclient config --verbose --name chromium --unmanaged --custom-var checkout_nacl=False https://github.com/chromium/chromium.git
+    echo 'target_os = ["linux", "mac", "win"]' >> .gclient
     gclient sync || {
         info "Ignore error for missing gclient_args.gni - Need to fix DEPS to get the right path"
     }
@@ -211,14 +211,14 @@ add_remotes() {
 
 fetch_remotes() {
     cd $CHROMIUM_DIR
-    git -c core.deltaBaseCacheLimit=2g fetch --all --tags --verbose
+    time git -c core.deltaBaseCacheLimit=2g fetch --all --tags --verbose
     subheader "Remotes fetched : qt, old"
 }
 
 get_old_branch() {
     cd $CHROMIUM_DIR
     info "Get the old branch $OLD_BRANCH"
-    git checkout -t $OLD_BRANCH
+    time git checkout -t $OLD_BRANCH
     subheader "Chromium branch checked out: $OLD_BRANCH"
 }
 
@@ -266,7 +266,7 @@ fix_DEPS_file() {
 
 get_chromium_deps() {
     cd $CHROMIUM_DIR
-    gclient sync --with_branch_heads --with_tags -vvv --force
+    time gclient sync --with_branch_heads --with_tags -vvv --force
     gclient runhooks
     subheader "Fetched chromium deps"
 }
