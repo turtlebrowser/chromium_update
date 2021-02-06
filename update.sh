@@ -277,9 +277,33 @@ get_chromium_deps() {
     subheader "Fetched chromium deps"
 }
 
+unignore_chromium_cipd() {
+    cd $CHROMIUM_DIR
+    # TODO Doesn't really work
+    for cipd_dir in $(find ./ -name cipd.yaml | rev | cut -d"/" -f2- | rev | sort --unique)
+    do
+        echo "CIPD directory found : $cipd_dir"
+        commented=true
+        while [ $commented = true ]
+        do
+            commented=false
+            commentme=$(git check-ignore --verbose "$cipd_dir" | cut -d: -f1,2 || true)
+            if [ -n "$commentme" ]
+            then
+                file=$(echo $commentme | cut -d: -f1)
+                line=$(echo $commentme | cut -d: -f2)
+                info "CIPD directory needs to be un-ignored : $cipd_dir in .gitignore $file"
+                sed -i "$line s/^/###/" "$file"
+                commented=true
+            fi
+        done
+    done
+    subheader "Un-ignored chromium CIPD deps"
+}
+
 unignore_chromium_deps() {
     cd $CHROMIUM_DIR
-    # cipd packages we need
+    # HARDCODED cipd packages we need
     sed -i 's=^/shaka-player/dist/=###&=' third_party/.gitignore
     for gitdir in $(find . -type d -name .git | grep -v "^./.git$" | sort --unique)
     do
@@ -300,7 +324,7 @@ unignore_chromium_deps() {
         echo rm -rf "$gitdir"
         rm -rf "$gitdir"
     done
-    subheader "Un-ignored chromium deps"
+    subheader "Un-ignored chromium git deps"
 }
 
 commit_dot_ignore_files() {
