@@ -3,11 +3,12 @@ set -e
 
 # Based on branch: old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing_win_linux
 
-git cherry-pick --strategy=recursive -X patience b250cc2c4c420	 # psmaas@gmail.com	Fri Feb 5 14:33:51 2021 +0100	Fix DEPS
-git cherry-pick --strategy=recursive -X patience 7031ee6d4c98f	 # psmaas@gmail.com	Fri Feb 5 14:47:42 2021 +0100	Unignore modules
-git cherry-pick --strategy=recursive -X patience 2b9bbaf00dd9a	 # psmaas@gmail.com	Fri Feb 5 14:48:17 2021 +0100	Add all modules
-git cherry-pick --strategy=recursive -X patience 6159649c8eb5d	 # psmaas@gmail.com	Fri Feb 5 18:18:57 2021 +0100	Un-ignore generated files
-git cherry-pick --strategy=recursive -X patience 63c7ae12cc7c0	 # psmaas@gmail.com	Fri Feb 5 18:23:20 2021 +0100	Add generated files
+#git cherry-pick --strategy=recursive -X patience b250cc2c4c420	 # psmaas@gmail.com	Fri Feb 5 14:33:51 2021 +0100	Fix DEPS
+#git cherry-pick --strategy=recursive -X patience 7031ee6d4c98f	 # psmaas@gmail.com	Fri Feb 5 14:47:42 2021 +0100	Unignore modules
+#git cherry-pick --strategy=recursive -X patience 2b9bbaf00dd9a	 # psmaas@gmail.com	Fri Feb 5 14:48:17 2021 +0100	Add all modules
+#git cherry-pick --strategy=recursive -X patience 6159649c8eb5d	 # psmaas@gmail.com	Fri Feb 5 18:18:57 2021 +0100	Un-ignore generated files
+#git cherry-pick --strategy=recursive -X patience 63c7ae12cc7c0	 # psmaas@gmail.com	Fri Feb 5 18:23:20 2021 +0100	Add generated files
+
 git cherry-pick --strategy=recursive -X patience 994e610be0dd3	 # allan.jensen@qt.io	Wed Dec 9 10:12:38 2020 +0100	Reinstate jumbo-builds
 git cherry-pick --strategy=recursive -X patience 1ad194de9667a	 # psmaas@gmail.com	Fri Jan 22 11:46:46 2021 +0100	Remove no_check_targets
 git cherry-pick --strategy=recursive -X patience 1b338adf15653	 # jocelyn.turcotte@digia.com	Wed Jan 15 17:22:44 2014 +0100	Declare a Qt IPC message class
@@ -270,4 +271,4 @@ git cherry-pick --strategy=recursive -X patience ead1f969365c6	 # patricia@turtl
 git cherry-pick --strategy=recursive -X patience 497f2a7f790c4	 # allan.jensen@qt.io	Thu Nov 26 12:08:50 2020 +0100	[Revert] ui/gl: Remove WGL support on Windows
 git cherry-pick --strategy=recursive -X patience 064e4d74186e0	 # alexandru.croitor@qt.io	Tue Aug 22 19:03:54 2017 +0200	Support using software GL implementation opengl32sw.dll on Windows
 git cherry-pick --strategy=recursive -X patience dda69cef58cc5	 # kai.koehne@qt.io	Thu Mar 15 11:16:06 2018 +0100	Win: Fix crashes when initializing GPU thread
-git cherry-pick --strategy=recursive -X patience d34343f0ced72	 # patricia@turtlesec.no	Sat Feb 6 16:08:54 2021 +0100	DONT CHERRY-PICK (cipd package) add shaka-player
+#git cherry-pick --strategy=recursive -X patience d34343f0ced72	 # patricia@turtlesec.no	Sat Feb 6 16:08:54 2021 +0100	DONT CHERRY-PICK (cipd package) add shaka-player
