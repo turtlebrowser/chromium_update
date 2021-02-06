@@ -454,7 +454,7 @@ case $WORKFLOW in
     confirm "11. Run gclient runhooks? [y/N]" && run_gclient_runhooks
     confirm "12. CLEAN Qt build? [y/N]" && clean_qt_build
     confirm "13. CLEAN Chromium build? [y/N]" && clean_chromium_build
-    confirm "14. Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
+    confirm "14. Build both Chromium and Qt? [y/N]" && build_chromium && build_qt
 
     ;;
 
