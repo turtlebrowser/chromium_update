@@ -466,13 +466,13 @@ case $WORKFLOW in
     confirm "12. Checkout new branch [y/N]" && create_new_branch
     confirm "13. Fix DEPS file [y/N]" && fix_DEPS_file
     confirm "14. Get Chromium deps [y/N]" && get_chromium_deps
-    confirm "15. Un-ignore Chromium deps [y/N]" && unignore_chromium_deps
-    confirm "16. Check-in .gitignore files [y/N]" && commit_dot_ignore_files
-    confirm "17. Check-in Chromium modules [y/N]" && add_chromium_modules
-    confirm "18. Un-ignore generated files? [y/N]" && unignore_generated_files
-    confirm "19. Check-in build/.gitignore to un-ignore generated files? [y/N]" && commit_generated_files
-    confirm "20. Check-in all generated files [y/N]" && add_generated_files
-    confirm "21. Push new branch to remotes (and track) [y/N]" && push_branch_remotes
+    confirm "15. Check-in all generated files? [y/N]" && add_generated_files
+    confirm "16. Un-ignore Chromium Git deps? [y/N]" && unignore_chromium_deps
+    confirm "17. Check-in .gitignore files? [y/N]" && commit_dot_ignore_files
+    confirm "18. Check-in Chromium Git deps? [y/N]" && add_chromium_modules
+    confirm "19. Un-ignore Chromium CIPD deps? [y/N]" && unignore_chromium_cipd
+    confirm "20. Push new branch to remotes (and track)? [y/N]" && push_branch_remotes
+    confirm "21. Fix .gclient for current platform? [y/N]" && make_platform_gclient
     confirm "22. CLEAN Chromium build [y/N]" && clean_chromium_build
     confirm "23. Build Chromium [y/N]" && build_chromium
 
