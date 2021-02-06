@@ -194,9 +194,12 @@ make_platform_gclient() {
 
 get_upstream_chromium() {
     cd $THIRD_PARTY_DIR
-    time gclient config --verbose --name chromium --unmanaged --custom-var checkout_nacl=False https://github.com/chromium/chromium.git
+    info "Run gclient config"
+    gclient config --verbose --name chromium --unmanaged --custom-var checkout_nacl=False https://github.com/chromium/chromium.git
+    info "Add platforms"
     echo 'target_os = ["linux", "mac", "win"]' >> .gclient
-    gclient sync || {
+    info "Run gclient sync"
+    time gclient sync --verbose || {
         info "Ignore error for missing gclient_args.gni - Need to fix DEPS to get the right path"
     }
     subheader "Chromium sync'ed at : $CHROMIUM_DIR"
