@@ -49,7 +49,7 @@ README_FILENAME="turtlebrowser_readme_${OLD_TAG}.txt"
 
 # 6) New tag and branch (NEW_TAG, NEW_BRANCH)
 NEW_TAG="87.0.4280.144"
-NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_testing_win"
+NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_testing_win_linux"
 CURRENT_BRANCH=$NEW_BRANCH
 
 # 7) Root work directory (WORK_DIR)
