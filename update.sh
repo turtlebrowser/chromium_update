@@ -341,26 +341,10 @@ add_chromium_modules() {
     subheader "Checked-in all modules"
 }
 
-unignore_generated_files() {
-    cd $CHROMIUM_DIR
-    info "Un-ignore: /config/gclient_args.gni"
-    sed -i "s+^/config/gclient_args.gni+#/config/gclient_args.gni+g" build/.gitignore
-    info "Un-ignore: /util/LASTCHANGE*"
-    sed -i "s+^/util/LASTCHANGE*+#/util/LASTCHANGE*+g" build/.gitignore
-    subheader "Un-ignored generated files"
-}
-
-commit_generated_files() {
-    cd $CHROMIUM_DIR
-    git add build/.gitignore
-    git commit -m "Un-ignore generated files"
-    subheader "Checked-in build/.gitignore to un-ignore generated files"
-}
-
 add_generated_files() {
     cd $CHROMIUM_DIR
-    git add build/config/gclient_args.gni # TODO : Not sure what makes this?
-    git add build/util/LASTCHANGE*
+    git add --force build/config/gclient_args.gni # TODO : Not sure what makes this?
+    git add --force build/util/LASTCHANGE*
     git commit -m "Add generated files"
     subheader "Checked-in all generated files"
 }
