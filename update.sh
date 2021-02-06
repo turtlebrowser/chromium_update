@@ -192,6 +192,14 @@ make_platform_gclient() {
     subheader "Modified : ${THIRD_PARTY_DIR}/.gclient"
 }
 
+run_gclient_runhooks() {
+    cd $CHROMIUM_DIR
+    info "Running gclient runhooks"
+    gclient runhooks
+    rmdir out
+    subheader "Ran gclient runhooks"
+}
+
 get_upstream_chromium() {
     cd $THIRD_PARTY_DIR
     info "Run gclient config"
@@ -443,9 +451,10 @@ case $WORKFLOW in
     confirm "8.  Fetch remotes? [y/N]" && fetch_remotes
     confirm "9.  Checkout current branch? [y/N]" && checkout_current_branch
     confirm "10. Fix .gclient for current platform? [y/N]" && make_platform_gclient
-    confirm "11. CLEAN Qt build [y/N]" && clean_qt_build
-    confirm "12. CLEAN Chromium build [y/N]" && clean_chromium_build
-    confirm "13. Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
+    confirm "11. Run gclient runhooks? [y/N]" && run_gclient_runhooks
+    confirm "12. CLEAN Qt build? [y/N]" && clean_qt_build
+    confirm "13. CLEAN Chromium build? [y/N]" && clean_chromium_build
+    confirm "14. Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
 
     ;;
 
