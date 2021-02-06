@@ -272,6 +272,8 @@ get_chromium_deps() {
 
 unignore_chromium_deps() {
     cd $CHROMIUM_DIR
+    # cipd packages we need
+    sed -i 's=^/shaka-player/dist/=###&=' third_party/.gitignore
     for gitdir in $(find . -type d -name .git | grep -v "^./.git$" | sort --unique)
     do
         commented=true
