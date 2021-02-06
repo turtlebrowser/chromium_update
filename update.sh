@@ -50,6 +50,7 @@ README_FILENAME="turtlebrowser_readme_${OLD_TAG}.txt"
 # 6) New tag and branch (NEW_TAG, NEW_BRANCH)
 NEW_TAG="87.0.4280.144"
 NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_testing_win"
+CURRENT_BRANCH=$NEW_BRANCH
 
 # 7) Root work directory (WORK_DIR)
 if [ "$OSTYPE" = "msys" ] ; then
@@ -172,6 +173,22 @@ get_chromium() {
 
     git clone https://github.com/chromium/chromium.git chromium
     subheader "Chromium cloned at : $CHROMIUM_DIR"
+}
+
+checkout_current_branch() {
+    cd $CHROMIUM_DIR
+    git checkout -t old/${CURRENT_BRANCH}
+    subheader "Checked out new branch: ${CURRENT_BRANCH}"
+}
+
+make_platform_gclient() {
+    cd $THIRD_PARTY_DIR
+    if [ "$OSTYPE" = "msys" ] ; then
+        sed -i 's/target_os.*/target_os = ["win"]/g' ${THIRD_PARTY_DIR}/.gclient
+    else
+        sed -i 's/target_os.*/target_os = ["linux"]/g' ${THIRD_PARTY_DIR}/.gclient
+    fi
+    subheader "Modified : ${THIRD_PARTY_DIR}/.gclient"
 }
 
 get_upstream_chromium() {
@@ -381,7 +398,13 @@ case $WORKFLOW in
     confirm "4.  Get QtWebEngine? [y/N]" && get_webengine
     confirm "5.  Checkout the QtWebEngine branch? [y/N]" && update_webengine
     confirm "6.  Get TurtleBrowser Chromium? [y/N]" && get_chromium
-    confirm "7.  Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
+    confirm "7.  Add remotes? [y/N]" && add_remotes
+    confirm "8.  Fetch remotes? [y/N]" && fetch_remotes
+    confirm "9.  Checkout current branch? [y/N]" && checkout_current_branch
+    confirm "10. Fix .gclient for current platform? [y/N]" && make_platform_gclient
+    confirm "11. CLEAN Qt build [y/N]" && clean_qt_build
+    confirm "12. CLEAN Chromium build [y/N]" && clean_chromium_build
+    confirm "13. Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
 
     ;;
 
