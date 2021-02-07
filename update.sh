@@ -251,9 +251,9 @@ create_script() {
     cat cherry_pick_log.txt >> $README_FILENAME
 
     rm commit_log.txt cherry_pick_log.txt
-    mv $README_FILENAME ${CHROMIUM_UPDATE_DIR}/${README_FILENAME}
+    mv $README_FILENAME ${CHROMIUM_UPDATE_DIR}/updates/${README_FILENAME}
 
-    subheader "Script found at: ${CHROMIUM_UPDATE_DIR}/$README_FILENAME"
+    subheader "Script found at: ${CHROMIUM_UPDATE_DIR}/updates/${README_FILENAME}"
 }
 
 get_new_tag() {
@@ -423,7 +423,7 @@ build_qt() {
 
 apply_patches() {
     cd $CHROMIUM_DIR
-    cp ${CHROMIUM_UPDATE_DIR}/${README_FILENAME} apply_patches.sh && bash apply_patches.sh
+    cp ${CHROMIUM_UPDATE_DIR}/updates/${README_FILENAME} apply_patches.sh && bash apply_patches.sh
     subheader "Patches Applied"
 }
 
