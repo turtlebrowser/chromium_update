@@ -378,7 +378,9 @@ clean_chromium_build() {
 
 build_chromium() {
     cd $CHROMIUM_DIR
-    time autoninja $NINJAFLAGS -C out/Default chrome
+    time autoninja $NINJAFLAGS -C out/Default chrome || {
+        info "Continue on error"
+    }
     subheader "Chromium built successfully"
 }
 
@@ -412,11 +414,13 @@ clean_qt_build() {
 build_qt() {
     cd $QT_BUILD_DIR
     if [ "$OSTYPE" = "msys" ] ; then
-        $CHROMIUM_UPDATE_DIR/build_qt.bat || {
+        time $CHROMIUM_UPDATE_DIR/build_qt.bat || {
             info "Continue on error"
         }
     else
-        time make -j 8
+        time make -k -j 8 || {
+            info "Continue on error"
+        }
     fi
     subheader "Qt built successfully"
 }
