@@ -205,7 +205,11 @@ get_upstream_chromium() {
     info "Run gclient config"
     gclient config --verbose --name chromium --unmanaged --custom-var checkout_nacl=False https://github.com/chromium/chromium.git
     info "Add platforms"
-    echo 'target_os = ["linux", "mac", "win"]' >> .gclient
+    if [ "$OSTYPE" = "msys" ] ; then
+        echo 'target_os = ["linux", "win"]' >> .gclient
+    else
+        echo 'target_os = ["linux", "mac", "win"]' >> .gclient
+    fi
     info "Run gclient sync"
     time gclient sync --verbose || {
         info "Ignore error for missing gclient_args.gni - Need to fix DEPS to get the right path"
