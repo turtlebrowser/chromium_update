@@ -117,3 +117,22 @@ https://chromium.googlesource.com/chromium/src/+/HEAD/docs/win_cross.md
 
 # NOTE: Which files are in a commit?
 git show  --name-only --format="" f793ac8396ba9
+
+Modules not added on windows:
+        third_party/cros_system_api/
+        third_party/fontconfig/src/
+        third_party/google_toolbox_for_mac/src/
+        third_party/libdrm/src/
+        third_party/libipp/libipp/
+        third_party/liblouis/src/
+        third_party/libsync/src/
+        third_party/lss/
+        third_party/minigbm/src/
+        third_party/minizip/src/
+        third_party/perfetto/ui/src/gen
+        third_party/pyelftools/
+        third_party/wayland-protocols/src/
+        third_party/wayland/src/
+        third_party/wds/src/
+        third_party/weston/src/
+        third_party/xdg-utils/
