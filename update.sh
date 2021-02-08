@@ -317,6 +317,9 @@ unignore_chromium_deps() {
     cd $CHROMIUM_DIR
     # HARDCODED cipd packages we need
     sed -i 's=^/shaka-player/dist/=###&=' third_party/.gitignore
+    # HARDCODED .gitignores
+    sed -i 's=^/build.\*=###&=' ./third_party/ffmpeg/.gitignore
+
     for gitdir in $(find . -type d -name .git | grep -v "^./.git$" | sort --unique)
     do
         commented=true
