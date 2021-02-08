@@ -44,12 +44,12 @@ QT_PACKAGE_NAME="qt-everywhere-src-${QT_VERSION}"
 
 # 5) Previous tag and branch (OLD_TAG, OLD_BRANCH)
 OLD_TAG="87.0.4280.144"
-OLD_BRANCH="old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing_win_linux"
+OLD_BRANCH="old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_3"
 README_FILENAME="turtlebrowser_readme_${OLD_TAG}.txt"
 
 # 6) New tag and branch (NEW_TAG, NEW_BRANCH)
 NEW_TAG="87.0.4280.144"
-NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}"
+NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_4"
 CURRENT_BRANCH=$NEW_BRANCH
 
 # 7) Root work directory (WORK_DIR)
