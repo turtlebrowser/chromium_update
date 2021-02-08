@@ -3,9 +3,32 @@ set -e
 
 echo "TurtleBrowser Chromium update script, running on $OSTYPE"
 
+header() {
+    echo -e "\e[35m$1\e[0m"
+}
+
+subheader() {
+    echo -e "\e[36m$1\e[0m"
+}
+
+info() {
+    echo -e "\e[34m$1\e[0m"
+}
+
+show_help() {
+    header "General Options"
+    info "-v verbose output from tools invoked (Default off)"
+    info "-k compilation should continue on error (Default off)"
+
+    header "Workflow Options - only one of the below at a time"
+    info "-d Developer   Workflow: (Default) Building the current branch Qt+Chromium"
+    info "-e Environment Workflow: Setting up the development environment for a dev using the current branch"
+    info "-u Update      Workflow: Updating to a new Chromium version and set up a branch"
+    info "-p Patching    Workflow: Applying the patches to an update branch"
+}
+
 # Config Options
-# 0) Workfolw type (WORKFLOW)
-# 1) Target platforms (TARGET_OS_LIST)
+# 1) Workfolw type (WORKFLOW)
 # 2) Verbose output (BUILD_VERBOSE)
 # 3) Continue on error (BUILD_CONTINUE)
 # 4) Qt version (QT_VERSION)
@@ -14,29 +37,53 @@ echo "TurtleBrowser Chromium update script, running on $OSTYPE"
 # 7) Root work directory (WORK_DIR)
 # 8) Windows Toolchain (DEPOT_TOOLS_WIN_TOOLCHAIN ++)
 
-# 0) Workfolw type (WORKFLOW)
+# 1) Workfolw type (WORKFLOW)
 # workflow selects which options are available
 WORKFLOW_DEV="Dev"              # Building the current branch Qt+Chromium
 WORKFLOW_ENV="Environment"      # Get the source for a prepared branch
 WORKFLOW_UPD="Update"           # Get up a new branch for a new release of Chromium
 WORKFLOW_PCH="Patching"         # Applying patches and fixing conflicts
 
-WORKFLOW=$WORKFLOW_PCH
-
-# 1) Target platforms (TARGET_OS_LIST)
-# gclient target_os options:
-TARGET_OS_WINDOWS="win"
-TARGET_OS_LINUX="linux"
-TARGET_OS_MACOS="mac"
-
-#echo 'target_os = ["linux", "mac", "win"]' >> .gclient
-TARGET_OS_LIST="$TARGET_OS_WINDOWS"
+WORKFLOW=$WORKFLOW_DEV
 
 # 2) Verbose output (BUILD_VERBOSE)
-BUILD_VERBOSE=true
+BUILD_VERBOSE=false
 
 # 3) Continue on error (BUILD_CONTINUE)
-BUILD_CONTINUE=true
+BUILD_CONTINUE=false
+
+# Process commandline 
+OPTIND=1
+
+while getopts "h?vkdupe" opt; do
+    case "$opt" in
+    h|\?)
+        show_help
+        exit 0
+        ;;
+    d)  WORKFLOW=$WORKFLOW_DEV
+        ;;
+    u)  WORKFLOW=$WORKFLOW_UPD
+        ;;
+    p)  WORKFLOW=$WORKFLOW_PCH
+        ;;
+    e)  WORKFLOW=$WORKFLOW_ENV
+        ;;
+    v)  BUILD_VERBOSE=true
+        ;;
+    k)  BUILD_CONTINUE=true
+        ;;
+    esac
+done
+
+shift $((OPTIND-1))
+
+[ "${1:-}" = "--" ] && shift
+
+info "Verbose:  $BUILD_VERBOSE"
+info "Continue: $BUILD_CONTINUE"
+info "Workflow: $WORKFLOW"
+echo "Leftovers: $@"
 
 # 4) Qt version (QT_VERSION)
 QT_VERSION="5.15.2"
@@ -105,18 +152,6 @@ confirm() {
             false
             ;;
     esac
-}
-
-header() {
-    echo -e "\e[35m$1\e[0m"
-}
-
-subheader() {
-    echo -e "\e[36m$1\e[0m"
-}
-
-info() {
-    echo -e "\e[34m$1\e[0m"
 }
 
 make_work_dir() {
@@ -452,7 +487,7 @@ case $WORKFLOW in
     ;;
 
   $WORKFLOW_ENV)
-    header "Dev Bring Up Workflow"
+    header "Dev Environment Bring Up Workflow"
 
     confirm "1.  Make work directory? [y/N]" && make_work_dir
     confirm "2.  Get Depot Tools? [y/N]" && get_depot_tools
