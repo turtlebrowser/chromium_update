@@ -17,6 +17,7 @@ info() {
 
 show_help() {
     header "General Options"
+    info "-j <num> number of compile jobs (Default 8)"
     info "-v verbose output from tools invoked (Default off)"
     info "-k compilation should continue on error (Default off)"
 
@@ -28,6 +29,7 @@ show_help() {
 }
 
 # Config Options
+# 0) Compile jobs
 # 1) Workfolw type (WORKFLOW)
 # 2) Verbose output (BUILD_VERBOSE)
 # 3) Continue on error (BUILD_CONTINUE)
@@ -36,6 +38,9 @@ show_help() {
 # 6) New tag and branch (NEW_TAG, NEW_BRANCH)
 # 7) Root work directory (WORK_DIR)
 # 8) Windows Toolchain (DEPOT_TOOLS_WIN_TOOLCHAIN ++)
+
+# 0) Compile jobs
+BUILD_JOBS=8
 
 # 1) Workfolw type (WORKFLOW)
 # workflow selects which options are available
@@ -55,7 +60,7 @@ BUILD_CONTINUE=false
 # Process commandline 
 OPTIND=1
 
-while getopts "h?vkdupe" opt; do
+while getopts "h?vkj:dupe" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -73,6 +78,8 @@ while getopts "h?vkdupe" opt; do
         ;;
     k)  BUILD_CONTINUE=true
         ;;
+    j)  BUILD_JOBS=$OPTARG
+        ;;
     esac
 done
 
@@ -82,6 +89,7 @@ shift $((OPTIND-1))
 
 info "Verbose:  $BUILD_VERBOSE"
 info "Continue: $BUILD_CONTINUE"
+info "Jobs:     $BUILD_JOBS"
 info "Workflow: $WORKFLOW"
 echo "Leftovers: $@"
 
@@ -125,7 +133,7 @@ PATH="$PATH:${DEPOT_TOOLS_DIR}"
 PATH="${CHROMIUM_DIR}/third_party/llvm-build/Release+Asserts/bin/:$PATH"
 
 # Build flags passed to both Qt and Chromium builds
-NINJAFLAGS=""
+NINJAFLAGS="-j $BUILD_JOBS"
 if [ "$BUILD_VERBOSE" = true ] ; then
     NINJAFLAGS="$NINJAFLAGS -v"
 fi
@@ -462,7 +470,7 @@ build_qt() {
             info "Continue on error"
         }
     else
-        time make -k -j 8 || {
+        time make -k -j $BUILD_JOBS || {
             info "Continue on error"
         }
     fi
