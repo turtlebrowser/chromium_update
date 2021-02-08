@@ -361,6 +361,8 @@ add_generated_files() {
     git add --force build/config/gclient_args.gni # TODO : Not sure what makes this?
     git add --force build/util/LASTCHANGE*
     git commit -m "Add generated files"
+    git update-index --assume-unchanged build/util/LASTCHANGE
+    git update-index --assume-unchanged build/util/LASTCHANGE.committime
     subheader "Checked-in all generated files"
 }
 
