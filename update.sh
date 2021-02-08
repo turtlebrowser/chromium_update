@@ -492,11 +492,13 @@ case $WORKFLOW in
     confirm "16. Un-ignore Chromium Git deps? [y/N]" && unignore_chromium_deps
     confirm "17. Check-in .gitignore files? [y/N]" && commit_dot_ignore_files
     confirm "18. Check-in Chromium Git deps? [y/N]" && add_chromium_modules
-    confirm "19. Un-ignore Chromium CIPD deps? [y/N]" && unignore_chromium_cipd
+#    confirm "19. Un-ignore Chromium CIPD deps? [y/N]" && unignore_chromium_cipd
     confirm "20. Push new branch to remotes (and track)? [y/N]" && push_branch_remotes
     confirm "21. Fix .gclient for current platform? [y/N]" && make_platform_gclient
-    confirm "22. CLEAN Chromium build [y/N]" && clean_chromium_build
-    confirm "23. Build Chromium [y/N]" && build_chromium
+    confirm "22. Run gclient runhooks? [y/N]" && run_gclient_runhooks
+    confirm "23. CLEAN Qt build? [y/N]" && clean_qt_build
+    confirm "24. CLEAN Chromium? build [y/N]" && clean_chromium_build
+    confirm "25. Build Chromium? [y/N]" && build_chromium
 
     ;;
 
@@ -507,8 +509,10 @@ case $WORKFLOW in
     confirm "2.  Build Qt [y/N]" && build_qt
     confirm "3.  Build Chromium [y/N]" && build_chromium
     confirm "4.  Apply Patches? [y/N]" && apply_patches
-    confirm "5.  CLEAN Qt build [y/N]" && clean_qt_build
-    confirm "6.  CLEAN Chromium build [y/N]" && clean_chromium_build
+    confirm "5.  Fix .gclient for current platform? [y/N]" && make_platform_gclient
+    confirm "6.  Run gclient runhooks? [y/N]" && run_gclient_runhooks
+    confirm "7.  CLEAN Qt build? [y/N]" && clean_qt_build
+    confirm "8.  CLEAN Chromium build? [y/N]" && clean_chromium_build
 
     ;;
 esac
