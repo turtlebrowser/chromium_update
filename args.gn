@@ -1,4 +1,0 @@
-# Set build arguments here. See `gn help buildargs`.
-use_jumbo_build=true
-#jumbo_file_merge_limit=100
-#jumbo_build_excluded="["browser"]"
