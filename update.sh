@@ -223,6 +223,8 @@ get_chromium() {
 checkout_current_branch() {
     cd $CHROMIUM_DIR
     git checkout -t old/${CURRENT_BRANCH}
+    git update-index --assume-unchanged build/util/LASTCHANGE
+    git update-index --assume-unchanged build/util/LASTCHANGE.committime
     subheader "Checked out new branch: ${CURRENT_BRANCH}"
 }
 
