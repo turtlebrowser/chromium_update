@@ -142,6 +142,7 @@ if [ "$BUILD_CONTINUE" = true ] ; then
     NINJAFLAGS="$NINJAFLAGS -k 0"
 fi
 
+# https://github.com/qt/qtbase/blob/5.15.2/config_help.txt
 COMMON_CONFIGURE_FLAGS="-developer-build -opensource -confirm-license -nomake examples -nomake tests"
 
 if [ "$BUILD_VERBOSE" = true ] ; then
