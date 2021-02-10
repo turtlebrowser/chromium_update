@@ -471,6 +471,9 @@ build_qt() {
         time $CHROMIUM_UPDATE_DIR/build_qt.bat || {
             info "Continue on error"
         }
+        # https://bugreports.qt.io/browse/QTBUG-36463
+        mkdir -p qtbase/include/QtAngle/
+        cp -r ${QT_DIR}/qtbase/src/3rdparty/angle/include/* qtbase/include/QtAngle/
     else
         time make -k -j $BUILD_JOBS || {
             info "Continue on error"
