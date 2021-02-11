@@ -142,6 +142,10 @@ if [ "$BUILD_CONTINUE" = true ] ; then
     NINJAFLAGS="$NINJAFLAGS -k 0"
 fi
 
+# NINJAFLAGS have to be set before configure is run to affect Qt builds, and cannot be changed after
+export NINJAFLAGS=${NINJAFLAGS}
+export NINJAJOBS=${NINJAFLAGS}
+
 # https://github.com/qt/qtbase/blob/5.15.2/config_help.txt
 COMMON_CONFIGURE_FLAGS="-developer-build -opensource -confirm-license -nomake examples -nomake tests"
 
@@ -455,8 +459,6 @@ clean_qt_build() {
         ;;
 
     "linux-gnu")
-        # NINJAFLAGS have to be set before configure is run to affect Qt builds, and cannot be changed after
-        export NINJAFLAGS=$NINJAFLAGS
         ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -platform linux-clang-libc++
         ;;
 
