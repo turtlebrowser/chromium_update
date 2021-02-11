@@ -176,10 +176,10 @@ get_depot_tools() {
     cd $WORK_DIR
     if [ -d "$DEPOT_TOOLS_DIR" ]
     then
-      subheader "Depot tools found at : $DEPOT_TOOLS_DIR"
+      subheader "[Depot tools] Checkout found at : $DEPOT_TOOLS_DIR"
     else
       git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-      subheader "Depot tools cloned at : $DEPOT_TOOLS_DIR"
+      subheader "[Depot tools] Cloned at : $DEPOT_TOOLS_DIR"
     fi
 }
 
@@ -187,49 +187,67 @@ get_qt() {
     cd $WORK_DIR
     if [ -d "$QT_DIR" ]
     then
-      subheader "Qt found at : $QT_DIR"
+      subheader "[Qt] Directory found at : $QT_DIR"
     else
       curl -sSL https://download.qt.io/archive/qt/5.15/${QT_VERSION}/single/${QT_PACKAGE_NAME}.tar.xz | tar xJf -
-      subheader "Qt extracted at : $QT_DIR"
+      info "Moving ${QT_DIR}/qtwebengine to ${QT_DIR}/old_qtwebengine"
+      mv ${QT_DIR}/qtwebengine ${QT_DIR}/old_qtwebengine
+      subheader "[Qt] Directory extracted at : $QT_DIR"
     fi
 }
 
 get_webengine() {
     cd $QT_DIR
-    mv qtwebengine old_qtwebengine
-    git clone git@github.com:turtlebrowser/qtwebengine.git
-    subheader "QtWebEngine cloned at : $WEB_ENGINE_DIR"
+    if [ -d "$WEB_ENGINE_DIR" ]
+    then
+      subheader "[QtWebEngine] Checkout found at : $WEB_ENGINE_DIR"
+    else
+      git clone git@github.com:turtlebrowser/qtwebengine.git
+      subheader "[QtWebEngine] Cloned at : $WEB_ENGINE_DIR"
+    fi
 }
 
 update_webengine() {
     cd $WEB_ENGINE_DIR
     WEB_ENGINE_BRANCH="turtlebrowser_integration_5.15"
-    git checkout $WEB_ENGINE_BRANCH
-    git pull
-    git remote add qt https://code.qt.io/qt/qtwebengine.git
-    git fetch qt
-    subheader "QtWebEngine updated to : $WEB_ENGINE_BRANCH"
+
+    BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+    if [[ "$BRANCH" != "$WEB_ENGINE_BRANCH" ]]; then
+      git checkout $WEB_ENGINE_BRANCH
+      git pull
+      git remote add qt https://code.qt.io/qt/qtwebengine.git
+      git fetch qt
+      subheader "[QtWebEngine] Checked out current branch : ${WEB_ENGINE_BRANCH}"
+    else
+      git pull
+      subheader "[QtWebEngine] Current branch updated : ${WEB_ENGINE_BRANCH}"
+    fi
 }
 
 get_chromium() {
     cd $THIRD_PARTY_DIR
-
     if [ -d "$CHROMIUM_DIR" ]
     then
-      mv chromium chromium_old
-      subheader "Existing chromium moved to : $THIRD_PARTY_DIR/chromium_old"
+      subheader "[Chromium] Checkout found at : $CHROMIUM_DIR"
+    else
+      time git clone https://github.com/chromium/chromium.git chromium
+      subheader "[Chromium] Cloned at : $CHROMIUM_DIR"
     fi
-
-    time git clone https://github.com/chromium/chromium.git chromium
-    subheader "Chromium cloned at : $CHROMIUM_DIR"
 }
 
 checkout_current_branch() {
     cd $CHROMIUM_DIR
-    git checkout -t old/${CURRENT_BRANCH}
-    git update-index --assume-unchanged build/util/LASTCHANGE
-    git update-index --assume-unchanged build/util/LASTCHANGE.committime
-    subheader "Checked out new branch: ${CURRENT_BRANCH}"
+
+    BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+    if [[ "$BRANCH" != "$CURRENT_BRANCH" ]]; then
+      git checkout -t old/${CURRENT_BRANCH}
+      git update-index --assume-unchanged build/util/LASTCHANGE
+      git update-index --assume-unchanged build/util/LASTCHANGE.committime
+      subheader "[Chromium] Checked out current branch: ${CURRENT_BRANCH}"
+    else
+      git pull
+      subheader "[Chromium] Current branch updated : ${CURRENT_BRANCH}"
+    fi
 }
 
 make_platform_gclient() {
@@ -264,14 +282,23 @@ get_upstream_chromium() {
     time gclient sync --verbose || {
         info "Ignore error for missing gclient_args.gni - Need to fix DEPS to get the right path"
     }
-    subheader "Chromium sync'ed at : $CHROMIUM_DIR"
+    subheader "[Chromium] sync'ed at : $CHROMIUM_DIR"
 }
 
 add_remotes() {
     cd $CHROMIUM_DIR
-    git remote add qt https://code.qt.io/qt/qtwebengine-chromium.git
-    git remote add old git@github.com:turtlebrowser/chromium.git
-    subheader "Remotes added : qt, old"
+
+    has_old=$(git remote | grep old)
+    if [ -z "${has_old}" ] ; then
+      git remote add old git@github.com:turtlebrowser/chromium.git
+    fi
+
+    has_qt=$(git remote | grep qt)
+    if [ -z "${has_qt}" ] ; then
+      git remote add qt https://code.qt.io/qt/qtwebengine-chromium.git
+    fi
+
+    subheader "[Chromium] Remotes added : qt, old"
 }
 
 fetch_remotes() {
