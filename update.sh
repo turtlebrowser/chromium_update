@@ -111,7 +111,7 @@ CURRENT_BRANCH=$NEW_BRANCH
 if [ "$OSTYPE" = "msys" ] ; then
     WORK_DIR="/c/Code"
 else
-    WORK_DIR="$HOME/Code"
+    WORK_DIR="/Code"
 fi
 
 # 8) Windows Toolchain (DEPOT_TOOLS_WIN_TOOLCHAIN ++)
