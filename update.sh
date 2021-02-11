@@ -27,10 +27,12 @@ show_help() {
     info "-s skip actual build steps (Default off)"
 
     header "Workflow Options - only one of the below at a time"
-    info "-d Developer   Workflow: (Default) Building the current branch Qt+Chromium"
-    info "-e Environment Workflow: Setting up the development environment for a dev using the current branch"
-    info "-u Update      Workflow: Updating to a new Chromium version and set up a branch"
-    info "-p Patching    Workflow: Applying the patches to an update branch"
+    info "-d Developer      Workflow: (Default) Building the current branch Qt+Chromium"
+    info "-e Environment    Workflow: Setting up the development environment for a dev using the current branch"
+    info "-u Update         Workflow: Updating to a new Chromium version and set up a branch"
+    info "-p Patching       Workflow: Applying the patches to an update branch"
+    info "-q Qt build       Workflow: Just build Qt (Assumes setup has been done)"
+    info "-c Chromium build Workflow: Just build Chromium (Assumes setup has been done)"
 }
 
 # Config Options
@@ -54,6 +56,8 @@ WORKFLOW_DEV="Dev"              # Building the current branch Qt+Chromium
 WORKFLOW_ENV="Environment"      # Get the source for a prepared branch
 WORKFLOW_UPD="Update"           # Get up a new branch for a new release of Chromium
 WORKFLOW_PCH="Patching"         # Applying patches and fixing conflicts
+WORKFLOW_QT="BuildQt"
+WORKFLOW_CHR="BuildChromium"
 
 WORKFLOW=$WORKFLOW_DEV
 
@@ -79,7 +83,7 @@ fi
 # Process commandline 
 OPTIND=1
 
-while getopts "h?vkxsj:w:dupe" opt; do
+while getopts "h?vkxsqcj:w:dupe" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -92,6 +96,10 @@ while getopts "h?vkxsj:w:dupe" opt; do
     p)  WORKFLOW=$WORKFLOW_PCH
         ;;
     e)  WORKFLOW=$WORKFLOW_ENV
+        ;;
+    q)  WORKFLOW=$WORKFLOW_QT
+        ;;
+    c)  WORKFLOW=$WORKFLOW_CHR
         ;;
     v)  BUILD_VERBOSE=true
         ;;
@@ -600,6 +608,20 @@ apply_patches() {
 }
 
 case $WORKFLOW in
+
+  $WORKFLOW_QT)
+    header "Build Qt Workflow"
+
+    confirm "1.  Build Qt [y/N]" && build_qt
+
+    ;;
+
+  $WORKFLOW_CHR)
+    header "Build Chromium Workflow"
+
+    confirm "1.  Build Chromium [y/N]" && build_chromium
+
+    ;;
 
   $WORKFLOW_DEV)
     header "Dev Workflow"
