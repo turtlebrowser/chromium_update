@@ -62,6 +62,10 @@ jobs:
           sudo apt-get install libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdbus-1-dev libfontconfig1-dev libcap-dev libxtst-dev libpulse-dev libudev-dev libpci-dev libnss3-dev libasound2-dev libxss-dev libegl1-mesa-dev gperf bison
           sudo apt-get install libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
 
+      - name: 2.  [Windows] Build up the environment
+        if: matrix.os == 'windows-latest'
+        run: yes | bash update.sh -e -x -s
+
       - name: 2.  [Linux] Build up the environment
         if: matrix.os == 'ubuntu-latest'
         run: yes | bash update.sh -e -x -s -w $HOME
