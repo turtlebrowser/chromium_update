@@ -32,6 +32,7 @@ jobs:
 
       - name: 0.  [Linux] Free Disk Space
         if: matrix.os == 'ubuntu-latest'
+        shell: bash
         run: |
           echo "Listing 100 largest packages"
           dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -n 100
@@ -54,6 +55,7 @@ jobs:
 
       - name: 1.  [Linux] Add Build Dependencies
         if: matrix.os == 'ubuntu-latest'
+        shell: bash
         run: |
           sudo sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
           sudo apt-get update
@@ -64,18 +66,22 @@ jobs:
 
       - name: 2.  [Windows] Build up the environment
         if: matrix.os == 'windows-latest'
+        shell: bash
         run: yes | bash update.sh -e -x -s
 
       - name: 2.  [Linux] Build up the environment
         if: matrix.os == 'ubuntu-latest'
+        shell: bash
         run: yes | bash update.sh -e -x -s -w $HOME
 
       - name: 3.  [Linux] Build Chromium
         if: matrix.os == 'ubuntu-latest'
+        shell: bash
         run: yes | bash update.sh -c -w $HOME
 
       - name: 4.  [Linux] Build Qt
         if: matrix.os == 'ubuntu-latest'
+        shell: bash
         run: yes | bash update.sh -q -w $HOME
 
 #      - name: 3.  [Windows] Make SDK toolchain zip
