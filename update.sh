@@ -23,7 +23,7 @@ show_help() {
     info "-v verbose output from tools invoked (Default off)"
     info "-k compilation should continue on error (Default off)"
     info "-w work directory (Default '/c/Code' (win) or '/Code' (linux))"
-    info "-x external, always clone with https (Default off)"
+    info "-x external, does not require rights (Default off)"
 
     header "Workflow Options - only one of the below at a time"
     info "-d Developer   Workflow: (Default) Building the current branch Qt+Chromium"
@@ -37,7 +37,7 @@ show_help() {
 # 1) Workfolw type (WORKFLOW)
 # 2) Verbose output (BUILD_VERBOSE)
 # 3) Continue on error (BUILD_CONTINUE)
-# x) Build uses https instead of ssh
+# x) External, does not require rights
 # 4) Root work directory (WORK_DIR)
 # 5) Qt version (QT_VERSION)
 # 6) Previous tag and branch (OLD_TAG, OLD_BRANCH)
@@ -247,23 +247,32 @@ get_chromium() {
     then
       subheader "[Chromium] Checkout found at : $CHROMIUM_DIR"
     else
-      time git clone https://github.com/chromium/chromium.git chromium
-      subheader "[Chromium] Cloned at : $CHROMIUM_DIR"
+      if [ "$BUILD_EXTERNAL" = true ] ; then
+        time curl -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/${CURRENT_BRANCH} | tar xzf -
+        mv turtlebrowser-chromium-* chromium
+        subheader "[Chromium] Extracted at : $CHROMIUM_DIR"
+      else
+        time git clone https://github.com/chromium/chromium.git chromium
+        subheader "[Chromium] Cloned at : $CHROMIUM_DIR"
+      fi
     fi
 }
 
 checkout_current_branch() {
     cd $CHROMIUM_DIR
-
-    BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-    if [[ "$BRANCH" != "$CURRENT_BRANCH" ]]; then
-      git checkout -t old/${CURRENT_BRANCH}
-      git update-index --assume-unchanged build/util/LASTCHANGE
-      git update-index --assume-unchanged build/util/LASTCHANGE.committime
-      subheader "[Chromium] Checked out current branch: ${CURRENT_BRANCH}"
+    if [ "$BUILD_EXTERNAL" = true ] ; then
+      subheader "[Chromium] Was already extracted at : ${CURRENT_BRANCH}"
     else
-      git pull
-      subheader "[Chromium] Current branch updated : ${CURRENT_BRANCH}"
+      BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+      if [[ "$BRANCH" != "$CURRENT_BRANCH" ]]; then
+        git checkout -t old/${CURRENT_BRANCH}
+        git update-index --assume-unchanged build/util/LASTCHANGE
+        git update-index --assume-unchanged build/util/LASTCHANGE.committime
+        subheader "[Chromium] Checked out current branch: ${CURRENT_BRANCH}"
+      else
+        git pull
+        subheader "[Chromium] Current branch updated : ${CURRENT_BRANCH}"
+      fi
     fi
 }
 
@@ -305,29 +314,36 @@ get_upstream_chromium() {
 add_remotes() {
     cd $CHROMIUM_DIR
 
-    old_repo="git@github.com:turtlebrowser/chromium.git"
-
     if [ "$BUILD_EXTERNAL" = true ] ; then
-      old_repo="https://github.com/turtlebrowser/chromium.git"
-    fi
+      subheader "[Chromium] Was extracted, no remotes needed"
+    else
+      old_repo="git@github.com:turtlebrowser/chromium.git"
 
-    has_old=$(git remote | grep old)
-    if [ -z "${has_old}" ] ; then
-      git remote add old $old_repo
-    fi
+      if [ "$BUILD_EXTERNAL" = true ] ; then
+        old_repo="https://github.com/turtlebrowser/chromium.git"
+      fi
 
-    has_qt=$(git remote | grep qt)
-    if [ -z "${has_qt}" ] ; then
-      git remote add qt https://code.qt.io/qt/qtwebengine-chromium.git
-    fi
+      has_old=$(git remote | grep old)
+      if [ -z "${has_old}" ] ; then
+        git remote add old $old_repo
+      fi
 
-    subheader "[Chromium] Remotes added : qt, old"
+      has_qt=$(git remote | grep qt)
+      if [ -z "${has_qt}" ] ; then
+        git remote add qt https://code.qt.io/qt/qtwebengine-chromium.git
+      fi
+      subheader "[Chromium] Remotes added : qt, old"
+    fi
 }
 
 fetch_remotes() {
     cd $CHROMIUM_DIR
-    time git -c core.deltaBaseCacheLimit=2g fetch --all --tags --verbose
-    subheader "Remotes fetched : qt, old"
+    if [ "$BUILD_EXTERNAL" = true ] ; then
+      subheader "[Chromium] Was extracted, no remotes need to be fetched"
+    else
+      time git -c core.deltaBaseCacheLimit=2g fetch --all --tags --verbose
+      subheader "Remotes fetched : qt, old"
+    fi
 }
 
 get_old_branch() {
