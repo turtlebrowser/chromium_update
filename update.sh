@@ -35,13 +35,6 @@ show_help() {
     info "-c Chromium build Workflow: Just build Chromium (Assumes setup has been done)"
 }
 
-# Config Options
-# 0) Compile jobs
-# 1) Workfolw type (WORKFLOW)
-# 2) Verbose output (BUILD_VERBOSE)
-# 3) Continue on error (BUILD_CONTINUE)
-# x) External, does not require rights
-# 4) Root work directory (WORK_DIR)
 # 5) Qt version (QT_VERSION)
 # 6) Previous tag and branch (OLD_TAG, OLD_BRANCH)
 # 7) New tag and branch (NEW_TAG, NEW_BRANCH)
@@ -50,21 +43,21 @@ show_help() {
 # 0) Compile jobs
 BUILD_JOBS=8
 
-# 1) Workfolw type (WORKFLOW)
+# dupeqc) Workfolw type (WORKFLOW)
 # workflow selects which options are available
-WORKFLOW_DEV="Dev"              # Building the current branch Qt+Chromium
-WORKFLOW_ENV="Environment"      # Get the source for a prepared branch
-WORKFLOW_UPD="Update"           # Get up a new branch for a new release of Chromium
-WORKFLOW_PCH="Patching"         # Applying patches and fixing conflicts
-WORKFLOW_QT="BuildQt"
-WORKFLOW_CHR="BuildChromium"
+WORKFLOW_DEV="Dev"              # -d (Default)
+WORKFLOW_ENV="Environment"      # -e
+WORKFLOW_UPD="Update"           # -u
+WORKFLOW_PCH="Patching"         # -p
+WORKFLOW_QT="BuildQt"           # -q
+WORKFLOW_CHR="BuildChromium"    # -c
 
 WORKFLOW=$WORKFLOW_DEV
 
-# 2) Verbose output (BUILD_VERBOSE)
+# v) Verbose output (BUILD_VERBOSE)
 BUILD_VERBOSE=false
 
-# 3) Continue on error (BUILD_CONTINUE)
+# k) Continue on error (BUILD_CONTINUE)
 BUILD_CONTINUE=false
 
 # x) Build uses https instead of ssh
@@ -83,7 +76,7 @@ fi
 # Process commandline 
 OPTIND=1
 
-while getopts "h?vkxsqcj:w:dupe" opt; do
+while getopts "h?vkxsj:w:dupeqc" opt; do
     case "$opt" in
     h|\?)
         show_help
