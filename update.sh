@@ -214,9 +214,9 @@ get_qt() {
     then
       subheader "[Qt] Directory found at : $QT_DIR"
     else
-      curl -O -sSL https://download.qt.io/archive/qt/5.15/${QT_VERSION}/single/${QT_PACKAGE_NAME}.tar.xzf
-      tar xf qt-everywhere-src-5.15.2.tar.xz
-      rm qt-everywhere-src-5.15.2.tar.xz
+      curl -O -sSL https://download.qt.io/archive/qt/5.15/${QT_VERSION}/single/${QT_PACKAGE_NAME}.tar.xz
+      tar xf ${QT_PACKAGE_NAME}.tar.xz
+      rm ${QT_PACKAGE_NAME}.tar.xz
       info "[Qt] Deleting ${QT_DIR}/qtwebengine"
       rm -rf ${QT_DIR}/qtwebengine
       subheader "[Qt] Directory extracted at : $QT_DIR"
