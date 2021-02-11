@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-echo "TurtleBrowser Chromium update script, running on $OSTYPE"
+echo "TurtleBrowser Chromium update script, running on: $OSTYPE"
+CHROMIUM_UPDATE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+echo "Chromium Update location: $CHROMIUM_UPDATE_DIR"
 
 header() {
     echo -e "\e[35m$1\e[0m"
@@ -133,7 +135,7 @@ export DEPOT_TOOLS_WIN_TOOLCHAIN=0
 CHROMIUM_WINDOWS_SDK_VERSION="10.0.19041.0"
 
 # Paths
-CHROMIUM_UPDATE_DIR="$HOME/Code/chromium_update"
+#CHROMIUM_UPDATE_DIR="$HOME/Code/chromium_update"
 DEPOT_TOOLS_DIR="$WORK_DIR/depot_tools"
 QT_DIR="$WORK_DIR/${QT_PACKAGE_NAME}"
 QT_BUILD_DIR="$WORK_DIR/qt5-build"
