@@ -24,6 +24,7 @@ show_help() {
     info "-k compilation should continue on error (Default off)"
     info "-w work directory (Default '/c/Code' (win) or '/Code' (linux))"
     info "-x external, does not require rights (Default off)"
+    info "-s skip actual build steps (Default off)"
 
     header "Workflow Options - only one of the below at a time"
     info "-d Developer   Workflow: (Default) Building the current branch Qt+Chromium"
@@ -65,6 +66,9 @@ BUILD_CONTINUE=false
 # x) Build uses https instead of ssh
 BUILD_EXTERNAL=false
 
+# s) Skip all building steps
+BUILD_SKIP=false
+
 # 4) Root work directory (WORK_DIR)
 if [ "$OSTYPE" = "msys" ] ; then
     WORK_DIR="/c/Code"
@@ -75,7 +79,7 @@ fi
 # Process commandline 
 OPTIND=1
 
-while getopts "h?vkxj:w:dupe" opt; do
+while getopts "h?vkxsj:w:dupe" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -95,6 +99,8 @@ while getopts "h?vkxj:w:dupe" opt; do
         ;;
     x)  BUILD_EXTERNAL=true
         ;;
+    s)  BUILD_SKIP=true
+        ;;
     j)  BUILD_JOBS=$OPTARG
         ;;
     w)  WORK_DIR=$OPTARG
@@ -106,13 +112,14 @@ shift $((OPTIND-1))
 
 [ "${1:-}" = "--" ] && shift
 
-info "Verbose:  $BUILD_VERBOSE"
-info "Continue: $BUILD_CONTINUE"
-info "External: $BUILD_EXTERNAL"
-info "Jobs:     $BUILD_JOBS"
-info "Workflow: $WORKFLOW"
-info "Work dir: $WORK_DIR"
-echo "Leftovers: $@"
+info "Verbose:    $BUILD_VERBOSE"
+info "Continue:   $BUILD_CONTINUE"
+info "Skip build: $BUILD_SKIP"
+info "External:   $BUILD_EXTERNAL"
+info "Jobs:       $BUILD_JOBS"
+info "Workflow:   $WORKFLOW"
+info "Work dir:   $WORK_DIR"
+echo "Leftovers:  $@"
 
 # 5) Qt version (QT_VERSION)
 QT_VERSION="5.15.2"
@@ -524,6 +531,11 @@ clean_chromium_build() {
 
 build_chromium() {
     cd $CHROMIUM_DIR
+    if [ "$BUILD_SKIP" = true ] ; then
+      subheader "[Chromium] Skipping build"
+      return
+    fi
+
     info "[Chromium] Build"
     time autoninja $NINJAFLAGS -C out/Default chrome || {
         info "[Chromium] Continue on error"
@@ -559,6 +571,11 @@ clean_qt_build() {
 
 build_qt() {
     cd $QT_BUILD_DIR
+    if [ "$BUILD_SKIP" = true ] ; then
+      subheader "[Qt] Skipping build"
+      return
+    fi
+
     info "[Qt] Build"
     if [ "$OSTYPE" = "msys" ] ; then
         time $CHROMIUM_UPDATE_DIR/build_qt.bat || {
