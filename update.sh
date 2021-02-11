@@ -207,8 +207,8 @@ get_qt() {
       subheader "[Qt] Directory found at : $QT_DIR"
     else
       curl -sSL https://download.qt.io/archive/qt/5.15/${QT_VERSION}/single/${QT_PACKAGE_NAME}.tar.xz | tar xJf -
-      info "Moving ${QT_DIR}/qtwebengine to ${QT_DIR}/old_qtwebengine"
-      mv ${QT_DIR}/qtwebengine ${QT_DIR}/old_qtwebengine
+      info "[Qt] Deleting ${QT_DIR}/qtwebengine"
+      rm -rf ${QT_DIR}/qtwebengine
       subheader "[Qt] Directory extracted at : $QT_DIR"
     fi
 }
