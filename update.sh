@@ -20,6 +20,7 @@ show_help() {
     info "-j <num> number of compile jobs (Default 8)"
     info "-v verbose output from tools invoked (Default off)"
     info "-k compilation should continue on error (Default off)"
+    info "-w work directory (Default '/c/Code' (win) or '/Code' (linux))"
 
     header "Workflow Options - only one of the below at a time"
     info "-d Developer   Workflow: (Default) Building the current branch Qt+Chromium"
@@ -33,10 +34,10 @@ show_help() {
 # 1) Workfolw type (WORKFLOW)
 # 2) Verbose output (BUILD_VERBOSE)
 # 3) Continue on error (BUILD_CONTINUE)
-# 4) Qt version (QT_VERSION)
-# 5) Previous tag and branch (OLD_TAG, OLD_BRANCH)
-# 6) New tag and branch (NEW_TAG, NEW_BRANCH)
-# 7) Root work directory (WORK_DIR)
+# 4) Root work directory (WORK_DIR)
+# 5) Qt version (QT_VERSION)
+# 6) Previous tag and branch (OLD_TAG, OLD_BRANCH)
+# 7) New tag and branch (NEW_TAG, NEW_BRANCH)
 # 8) Windows Toolchain (DEPOT_TOOLS_WIN_TOOLCHAIN ++)
 
 # 0) Compile jobs
@@ -57,10 +58,17 @@ BUILD_VERBOSE=false
 # 3) Continue on error (BUILD_CONTINUE)
 BUILD_CONTINUE=false
 
+# 4) Root work directory (WORK_DIR)
+if [ "$OSTYPE" = "msys" ] ; then
+    WORK_DIR="/c/Code"
+else
+    WORK_DIR="/Code"
+fi
+
 # Process commandline 
 OPTIND=1
 
-while getopts "h?vkj:dupe" opt; do
+while getopts "h?vkj:w:dupe" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -80,6 +88,8 @@ while getopts "h?vkj:dupe" opt; do
         ;;
     j)  BUILD_JOBS=$OPTARG
         ;;
+    w)  WORK_DIR=$OPTARG
+        ;;
     esac
 done
 
@@ -91,28 +101,22 @@ info "Verbose:  $BUILD_VERBOSE"
 info "Continue: $BUILD_CONTINUE"
 info "Jobs:     $BUILD_JOBS"
 info "Workflow: $WORKFLOW"
+info "Work dir: $WORK_DIR"
 echo "Leftovers: $@"
 
-# 4) Qt version (QT_VERSION)
+# 5) Qt version (QT_VERSION)
 QT_VERSION="5.15.2"
 QT_PACKAGE_NAME="qt-everywhere-src-${QT_VERSION}"
 
-# 5) Previous tag and branch (OLD_TAG, OLD_BRANCH)
+# 6) Previous tag and branch (OLD_TAG, OLD_BRANCH)
 OLD_TAG="87.0.4280.144"
 OLD_BRANCH="old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_3"
 README_FILENAME="turtlebrowser_readme_${OLD_TAG}.txt"
 
-# 6) New tag and branch (NEW_TAG, NEW_BRANCH)
+# 7) New tag and branch (NEW_TAG, NEW_BRANCH)
 NEW_TAG="87.0.4280.144"
 NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_4"
 CURRENT_BRANCH=$NEW_BRANCH
-
-# 7) Root work directory (WORK_DIR)
-if [ "$OSTYPE" = "msys" ] ; then
-    WORK_DIR="/c/Code"
-else
-    WORK_DIR="/Code"
-fi
 
 # 8) Windows Toolchain (DEPOT_TOOLS_WIN_TOOLCHAIN ++)
 #export DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL="${DEPOT_TOOLS_DIR}/win_toolchain/"
