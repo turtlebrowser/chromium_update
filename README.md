@@ -1,37 +1,24 @@
-# chromium_update
+# TurtleBrowser Chromium Update
 
-Linux, Get clang 11
-```
-sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-sudo apt install libc++-dev libc++abi-dev
-sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-11 100
-sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-11 100
-```
+The main component in this repo is the update.sh script. This script automates a lot of the workflow around taking in a new Chromium version, setting up a local checkout with the current branch and building both Chromium and Qt+Chromium.
 
-Windows, Get clang 11
-```
-Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-scoop install llvm
-clang --version
+To see the options the script has
+```bash
+bash update.sh -h
 ```
 
+Example output on Linux
+```bash
+TurtleBrowser Chromium update script, running on linux-gnu
+General Options
+-j <num> number of compile jobs (Default 8)
+-v verbose output from tools invoked (Default off)
+-k compilation should continue on error (Default off)
+Workflow Options - only one of the below at a time
+-d Developer   Workflow: (Default) Building the current branch Qt+Chromium
+-e Environment Workflow: Setting up the development environment for a dev using the current branch
+-u Update      Workflow: Updating to a new Chromium version and set up a branch
+-p Patching    Workflow: Applying the patches to an update branch
 ```
-cd ~
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-wget https://download.qt.io/archive/qt/5.15/5.15.2/single/qt-everywhere-src-5.15.2.tar.xz
-tar xf qt-everywhere-src-5.15.2.tar.xz
-cd qt-everywhere-src-5.15.2
-rm -rf qtwebengine
-git clone --depth 1 git@github.com:turtlebrowser/qtwebengine.git
-cd qtwebengine/src/3rdparty
-git clone --depth 1 git@github.com:turtlebrowser/chromium.git
-cd chromium/
-export PATH="$PATH:${HOME}/depot_tools"
-gclient runhooks
-cd ~
-mkdir qt5-build
-cd qt5-build
-export NINJAFLAGS="-v -k 0"
-../qt-everywhere-src-5.15.2/configure -platform linux-clang-libc++ -developer-build -opensource -confirm-license -nomake examples -nomake tests
-make -j 8
-```
+
+On Windows the script is meant to be run in GitBash.
