@@ -21,6 +21,7 @@ show_help() {
     info "-v verbose output from tools invoked (Default off)"
     info "-k compilation should continue on error (Default off)"
     info "-w work directory (Default '/c/Code' (win) or '/Code' (linux))"
+    info "-x external, always clone with https (Default off)"
 
     header "Workflow Options - only one of the below at a time"
     info "-d Developer   Workflow: (Default) Building the current branch Qt+Chromium"
@@ -34,6 +35,7 @@ show_help() {
 # 1) Workfolw type (WORKFLOW)
 # 2) Verbose output (BUILD_VERBOSE)
 # 3) Continue on error (BUILD_CONTINUE)
+# x) Build uses https instead of ssh
 # 4) Root work directory (WORK_DIR)
 # 5) Qt version (QT_VERSION)
 # 6) Previous tag and branch (OLD_TAG, OLD_BRANCH)
@@ -58,6 +60,9 @@ BUILD_VERBOSE=false
 # 3) Continue on error (BUILD_CONTINUE)
 BUILD_CONTINUE=false
 
+# x) Build uses https instead of ssh
+BUILD_EXTERNAL=false
+
 # 4) Root work directory (WORK_DIR)
 if [ "$OSTYPE" = "msys" ] ; then
     WORK_DIR="/c/Code"
@@ -68,7 +73,7 @@ fi
 # Process commandline 
 OPTIND=1
 
-while getopts "h?vkj:w:dupe" opt; do
+while getopts "h?vkxj:w:dupe" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -86,6 +91,8 @@ while getopts "h?vkj:w:dupe" opt; do
         ;;
     k)  BUILD_CONTINUE=true
         ;;
+    x)  BUILD_EXTERNAL=true
+        ;;
     j)  BUILD_JOBS=$OPTARG
         ;;
     w)  WORK_DIR=$OPTARG
@@ -99,6 +106,7 @@ shift $((OPTIND-1))
 
 info "Verbose:  $BUILD_VERBOSE"
 info "Continue: $BUILD_CONTINUE"
+info "External: $BUILD_EXTERNAL"
 info "Jobs:     $BUILD_JOBS"
 info "Workflow: $WORKFLOW"
 info "Work dir: $WORK_DIR"
@@ -206,7 +214,11 @@ get_webengine() {
     then
       subheader "[QtWebEngine] Checkout found at : $WEB_ENGINE_DIR"
     else
-      git clone git@github.com:turtlebrowser/qtwebengine.git
+      if [ "$BUILD_EXTERNAL" = true ] ; then
+        git clone https://github.com/turtlebrowser/qtwebengine.git
+      else
+        git clone git@github.com:turtlebrowser/qtwebengine.git
+      fi
       subheader "[QtWebEngine] Cloned at : $WEB_ENGINE_DIR"
     fi
 }
@@ -292,9 +304,15 @@ get_upstream_chromium() {
 add_remotes() {
     cd $CHROMIUM_DIR
 
+    old_repo="git@github.com:turtlebrowser/chromium.git"
+
+    if [ "$BUILD_EXTERNAL" = true ] ; then
+      old_repo="https://github.com/turtlebrowser/chromium.git"
+    fi
+
     has_old=$(git remote | grep old)
     if [ -z "${has_old}" ] ; then
-      git remote add old git@github.com:turtlebrowser/chromium.git
+      git remote add old $old_repo
     fi
 
     has_qt=$(git remote | grep qt)
