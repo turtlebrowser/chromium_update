@@ -214,8 +214,8 @@ get_qt() {
     then
       subheader "[Qt] Directory found at : $QT_DIR"
     else
-      curl -O -sSL https://download.qt.io/archive/qt/5.15/${QT_VERSION}/single/${QT_PACKAGE_NAME}.tar.xz
-      tar xf ${QT_PACKAGE_NAME}.tar.xz
+      time curl -O -sSL https://download.qt.io/archive/qt/5.15/${QT_VERSION}/single/${QT_PACKAGE_NAME}.tar.xz
+      time tar xf ${QT_PACKAGE_NAME}.tar.xz
       rm ${QT_PACKAGE_NAME}.tar.xz
       info "[Qt] Deleting ${QT_DIR}/qtwebengine"
       rm -rf ${QT_DIR}/qtwebengine
@@ -264,8 +264,10 @@ get_chromium() {
       subheader "[Chromium] Checkout found at : $CHROMIUM_DIR"
     else
       if [ "$BUILD_EXTERNAL" = true ] ; then
-        time curl -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/${CURRENT_BRANCH} | tar xzf -
+        time curl -o chromium.tar.xz -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/${CURRENT_BRANCH}
+        time tar xf chromium.tar.xz
         mv turtlebrowser-chromium-* chromium
+        rm chromium.tar.xz
         subheader "[Chromium] Extracted at : $CHROMIUM_DIR"
       else
         time git clone https://github.com/chromium/chromium.git chromium
