@@ -230,7 +230,6 @@ update_webengine() {
     BRANCH="$(git rev-parse --abbrev-ref HEAD)"
     if [[ "$BRANCH" != "$WEB_ENGINE_BRANCH" ]]; then
       git checkout $WEB_ENGINE_BRANCH
-      git pull
       git remote add qt https://code.qt.io/qt/qtwebengine.git
       git fetch qt
       subheader "[QtWebEngine] Checked out current branch : ${WEB_ENGINE_BRANCH}"
