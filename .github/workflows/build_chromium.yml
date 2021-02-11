@@ -26,6 +26,25 @@ jobs:
           echo "WINDOWS_SDK_VERSION:    ${{ env.WINDOWS_SDK_VERSION }}"
           echo "WINDOWS_TOOLCHAIN_HASH: ${{ env.WINDOWS_TOOLCHAIN_HASH }}"
 
+      - name: 0.  [Linux] Free Disk Space
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          echo "Listing 100 largest packages"
+          dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n | tail -n 100
+          df -h
+          echo "Removing large packages"
+          sudo apt-get remove -y '^ghc-8.*'
+          sudo apt-get remove -y '^dotnet-.*'
+          sudo apt-get remove -y '^llvm-.*'
+          sudo apt-get remove -y 'php.*'
+          sudo apt-get remove -y azure-cli google-cloud-sdk hhvm google-chrome-stable firefox powershell mono-devel
+          sudo apt-get autoremove -y
+          sudo apt-get clean
+          df -h
+          echo "Removing large directories"
+          rm -rf /usr/share/dotnet/
+          df -h
+
 # Debian Dependencies
 # https://wiki.qt.io/Building_Qt_5_from_Git
 
