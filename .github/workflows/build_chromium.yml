@@ -11,24 +11,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     env:
-      QT_VERSION: "5.15.2"
       WINDOWS_SDK_VERSION: "10.0.19041.0" # see build/toolchain/win/setup_toolchain.py
       WINDOWS_TOOLCHAIN_HASH: "fdfc420dcd"
-      WEB_ENGINE_BRANCH: "turtlebrowser_integration_5.15"
-      CHROMIUM_BRANCH: "turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_testing_win2"
-      COMMON_CONFIGURE_FLAGS: "-developer-build -opensource -confirm-license -silent -nomake examples -nomake tests"
-      QT_PACKAGE_NAME: "qt-everywhere-src-5.15.2"
-      WORK_DIR: "Code"
-      DEPOT_TOOLS_DIR: "Code/depot_tools"
-      QT_DIR: "Code/qt-everywhere-src-5.15.2"
-      QT_BUILD_DIR: "Code/qt5-build"
-      CACHE_DIR: "Code/github_cache"
-      WEB_ENGINE_DIR: "Code/qt-everywhere-src-5.15.2/qtwebengine"
-      THIRD_PARTY_DIR: "Code/qt-everywhere-src-5.15.2/qtwebengine/src/3rdparty"
-      CHROMIUM_DIR: "Code/qt-everywhere-src-5.15.2/qtwebengine/src/3rdparty/chromium"
 
     steps:
       - uses: actions/checkout@v2
@@ -36,18 +23,8 @@ jobs:
       - name: 0.  [All] Print environment
         shell: bash
         run: |
-          echo "QT_VERSION:             ${{ env.QT_VERSION }}"
-          echo "WEB_ENGINE_BRANCH:      ${{ env.WEB_ENGINE_BRANCH }}"
-          echo "CHROMIUM_BRANCH:        ${{ env.CHROMIUM_BRANCH }}"
-          echo "COMMON_CONFIGURE_FLAGS: ${{ env.COMMON_CONFIGURE_FLAGS }}"
-          echo "QT_PACKAGE_NAME :       ${{ env.QT_PACKAGE_NAME }}"
-          echo "WORK_DIR:               ${{ env.WORK_DIR }}"
-          echo "DEPOT_TOOLS_DIR:        ${{ env.DEPOT_TOOLS_DIR }}"
-          echo "QT_DIR:                 ${{ env.QT_DIR }}"
-          echo "QT_BUILD_DIR:           ${{ env.QT_BUILD_DIR }}"
-          echo "WEB_ENGINE_DIR:         ${{ env.WEB_ENGINE_DIR }}"
-          echo "THIRD_PARTY_DIR:        ${{ env.THIRD_PARTY_DIR }}"
-          echo "CHROMIUM_DIR:           ${{ env.CHROMIUM_DIR }}"
+          echo "WINDOWS_SDK_VERSION:    ${{ env.WINDOWS_SDK_VERSION }}"
+          echo "WINDOWS_TOOLCHAIN_HASH: ${{ env.WINDOWS_TOOLCHAIN_HASH }}"
 
 # Debian Dependencies
 # https://wiki.qt.io/Building_Qt_5_from_Git
@@ -61,53 +38,10 @@ jobs:
           sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
           sudo apt-get install libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdbus-1-dev libfontconfig1-dev libcap-dev libxtst-dev libpulse-dev libudev-dev libpci-dev libnss3-dev libasound2-dev libxss-dev libegl1-mesa-dev gperf bison
           sudo apt-get install libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
-          sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-          sudo apt install libc++-dev libc++abi-dev
-          CC_COMPILER="/usr/bin/clang-11"
-          CXX_COMPILER="/usr/bin/clang++-11"
-          sudo update-alternatives --install /usr/bin/clang clang ${CC_COMPILER} 100
-          sudo update-alternatives --install /usr/bin/clang++ clang++ ${CXX_COMPILER} 100
-          sudo update-alternatives --config clang
-          sudo update-alternatives --config clang++
-          echo "/usr/bin/" >> $GITHUB_PATH
-          echo "CC=${CC_COMPILER}" >> $GITHUB_ENV
-          echo "CXX=${CXX_COMPILER}" >> $GITHUB_ENV
-          echo "QMAKE_CC=${CC_COMPILER}" >> $GITHUB_ENV
-          echo "QMAKE_CXX=${CXX_COMPILER}" >> $GITHUB_ENV
 
-      - name: 1.  [MacOS] Add Build Dependencies
-        if: matrix.os == 'macos-latest'
-        run: |
-          brew install -v llvm
-          LLVMDIR="$(brew --prefix)/opt/llvm"
-          echo "${LLVMDIR}/bin/" >> $GITHUB_PATH
-          CC_COMPILER="${LLVMDIR}/bin/clang"
-          CXX_COMPILER="${LLVMDIR}/bin/clang++"
-          LINKER_FLAGS="${LDFLAGS} -L${LLVMDIR}/lib -Wl,-rpath,${LLVMDIR}/lib"
-          echo "CC=${CC_COMPILER}" >> $GITHUB_ENV
-          echo "CXX=${CXX_COMPILER}" >> $GITHUB_ENV
-          echo "LDFLAGS=${LINKER_FLAGS}" >> $GITHUB_ENV
-          echo "QMAKE_CC=${CC_COMPILER}" >> $GITHUB_ENV
-          echo "QMAKE_CXX=${CXX_COMPILER}" >> $GITHUB_ENV
-          echo "QMAKE_LFLAGS=${LINKER_FLAGS}" >> $GITHUB_ENV
+      - name: 2.  [All] Run Script
+        run: yes | bash update.sh -e
 
-      - name: 2.  [All] Test clang
-        run: |
-          echo "PATH : $PATH"
-          echo "LDFLAGS : ${{ env.LDFLAGS }}"
-          clang --version
-          ${{ env.QMAKE_CXX }} --version
-
-      - name: 3.  [All] Make work directory
-        shell: bash
-        run: mkdir -p Code
-
-      - name: 4.  Get Depot Tools
-        shell: bash
-        working-directory: ${{ env.WORK_DIR }}
-        run: |
-          git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-          
 #      - name: 3.  [Windows] Make SDK toolchain zip
 #        if: matrix.os == 'windows-latest' && steps.github-cache.outputs.cache-hit != 'true'
 #        shell: bash
@@ -117,56 +51,3 @@ jobs:
 #          sed -i "/  raise Exception('%s h/s/^/#/g" package_from_installed.py #comment
 #          python package_from_installed.py 2019 -w ${{ env.WINDOWS_SDK_VERSION }}
 #          cp *.zip ../../github_cache/
-
-      - name: 5.  [All] Get Qt
-        shell: bash
-        working-directory: ${{ env.WORK_DIR }}
-        run: |
-          curl -sSL https://download.qt.io/archive/qt/5.15/${{ env.QT_VERSION }}/single/${{ env.QT_PACKAGE_NAME }}.tar.xz | tar xJf -
-
-      - name: 6.  [All] Get QtWebEngine
-        shell: bash
-        working-directory: ${{ env.QT_DIR }}
-        run: |
-          rm -rf qtwebengine
-          git clone https://github.com/turtlebrowser/qtwebengine.git
-
-      - name: 7.  [All] Checkout the QtWebEngine branch
-        shell: bash
-        working-directory: ${{ env.WEB_ENGINE_DIR }}
-        run: |
-          git checkout ${{ env.WEB_ENGINE_BRANCH }}
-          git pull
-
-      - name: 8.  [All] Get Chromium
-        if: matrix.os != 'windows-latest'
-        shell: bash
-        working-directory: ${{ env.THIRD_PARTY_DIR }}
-        run: |
-          curl -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/${{ env.CHROMIUM_BRANCH }} | tar xzf -
-          mv turtlebrowser-chromium-* chromium
-
-      - name: 9.  [All] Make Qt build directory
-        shell: bash
-        run: mkdir -p ${{ env.QT_BUILD_DIR }}
-
-      - name: 10.  [Linux] Prepare Qt build directory
-        if: matrix.os == 'ubuntu-latest'
-        shell: bash
-        working-directory: ${{ env.QT_BUILD_DIR }}
-        env:
-          NINJAFLAGS: "-k 0"
-        run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform linux-clang-libc++
-
-      - name: 10.  [Mac] Prepare Qt build directory
-        if: matrix.os == 'macos-latest'
-        shell: bash
-        working-directory: ${{ env.QT_BUILD_DIR }}
-        env:
-          NINJAFLAGS: "-k 0"
-        run: ../qt-everywhere-src-5.15.2/configure ${{ env.COMMON_CONFIGURE_FLAGS }} -platform macx-clang
-
-      - name: 11. [All] Build Qt
-        shell: bash
-        working-directory: ${{ env.QT_BUILD_DIR }}
-        run: time make -j 8
