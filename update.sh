@@ -236,7 +236,7 @@ update_webengine() {
       git fetch qt
       subheader "[QtWebEngine] Checked out current branch : ${WEB_ENGINE_BRANCH}"
     else
-      git pull
+      git pull --ff-only
       subheader "[QtWebEngine] Current branch updated : ${WEB_ENGINE_BRANCH}"
     fi
 }
