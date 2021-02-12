@@ -129,9 +129,14 @@ QT_PACKAGE_NAME="qt-everywhere-src-${QT_VERSION}"
 # 6) Previous tag and branch (OLD_TAG, OLD_BRANCH)
 OLD_TAG="87.0.4280.144"
 
+# 7) New tag and branch (NEW_TAG, NEW_BRANCH)
+NEW_TAG="87.0.4280.144"
+NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_4"
+CURRENT_BRANCH=$NEW_BRANCH
+
 if [ "$BUILD_EXTERNAL" = true ] ; then
   BRANCH_REMOTE="origin"
-  CHROMIUM_ORIGIN_URL="https://github.com/turtlebrowser/chromium.git"
+  CHROMIUM_ORIGIN_URL="https://github.com/turtlebrowser/chromium.git --branch $CURRENT_BRANCH --single-branch"
   QT_WEBENGINE_ORIGIN_URL="https://github.com/turtlebrowser/qtwebengine.git"
 else
   BRANCH_REMOTE="old"
@@ -141,11 +146,6 @@ fi
 
 OLD_BRANCH="$BRANCH_REMOTE/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_3"
 README_FILENAME="turtlebrowser_readme_${OLD_TAG}.txt"
-
-# 7) New tag and branch (NEW_TAG, NEW_BRANCH)
-NEW_TAG="87.0.4280.144"
-NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_4"
-CURRENT_BRANCH=$NEW_BRANCH
 
 # 8) Windows Toolchain (DEPOT_TOOLS_WIN_TOOLCHAIN ++)
 #export DEPOT_TOOLS_WIN_TOOLCHAIN_BASE_URL="${DEPOT_TOOLS_DIR}/win_toolchain/"
@@ -352,6 +352,12 @@ add_remotes() {
 fetch_remotes() {
     cd $CHROMIUM_DIR
     info "[Chromium] Fetch remotes"
+
+    if [ "$BUILD_EXTERNAL" = true ] ; then
+      subheader "[Chromium] Skipping fetching remotes"
+      return
+    fi
+
     time git -c core.deltaBaseCacheLimit=2g fetch --all --tags --verbose
     subheader "[Chromium] Remotes fetched : qt, old"
 }
