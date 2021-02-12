@@ -25,7 +25,7 @@ jobs:
         run: |
           echo "WINDOWS_SDK_VERSION:    ${{ env.WINDOWS_SDK_VERSION }}"
           echo "WINDOWS_TOOLCHAIN_HASH: ${{ env.WINDOWS_TOOLCHAIN_HASH }}"
-          
+
       - name: 0.  [Windows] Get-PSDrive
         if: matrix.os == 'windows-latest'
         run: Get-PSDrive
@@ -33,6 +33,16 @@ jobs:
       - name: 0.  [Windows] LongPathsEnabled
         if: matrix.os == 'windows-latest'
         run: Set-ItemProperty 'HKLM:\System\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -value 1
+
+      - name: 0.  [Windows] Get-Jom
+        if: matrix.os == 'windows-latest'
+        run: |
+          cd $HOME
+          mkdir jom
+          cd jom
+          curl -O -sSL http://download.qt.io/official_releases/jom/jom.zip
+          unzip jom.zip
+          echo "$HOME/jom" >> $GITHUB_PATH
 
       - name: 0.  [Windows] Git longpaths
         if: matrix.os == 'windows-latest'
