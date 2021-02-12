@@ -263,35 +263,23 @@ get_chromium() {
     then
       subheader "[Chromium] Checkout found at : $CHROMIUM_DIR"
     else
-      if [ "$BUILD_EXTERNAL" = true ] ; then
-        time curl -o chromium.tar.xz -sSL https://api.github.com/repos/turtlebrowser/chromium/tarball/${CURRENT_BRANCH}
-        time tar xf chromium.tar.xz
-        mv turtlebrowser-chromium-* chromium
-        rm chromium.tar.xz
-        subheader "[Chromium] Extracted at : $CHROMIUM_DIR"
-      else
-        time git clone https://github.com/chromium/chromium.git chromium
-        subheader "[Chromium] Cloned at : $CHROMIUM_DIR"
-      fi
+      time git clone https://github.com/chromium/chromium.git chromium
+      subheader "[Chromium] Cloned at : $CHROMIUM_DIR"
     fi
 }
 
 checkout_current_branch() {
     cd $CHROMIUM_DIR
     info "[Chromium] Update"
-    if [ "$BUILD_EXTERNAL" = true ] ; then
-      subheader "[Chromium] Was already extracted at : ${CURRENT_BRANCH}"
+    BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+    if [[ "$BRANCH" != "$CURRENT_BRANCH" ]]; then
+      git checkout -t old/${CURRENT_BRANCH}
+      git update-index --assume-unchanged build/util/LASTCHANGE
+      git update-index --assume-unchanged build/util/LASTCHANGE.committime
+      subheader "[Chromium] Checked out current branch: ${CURRENT_BRANCH}"
     else
-      BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-      if [[ "$BRANCH" != "$CURRENT_BRANCH" ]]; then
-        git checkout -t old/${CURRENT_BRANCH}
-        git update-index --assume-unchanged build/util/LASTCHANGE
-        git update-index --assume-unchanged build/util/LASTCHANGE.committime
-        subheader "[Chromium] Checked out current branch: ${CURRENT_BRANCH}"
-      else
-        git pull
-        subheader "[Chromium] Current branch updated : ${CURRENT_BRANCH}"
-      fi
+      git pull
+      subheader "[Chromium] Current branch updated : ${CURRENT_BRANCH}"
     fi
 }
 
@@ -335,37 +323,29 @@ add_remotes() {
     cd $CHROMIUM_DIR
     info "[Chromium] Add remotes"
 
+    old_repo="git@github.com:turtlebrowser/chromium.git"
+
     if [ "$BUILD_EXTERNAL" = true ] ; then
-      subheader "[Chromium] Was extracted, no remotes needed"
-    else
-      old_repo="git@github.com:turtlebrowser/chromium.git"
-
-      if [ "$BUILD_EXTERNAL" = true ] ; then
-        old_repo="https://github.com/turtlebrowser/chromium.git"
-      fi
-
-      has_old=$(git remote | grep old)
-      if [ -z "${has_old}" ] ; then
-        git remote add old $old_repo
-      fi
-
-      has_qt=$(git remote | grep qt)
-      if [ -z "${has_qt}" ] ; then
-        git remote add qt https://code.qt.io/qt/qtwebengine-chromium.git
-      fi
-      subheader "[Chromium] Remotes added : qt, old"
+      old_repo="https://github.com/turtlebrowser/chromium.git"
     fi
+
+    has_old=$(git remote | grep old)
+    if [ -z "${has_old}" ] ; then
+      git remote add old $old_repo
+    fi
+
+    has_qt=$(git remote | grep qt)
+    if [ -z "${has_qt}" ] ; then
+      git remote add qt https://code.qt.io/qt/qtwebengine-chromium.git
+    fi
+    subheader "[Chromium] Remotes added : qt, old"
 }
 
 fetch_remotes() {
     cd $CHROMIUM_DIR
     info "[Chromium] Fetch remotes"
-    if [ "$BUILD_EXTERNAL" = true ] ; then
-      subheader "[Chromium] Was extracted, no remotes need to be fetched"
-    else
-      time git -c core.deltaBaseCacheLimit=2g fetch --all --tags --verbose
-      subheader "[Chromium] Remotes fetched : qt, old"
-    fi
+    time git -c core.deltaBaseCacheLimit=2g fetch --all --tags --verbose
+    subheader "[Chromium] Remotes fetched : qt, old"
 }
 
 get_old_branch() {
