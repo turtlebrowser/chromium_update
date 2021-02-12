@@ -331,11 +331,13 @@ add_remotes() {
 
     has_old=$(git remote | grep old)
     if [ -z "${has_old}" ] ; then
+      info "[Chromium] Add remote old : $old_repo"
       git remote add old $old_repo
     fi
 
     has_qt=$(git remote | grep qt)
     if [ -z "${has_qt}" ] ; then
+      info "[Chromium] Add remote qt : https://code.qt.io/qt/qtwebengine-chromium.git"
       git remote add qt https://code.qt.io/qt/qtwebengine-chromium.git
     fi
     subheader "[Chromium] Remotes added : qt, old"
