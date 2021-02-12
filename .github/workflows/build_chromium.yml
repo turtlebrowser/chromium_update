@@ -88,6 +88,16 @@ jobs:
         shell: bash
         run: bash -c "yes || true" | bash update.sh -e -x -s
 
+      - name: 3.  [Windows] Build Chromium
+        if: matrix.os == 'windows-latest'
+        shell: bash
+        run: bash -c "yes || true" | bash update.sh -c -x
+
+      - name: 4.  [Windows] Build Qt
+        if: matrix.os == 'windows-latest'
+        shell: bash
+        run: bash -c "yes || true" | bash update.sh -q -x
+
       - name: 2.  [Linux] Build up the environment
         if: matrix.os == 'ubuntu-latest'
         run: yes | bash update.sh -e -x -s -w $HOME
