@@ -136,7 +136,7 @@ CURRENT_BRANCH=$NEW_BRANCH
 
 if [ "$BUILD_EXTERNAL" = true ] ; then
   BRANCH_REMOTE="origin"
-  CHROMIUM_ORIGIN_URL="https://github.com/turtlebrowser/chromium.git --branch $CURRENT_BRANCH --single-branch"
+  CHROMIUM_ORIGIN_URL="--depth 1 https://github.com/turtlebrowser/chromium.git --branch $CURRENT_BRANCH --single-branch"
   QT_WEBENGINE_ORIGIN_URL="https://github.com/turtlebrowser/qtwebengine.git"
 else
   BRANCH_REMOTE="old"
