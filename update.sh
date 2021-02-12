@@ -530,12 +530,13 @@ clean_chromium_build() {
 
 build_chromium() {
     cd $CHROMIUM_DIR
+    info "[Chromium] Build"
+
     if [ "$BUILD_SKIP" = true ] ; then
       subheader "[Chromium] Skipping build"
       return
     fi
 
-    info "[Chromium] Build"
     time autoninja $NINJAFLAGS -C out/Default chrome || {
         info "[Chromium] Continue on error"
     }
@@ -570,12 +571,13 @@ clean_qt_build() {
 
 build_qt() {
     cd $QT_BUILD_DIR
+    info "[Qt] Build"
+
     if [ "$BUILD_SKIP" = true ] ; then
       subheader "[Qt] Skipping build"
       return
     fi
 
-    info "[Qt] Build"
     if [ "$OSTYPE" = "msys" ] ; then
         time $CHROMIUM_UPDATE_DIR/build_qt.bat || {
             info "[Qt] Continue on error"
