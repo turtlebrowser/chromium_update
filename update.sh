@@ -128,7 +128,18 @@ QT_PACKAGE_NAME="qt-everywhere-src-${QT_VERSION}"
 
 # 6) Previous tag and branch (OLD_TAG, OLD_BRANCH)
 OLD_TAG="87.0.4280.144"
-OLD_BRANCH="old/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_3"
+
+if [ "$BUILD_EXTERNAL" = true ] ; then
+  BRANCH_REMOTE="origin"
+  CHROMIUM_ORIGIN_URL="https://github.com/turtlebrowser/chromium.git"
+  QT_WEBENGINE_ORIGIN_URL="https://github.com/turtlebrowser/qtwebengine.git"
+else
+  BRANCH_REMOTE="old"
+  CHROMIUM_ORIGIN_URL="https://github.com/chromium/chromium.git"
+  QT_WEBENGINE_ORIGIN_URL="git@github.com:turtlebrowser/qtwebengine.git"
+fi
+
+OLD_BRANCH="$BRANCH_REMOTE/turtlebrowser_integration_chromium_87.0.4280.144_qt_5.15.2_3"
 README_FILENAME="turtlebrowser_readme_${OLD_TAG}.txt"
 
 # 7) New tag and branch (NEW_TAG, NEW_BRANCH)
@@ -230,11 +241,7 @@ get_webengine() {
     then
       subheader "[QtWebEngine] Checkout found at : $WEB_ENGINE_DIR"
     else
-      if [ "$BUILD_EXTERNAL" = true ] ; then
-        git clone https://github.com/turtlebrowser/qtwebengine.git
-      else
-        git clone git@github.com:turtlebrowser/qtwebengine.git
-      fi
+      git clone $QT_WEBENGINE_ORIGIN_URL
       subheader "[QtWebEngine] Cloned at : $WEB_ENGINE_DIR"
     fi
 }
@@ -263,7 +270,7 @@ get_chromium() {
     then
       subheader "[Chromium] Checkout found at : $CHROMIUM_DIR"
     else
-      time git clone https://github.com/chromium/chromium.git chromium
+      time git clone $CHROMIUM_ORIGIN_URL chromium
       subheader "[Chromium] Cloned at : $CHROMIUM_DIR"
     fi
 }
@@ -273,7 +280,7 @@ checkout_current_branch() {
     info "[Chromium] Update"
     BRANCH="$(git rev-parse --abbrev-ref HEAD)"
     if [[ "$BRANCH" != "$CURRENT_BRANCH" ]]; then
-      git checkout -t old/${CURRENT_BRANCH}
+      git checkout -t ${BRANCH_REMOTE}/${CURRENT_BRANCH}
       git update-index --assume-unchanged build/util/LASTCHANGE
       git update-index --assume-unchanged build/util/LASTCHANGE.committime
       subheader "[Chromium] Checked out current branch: ${CURRENT_BRANCH}"
@@ -323,21 +330,15 @@ add_remotes() {
     cd $CHROMIUM_DIR
     info "[Chromium] Add remotes"
 
-    old_repo="git@github.com:turtlebrowser/chromium.git"
-
     if [ "$BUILD_EXTERNAL" = true ] ; then
-      old_repo="https://github.com/turtlebrowser/chromium.git"
+      subheader "[Chromium] Skipping adding remotes"
+      return
     fi
 
-    info "[Chromium] Using repo url for old $old_repo"
-
     has_old=$(git remote | grep old)
-
-    info "[Chromium] Has old '$has_old'"
-
     if [ -z "${has_old}" ] ; then
-      info "[Chromium] Add remote old : $old_repo"
-      git remote add old $old_repo
+      info "[Chromium] Add remote old : git@github.com:turtlebrowser/chromium.git"
+      git remote add old git@github.com:turtlebrowser/chromium.git
     fi
 
     has_qt=$(git remote | grep qt)
