@@ -329,7 +329,12 @@ add_remotes() {
       old_repo="https://github.com/turtlebrowser/chromium.git"
     fi
 
+    info "[Chromium] Using repo url for old $old_repo"
+
     has_old=$(git remote | grep old)
+
+    info "[Chromium] Has old '$has_old'"
+
     if [ -z "${has_old}" ] ; then
       info "[Chromium] Add remote old : $old_repo"
       git remote add old $old_repo
