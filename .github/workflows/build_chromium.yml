@@ -26,6 +26,10 @@ jobs:
           echo "WINDOWS_SDK_VERSION:    ${{ env.WINDOWS_SDK_VERSION }}"
           echo "WINDOWS_TOOLCHAIN_HASH: ${{ env.WINDOWS_TOOLCHAIN_HASH }}"
 
+      - name: 0.  [Windows] Find Visual Studio
+        if: matrix.os == 'windows-latest'
+        run: vswhere -latest -property installationPath
+
       - name: 0.  [Windows] Get-PSDrive
         if: matrix.os == 'windows-latest'
         run: Get-PSDrive
