@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest] # , macos-latest
     runs-on: ${{ matrix.os }}
     env:
       WINDOWS_SDK_VERSION: "10.0.19041.0" # see build/toolchain/win/setup_toolchain.py
@@ -88,10 +88,10 @@ jobs:
         run: |
           pip install psutil
 
-      - name: 2.  [MacOS] Build up the environment
-        if: matrix.os == 'macos-latest'
-        shell: bash
-        run: yes | bash update.sh -e -x -s -w $HOME
+      # - name: 2.  [MacOS] Build up the environment
+      #   if: matrix.os == 'macos-latest'
+      #   shell: bash
+      #   run: yes | bash update.sh -e -x -s -w $HOME
 
       - name: 2.  [Windows] Build up the environment
         if: matrix.os == 'windows-latest'
