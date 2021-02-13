@@ -307,6 +307,8 @@ make_platform_gclient() {
     info "[Chromium] Configure for this platform"
     if [ "$OSTYPE" = "msys" ] ; then
         sed -i 's/target_os.*/target_os = ["win"]/g' ${THIRD_PARTY_DIR}/.gclient
+    elif [ "$OSTYPE" = "darwin19" ] ; then
+        sed -i 's/target_os.*/target_os = ["mac"]/g' ${THIRD_PARTY_DIR}/.gclient
     else
         sed -i 's/target_os.*/target_os = ["linux"]/g' ${THIRD_PARTY_DIR}/.gclient
     fi
