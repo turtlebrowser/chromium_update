@@ -104,11 +104,11 @@ jobs:
 
       - name: 2.  [All] Build up the environment
         shell: bash
-        run: bash -c "yes || true" | bash update.sh -e -x -s -w ${{ matrix.config.work_dir }}
+        run: bash -c "yes || true" | bash update.sh -e -x -r -s -w ${{ matrix.config.work_dir }}
 
       - name: 3.  [All] Build Qt
         shell: bash
-        run: bash -c "yes || true" | bash update.sh -q -x -j 12 -w ${{ matrix.config.work_dir }}
+        run: bash -c "yes || true" | bash update.sh -q -x -r -j 4 -w ${{ matrix.config.work_dir }}
 
       # - name: 4.  [All] Build Chromium
       #   shell: bash

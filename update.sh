@@ -37,6 +37,7 @@ show_help() {
     info "-w work directory (Default '/c/Code' (win) or '/Code' (linux))"
     info "-x external, does not require rights (Default off)"
     info "-s skip actual build steps (Default off)"
+    info "-r only build release (Default off)"
 
     header "Workflow Options - only one of the below at a time"
     info "-d Developer      Workflow: (Default) Building the current branch Qt+Chromium"
@@ -78,6 +79,9 @@ BUILD_EXTERNAL=false
 # s) Skip all building steps
 BUILD_SKIP=false
 
+# r) Build release only
+BUILD_RELEASE=false
+
 # 4) Root work directory (WORK_DIR)
 if [ "$OSTYPE" = "msys" ] ; then
     WORK_DIR="/c/Code"
@@ -88,7 +92,7 @@ fi
 # Process commandline 
 OPTIND=1
 
-while getopts "h?vkxsj:w:dupeqc" opt; do
+while getopts "h?vkxsrj:w:dupeqc" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -112,6 +116,8 @@ while getopts "h?vkxsj:w:dupeqc" opt; do
         ;;
     x)  BUILD_EXTERNAL=true
         ;;
+    r)  BUILD_RELEASE=true
+        ;;
     s)  BUILD_SKIP=true
         ;;
     j)  BUILD_JOBS=$OPTARG
@@ -129,6 +135,7 @@ info "Verbose:    $BUILD_VERBOSE"
 info "Continue:   $BUILD_CONTINUE"
 info "Skip build: $BUILD_SKIP"
 info "External:   $BUILD_EXTERNAL"
+info "Release:    $BUILD_RELEASE"
 info "Jobs:       $BUILD_JOBS"
 info "Workflow:   $WORKFLOW"
 info "Work dir:   $WORK_DIR"
@@ -191,14 +198,19 @@ fi
 export NINJAFLAGS=${NINJAFLAGS}
 export NINJAJOBS=${NINJAFLAGS}
 
-# dev: -developer-build
 # https://github.com/qt/qtbase/blob/5.15.2/config_help.txt
-COMMON_CONFIGURE_FLAGS="-release -opensource -confirm-license -nomake examples -nomake tests"
+COMMON_CONFIGURE_FLAGS="-confirm-license -nomake examples -nomake tests"
 
 if [ "$BUILD_VERBOSE" = true ] ; then
     COMMON_CONFIGURE_FLAGS="${COMMON_CONFIGURE_FLAGS} -verbose"
 else
     COMMON_CONFIGURE_FLAGS="${COMMON_CONFIGURE_FLAGS} -silent"
+fi
+
+if [ "$BUILD_RELEASE" = true ] ; then
+    COMMON_CONFIGURE_FLAGS="${COMMON_CONFIGURE_FLAGS} -release"
+else
+    COMMON_CONFIGURE_FLAGS="${COMMON_CONFIGURE_FLAGS} -developer-build"
 fi
 
 confirm() {
