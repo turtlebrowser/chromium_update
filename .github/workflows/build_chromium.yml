@@ -15,15 +15,18 @@ jobs:
         config:
         - {
             name: "Ubuntu Latest",
-            os: ubuntu-latest
+            os: ubuntu-latest,
+            work_dir: "$HOME"
           }
         - {
             name: "MacOS Latest",
-            os: macos-latest
+            os: macos-latest,
+            work_dir: "$HOME"
           }
         - {
             name: "Windows Latest",
-            os: windows-latest
+            os: windows-latest,
+            work_dir: "C:\Code"
           }
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
