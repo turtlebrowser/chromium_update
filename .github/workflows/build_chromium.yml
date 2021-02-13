@@ -11,8 +11,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest] #
-    runs-on: ${{ matrix.os }}
+        config:
+        - {
+            name: "Ubuntu Latest",
+            os: ubuntu-latest
+          }
+        - {
+            name: "MacOS Latest",
+            os: macos-latest
+          }
+        - {
+            name: "Windows Latest",
+            os: windows-latest
+          }
+    name: ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.os }}
     env:
       WINDOWS_SDK_VERSION: "10.0.19041.0" # see build/toolchain/win/setup_toolchain.py
       WINDOWS_TOOLCHAIN_HASH: "fdfc420dcd"
@@ -27,7 +40,7 @@ jobs:
           echo "WINDOWS_TOOLCHAIN_HASH: ${{ env.WINDOWS_TOOLCHAIN_HASH }}"
 
       - name: 0.  [Linux] Free Disk Space
-        if: matrix.os == 'ubuntu-latest'
+        if: startsWith(matrix.config.os, 'ubuntu')
         shell: bash
         run: |
           echo "Listing 100 largest packages"
@@ -53,7 +66,7 @@ jobs:
         # jom: Needed for Qt build
         # Path: put depot_tools in the path
       - name: 1.  [Windows] Add Build Dependencies
-        if: matrix.os == 'windows-latest'
+        if: startsWith(matrix.config.os, 'windows')
         run: |
           Get-PSDrive
           vswhere -latest -property installationPath
@@ -67,7 +80,7 @@ jobs:
         # Debian Dependencies
         # https://wiki.qt.io/Building_Qt_5_from_Git
       - name: 1.  [Linux] Add Build Dependencies
-        if: matrix.os == 'ubuntu-latest'
+        if: startsWith(matrix.config.os, 'ubuntu')
         shell: bash
         run: |
           sudo sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
@@ -79,46 +92,46 @@ jobs:
 
         # gnu-sed: needed for the update.sh script
       - name: 1.  [MacOS] Add Build Dependencies
-        if: matrix.os == 'macos-latest'
+        if: startsWith(matrix.config.os, 'macos')
         shell: bash
         run: |
           brew install gnu-sed
           echo "/usr/local/opt/gnu-sed/libexec/gnubin" >> $GITHUB_PATH
 
       - name: 2.  [Linux] Build up the environment
-        if: matrix.os == 'ubuntu-latest'
+        if: startsWith(matrix.config.os, 'ubuntu')
         run: yes | bash update.sh -e -x -s -w $HOME
 
       - name: 2.  [MacOS] Build up the environment
-        if: matrix.os == 'macos-latest'
+        if: startsWith(matrix.config.os, 'macos')
         shell: bash
         run: yes | bash update.sh -e -x -s -w $HOME
 
       - name: 2.  [Windows] Build up the environment
-        if: matrix.os == 'windows-latest'
+        if: startsWith(matrix.config.os, 'windows')
         shell: bash
         run: bash -c "yes || true" | bash update.sh -e -x -s
 
       - name: 3.  [Linux] Build Qt
-        if: matrix.os == 'ubuntu-latest'
+        if: startsWith(matrix.config.os, 'ubuntu')
         run: yes | bash update.sh -q -x -j 12 -w $HOME
 
       - name: 3.  [Windows] Build Qt
-        if: matrix.os == 'windows-latest'
+        if: startsWith(matrix.config.os, 'windows')
         shell: bash
         run: bash -c "yes || true" | bash update.sh -q -x
 
       # - name: 4.  [Linux] Build Chromium
-      #   if: matrix.os == 'ubuntu-latest'
+      #   if: startsWith(matrix.config.os, 'ubuntu')
       #   run: yes | bash update.sh -c -x -w $HOME
 
       # - name: 4.  [Windows] Build Chromium
-      #   if: matrix.os == 'windows-latest'
+      #   if: startsWith(matrix.config.os, 'windows')
       #   shell: bash
       #   run: bash -c "yes || true" | bash update.sh -c -x
 
 #      - name: 5.  [Windows] Make SDK toolchain zip
-#        if: matrix.os == 'windows-latest' && steps.github-cache.outputs.cache-hit != 'true'
+#        if: startsWith(matrix.config.os, 'windows') && steps.github-cache.outputs.cache-hit != 'true'
 #        shell: bash
 #        working-directory: ${{ env.DEPOT_TOOLS_DIR }}/win_toolchain
 #        run: |
