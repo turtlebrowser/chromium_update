@@ -297,7 +297,7 @@ checkout_current_branch() {
       git update-index --assume-unchanged build/util/LASTCHANGE.committime
       subheader "[Chromium] Checked out current branch: ${CURRENT_BRANCH}"
     else
-      git pull
+      git pull --ff-only
       subheader "[Chromium] Current branch updated : ${CURRENT_BRANCH}"
     fi
 }
