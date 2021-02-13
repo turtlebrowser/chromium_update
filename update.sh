@@ -190,8 +190,10 @@ if [ "$BUILD_VERBOSE" = true ] ; then
     NINJAFLAGS="$NINJAFLAGS -v"
 fi
 
+CONTINUE_FLAG=""
 if [ "$BUILD_CONTINUE" = true ] ; then
     NINJAFLAGS="$NINJAFLAGS -k 0"
+    CONTINUE_FLAG="-k"
 fi
 
 # NINJAFLAGS have to be set before configure is run to affect Qt builds, and cannot be changed after
@@ -584,7 +586,7 @@ clean_qt_build() {
     case $OSTYPE in
 
     "msys")
-        $CHROMIUM_UPDATE_DIR/configure_qt.bat
+        $CHROMIUM_UPDATE_DIR/configure_qt.bat "${QT_DIR}" "${NINJAFLAGS}" "${CHROMIUM_WINDOWS_SDK_VERSION}" "${COMMON_CONFIGURE_FLAGS}"
         ;;
 
     "linux-gnu")
@@ -606,14 +608,14 @@ build_qt() {
     fi
 
     if [ "$OSTYPE" = "msys" ] ; then
-        time $CHROMIUM_UPDATE_DIR/build_qt.bat || {
+        time $CHROMIUM_UPDATE_DIR/build_qt.bat "${QT_DIR}" "${NINJAFLAGS}" "${CHROMIUM_WINDOWS_SDK_VERSION}" $BUILD_JOBS "$CONTINUE_FLAG" || {
             info "[Qt] Continue on error"
         }
         # https://bugreports.qt.io/browse/QTBUG-36463
         mkdir -p qtbase/include/QtAngle/
         cp -r ${QT_DIR}/qtbase/src/3rdparty/angle/include/* qtbase/include/QtAngle/
     else
-        time make -k -j $BUILD_JOBS || {
+        time make $CONTINUE_FLAG -j $BUILD_JOBS || {
             info "[Qt] Continue on error"
         }
     fi
