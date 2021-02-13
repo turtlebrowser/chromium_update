@@ -1,4 +1,4 @@
-name: Build Chromium
+name: Build Qt
 
 on:
   push:
@@ -48,7 +48,6 @@ jobs:
 
         # Get-PSDrive: Check how much free space there is
         # vswhere: Find path to latest Visual Studio
-        # psutil: Might be needed for Chromium build
         # LongPathsEnabled: Checkout won't work without
         # core.longpaths: Checkout won't work without
         # jom: Needed for Qt build
@@ -57,7 +56,6 @@ jobs:
         run: |
           Get-PSDrive
           vswhere -latest -property installationPath
-          pip install psutil
           Set-ItemProperty 'HKLM:\System\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -value 1
           git config --system core.longpaths true
           Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
@@ -103,10 +101,10 @@ jobs:
       #   if: matrix.os == 'ubuntu-latest'
       #   run: yes | bash update.sh -c -x -w $HOME
 
-      - name: 3.  [Windows] Build Chromium
-        if: matrix.os == 'windows-latest'
-        shell: bash
-        run: bash -c "yes || true" | bash update.sh -c -x
+      # - name: 3.  [Windows] Build Chromium
+      #   if: matrix.os == 'windows-latest'
+      #   shell: bash
+      #   run: bash -c "yes || true" | bash update.sh -c -x
 
       - name: 4.  [Windows] Build Qt
         if: matrix.os == 'windows-latest'
