@@ -3,7 +3,6 @@ set -e
 
 echo "TurtleBrowser Chromium update script, running on: $OSTYPE"
 CHROMIUM_UPDATE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-echo "Chromium Update location: $CHROMIUM_UPDATE_DIR"
 
 header() {
     if [ "$OSTYPE" = "darwin19" ] ; then
