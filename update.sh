@@ -6,15 +6,27 @@ CHROMIUM_UPDATE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 &&
 echo "Chromium Update location: $CHROMIUM_UPDATE_DIR"
 
 header() {
-    echo -e "\e[35m$1\e[0m"
+    if [ "$OSTYPE" = "darwin19" ] ; then
+      echo -e "$1"
+    else
+      echo -e "\e[35m$1\e[0m"
+    fi
 }
 
 subheader() {
-    echo -e "\e[36m$1\e[0m"
+    if [ "$OSTYPE" = "darwin19" ] ; then
+      echo -e "$1"
+    else
+      echo -e "\e[36m$1\e[0m"
+    fi
 }
 
 info() {
-    echo -e "\e[34m$1\e[0m"
+    if [ "$OSTYPE" = "darwin19" ] ; then
+      echo -e "$1"
+    else
+      echo -e "\e[34m$1\e[0m"
+    fi
 }
 
 show_help() {

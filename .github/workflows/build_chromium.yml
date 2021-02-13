@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest] # , macos-latest
+        os: [ubuntu-latest, windows-latest, macos-latest] #
     runs-on: ${{ matrix.os }}
     env:
       WINDOWS_SDK_VERSION: "10.0.19041.0" # see build/toolchain/win/setup_toolchain.py
@@ -87,6 +87,14 @@ jobs:
         if: matrix.os == 'windows-latest'
         run: |
           pip install psutil
+
+      - name: 2.  [MacOS] Add Build Dependencies
+        if: matrix.os == 'macos-latest'
+        shell: bash
+        run: |
+          which sed
+          brew install --default-names gnu-sed
+          which sed
 
       # - name: 2.  [MacOS] Build up the environment
       #   if: matrix.os == 'macos-latest'
