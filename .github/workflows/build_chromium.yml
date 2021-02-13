@@ -26,7 +26,7 @@ jobs:
         - {
             name: "Windows Latest",
             os: windows-latest,
-            work_dir: "C:\Code"
+            work_dir: "C:\\Code"
           }
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
