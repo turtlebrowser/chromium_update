@@ -92,7 +92,6 @@ jobs:
         if: matrix.os == 'macos-latest'
         shell: bash
         run: |
-          sed --version
           brew install gnu-sed
           echo "/usr/local/opt/gnu-tar/libexec/gnubin" >> $GITHUB_PATH
           sed --version
