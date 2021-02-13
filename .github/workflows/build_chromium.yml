@@ -18,11 +18,11 @@ jobs:
             os: ubuntu-latest,
             work_dir: "$HOME"
           }
-        - {
-            name: "MacOS Latest",
-            os: macos-latest,
-            work_dir: "$HOME"
-          }
+        # - {
+        #     name: "MacOS Latest",
+        #     os: macos-latest,
+        #     work_dir: "$HOME"
+        #   }
         - {
             name: "Windows Latest",
             os: windows-latest,
