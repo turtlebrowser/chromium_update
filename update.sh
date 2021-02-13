@@ -191,8 +191,9 @@ fi
 export NINJAFLAGS=${NINJAFLAGS}
 export NINJAJOBS=${NINJAFLAGS}
 
+# dev: -developer-build
 # https://github.com/qt/qtbase/blob/5.15.2/config_help.txt
-COMMON_CONFIGURE_FLAGS="-developer-build -opensource -confirm-license -nomake examples -nomake tests"
+COMMON_CONFIGURE_FLAGS="-release -opensource -confirm-license -nomake examples -nomake tests"
 
 if [ "$BUILD_VERBOSE" = true ] ; then
     COMMON_CONFIGURE_FLAGS="${COMMON_CONFIGURE_FLAGS} -verbose"
