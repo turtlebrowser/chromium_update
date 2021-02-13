@@ -26,18 +26,6 @@ jobs:
           echo "WINDOWS_SDK_VERSION:    ${{ env.WINDOWS_SDK_VERSION }}"
           echo "WINDOWS_TOOLCHAIN_HASH: ${{ env.WINDOWS_TOOLCHAIN_HASH }}"
 
-      - name: 1.  [Windows] Add Build Dependencies
-        if: matrix.os == 'windows-latest'
-        run: |
-          Get-PSDrive
-          vswhere -latest -property installationPath
-          pip install psutil
-          Set-ItemProperty 'HKLM:\System\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -value 1
-          git config --system core.longpaths true
-          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-          scoop install jom
-          echo "$HOME/scoop/shims/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
-
       - name: 0.  [Linux] Free Disk Space
         if: matrix.os == 'ubuntu-latest'
         shell: bash
@@ -58,9 +46,26 @@ jobs:
           rm -rf /usr/share/dotnet/
           df -h
 
-# Debian Dependencies
-# https://wiki.qt.io/Building_Qt_5_from_Git
+        # Get-PSDrive: Check how much free space there is
+        # vswhere: Find path to latest Visual Studio
+        # psutil: Might be needed for Chromium build
+        # LongPathsEnabled: Checkout won't work without
+        # core.longpaths: Checkout won't work without
+        # jom: Needed for Qt build
+      - name: 1.  [Windows] Add Build Dependencies
+        if: matrix.os == 'windows-latest'
+        run: |
+          Get-PSDrive
+          vswhere -latest -property installationPath
+          pip install psutil
+          Set-ItemProperty 'HKLM:\System\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -value 1
+          git config --system core.longpaths true
+          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+          scoop install jom
+          echo "$HOME/scoop/shims/" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
+        # Debian Dependencies
+        # https://wiki.qt.io/Building_Qt_5_from_Git
       - name: 1.  [Linux] Add Build Dependencies
         if: matrix.os == 'ubuntu-latest'
         shell: bash
@@ -72,6 +77,7 @@ jobs:
           sudo apt-get install libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdbus-1-dev libfontconfig1-dev libcap-dev libxtst-dev libpulse-dev libudev-dev libpci-dev libnss3-dev libasound2-dev libxss-dev libegl1-mesa-dev gperf bison
           sudo apt-get install libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
 
+        # gnu-sed: needed for the update.sh script
       - name: 1.  [MacOS] Add Build Dependencies
         if: matrix.os == 'macos-latest'
         shell: bash
