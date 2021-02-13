@@ -93,13 +93,12 @@ jobs:
         shell: bash
         run: |
           brew install gnu-sed
-          echo "/usr/local/opt/gnu-tar/libexec/gnubin" >> $GITHUB_PATH
-          sed --version
+          echo "/usr/local/opt/gnu-sed/libexec/gnubin" >> $GITHUB_PATH
 
-      # - name: 2.  [MacOS] Build up the environment
-      #   if: matrix.os == 'macos-latest'
-      #   shell: bash
-      #   run: yes | bash update.sh -e -x -s -w $HOME
+      - name: 2.  [MacOS] Build up the environment
+        if: matrix.os == 'macos-latest'
+        shell: bash
+        run: yes | bash update.sh -e -x -s -w $HOME
 
       - name: 2.  [Windows] Build up the environment
         if: matrix.os == 'windows-latest'
