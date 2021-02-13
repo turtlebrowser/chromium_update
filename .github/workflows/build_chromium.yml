@@ -102,20 +102,24 @@ jobs:
           brew install gnu-sed
           echo "/usr/local/opt/gnu-sed/libexec/gnubin" >> $GITHUB_PATH
 
-      - name: 2.  [Linux] Build up the environment
-        if: startsWith(matrix.config.os, 'ubuntu')
+      - name: 2.  [All] Build up the environment
         shell: bash
-        run: bash -c "yes || true" | bash update.sh -e -x -s -w $HOME
+        run: bash -c "yes || true" | bash update.sh -e -x -s -w ${{ matrix.config.work_dir }}
 
-      - name: 2.  [MacOS] Build up the environment
-        if: startsWith(matrix.config.os, 'macos')
-        shell: bash
-        run: bash -c "yes || true" | bash update.sh -e -x -s -w $HOME
+      # - name: 2.  [Linux] Build up the environment
+      #   if: startsWith(matrix.config.os, 'ubuntu')
+      #   shell: bash
+      #   run: bash -c "yes || true" | bash update.sh -e -x -s -w $HOME
 
-      - name: 2.  [Windows] Build up the environment
-        if: startsWith(matrix.config.os, 'windows')
-        shell: bash
-        run: bash -c "yes || true" | bash update.sh -e -x -s
+      # - name: 2.  [MacOS] Build up the environment
+      #   if: startsWith(matrix.config.os, 'macos')
+      #   shell: bash
+      #   run: bash -c "yes || true" | bash update.sh -e -x -s -w $HOME
+
+      # - name: 2.  [Windows] Build up the environment
+      #   if: startsWith(matrix.config.os, 'windows')
+      #   shell: bash
+      #   run: bash -c "yes || true" | bash update.sh -e -x -s
 
       - name: 3.  [Linux] Build Qt
         if: startsWith(matrix.config.os, 'ubuntu')
