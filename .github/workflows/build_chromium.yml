@@ -16,17 +16,20 @@ jobs:
         - {
             name: "Ubuntu Latest",
             os: ubuntu-latest,
-            shell: sh
+            shell: sh,
+            work_dir: $HOME
           }
         - {
             name: "MacOS Latest",
             os: macos-latest,
-            shell: bash
+            shell: bash,
+            work_dir: $HOME
           }
         - {
             name: "Windows Latest",
             os: windows-latest,
-            shell: bash
+            shell: bash,
+            work_dir: "C:\Code"
           }
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
@@ -104,17 +107,17 @@ jobs:
 
       - name: 2.  [Linux] Build up the environment
         if: startsWith(matrix.config.os, 'ubuntu')
-        shell: matrix.config.shell
+        shell: ${ matrix.config.shell }
         run: yes | bash update.sh -e -x -s -w $HOME
 
       - name: 2.  [MacOS] Build up the environment
         if: startsWith(matrix.config.os, 'macos')
-        shell: matrix.config.shell
+        shell: ${ matrix.config.shell }
         run: yes | bash update.sh -e -x -s -w $HOME
 
       - name: 2.  [Windows] Build up the environment
         if: startsWith(matrix.config.os, 'windows')
-        shell: matrix.config.shell
+        shell: ${ matrix.config.shell }
         run: bash -c "yes || true" | bash update.sh -e -x -s
 
       - name: 3.  [Linux] Build Qt
