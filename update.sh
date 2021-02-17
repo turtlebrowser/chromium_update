@@ -346,7 +346,7 @@ get_upstream_chromium() {
     else
         echo 'target_os = ["linux", "mac", "win"]' >> .gclient
     fi
-    info "Run gclient sync"
+    info "[Chromium] Run gclient sync"
     time gclient sync --verbose || {
         info "[Chromium] Ignore error for missing gclient_args.gni - Need to fix DEPS to get the right path"
     }
@@ -362,12 +362,14 @@ add_remotes() {
       return
     fi
 
+    subheader "[Chromium] Checking remote old"
     has_old=$(git remote | grep old)
     if [ -z "${has_old}" ] ; then
       info "[Chromium] Add remote old : git@github.com:turtlebrowser/chromium.git"
       git remote add old git@github.com:turtlebrowser/chromium.git
     fi
 
+    subheader "[Chromium] Checking remote qt"
     has_qt=$(git remote | grep qt)
     if [ -z "${has_qt}" ] ; then
       info "[Chromium] Add remote qt : https://code.qt.io/qt/qtwebengine-chromium.git"
