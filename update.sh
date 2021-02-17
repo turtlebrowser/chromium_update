@@ -708,14 +708,14 @@ case $WORKFLOW in
   $WORKFLOW_PCH)
     header "Chromium Cherry-Pick Workflow"
 
-    confirm "1.  Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
-    confirm "2.  Build Qt [y/N]" && build_qt
-    confirm "3.  Build Chromium [y/N]" && build_chromium
-    confirm "4.  Apply Patches? [y/N]" && apply_patches
-    confirm "5.  Fix .gclient for current platform? [y/N]" && make_platform_gclient
-    confirm "6.  Run gclient runhooks? [y/N]" && run_gclient_runhooks
-    confirm "7.  CLEAN Qt build? [y/N]" && clean_qt_build
-    confirm "8.  CLEAN Chromium build? [y/N]" && clean_chromium_build
+    confirm "1.  Apply Patches? [y/N]" && apply_patches
+    confirm "2.  Fix .gclient for current platform? [y/N]" && make_platform_gclient
+    confirm "3.  Run gclient runhooks? [y/N]" && run_gclient_runhooks
+    confirm "4.  CLEAN Qt build? [y/N]" && clean_qt_build
+    confirm "5.  CLEAN Chromium build? [y/N]" && clean_chromium_build
+    confirm "6.  Build both Qt and Chromium? [y/N]" && build_qt && build_chromium
+    confirm "7.  Build Qt [y/N]" && build_qt
+    confirm "8.  Build Chromium [y/N]" && build_chromium
 
     ;;
 esac
