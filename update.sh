@@ -552,7 +552,7 @@ clean_chromium_build() {
         info "[Chromium] Existing build moved to : ${CHROMIUM_DIR}/out_old"
     fi
     gclient runhooks
-    gn gen out/Default --args='use_jumbo_build=true'
+    gn gen out/Default --args='use_jumbo_build=true symbol_level=0 is_debug=false'
     subheader "[Chromium] CLEANED build successfully"
 }
 
