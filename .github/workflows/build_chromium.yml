@@ -23,16 +23,16 @@ jobs:
             os: ubuntu-20.04,
             work_dir: "$HOME"
           }
-        # - {
-        #     name: "MacOS Latest",
-        #     os: macos-latest,
-        #     work_dir: "$HOME"
-        #   }
         - {
             name: "Windows Latest",
             os: windows-latest,
             work_dir: "/c/Code"
           }
+        # - {
+        #     name: "MacOS Latest",
+        #     os: macos-latest,
+        #     work_dir: "$HOME"
+        #   }
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
     env:
@@ -112,13 +112,13 @@ jobs:
         shell: bash
         run: bash -c "yes || true" | bash update.sh -e -x -r -s -w ${{ matrix.config.work_dir }}
 
+      - name: 4.  [All] Build Chromium
+        shell: bash
+        run: bash -c "yes || true" | bash update.sh -c -x -w ${{ matrix.config.work_dir }}
+
 #      - name: 3.  [All] Build Qt
 #        shell: bash
 #        run: bash -c "yes || true" | bash update.sh -q -x -r -j 4 -w ${{ matrix.config.work_dir }}
-
-       - name: 4.  [All] Build Chromium
-         shell: bash
-         run: bash -c "yes || true" | bash update.sh -c -x -w ${{ matrix.config.work_dir }}
 
 #      - name: 5.  [Windows] Make SDK toolchain zip
 #        if: startsWith(matrix.config.os, 'windows') && steps.github-cache.outputs.cache-hit != 'true'
