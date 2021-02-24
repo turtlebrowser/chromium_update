@@ -112,9 +112,9 @@ jobs:
         shell: bash
         run: bash -c "yes || true" | bash update.sh -e -x -r -s -w ${{ matrix.config.work_dir }}
 
-      - name: 4.  [All] Build Chromium
-        shell: bash
-        run: bash -c "yes || true" | bash update.sh -c -x -w ${{ matrix.config.work_dir }}
+#      - name: 4.  [All] Build Chromium
+#        shell: bash
+#        run: bash -c "yes || true" | bash update.sh -c -x -w ${{ matrix.config.work_dir }}
 
 #      - name: 3.  [All] Build Qt
 #        shell: bash
