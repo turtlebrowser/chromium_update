@@ -1,0 +1,440 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[1/291] WaylandOverlayManagerTest.MultipleOverlayCandidates (0 ms)
+[2/291] WaylandOverlayManagerTest.NonIntegerDisplayRect (0 ms)
+[3/291] WaylandConnectionTest.Ping (39 ms)
+[4/291] XdgVersionStableTest/WaylandDataDeviceManagerTest.WriteToClipboard/0 (56 ms)
+[5/291] XdgVersionStableTest/WaylandDataDeviceManagerTest.ReadFromClipboard/0 (32 ms)
+[6/291] XdgVersionStableTest/WaylandDataDeviceManagerTest.ReadFromClipboardWithoutOffer/0 (15 ms)
+[7/291] XdgVersionStableTest/WaylandDataDeviceManagerTest.IsSelectionOwner/0 (20 ms)
+[8/291] XdgVersionV6Test/WaylandDataDeviceManagerTest.WriteToClipboard/0 (51 ms)
+[9/291] XdgVersionV6Test/WaylandDataDeviceManagerTest.ReadFromClipboard/0 (36 ms)
+[10/291] XdgVersionV6Test/WaylandDataDeviceManagerTest.ReadFromClipboardWithoutOffer/0 (20 ms)
+[11/291] XdgVersionStableTest/WaylandInputMethodContextTest.Blur/0 (48 ms)
+[12/291] XdgVersionStableTest/WaylandInputMethodContextTest.Reset/0 (17 ms)
+[13/291] XdgVersionStableTest/WaylandInputMethodContextTest.SetCursorLocation/0 (24 ms)
+[14/291] XdgVersionStableTest/WaylandInputMethodContextTest.OnPreeditChanged/0 (25 ms)
+[15/291] XdgVersionStableTest/WaylandInputMethodContextTest.OnCommit/0 (23 ms)
+[16/291] XdgVersionV6Test/WaylandInputMethodContextTest.Focus/0 (27 ms)
+[17/291] XdgVersionV6Test/WaylandInputMethodContextTest.Blur/0 (27 ms)
+[18/291] XdgVersionV6Test/WaylandInputMethodContextTest.Reset/0 (23 ms)
+[19/291] XdgVersionV6Test/WaylandInputMethodContextTest.SetCursorLocation/0 (21 ms)
+[20/291] XdgVersionV6Test/WaylandInputMethodContextTest.OnPreeditChanged/0 (19 ms)
+[21/291] XdgVersionV6Test/WaylandKeyboardTest.NoEventAutoRepeatBeforeTimeout/0 (40 ms)
+[22/291] XdgVersionStableTest/WaylandPointerTest.Enter/0 (25 ms)
+[23/291] XdgVersionStableTest/WaylandPointerTest.Leave/0 (16 ms)
+[24/291] XdgVersionStableTest/WaylandPointerTest.Motion/0 (28 ms)
+[25/291] XdgVersionStableTest/WaylandPointerTest.MotionDragged/0 (28 ms)
+[26/291] XdgVersionStableTest/WaylandPointerTest.AxisVertical/0 (16 ms)
+[27/291] XdgVersionStableTest/WaylandPointerTest.AxisHorizontal/0 (23 ms)
+[28/291] XdgVersionStableTest/WaylandPointerTest.SetBitmap/0 (23 ms)
+[29/291] XdgVersionStableTest/WaylandPointerTest.SetBitmapOnPointerFocus/0 (25 ms)
+[30/291] XdgVersionStableTest/WaylandPointerTest.FlingVertical/0 (33 ms)
+[31/291] XdgVersionStableTest/WaylandPointerTest.FlingHorizontal/0 (46 ms)
+[32/291] XdgVersionStableTest/WaylandPointerTest.FlingCancel/0 (24 ms)
+[33/291] XdgVersionStableTest/WaylandPointerTest.FlingDiagonal/0 (35 ms)
+[34/291] XdgVersionV6Test/WaylandPointerTest.Enter/0 (16 ms)
+[35/291] XdgVersionV6Test/WaylandPointerTest.Leave/0 (20 ms)
+[36/291] XdgVersionV6Test/WaylandPointerTest.Motion/0 (23 ms)
+[37/291] XdgVersionV6Test/WaylandPointerTest.MotionDragged/0 (23 ms)
+[38/291] XdgVersionV6Test/WaylandPointerTest.AxisVertical/0 (20 ms)
+[39/291] XdgVersionV6Test/WaylandPointerTest.AxisHorizontal/0 (24 ms)
+[40/291] XdgVersionV6Test/WaylandPointerTest.SetBitmap/0 (23 ms)
+[41/291] XdgVersionV6Test/WaylandDataDragControllerTest.StartDragWithWrongMimeType/0 (72 ms)
+[42/291] XdgVersionV6Test/WaylandDataDragControllerTest.StartDragWithText/0 (44 ms)
+[43/291] XdgVersionV6Test/WaylandDataDragControllerTest.ReceiveDrag/0 (43 ms)
+[44/291] XdgVersionV6Test/WaylandDataDragControllerTest.DropSeveralMimeTypes/0 (32 ms)
+[45/291] XdgVersionV6Test/WaylandDataDragControllerTest.ValidateDroppedUriList/0 (27 ms)
+[46/291] XdgVersionV6Test/WaylandDataDragControllerTest.ValidateDroppedXMozUrl/0 (32 ms)
+[47/291] XdgVersionV6Test/WaylandDataDragControllerTest.StartAndCancel/0 (27 ms)
+[48/291] XdgVersionStableTest/WaylandEventSourceTest.CheckPointerButtonHandling/0 (19 ms)
+[49/291] XdgVersionV6Test/WaylandEventSourceTest.CheckPointerButtonHandling/0 (24 ms)
+[50/291] XdgVersionStableTest/WaylandInputMethodContextTest.Focus/0 (24 ms)
+[51/291] XdgVersionV6Test/WaylandDataDeviceManagerTest.IsSelectionOwner/0 (47 ms)
+[52/291] XdgVersionStableTest/WaylandDataDragControllerTest.StartDrag/0 (47 ms)
+[53/291] XdgVersionStableTest/WaylandDataDragControllerTest.StartDragWithWrongMimeType/0 (35 ms)
+[54/291] XdgVersionStableTest/WaylandDataDragControllerTest.StartDragWithText/0 (39 ms)
+[55/291] XdgVersionStableTest/WaylandDataDragControllerTest.ReceiveDrag/0 (47 ms)
+[56/291] XdgVersionStableTest/WaylandDataDragControllerTest.DropSeveralMimeTypes/0 (40 ms)
+[57/291] XdgVersionStableTest/WaylandDataDragControllerTest.ValidateDroppedUriList/0 (47 ms)
+[58/291] XdgVersionStableTest/WaylandDataDragControllerTest.ValidateDroppedXMozUrl/0 (40 ms)
+[59/291] XdgVersionStableTest/WaylandDataDragControllerTest.StartAndCancel/0 (20 ms)
+[60/291] XdgVersionV6Test/WaylandDataDragControllerTest.StartDrag/0 (44 ms)
+[61/291] XdgVersionV6Test/WaylandInputMethodContextTest.OnCommit/0 (52 ms)
+[62/291] XdgVersionStableTest/WaylandKeyboardTest.Keypress/0 (35 ms)
+[63/291] XdgVersionStableTest/WaylandKeyboardTest.AltModifierKeypress/0 (33 ms)
+[64/291] XdgVersionStableTest/WaylandKeyboardTest.ControlModifierKeypress/0 (44 ms)
+[65/291] XdgVersionStableTest/WaylandKeyboardTest.ShiftModifierKeypress/0 (41 ms)
+[66/291] XdgVersionStableTest/WaylandKeyboardTest.ControlShiftModifiers/0 (32 ms)
+[67/291] XdgVersionStableTest/WaylandKeyboardTest.CapsLockKeypress/0 (43 ms)
+[68/291] XdgVersionStableTest/WaylandKeyboardTest.CapsLockModifier/0 (25 ms)
+[69/291] XdgVersionStableTest/WaylandKeyboardTest.EventAutoRepeat/0 (37 ms)
+[70/291] XdgVersionStableTest/WaylandKeyboardTest.NoEventAutoRepeatOnLeave/0 (41 ms)
+[71/291] XdgVersionV6Test/WaylandPointerTest.SetBitmapOnPointerFocus/0 (17 ms)
+[72/291] XdgVersionV6Test/WaylandPointerTest.FlingVertical/0 (15 ms)
+[73/291] XdgVersionV6Test/WaylandPointerTest.FlingHorizontal/0 (29 ms)
+[74/291] XdgVersionV6Test/WaylandPointerTest.FlingCancel/0 (28 ms)
+[75/291] XdgVersionV6Test/WaylandPointerTest.FlingDiagonal/0 (31 ms)
+[76/291] XdgVersionStableTest/WaylandScreenTest.OutputBaseTest/0 (29 ms)
+[77/291] XdgVersionStableTest/WaylandScreenTest.MultipleOutputsAddedAndRemoved/0 (16 ms)
+[78/291] XdgVersionStableTest/WaylandScreenTest.OutputPropertyChanges/0 (24 ms)
+[79/291] XdgVersionStableTest/WaylandScreenTest.GetAcceleratedWidgetAtScreenPoint/0 (23 ms)
+[80/291] XdgVersionStableTest/WaylandScreenTest.GetLocalProcessWidgetAtPoint/0 (12 ms)
+[81/291] XdgVersionStableTest/WaylandWindowDragControllerTest.DragExitWindowAndDrop/0 (19 ms)
+[82/291] XdgVersionStableTest/WaylandWindowDragControllerTest.DragToOtherWindowSnapDragDrop/0 (33 ms)
+[83/291] XdgVersionStableTest/WaylandWindowDragControllerTest.DragExitAttached/0 (39 ms)
+[84/291] XdgVersionStableTest/WaylandWindowDragControllerTest.RestoreDuringWindowDragSession/0 (35 ms)
+[85/291] XdgVersionStableTest/WaylandWindowDragControllerTest.IgnorePointerEventsUntilDrop/0 (22 ms)
+[86/291] XdgVersionV6Test/WaylandWindowDragControllerTest.DragInsideWindowAndDrop/0 (37 ms)
+[87/291] XdgVersionV6Test/WaylandWindowDragControllerTest.DragExitWindowAndDrop/0 (32 ms)
+[88/291] XdgVersionV6Test/WaylandWindowDragControllerTest.DragToOtherWindowSnapDragDrop/0 (20 ms)
+[89/291] XdgVersionV6Test/WaylandWindowDragControllerTest.DragExitAttached/0 (24 ms)
+[90/291] XdgVersionV6Test/WaylandWindowDragControllerTest.RestoreDuringWindowDragSession/0 (28 ms)
+[91/291] XdgVersionStableTest/WaylandKeyboardTest.NoEventAutoRepeatBeforeTimeout/0 (78 ms)
+[92/291] XdgVersionV6Test/WaylandKeyboardTest.Keypress/0 (44 ms)
+[93/291] XdgVersionV6Test/WaylandKeyboardTest.AltModifierKeypress/0 (59 ms)
+[94/291] XdgVersionV6Test/WaylandKeyboardTest.ControlModifierKeypress/0 (33 ms)
+[95/291] XdgVersionV6Test/WaylandKeyboardTest.ShiftModifierKeypress/0 (39 ms)
+[96/291] XdgVersionV6Test/WaylandKeyboardTest.ControlShiftModifiers/0 (48 ms)
+[97/291] XdgVersionV6Test/WaylandKeyboardTest.CapsLockKeypress/0 (39 ms)
+[98/291] XdgVersionV6Test/WaylandKeyboardTest.CapsLockModifier/0 (52 ms)
+[99/291] XdgVersionV6Test/WaylandKeyboardTest.EventAutoRepeat/0 (43 ms)
+[100/291] XdgVersionV6Test/WaylandKeyboardTest.NoEventAutoRepeatOnLeave/0 (52 ms)
+[101/291] XdgVersionV6Test/WaylandWindowDragControllerTest.IgnorePointerEventsUntilDrop/0 (35 ms)
+[102/291] XdgVersionStableTest/WaylandWindowManagerTest.GetWindow/0 (40 ms)
+[103/291] XdgVersionStableTest/WaylandWindowManagerTest.GetWindowWithLargestBounds/0 (20 ms)
+[104/291] XdgVersionStableTest/WaylandWindowManagerTest.GetCurrentFocusedWindow/0 (16 ms)
+[105/291] XdgVersionStableTest/WaylandWindowManagerTest.GetCurrentKeyboardFocusedWindow/0 (20 ms)
+[106/291] XdgVersionStableTest/WaylandWindowManagerTest.GetWindowsOnOutput/0 (11 ms)
+[107/291] XdgVersionStableTest/WaylandWindowManagerTest.GetAllWindows/0 (23 ms)
+[108/291] XdgVersionV6Test/WaylandWindowManagerTest.GetWindow/0 (20 ms)
+[109/291] XdgVersionV6Test/WaylandWindowManagerTest.GetWindowWithLargestBounds/0 (35 ms)
+[110/291] XdgVersionV6Test/WaylandWindowManagerTest.GetCurrentFocusedWindow/0 (20 ms)
+[111/291] XdgVersionStableTest/WaylandScreenTest.GetDisplayMatching/0 (36 ms)
+[112/291] XdgVersionStableTest/WaylandScreenTest.GetDisplayForAcceleratedWidget/0 (36 ms)
+[113/291] XdgVersionStableTest/WaylandScreenTest.GetCursorScreenPoint/0 (40 ms)
+[114/291] XdgVersionStableTest/WaylandScreenTest.SetBufferScale/0 (34 ms)
+[115/291] XdgVersionV6Test/WaylandScreenTest.OutputBaseTest/0 (24 ms)
+[116/291] XdgVersionV6Test/WaylandScreenTest.MultipleOutputsAddedAndRemoved/0 (27 ms)
+[117/291] XdgVersionV6Test/WaylandScreenTest.OutputPropertyChanges/0 (23 ms)
+[118/291] XdgVersionV6Test/WaylandScreenTest.GetAcceleratedWidgetAtScreenPoint/0 (25 ms)
+[119/291] XdgVersionV6Test/WaylandScreenTest.GetLocalProcessWidgetAtPoint/0 (21 ms)
+[120/291] XdgVersionV6Test/WaylandScreenTest.GetDisplayMatching/0 (26 ms)
+[121/291] XdgVersionV6Test/WaylandScreenTest.GetDisplayForAcceleratedWidget/0 (51 ms)
+[122/291] XdgVersionV6Test/WaylandScreenTest.GetCursorScreenPoint/0 (31 ms)
+[123/291] XdgVersionV6Test/WaylandScreenTest.SetBufferScale/0 (31 ms)
+[124/291] XdgVersionStableTest/LazilyConfiguredScreenTest.DualOutput/0 (27 ms)
+[125/291] XdgVersionV6Test/LazilyConfiguredScreenTest.DualOutput/0 (20 ms)
+[126/291] XdgVersionStableTest/WaylandTouchTest.KeypressAndMotion/0 (31 ms)
+[127/291] XdgVersionStableTest/WaylandTouchTest.CheckTouchFocus/0 (16 ms)
+[128/291] XdgVersionV6Test/WaylandTouchTest.KeypressAndMotion/0 (23 ms)
+[129/291] XdgVersionV6Test/WaylandTouchTest.CheckTouchFocus/0 (36 ms)
+[130/291] XdgVersionStableTest/WaylandWindowDragControllerTest.DragInsideWindowAndDrop/0 (47 ms)
+[131/291] XdgVersionV6Test/WaylandWindowManagerTest.GetCurrentKeyboardFocusedWindow/0 (28 ms)
+[132/291] XdgVersionV6Test/WaylandWindowManagerTest.GetWindowsOnOutput/0 (17 ms)
+[133/291] XdgVersionV6Test/WaylandWindowManagerTest.GetAllWindows/0 (36 ms)
+[134/291] XdgVersionStableTest/WaylandWindowTest.SetTitle/0 (35 ms)
+[135/291] XdgVersionStableTest/WaylandWindowTest.MaximizeAndRestore/0 (20 ms)
+[136/291] XdgVersionStableTest/WaylandWindowTest.Minimize/0 (27 ms)
+[ RUN      ] XdgVersionStableTest/WaylandWindowTest.SetFullscreenAndRestore/0
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: SetAppId(0x16ad2fa8ea7c pointing to "")
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: SetTitle(@0x7fad9c1fb1d8 "")
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: UnsetFullscreen()
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: UnsetMaximized()
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnWindowStateChanged(4-byte object <01-00 00-00>)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnActivationChanged(true)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+../../ui/ozone/platform/wayland/host/wayland_window_unittest.cc:378: Failure
+Expected equality of these values:
+  PlatformWindowState::kNormal
+    Which is: 4-byte object <03-00 00-00>
+  window_->GetPlatformWindowState()
+    Which is: 4-byte object <01-00 00-00>
+Stack trace:
+#0 0x5580d33849d9 ui::WaylandWindowTest_SetFullscreenAndRestore_Test::TestBody()
+
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnWindowStateChanged(4-byte object <03-00 00-00>)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: UnsetMaximized()
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+[  FAILED  ] XdgVersionStableTest/WaylandWindowTest.SetFullscreenAndRestore/0, where GetParam() = 7 (37 ms)
+[137/291] XdgVersionStableTest/WaylandWindowTest.SetFullscreenAndRestore/0 (37 ms)
+[138/291] XdgVersionStableTest/WaylandWindowTest.StartWithFullscreen/0 (21 ms)
+[139/291] XdgVersionStableTest/WaylandWindowTest.StartMaximized/0 (29 ms)
+[ RUN      ] XdgVersionStableTest/WaylandWindowTest.CompositorSideStateChanges/0
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: SetAppId(0x16ad2fa8e53c pointing to "")
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: SetTitle(@0x7fad9c1fb5b8 "")
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: UnsetFullscreen()
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: UnsetMaximized()
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnWindowStateChanged(4-byte object <01-00 00-00>)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnActivationChanged(true)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+../../ui/ozone/platform/wayland/host/wayland_window_unittest.cc:499: Failure
+Expected equality of these values:
+  window_->GetPlatformWindowState()
+    Which is: 4-byte object <01-00 00-00>
+  PlatformWindowState::kNormal
+    Which is: 4-byte object <03-00 00-00>
+Stack trace:
+#0 0x5580d3386737 ui::WaylandWindowTest_CompositorSideStateChanges_Test::TestBody()
+
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnBoundsChanged(@0x16ad2faf0cb8 0,0 2000x2000)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnBoundsChanged(@0x16ad2faf0cb8 0,0 800x600)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnBoundsChanged(@0x16ad2faf0cb8 0,0 2005x2005)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnBoundsChanged(@0x16ad2faf0cb8 0,0 800x600)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnBoundsChanged(@0x16ad2faf0cb8 0,0 2000x2000)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnBoundsChanged(@0x16ad2faf0cb8 0,0 2005x2005)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: OnBoundsChanged(@0x16ad2faf0cb8 0,0 800x600)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+../../ui/ozone/platform/wayland/host/wayland_window_unittest.cc:507: Failure
+Actual function call count doesn't match EXPECT_CALL(delegate_, OnWindowStateChanged(Eq(PlatformWindowState::kMaximized)))...
+         Expected: to be called once
+           Actual: never called - unsatisfied and active
+Stack trace:
+#0 0x5580d341744d testing::internal::GoogleTestFailureReporter::ReportFailure()
+#1 0x5580d341a0f5 testing::internal::UntypedFunctionMockerBase::VerifyAndClearExpectationsLocked()
+#2 0x5580d33ec963 ui::MockPlatformWindowDelegate::~MockPlatformWindowDelegate()
+#3 0x5580d33af892 ui::WaylandTest::~WaylandTest()
+#4 0x5580d33a9b02 ui::WaylandWindowTest_Minimize_Test::~WaylandWindowTest_Minimize_Test()
+
+[  FAILED  ] XdgVersionStableTest/WaylandWindowTest.CompositorSideStateChanges/0, where GetParam() = 7 (20 ms)
+[140/291] XdgVersionStableTest/WaylandWindowTest.CompositorSideStateChanges/0 (20 ms)
+[141/291] XdgVersionStableTest/WaylandWindowTest.SetMaximizedFullscreenAndRestore/0 (56 ms)
+[142/291] XdgVersionStableTest/WaylandWindowTest.RestoreBoundsAfterMaximize/0 (32 ms)
+[143/291] XdgVersionStableTest/WaylandWindowTest.RestoreBoundsAfterFullscreen/0 (19 ms)
+[144/291] XdgVersionStableTest/WaylandWindowTest.RestoreBoundsAfterMaximizeAndFullscreen/0 (24 ms)
+[145/291] XdgVersionStableTest/WaylandWindowTest.SendsBoundsOnRequest/0 (28 ms)
+[146/291] XdgVersionStableTest/WaylandWindowTest.CanDispatchMouseEventDefault/0 (41 ms)
+[147/291] XdgVersionStableTest/WaylandWindowTest.CanDispatchMouseEventFocus/0 (38 ms)
+[148/291] XdgVersionStableTest/WaylandWindowTest.CanDispatchMouseEventUnfocus/0 (22 ms)
+[149/291] XdgVersionStableTest/WaylandWindowTest.SetCursorUsesZcrCursorShapesForCommonTypes/0 (32 ms)
+[150/291] XdgVersionStableTest/WaylandWindowTest.SetCursorCallsZcrCursorShapesOncePerCursor/0 (27 ms)
+[151/291] XdgVersionStableTest/WaylandWindowTest.SetCursorDoesNotUseZcrCursorShapesForNoneCursor/0 (22 ms)
+[152/291] XdgVersionStableTest/WaylandWindowTest.SetCursorDoesNotUseZcrCursorShapesForCustomCursors/0 (20 ms)
+[153/291] XdgVersionStableTest/WaylandWindowTest.DispatchEvent/0 (26 ms)
+[154/291] XdgVersionStableTest/WaylandWindowTest.ConfigureEvent/0 (25 ms)
+[155/291] XdgVersionStableTest/WaylandWindowTest.ConfigureEventWithNulledSize/0 (23 ms)
+[156/291] XdgVersionStableTest/WaylandWindowTest.OnActivationChanged/0 (23 ms)
+[157/291] XdgVersionStableTest/WaylandWindowTest.OnAcceleratedWidgetDestroy/0 (24 ms)
+[158/291] XdgVersionStableTest/WaylandWindowTest.CanCreateMenuWindow/0 (27 ms)
+[159/291] XdgVersionStableTest/WaylandWindowTest.CreateAndDestroyNestedMenuWindow/0 (17 ms)
+[160/291] XdgVersionStableTest/WaylandWindowTest.DispatchesLocatedEventsToCapturedWindow/0 (26 ms)
+[161/291] XdgVersionStableTest/WaylandWindowTest.DispatchesLocatedEventsToCapturedWindowInTheSameStack/0 (44 ms)
+[162/291] XdgVersionStableTest/WaylandWindowTest.DispatchesKeyboardEventToToplevelWindow/0 (35 ms)
+[163/291] XdgVersionStableTest/WaylandWindowTest.CanDispatchEvent/0 (40 ms)
+[164/291] XdgVersionStableTest/WaylandWindowTest.DispatchWindowMove/0 (21 ms)
+[165/291] XdgVersionStableTest/WaylandWindowTest.DispatchWindowResize/0 (17 ms)
+[166/291] XdgVersionStableTest/WaylandWindowTest.AdjustPopupBounds/0 (34 ms)
+[167/291] XdgVersionStableTest/WaylandWindowTest.SetOpaqueRegion/0 (16 ms)
+[168/291] XdgVersionStableTest/WaylandWindowTest.OnCloseRequest/0 (27 ms)
+[169/291] XdgVersionStableTest/WaylandWindowTest.AuxiliaryWindowSimpleParent/0 (20 ms)
+[170/291] XdgVersionStableTest/WaylandWindowTest.NestedPopupMenu/0 (24 ms)
+[171/291] XdgVersionStableTest/WaylandWindowTest.CreatesPopupOnTouchDownSerial/0 (27 ms)
+[172/291] XdgVersionStableTest/WaylandWindowTest.NestedPopupWindowsGetCorrectParent/0 (24 ms)
+[173/291] XdgVersionStableTest/WaylandWindowTest.DoesNotGrabPopupIfNoSeat/0 (27 ms)
+[174/291] XdgVersionStableTest/WaylandWindowTest.OneWaylandSubsurface/0 (20 ms)
+[175/291] XdgVersionStableTest/WaylandWindowTest.UsesCorrectParentForChildrenWindows/0 (20 ms)
+[176/291] XdgVersionV6Test/WaylandWindowTest.SetTitle/0 (16 ms)
+[177/291] XdgVersionV6Test/WaylandWindowTest.MaximizeAndRestore/0 (40 ms)
+[178/291] XdgVersionV6Test/WaylandWindowTest.Minimize/0 (16 ms)
+[179/291] XdgVersionV6Test/WaylandWindowTest.SetFullscreenAndRestore/0 (20 ms)
+[180/291] XdgVersionV6Test/WaylandWindowTest.StartWithFullscreen/0 (27 ms)
+[181/291] XdgVersionV6Test/WaylandWindowTest.StartMaximized/0 (42 ms)
+[182/291] XdgVersionV6Test/WaylandWindowTest.CompositorSideStateChanges/0 (24 ms)
+[183/291] XdgVersionV6Test/WaylandWindowTest.SetMaximizedFullscreenAndRestore/0 (27 ms)
+[184/291] XdgVersionV6Test/WaylandWindowTest.RestoreBoundsAfterMaximize/0 (44 ms)
+[185/291] XdgVersionV6Test/WaylandWindowTest.RestoreBoundsAfterFullscreen/0 (27 ms)
+[186/291] XdgVersionV6Test/WaylandWindowTest.RestoreBoundsAfterMaximizeAndFullscreen/0 (20 ms)
+[187/291] XdgVersionV6Test/WaylandWindowTest.SendsBoundsOnRequest/0 (20 ms)
+[188/291] XdgVersionV6Test/WaylandWindowTest.CanDispatchMouseEventDefault/0 (23 ms)
+[189/291] XdgVersionV6Test/WaylandWindowTest.CanDispatchMouseEventFocus/0 (19 ms)
+[190/291] XdgVersionV6Test/WaylandWindowTest.CanDispatchMouseEventUnfocus/0 (25 ms)
+[191/291] XdgVersionV6Test/WaylandWindowTest.SetCursorUsesZcrCursorShapesForCommonTypes/0 (23 ms)
+[192/291] XdgVersionV6Test/WaylandWindowTest.SetCursorCallsZcrCursorShapesOncePerCursor/0 (19 ms)
+[193/291] XdgVersionV6Test/WaylandWindowTest.SetCursorDoesNotUseZcrCursorShapesForNoneCursor/0 (28 ms)
+[194/291] XdgVersionV6Test/WaylandWindowTest.SetCursorDoesNotUseZcrCursorShapesForCustomCursors/0 (28 ms)
+[195/291] XdgVersionV6Test/WaylandWindowTest.DispatchEvent/0 (23 ms)
+[196/291] XdgVersionV6Test/WaylandWindowTest.ConfigureEvent/0 (19 ms)
+[197/291] XdgVersionV6Test/WaylandWindowTest.ConfigureEventWithNulledSize/0 (28 ms)
+[198/291] XdgVersionV6Test/WaylandWindowTest.OnActivationChanged/0 (17 ms)
+[199/291] XdgVersionV6Test/WaylandWindowTest.OnAcceleratedWidgetDestroy/0 (24 ms)
+[200/291] XdgVersionV6Test/WaylandWindowTest.CanCreateMenuWindow/0 (32 ms)
+[201/291] XdgVersionStableTest/WaylandWindowTest.NestedPopupMenu1/0 (47 ms)
+[202/291] XdgVersionStableTest/WaylandWindowTest.NestedPopupMenu2/0 (24 ms)
+[203/291] XdgVersionStableTest/WaylandWindowTest.NestedPopupMenu3/0 (27 ms)
+[204/291] XdgVersionStableTest/WaylandWindowTest.AuxiliaryWindowNestedParent/0 (35 ms)
+[205/291] XdgVersionStableTest/WaylandWindowTest.OnSizeConstraintsChanged/0 (22 ms)
+[206/291] XdgVersionStableTest/WaylandWindowTest.DestroysCreatesSurfaceOnHideShow/0 (28 ms)
+[207/291] XdgVersionStableTest/WaylandWindowTest.DestroysCreatesPopupsOnHideShow/0 (21 ms)
+[208/291] XdgVersionStableTest/WaylandWindowTest.RemovesReattachesBackgroundOnHideShow/0 (38 ms)
+[209/291] XdgVersionStableTest/WaylandWindowTest.SetsPropertiesOnShow/0 (28 ms)
+[210/291] XdgVersionStableTest/WaylandWindowTest.CreatesPopupOnButtonPressSerial/0 (20 ms)
+[211/291] XdgVersionV6Test/WaylandWindowTest.CreateAndDestroyNestedMenuWindow/0 (22 ms)
+[212/291] XdgVersionV6Test/WaylandWindowTest.DispatchesLocatedEventsToCapturedWindow/0 (14 ms)
+[213/291] XdgVersionV6Test/WaylandWindowTest.DispatchesLocatedEventsToCapturedWindowInTheSameStack/0 (34 ms)
+[214/291] XdgVersionV6Test/WaylandWindowTest.DispatchesKeyboardEventToToplevelWindow/0 (28 ms)
+[215/291] XdgVersionV6Test/WaylandWindowTest.CanDispatchEvent/0 (28 ms)
+[216/291] XdgVersionV6Test/WaylandWindowTest.DispatchWindowMove/0 (24 ms)
+[217/291] XdgVersionV6Test/WaylandWindowTest.DispatchWindowResize/0 (23 ms)
+[218/291] XdgVersionV6Test/WaylandWindowTest.AdjustPopupBounds/0 (28 ms)
+[219/291] XdgVersionV6Test/WaylandWindowTest.SetOpaqueRegion/0 (34 ms)
+[220/291] XdgVersionV6Test/WaylandWindowTest.OnCloseRequest/0 (25 ms)
+[221/291] XdgVersionV6Test/WaylandBufferManagerTest.OnSubmissionCalledForSingleBuffer/0 (31 ms)
+[222/291] XdgVersionV6Test/WaylandWindowTest.AuxiliaryWindowSimpleParent/0 (34 ms)
+[223/291] XdgVersionV6Test/WaylandWindowTest.NestedPopupMenu/0 (40 ms)
+[224/291] XdgVersionV6Test/WaylandWindowTest.NestedPopupMenu1/0 (27 ms)
+[225/291] XdgVersionV6Test/WaylandWindowTest.NestedPopupMenu2/0 (33 ms)
+[226/291] XdgVersionV6Test/WaylandWindowTest.NestedPopupMenu3/0 (26 ms)
+[227/291] XdgVersionV6Test/WaylandWindowTest.AuxiliaryWindowNestedParent/0 (24 ms)
+[228/291] XdgVersionV6Test/WaylandWindowTest.OnSizeConstraintsChanged/0 (29 ms)
+[229/291] XdgVersionV6Test/WaylandWindowTest.DestroysCreatesSurfaceOnHideShow/0 (27 ms)
+[230/291] XdgVersionV6Test/WaylandWindowTest.DestroysCreatesPopupsOnHideShow/0 (16 ms)
+[231/291] XdgVersionV6Test/WaylandWindowTest.RemovesReattachesBackgroundOnHideShow/0 (35 ms)
+[232/291] XdgVersionV6Test/WaylandWindowTest.SetsPropertiesOnShow/0 (39 ms)
+[233/291] XdgVersionV6Test/WaylandWindowTest.CreatesPopupOnButtonPressSerial/0 (20 ms)
+[234/291] XdgVersionV6Test/WaylandWindowTest.CreatesPopupOnTouchDownSerial/0 (27 ms)
+[235/291] XdgVersionV6Test/WaylandWindowTest.NestedPopupWindowsGetCorrectParent/0 (31 ms)
+[236/291] XdgVersionV6Test/WaylandWindowTest.DoesNotGrabPopupIfNoSeat/0 (32 ms)
+[237/291] XdgVersionV6Test/WaylandWindowTest.OneWaylandSubsurface/0 (26 ms)
+[238/291] XdgVersionV6Test/WaylandWindowTest.UsesCorrectParentForChildrenWindows/0 (25 ms)
+[239/291] XdgVersionStableTest/WaylandSurfaceFactoryTest.GbmSurfacelessWaylandCheckOrderOfCallbacksTest/0 (27 ms)
+[240/291] XdgVersionStableTest/WaylandSurfaceFactoryTest.GbmSurfacelessWaylandCommitOverlaysCallbacksTest/0 (35 ms)
+[241/291] XdgVersionStableTest/WaylandSurfaceFactoryTest.GbmSurfacelessWaylandGroupOnSubmissionCallbacksTest/0 (45 ms)
+[242/291] XdgVersionStableTest/WaylandBufferManagerTest.VerifyModifiers/0 (57 ms)
+[243/291] XdgVersionStableTest/WaylandBufferManagerTest.CreateShmBasedBuffers/0 (20 ms)
+[244/291] XdgVersionStableTest/WaylandBufferManagerTest.ValidateDataFromGpu/0 (26 ms)
+[245/291] XdgVersionStableTest/WaylandBufferManagerTest.CreateAndDestroyBuffer/0 (27 ms)
+[246/291] XdgVersionStableTest/WaylandBufferManagerTest.CommitBufferNonExistingBufferId/0 (30 ms)
+[247/291] XdgVersionStableTest/WaylandBufferManagerTest.CommitBufferNullWidget/0 (20 ms)
+[248/291] XdgVersionStableTest/WaylandBufferManagerTest.EnsureCorrectOrderOfCallbacks/0 (33 ms)
+[249/291] XdgVersionStableTest/WaylandBufferManagerTest.DestroyedBuffersGeneratePresentationFeedbackFailure/0 (23 ms)
+[250/291] XdgVersionStableTest/WaylandBufferManagerTest.EnsureDiscardedPresentationDoesNotMakePreviousFeedbacksFailed/0 (24 ms)
+[251/291] XdgVersionStableTest/WaylandBufferManagerTest.TestCommitBufferConditions/0 (31 ms)
+[252/291] XdgVersionStableTest/WaylandBufferManagerTest.TestCommitBufferConditionsAckConfigured/0 (22 ms)
+[253/291] XdgVersionStableTest/WaylandBufferManagerTest.AnonymousBufferAttachedAndReleased/0 (15 ms)
+[254/291] XdgVersionStableTest/WaylandBufferManagerTest.DestroyBufferForDestroyedWindow/0 (31 ms)
+[255/291] XdgVersionStableTest/WaylandBufferManagerTest.DestroyedWindowNoSubmissionSingleBuffer/0 (36 ms)
+[256/291] XdgVersionStableTest/WaylandBufferManagerTest.DestroyedWindowNoSubmissionMultipleBuffers/0 (23 ms)
+[257/291] XdgVersionStableTest/WaylandBufferManagerTest.DestroyBufferCommittedTwiceInARow/0 (25 ms)
+[258/291] XdgVersionStableTest/WaylandBufferManagerTest.ReleaseBufferCommittedTwiceInARow/0 (31 ms)
+[259/291] XdgVersionStableTest/WaylandBufferManagerTest.ReleaseOrderDifferentToCommitOrder/0 (14 ms)
+[260/291] XdgVersionStableTest/WaylandBufferManagerTest.OnSubmissionCalledForBufferCommitedTwiceInARow/0 (27 ms)
+[261/291] XdgVersionStableTest/WaylandBufferManagerTest.OnSubmissionCalledForSingleBuffer/0 (20 ms)
+[262/291] XdgVersionStableTest/WaylandSurfaceFactoryTest.Canvas/0 (40 ms)
+[263/291] XdgVersionStableTest/WaylandSurfaceFactoryTest.CanvasResize/0 (41 ms)
+[264/291] XdgVersionStableTest/WaylandSurfaceFactoryTest.CreateSurfaceCheckGbm/0 (32 ms)
+[265/291] XdgVersionV6Test/WaylandSurfaceFactoryTest.GbmSurfacelessWaylandCheckOrderOfCallbacksTest/0 (35 ms)
+[266/291] XdgVersionV6Test/WaylandSurfaceFactoryTest.GbmSurfacelessWaylandCommitOverlaysCallbacksTest/0 (28 ms)
+[267/291] XdgVersionV6Test/WaylandSurfaceFactoryTest.GbmSurfacelessWaylandGroupOnSubmissionCallbacksTest/0 (10 ms)
+[268/291] XdgVersionV6Test/WaylandSurfaceFactoryTest.Canvas/0 (30 ms)
+[269/291] XdgVersionV6Test/WaylandSurfaceFactoryTest.CanvasResize/0 (24 ms)
+[270/291] XdgVersionV6Test/WaylandSurfaceFactoryTest.CreateSurfaceCheckGbm/0 (23 ms)
+[271/291] XdgVersionStableTest/WaylandBufferManagerTest.CreateDmabufBasedBuffers/0 (20 ms)
+[272/291] XdgVersionV6Test/WaylandBufferManagerTest.CreateDmabufBasedBuffers/0 (49 ms)
+[273/291] XdgVersionV6Test/WaylandBufferManagerTest.VerifyModifiers/0 (44 ms)
+[274/291] XdgVersionV6Test/WaylandBufferManagerTest.CreateShmBasedBuffers/0 (27 ms)
+[275/291] XdgVersionV6Test/WaylandBufferManagerTest.ValidateDataFromGpu/0 (25 ms)
+[276/291] XdgVersionV6Test/WaylandBufferManagerTest.CreateAndDestroyBuffer/0 (23 ms)
+[277/291] XdgVersionV6Test/WaylandBufferManagerTest.CommitBufferNonExistingBufferId/0 (31 ms)
+[278/291] XdgVersionV6Test/WaylandBufferManagerTest.CommitBufferNullWidget/0 (24 ms)
+[279/291] XdgVersionV6Test/WaylandBufferManagerTest.EnsureCorrectOrderOfCallbacks/0 (23 ms)
+[280/291] XdgVersionV6Test/WaylandBufferManagerTest.DestroyedBuffersGeneratePresentationFeedbackFailure/0 (39 ms)
+[281/291] XdgVersionV6Test/WaylandBufferManagerTest.EnsureDiscardedPresentationDoesNotMakePreviousFeedbacksFailed/0 (27 ms)
+[282/291] XdgVersionV6Test/WaylandBufferManagerTest.TestCommitBufferConditions/0 (43 ms)
+[283/291] XdgVersionV6Test/WaylandBufferManagerTest.TestCommitBufferConditionsAckConfigured/0 (42 ms)
+[284/291] XdgVersionV6Test/WaylandBufferManagerTest.AnonymousBufferAttachedAndReleased/0 (19 ms)
+[285/291] XdgVersionV6Test/WaylandBufferManagerTest.DestroyBufferForDestroyedWindow/0 (21 ms)
+[286/291] XdgVersionV6Test/WaylandBufferManagerTest.DestroyedWindowNoSubmissionSingleBuffer/0 (32 ms)
+[287/291] XdgVersionV6Test/WaylandBufferManagerTest.DestroyedWindowNoSubmissionMultipleBuffers/0 (34 ms)
+[288/291] XdgVersionV6Test/WaylandBufferManagerTest.DestroyBufferCommittedTwiceInARow/0 (27 ms)
+[289/291] XdgVersionV6Test/WaylandBufferManagerTest.ReleaseBufferCommittedTwiceInARow/0 (24 ms)
+[290/291] XdgVersionV6Test/WaylandBufferManagerTest.ReleaseOrderDifferentToCommitOrder/0 (36 ms)
+[291/291] XdgVersionV6Test/WaylandBufferManagerTest.OnSubmissionCalledForBufferCommitedTwiceInARow/0 (29 ms)
+Retrying 2 tests (retry #0)
+[292/293] XdgVersionStableTest/WaylandWindowTest.SetFullscreenAndRestore/0 (35 ms)
+[293/293] XdgVersionStableTest/WaylandWindowTest.CompositorSideStateChanges/0 (39 ms)
+SUCCESS: all tests passed.
+Tests took 1 seconds.

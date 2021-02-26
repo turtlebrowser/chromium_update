@@ -1,0 +1,50 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 1 parallel jobs.
+Note: Google Test filter = LRUCache.Empty:LRUCache.AddNoEviction:LRUCache.AddWithEviction:LRUCache.AddClearAdd:LRUCache.Reordering:MemFd.DefaultConstructor:MemFd.AllocatingConstructor:MemFd.ExplicitAllocation:MemFd.Close:MemFd.ExportImportFd
+[==========] Running 10 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 5 tests from LRUCache
+[ RUN      ] LRUCache.Empty
+[       OK ] LRUCache.Empty (0 ms)
+[ RUN      ] LRUCache.AddNoEviction
+[       OK ] LRUCache.AddNoEviction (0 ms)
+[ RUN      ] LRUCache.AddWithEviction
+[       OK ] LRUCache.AddWithEviction (0 ms)
+[ RUN      ] LRUCache.AddClearAdd
+[       OK ] LRUCache.AddClearAdd (0 ms)
+[ RUN      ] LRUCache.Reordering
+[       OK ] LRUCache.Reordering (0 ms)
+[----------] 5 tests from LRUCache (0 ms total)
+
+[----------] 5 tests from MemFd
+[ RUN      ] MemFd.DefaultConstructor
+[       OK ] MemFd.DefaultConstructor (0 ms)
+[ RUN      ] MemFd.AllocatingConstructor
+[       OK ] MemFd.AllocatingConstructor (0 ms)
+[ RUN      ] MemFd.ExplicitAllocation
+[       OK ] MemFd.ExplicitAllocation (0 ms)
+[ RUN      ] MemFd.Close
+[       OK ] MemFd.Close (0 ms)
+[ RUN      ] MemFd.ExportImportFd
+[       OK ] MemFd.ExportImportFd (1 ms)
+[----------] 5 tests from MemFd (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 2 test suites ran. (1 ms total)
+[  PASSED  ] 10 tests.
+[1/10] LRUCache.Empty (0 ms)
+[2/10] LRUCache.AddNoEviction (0 ms)
+[3/10] LRUCache.AddWithEviction (0 ms)
+[4/10] LRUCache.AddClearAdd (0 ms)
+[5/10] LRUCache.Reordering (0 ms)
+[6/10] MemFd.DefaultConstructor (0 ms)
+[7/10] MemFd.AllocatingConstructor (0 ms)
+[8/10] MemFd.ExplicitAllocation (0 ms)
+[9/10] MemFd.Close (0 ms)
+[10/10] MemFd.ExportImportFd (1 ms)
+SUCCESS: all tests passed.
+Tests took 0 seconds.

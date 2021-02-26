@@ -1,0 +1,59 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[8010:8010:0226/000419.476713:124413668832:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[8010:8010:0226/000419.476774:124413668863:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[8010:8010:0226/000419.476786:124413668874:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[1/48] AppSourceUrlRecorderTest.CheckArc (25 ms)
+[2/48] AppSourceUrlRecorderTest.CheckPWA (20 ms)
+[3/48] UkmConsentStateObserverTest.NoProfiles (0 ms)
+[4/48] UkmConsentStateObserverTest.NotActive (0 ms)
+[5/48] UkmConsentStateObserverTest.OneEnabled (0 ms)
+[6/48] UkmConsentStateObserverTest.MixedProfiles (0 ms)
+[7/48] UkmConsentStateObserverTest.TwoEnabled (0 ms)
+[8/48] UkmConsentStateObserverTest.OneAddRemove (0 ms)
+[9/48] UkmConsentStateObserverTest.PurgeOnDisable (0 ms)
+[10/48] UkmRecorderImplTest.IsSampledIn (0 ms)
+[11/48] UkmServiceTest.AddEntryWithEmptyMetrics (1 ms)
+[12/48] UkmServiceTest.MetricsProviderTest (1 ms)
+[13/48] UkmServiceTest.SystemProfileTest (1 ms)
+[14/48] UkmServiceTest.AddUserDemograhicsWhenAvailableAndFeatureEnabled (1 ms)
+[15/48] UkmServiceTest.DontAddUserDemograhicsWhenNotAvailableAndFeatureEnabled (1 ms)
+[16/48] UkmServiceTest.DontAddUserDemograhicsWhenFeatureDisabled (1 ms)
+[17/48] UkmServiceTest.LogsRotation (1 ms)
+[18/48] UkmServiceTest.LogsUploadedOnlyWhenHavingSourcesOrEntries (2 ms)
+[19/48] UkmServiceTest.GetNewSourceID (0 ms)
+[20/48] UkmServiceTest.RecordRedirectedUrl (0 ms)
+[21/48] UkmRecorderImplTest.PurgeExtensionRecordings (1 ms)
+[22/48] UkmRecorderImplTest.WebApkSourceUrl (40 ms)
+[23/48] UkmRecorderImplTest.PaymentAppScopeUrl (29 ms)
+[24/48] UkmServiceTest.ClientIdMigration (0 ms)
+[25/48] UkmServiceTest.ClientIdClonedInstall (1 ms)
+[26/48] UkmServiceTest.EnableDisableSchedule (0 ms)
+[27/48] UkmServiceTest.PersistAndPurge (1 ms)
+[28/48] UkmServiceTest.Purge (1 ms)
+[29/48] UkmServiceTest.PurgeExtensionDataFromUnsentLogStore (1 ms)
+[30/48] UkmServiceTest.SourceSerialization (0 ms)
+[31/48] UkmServiceTest.RestrictToWhitelistedSourceIds (2 ms)
+[32/48] UkmServiceTest.RecordSessionId (1 ms)
+[33/48] UkmServiceTest.SourceSize (1 ms)
+[34/48] UkmServiceTest.PurgeMidUpload (1 ms)
+[35/48] UkmServiceTest.WhitelistEntryTest (1 ms)
+[36/48] UkmServiceTest.SourceURLLength (1 ms)
+[37/48] UkmServiceTest.UnreferencedNonWhitelistedSources (64 ms)
+[38/48] UkmServiceTest.NonWhitelistedUrls (4 ms)
+[39/48] UkmServiceTest.WhitelistIdType (38 ms)
+[40/48] UkmServiceTest.SupportedSchemes (1 ms)
+[41/48] UkmServiceTest.SupportedSchemesNoExtensions (26 ms)
+[42/48] UkmServiceTest.SanitizeUrlAuthParams (1 ms)
+[43/48] UkmServiceTest.SanitizeChromeUrlParams (5 ms)
+[44/48] UkmServiceTest.MarkSourceForDeletion (1 ms)
+[45/48] UkmServiceTest.PurgeNonNavigationSources (33 ms)
+[46/48] UkmServiceTest.IdentifiabilityMetricsDontExplode (1 ms)
+[47/48] UkmServiceTest.FilterCanRemoveMetrics (1 ms)
+[48/48] UkmServiceTest.FilterRejectsEvent (1 ms)
+SUCCESS: all tests passed.
+Tests took 0 seconds.

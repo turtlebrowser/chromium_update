@@ -1,0 +1,12 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[4786:4786:0225/232059.721746:121813913864:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[4786:4786:0225/232059.721795:121813913884:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[4786:4786:0225/232059.721806:121813913895:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[1/1] ResourcesTest.CriticalMessagesContainNoExtraWhitespaces (3 ms)
+SUCCESS: all tests passed.
+Tests took 0 seconds.

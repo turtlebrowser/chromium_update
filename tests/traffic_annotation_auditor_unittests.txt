@@ -1,0 +1,30 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[1/22] TrafficAnnotationAuditorTest.AnnotationsXMLDifferences (166 ms)
+[2/22] TrafficAnnotationAuditorTest.AnnotationGrouping (161 ms)
+[3/22] TrafficAnnotationAuditorTest.HashFunctionCheck (115 ms)
+[4/22] TrafficAnnotationAuditorTest.GetFilesFromGit (125 ms)
+[5/22] TrafficAnnotationAuditorTest.RelevantFilesReceived (106 ms)
+[6/22] TrafficAnnotationAuditorTest.IsSafeListed (137 ms)
+[7/22] TrafficAnnotationAuditorTest.AnnotationDeserialization (140 ms)
+[8/22] TrafficAnnotationAuditorTest.CallDeserialization (105 ms)
+[9/22] TrafficAnnotationAuditorTest.AssignmentDeserialization (119 ms)
+[10/22] TrafficAnnotationAuditorTest.GetReservedIDsCoverage (125 ms)
+[11/22] TrafficAnnotationAuditorTest.CheckReservedIDsUsageDetection (121 ms)
+[12/22] TrafficAnnotationAuditorTest.CheckDeprecatedIDsUsageDetection (124 ms)
+[13/22] TrafficAnnotationAuditorTest.CheckRepeatedIDsDetection (197 ms)
+[14/22] TrafficAnnotationAuditorTest.CheckSimilarUniqueAndSecondIDsDetection (136 ms)
+[15/22] TrafficAnnotationAuditorTest.CheckDuplicateIDsDetection (1476 ms)
+[16/22] TrafficAnnotationAuditorTest.CheckIDsFormat (125 ms)
+[17/22] TrafficAnnotationAuditorTest.CheckAllRequiredFunctionsAreAnnotated (127 ms)
+[18/22] TrafficAnnotationAuditorTest.CheckCompleteAnnotations (124 ms)
+[19/22] TrafficAnnotationAuditorTest.IsCompletableWith (1740 ms)
+[20/22] TrafficAnnotationAuditorTest.CreateCompleteAnnotation (121 ms)
+[21/22] TrafficAnnotationAuditorTest.AnnotationsXML (125 ms)
+[22/22] TrafficAnnotationAuditorTest.AnnotationsXMLLines (117 ms)
+SUCCESS: all tests passed.
+Tests took 4 seconds.

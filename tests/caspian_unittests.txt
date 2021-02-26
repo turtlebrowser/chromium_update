@@ -1,0 +1,180 @@
+Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.cc
+[==========] Running 45 tests from 5 test suites.
+[----------] Global test environment set-up.
+[----------] 14 tests from DiffTest
+[ RUN      ] DiffTest.TestIdentity
+Matched 6 symbols in matching pass 1
+Matched 0 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestIdentity (0 ms)
+[ RUN      ] DiffTest.TestSimpleAdd
+Matched 5 symbols in matching pass 1
+Matched 0 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestSimpleAdd (1 ms)
+[ RUN      ] DiffTest.TestSimpleDelete
+Matched 5 symbols in matching pass 1
+Matched 0 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestSimpleDelete (0 ms)
+[ RUN      ] DiffTest.TestSimpleChange
+Matched 4 symbols in matching pass 1
+Matched 2 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestSimpleChange (0 ms)
+[ RUN      ] DiffTest.TestDontMatchAcrossSections
+Matched 6 symbols in matching pass 1
+Matched 0 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestDontMatchAcrossSections (0 ms)
+[ RUN      ] DiffTest.TestAliasesRemove
+Matched 3 symbols in matching pass 1
+Matched 3 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestAliasesRemove (0 ms)
+[ RUN      ] DiffTest.TestAliasesAdd
+Matched 3 symbols in matching pass 1
+Matched 3 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestAliasesAdd (0 ms)
+[ RUN      ] DiffTest.TestAliasesChangeGroup
+Matched 2 symbols in matching pass 1
+Matched 4 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestAliasesChangeGroup (0 ms)
+[ RUN      ] DiffTest.TestStarSymbolNormalization
+Matched 5 symbols in matching pass 1
+Matched 1 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestStarSymbolNormalization (0 ms)
+[ RUN      ] DiffTest.TestNumberNormalization
+Matched 6 symbols in matching pass 1
+Matched 4 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestNumberNormalization (0 ms)
+[ RUN      ] DiffTest.TestChangedParams
+Matched 5 symbols in matching pass 1
+Matched 0 symbols in matching pass 2
+Matched 1 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestChangedParams (0 ms)
+[ RUN      ] DiffTest.TestChangedPathsNative
+Matched 5 symbols in matching pass 1
+Matched 0 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestChangedPathsNative (0 ms)
+[ RUN      ] DiffTest.TestChangedPathsJava
+Matched 5 symbols in matching pass 1
+Matched 0 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 1 symbols in matching pass 4
+[       OK ] DiffTest.TestChangedPathsJava (0 ms)
+[ RUN      ] DiffTest.TestChangedPathsChangedParams
+Matched 5 symbols in matching pass 1
+Matched 0 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestChangedPathsChangedParams (0 ms)
+[----------] 14 tests from DiffTest (1 ms total)
+
+[----------] 8 tests from AnalyzeTest
+[ RUN      ] AnalyzeTest.StringSplit
+[       OK ] AnalyzeTest.StringSplit (0 ms)
+[ RUN      ] AnalyzeTest.FindLastCharOutsideOfBrackets
+[       OK ] AnalyzeTest.FindLastCharOutsideOfBrackets (0 ms)
+[ RUN      ] AnalyzeTest.FindParameterListParen
+[       OK ] AnalyzeTest.FindParameterListParen (0 ms)
+[ RUN      ] AnalyzeTest.FindReturnValueSpace
+[       OK ] AnalyzeTest.FindReturnValueSpace (0 ms)
+[ RUN      ] AnalyzeTest.NormalizeTopLevelGccLambda
+[       OK ] AnalyzeTest.NormalizeTopLevelGccLambda (0 ms)
+[ RUN      ] AnalyzeTest.NormalizeTopLevelClangLambda
+[       OK ] AnalyzeTest.NormalizeTopLevelClangLambda (0 ms)
+[ RUN      ] AnalyzeTest.ParseJavaFunctionSignature
+[       OK ] AnalyzeTest.ParseJavaFunctionSignature (0 ms)
+[ RUN      ] AnalyzeTest.ParseFunctionSignature
+[       OK ] AnalyzeTest.ParseFunctionSignature (1 ms)
+[----------] 8 tests from AnalyzeTest (1 ms total)
+
+[----------] 9 tests from PathTest
+[ RUN      ] PathTest.TestBasic
+[       OK ] PathTest.TestBasic (0 ms)
+[ RUN      ] PathTest.TestEmptyGroup
+[       OK ] PathTest.TestEmptyGroup (0 ms)
+[ RUN      ] PathTest.TestComponent
+[       OK ] PathTest.TestComponent (0 ms)
+[ RUN      ] PathTest.TestGroupPaths
+[       OK ] PathTest.TestGroupPaths (0 ms)
+[ RUN      ] PathTest.TestNoSplitOnAngleBracketInPath
+[       OK ] PathTest.TestNoSplitOnAngleBracketInPath (0 ms)
+[ RUN      ] PathTest.TestNoSplitOnAngleBracketInGroup
+[       OK ] PathTest.TestNoSplitOnAngleBracketInGroup (0 ms)
+[ RUN      ] PathTest.TestIsTopLevelPath
+[       OK ] PathTest.TestIsTopLevelPath (0 ms)
+[ RUN      ] PathTest.TestComparison
+[       OK ] PathTest.TestComparison (0 ms)
+[ RUN      ] PathTest.TestShortname
+[       OK ] PathTest.TestShortname (0 ms)
+[----------] 9 tests from PathTest (0 ms total)
+
+[----------] 9 tests from LensTest
+[ RUN      ] LensTest.TestGeneratedLensRegisterJNI
+[       OK ] LensTest.TestGeneratedLensRegisterJNI (0 ms)
+[ RUN      ] LensTest.TestGeneratedLensGlBindings
+[       OK ] LensTest.TestGeneratedLensGlBindings (0 ms)
+[ RUN      ] LensTest.TestGeneratedLensNotGenerated
+[       OK ] LensTest.TestGeneratedLensNotGenerated (0 ms)
+[ RUN      ] LensTest.TestGeneratedLensJavaProtoFromFilename
+[       OK ] LensTest.TestGeneratedLensJavaProtoFromFilename (1 ms)
+[ RUN      ] LensTest.TestGeneratedLensJavaProto
+[       OK ] LensTest.TestGeneratedLensJavaProto (0 ms)
+[ RUN      ] LensTest.TestGeneratedLensCppProto
+[       OK ] LensTest.TestGeneratedLensCppProto (0 ms)
+[ RUN      ] LensTest.TestGeneratedLensMojo
+../../tools/binary_size/libsupersize/caspian/lens_test.cc:67: Failure
+Expected equality of these values:
+  "Mojo"
+    Which is: 0x55f0e0d9c49e
+  GeneratedLens().ParentName(sym)
+    Which is: { 'G' (71, 0x47), 'e' (101, 0x65), 'n' (110, 0x6E), 'e' (101, 0x65), 'r' (114, 0x72), 'a' (97, 0x61), 't' (116, 0x74), 'e' (101, 0x65), 'd' (100, 0x64), ' ' (32, 0x20), '(' (40, 0x28), 'o' (111, 0x6F), 't' (116, 0x74), 'h' (104, 0x68), 'e' (101, 0x65), 'r' (114, 0x72), ')' (41, 0x29) }
+Stack trace:
+#0 0x55f0e0de6563 caspian::LensTest_TestGeneratedLensMojo_Test::TestBody()
+
+[  FAILED  ] LensTest.TestGeneratedLensMojo (10 ms)
+[ RUN      ] LensTest.TestGeneratedLensDevTools
+[       OK ] LensTest.TestGeneratedLensDevTools (1 ms)
+[ RUN      ] LensTest.TestGeneratedLensBlinkBindings
+[       OK ] LensTest.TestGeneratedLensBlinkBindings (0 ms)
+[----------] 9 tests from LensTest (12 ms total)
+
+[----------] 5 tests from TreeBuilderTest
+[ RUN      ] TreeBuilderTest.TestIdPathLens
+[       OK ] TreeBuilderTest.TestIdPathLens (0 ms)
+[ RUN      ] TreeBuilderTest.TestComponentLens
+[       OK ] TreeBuilderTest.TestComponentLens (0 ms)
+[ RUN      ] TreeBuilderTest.TestTemplateLens
+[       OK ] TreeBuilderTest.TestTemplateLens (0 ms)
+[ RUN      ] TreeBuilderTest.TestNoNameUnderGroup
+[       OK ] TreeBuilderTest.TestNoNameUnderGroup (0 ms)
+[ RUN      ] TreeBuilderTest.TestJoinDexMethodClasses
+[       OK ] TreeBuilderTest.TestJoinDexMethodClasses (0 ms)
+[----------] 5 tests from TreeBuilderTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 45 tests from 5 test suites ran. (14 ms total)
+[  PASSED  ] 44 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] LensTest.TestGeneratedLensMojo
+
+ 1 FAILED TEST

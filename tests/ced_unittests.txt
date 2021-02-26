@@ -1,0 +1,35 @@
+Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.cc
+[==========] Running 10 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from CompactEncDetFuzzTest
+[ RUN      ] CompactEncDetFuzzTest.TestRandom
+[       OK ] CompactEncDetFuzzTest.TestRandom (1721 ms)
+[----------] 1 test from CompactEncDetFuzzTest (1754 ms total)
+
+[----------] 8 tests from CompactEncDetTest
+[ RUN      ] CompactEncDetTest.ZeroLength
+[       OK ] CompactEncDetTest.ZeroLength (0 ms)
+[ RUN      ] CompactEncDetTest.EasyTests
+[       OK ] CompactEncDetTest.EasyTests (2 ms)
+[ RUN      ] CompactEncDetTest.LangHintTests
+[       OK ] CompactEncDetTest.LangHintTests (0 ms)
+[ RUN      ] CompactEncDetTest.TLDHintTests
+[       OK ] CompactEncDetTest.TLDHintTests (0 ms)
+[ RUN      ] CompactEncDetTest.CharsetHintTests
+[       OK ] CompactEncDetTest.CharsetHintTests (0 ms)
+[ RUN      ] CompactEncDetTest.UTF8UTF8Tests
+[       OK ] CompactEncDetTest.UTF8UTF8Tests (0 ms)
+[ RUN      ] CompactEncDetTest.NoUTF8UTF8
+[       OK ] CompactEncDetTest.NoUTF8UTF8 (0 ms)
+[ RUN      ] CompactEncDetTest.ShiftJISNoHintTest
+[       OK ] CompactEncDetTest.ShiftJISNoHintTest (0 ms)
+[----------] 8 tests from CompactEncDetTest (2 ms total)
+
+[----------] 1 test from EncodingsTest
+[ RUN      ] EncodingsTest.EncodingNameAliasToEncoding
+[       OK ] EncodingsTest.EncodingNameAliasToEncoding (0 ms)
+[----------] 1 test from EncodingsTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 3 test suites ran. (1757 ms total)
+[  PASSED  ] 10 tests.

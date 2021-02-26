@@ -1,0 +1,39 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[1/31] DeviceDataManagerX11Test.NotifyOnDisable (20 ms)
+[2/31] DeviceDataManagerX11Test.TestMultipleDisable (0 ms)
+[3/31] DeviceDataManagerX11Test.UnblockOnDeviceUnplugged (0 ms)
+[4/31] EventsXTest.ButtonEvents (0 ms)
+[5/31] EventsXTest.AvoidExtraEventsOnWheelRelease (0 ms)
+[6/31] EventsXTest.EnterLeaveEvent (0 ms)
+[7/31] EventsXTest.ClickCount (0 ms)
+[8/31] EventsXTest.TouchEventBasic (0 ms)
+[9/31] EventsXTest.TouchEventNotRemovingFromNativeMapping (0 ms)
+[10/31] EventsXTest.CopiedTouchEventNotRemovingFromXEventMapping (0 ms)
+[11/31] EventsXTest.DisableKeyboard (12 ms)
+[12/31] EventsXTest.DisableMouse (0 ms)
+[13/31] EventsXTest.ImeFabricatedKeyEvents (0 ms)
+[14/31] EventsXTest.IgnoresMotionEventForMouseWheelScroll (0 ms)
+[15/31] EventsXTest.TimestampRolloverAndAdjustWhenDecreasing (0 ms)
+[16/31] EventsXTest.NoTimestampRolloverWhenMonotonicIncreasing (0 ms)
+[17/31] EventsXTest.NativeEvent (0 ms)
+[18/31] EventsXTest.GetCharacter (0 ms)
+[19/31] EventsXTest.NormalizeKeyEventFlags (0 ms)
+[20/31] EventsXTest.KeyEventCode (0 ms)
+[21/31] X11WindowTest.ToggleMinimizePropogateToPlatformWindowDelegate (78 ms)
+[22/31] EventsXTest.AutoRepeat (21 ms)
+[23/31] EventsXTest.EventLatencyOSTouchHistograms (0 ms)
+[24/31] EventsXTest.EventLatencyOSMouseWheelHistogram (0 ms)
+[25/31] XEventTranslationTest.KeyEventDomKeyExtraction (0 ms)
+[26/31] XEventTranslationTest.KeyEventXEventPropertiesSet (0 ms)
+[27/31] XEventTranslationTest.BogusTimestampCorrection (0 ms)
+[28/31] XEventTranslationTest.ChangedMouseButtonFlags (1 ms)
+[29/31] XEventTranslationTest.KeyModifiersCounterpartRepeat (0 ms)
+[30/31] X11WindowTest.Shape (152 ms)
+[31/31] X11WindowTest.WindowManagerTogglesFullscreen (480 ms)
+SUCCESS: all tests passed.
+Tests took 0 seconds.

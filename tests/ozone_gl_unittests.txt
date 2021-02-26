@@ -1,0 +1,68 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[19337:19337:0225/235829.024678:124063216788:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[19337:19337:0225/235829.024720:124063216809:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[ RUN      ] GLImageNativePixmapScanoutBGRA/GLImageTest/0.Create
+Received signal 11 SEGV_MAPERR 000000000000
+#0 0x55e0ef37caa9 base::debug::CollectStackTrace()
+#1 0x55e0ef3289a3 base::debug::StackTrace::StackTrace()
+#2 0x55e0ef37c69f base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#3 0x7fa904785980 (/lib/x86_64-linux-gnu/libpthread-2.27.so+0x1297f)
+#4 0x55e0eef5ddfc gl::(anonymous namespace)::GLImageNativePixmapTestDelegate<>::CreateSolidColorImage()
+#5 0x55e0eef5d8bd gl::gtest_suite_GLImageTest_::Create<>::TestBody()
+#6 0x55e0eefa15dd testing::Test::Run()
+#7 0x55e0eefa1e6f testing::TestInfo::Run()
+#8 0x55e0eefa2857 testing::TestSuite::Run()
+#9 0x55e0eefaffd7 testing::internal::UnitTestImpl::RunAllTests()
+#10 0x55e0eefaf93f testing::UnitTest::Run()
+#11 0x55e0ef2fbb44 base::TestSuite::Run()
+#12 0x55e0ef2fe2a7 base::(anonymous namespace)::LaunchUnitTestsInternal()
+#13 0x55e0ef2fe14f base::LaunchUnitTests()
+#14 0x55e0eef6c374 main
+#15 0x7fa9021f5bf7 __libc_start_main
+#16 0x55e0eef5c6aa _start
+  r8: 0000000000000000  r9: 0000000000000150 r10: 00007ffcf7b6dad8 r11: 00007ffcf7b6d200
+ r12: 00007ffcf7b6d2a8 r13: 00000000000041fb r14: 00007ffcf7b6d2b8 r15: 000023095b073e70
+  di: 00007ffcf7b6d2b8  si: 00007ffcf7b6d2a8  bp: 00007ffcf7b6d290  bx: aaaaaaaaaaaaaaaa
+  dx: 000000000000000f  ax: 0000000000000000  cx: 0000000000000000  sp: 00007ffcf7b6d210
+  ip: 000055e0eef5ddfc efl: 0000000000010202 cgf: 002b000000000033 erf: 0000000000000004
+ trp: 000000000000000e msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+[1/1] GLImageNativePixmapScanoutBGRA/GLImageTest/0.Create (CRASHED)
+Retrying 1 test (retry #0)
+[ RUN      ] GLImageNativePixmapScanoutBGRA/GLImageTest/0.Create
+Received signal 11 SEGV_MAPERR 000000000000
+#0 0x555dbfd56aa9 base::debug::CollectStackTrace()
+#1 0x555dbfd029a3 base::debug::StackTrace::StackTrace()
+#2 0x555dbfd5669f base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#3 0x7fd3ea1e2980 (/lib/x86_64-linux-gnu/libpthread-2.27.so+0x1297f)
+#4 0x555dbf937dfc gl::(anonymous namespace)::GLImageNativePixmapTestDelegate<>::CreateSolidColorImage()
+#5 0x555dbf9378bd gl::gtest_suite_GLImageTest_::Create<>::TestBody()
+#6 0x555dbf97b5dd testing::Test::Run()
+#7 0x555dbf97be6f testing::TestInfo::Run()
+#8 0x555dbf97c857 testing::TestSuite::Run()
+#9 0x555dbf989fd7 testing::internal::UnitTestImpl::RunAllTests()
+#10 0x555dbf98993f testing::UnitTest::Run()
+#11 0x555dbfcd5b44 base::TestSuite::Run()
+#12 0x555dbfcd82a7 base::(anonymous namespace)::LaunchUnitTestsInternal()
+#13 0x555dbfcd814f base::LaunchUnitTests()
+#14 0x555dbf946374 main
+#15 0x7fd3e7c52bf7 __libc_start_main
+#16 0x555dbf9366aa _start
+  r8: 0000000000000000  r9: 0000000000000150 r10: 00007ffc9f07cc58 r11: 00007ffc9f07c380
+ r12: 00007ffc9f07c428 r13: 00000000000183fb r14: 00007ffc9f07c438 r15: 000001b5c62a6e70
+  di: 00007ffc9f07c438  si: 00007ffc9f07c428  bp: 00007ffc9f07c410  bx: aaaaaaaaaaaaaaaa
+  dx: 000000000000000f  ax: 0000000000000000  cx: 0000000000000000  sp: 00007ffc9f07c390
+  ip: 0000555dbf937dfc efl: 0000000000010206 cgf: 002b000000000033 erf: 0000000000000004
+ trp: 000000000000000e msk: 0000000000000000 cr2: 0000000000000000
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+[2/2] GLImageNativePixmapScanoutBGRA/GLImageTest/0.Create (CRASHED)
+1 test crashed:
+    GLImageNativePixmapScanoutBGRA/GLImageTest/0.Create (../../ui/gl/test/gl_image_test_template.h:98)
+Tests took 5 seconds.

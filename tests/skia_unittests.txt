@@ -1,0 +1,36 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[1/28] StructTraitsTest.ImageInfo (0 ms)
+[2/28] StructTraitsTest.ImageInfoCustomColorSpace (0 ms)
+[3/28] StructTraitsTest.Bitmap (0 ms)
+[4/28] StructTraitsTest.BitmapTooWideToSerialize (0 ms)
+[5/28] StructTraitsTest.BitmapTooTallToSerialize (0 ms)
+[6/28] StructTraitsTest.BitmapWithExtraRowBytes (0 ms)
+[7/28] StructTraitsTest.BlurImageFilterTileMode (0 ms)
+[8/28] Skottie.Basic (10 ms)
+[9/28] ImageOperations.InvalidParams (0 ms)
+[10/28] ImageOperations.ResampleToSameHamming1 (1 ms)
+[11/28] ImageOperations.ResampleToSameLanczos3 (0 ms)
+[12/28] ImageOperations.ResizeShouldAverageColors (43 ms)
+[13/28] ImageOperations.ScaleUp (0 ms)
+[14/28] RecursiveGaussian.SmoothingMethodComparison (46 ms)
+[15/28] RecursiveGaussian.SmoothingImpulse (44 ms)
+[16/28] RecursiveGaussian.FirstDerivative (646 ms)
+[17/28] RecursiveGaussian.SecondDerivative (43 ms)
+[18/28] SkiaMemoryDumpProviderTest.OnMemoryDump (0 ms)
+[19/28] Convolver.Impulse (131 ms)
+[20/28] Convolver.Halve (0 ms)
+[21/28] Convolver.AddFilter (0 ms)
+[22/28] Convolver.VerifySIMDEdgeCases (82 ms)
+[23/28] Convolver.VerifySIMDPrecision (4300 ms)
+[24/28] Convolver.SeparableSingleConvolution (176 ms)
+[25/28] Convolver.SeparableSingleConvolutionEdges (77 ms)
+[26/28] Convolver.SetUpGaussianConvolutionFilter (0 ms)
+[27/28] ImageOperations.Halve (0 ms)
+[28/28] ImageOperations.HalveSubset (1 ms)
+SUCCESS: all tests passed.
+Tests took 4 seconds.

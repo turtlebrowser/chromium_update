@@ -1,0 +1,29 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[1/21] TypesTest.ArrayProperty (0 ms)
+[2/21] TypesTest.ArrayPropertyParseError (0 ms)
+[3/21] TypesTest.ObjectProperty (0 ms)
+[4/21] TypesTest.ObjectPropertyParseError (0 ms)
+[5/21] TypesTest.AnyProperty (0 ms)
+[6/21] TypesTest.ComplexObjectClone (1 ms)
+[7/21] ErrorReporterTest.NoErrors (0 ms)
+[8/21] ErrorReporterTest.TopLevelErrors (0 ms)
+[9/21] ErrorReporterTest.UnnamedContext (0 ms)
+[10/21] ErrorReporterTest.NestedContexts (0 ms)
+[11/21] PageRangeTextToPagesTest.General (0 ms)
+[12/21] TypesTest.IntegerProperty (0 ms)
+[13/21] TypesTest.IntegerPropertyParseError (1 ms)
+[14/21] TypesTest.BooleanProperty (0 ms)
+[15/21] TypesTest.BooleanPropertyParseError (0 ms)
+[16/21] TypesTest.DoubleProperty (0 ms)
+[17/21] TypesTest.DoublePropertyParseError (0 ms)
+[18/21] TypesTest.StringProperty (0 ms)
+[19/21] TypesTest.StringPropertyParseError (0 ms)
+[20/21] TypesTest.EnumProperty (0 ms)
+[21/21] TypesTest.EnumPropertyParseError (0 ms)
+SUCCESS: all tests passed.
+Tests took 0 seconds.

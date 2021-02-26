@@ -1,0 +1,22 @@
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from OneEuroFilterTest
+[ RUN      ] OneEuroFilterTest.ParametersTest
+[       OK ] OneEuroFilterTest.ParametersTest (0 ms)
+[ RUN      ] OneEuroFilterTest.RandomValuesRandomTimestampTest
+[       OK ] OneEuroFilterTest.RandomValuesRandomTimestampTest (0 ms)
+[ RUN      ] OneEuroFilterTest.RandomValuesConstantTimestampTest
+[       OK ] OneEuroFilterTest.RandomValuesConstantTimestampTest (0 ms)
+[ RUN      ] OneEuroFilterTest.SameValuesRandomTimestampTest
+[       OK ] OneEuroFilterTest.SameValuesRandomTimestampTest (0 ms)
+[ RUN      ] OneEuroFilterTest.SameValuesConstantTimestampTest
+[       OK ] OneEuroFilterTest.SameValuesConstantTimestampTest (0 ms)
+[ RUN      ] OneEuroFilterTest.CloneTest
+[       OK ] OneEuroFilterTest.CloneTest (0 ms)
+[ RUN      ] OneEuroFilterTest.TestResetting
+[       OK ] OneEuroFilterTest.TestResetting (0 ms)
+[----------] 7 tests from OneEuroFilterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 7 tests.

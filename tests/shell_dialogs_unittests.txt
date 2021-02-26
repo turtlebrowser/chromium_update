@@ -1,0 +1,9 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[1/1] ShellDialogs.ShortenFileNameIfNeeded (0 ms)
+SUCCESS: all tests passed.
+Tests took 0 seconds.

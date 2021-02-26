@@ -1,0 +1,49 @@
+Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.cc
+[==========] Running 20 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 20 tests from ZxcvbnTest
+[ RUN      ] ZxcvbnTest.DictionaryMatching
+[       OK ] ZxcvbnTest.DictionaryMatching (0 ms)
+[ RUN      ] ZxcvbnTest.ReverseDictionaryMatching
+[       OK ] ZxcvbnTest.ReverseDictionaryMatching (0 ms)
+[ RUN      ] ZxcvbnTest.L33tMatching
+[       OK ] ZxcvbnTest.L33tMatching (0 ms)
+[ RUN      ] ZxcvbnTest.SpatialMatching
+[       OK ] ZxcvbnTest.SpatialMatching (1 ms)
+[ RUN      ] ZxcvbnTest.SequenceMatching
+[       OK ] ZxcvbnTest.SequenceMatching (0 ms)
+[ RUN      ] ZxcvbnTest.RepeatMatching
+[       OK ] ZxcvbnTest.RepeatMatching (3 ms)
+[ RUN      ] ZxcvbnTest.RegexMatching
+[       OK ] ZxcvbnTest.RegexMatching (0 ms)
+[ RUN      ] ZxcvbnTest.DateMatching
+[       OK ] ZxcvbnTest.DateMatching (1 ms)
+[ RUN      ] ZxcvbnTest.Omnimatch
+[       OK ] ZxcvbnTest.Omnimatch (0 ms)
+[ RUN      ] ZxcvbnTest.nCk
+[       OK ] ZxcvbnTest.nCk (0 ms)
+[ RUN      ] ZxcvbnTest.Search
+[       OK ] ZxcvbnTest.Search (1 ms)
+[ RUN      ] ZxcvbnTest.CalcGuesses
+[       OK ] ZxcvbnTest.CalcGuesses (0 ms)
+[ RUN      ] ZxcvbnTest.RepeatGuesses
+[       OK ] ZxcvbnTest.RepeatGuesses (0 ms)
+[ RUN      ] ZxcvbnTest.SequenceGuesses
+[       OK ] ZxcvbnTest.SequenceGuesses (0 ms)
+[ RUN      ] ZxcvbnTest.RegexGuesses
+[       OK ] ZxcvbnTest.RegexGuesses (0 ms)
+[ RUN      ] ZxcvbnTest.DateGuesses
+[       OK ] ZxcvbnTest.DateGuesses (0 ms)
+[ RUN      ] ZxcvbnTest.SpatialGuesses
+[       OK ] ZxcvbnTest.SpatialGuesses (0 ms)
+[ RUN      ] ZxcvbnTest.DictionaryGuesses
+[       OK ] ZxcvbnTest.DictionaryGuesses (0 ms)
+[ RUN      ] ZxcvbnTest.UppercaseVariants
+[       OK ] ZxcvbnTest.UppercaseVariants (0 ms)
+[ RUN      ] ZxcvbnTest.L33tVariations
+[       OK ] ZxcvbnTest.L33tVariations (0 ms)
+[----------] 20 tests from ZxcvbnTest (6 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 1 test suite ran. (7 ms total)
+[  PASSED  ] 20 tests.

@@ -1,0 +1,48 @@
+[==========] Running 20 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 20 tests from CppgcWorkListTest
+[ RUN      ] CppgcWorkListTest.SegmentCreate
+[       OK ] CppgcWorkListTest.SegmentCreate (0 ms)
+[ RUN      ] CppgcWorkListTest.SegmentPush
+[       OK ] CppgcWorkListTest.SegmentPush (0 ms)
+[ RUN      ] CppgcWorkListTest.SegmentPushPop
+[       OK ] CppgcWorkListTest.SegmentPushPop (0 ms)
+[ RUN      ] CppgcWorkListTest.SegmentIsEmpty
+[       OK ] CppgcWorkListTest.SegmentIsEmpty (0 ms)
+[ RUN      ] CppgcWorkListTest.SegmentIsFull
+[       OK ] CppgcWorkListTest.SegmentIsFull (0 ms)
+[ RUN      ] CppgcWorkListTest.SegmentClear
+[       OK ] CppgcWorkListTest.SegmentClear (0 ms)
+[ RUN      ] CppgcWorkListTest.SegmentUpdateFalse
+[       OK ] CppgcWorkListTest.SegmentUpdateFalse (0 ms)
+[ RUN      ] CppgcWorkListTest.SegmentUpdate
+[       OK ] CppgcWorkListTest.SegmentUpdate (0 ms)
+[ RUN      ] CppgcWorkListTest.CreateEmpty
+[       OK ] CppgcWorkListTest.CreateEmpty (0 ms)
+[ RUN      ] CppgcWorkListTest.LocalPushPop
+[       OK ] CppgcWorkListTest.LocalPushPop (0 ms)
+[ RUN      ] CppgcWorkListTest.LocalPushStaysPrivate
+[       OK ] CppgcWorkListTest.LocalPushStaysPrivate (0 ms)
+[ RUN      ] CppgcWorkListTest.LocalClear
+[       OK ] CppgcWorkListTest.LocalClear (0 ms)
+[ RUN      ] CppgcWorkListTest.GlobalUpdateNull
+[       OK ] CppgcWorkListTest.GlobalUpdateNull (0 ms)
+[ RUN      ] CppgcWorkListTest.GlobalUpdate
+[       OK ] CppgcWorkListTest.GlobalUpdate (0 ms)
+[ RUN      ] CppgcWorkListTest.FlushToGlobalPushSegment
+[       OK ] CppgcWorkListTest.FlushToGlobalPushSegment (1 ms)
+[ RUN      ] CppgcWorkListTest.FlushToGlobalPopSegment
+[       OK ] CppgcWorkListTest.FlushToGlobalPopSegment (0 ms)
+[ RUN      ] CppgcWorkListTest.Clear
+[       OK ] CppgcWorkListTest.Clear (0 ms)
+[ RUN      ] CppgcWorkListTest.SingleSegmentSteal
+[       OK ] CppgcWorkListTest.SingleSegmentSteal (0 ms)
+[ RUN      ] CppgcWorkListTest.MultipleSegmentsStolen
+[       OK ] CppgcWorkListTest.MultipleSegmentsStolen (0 ms)
+[ RUN      ] CppgcWorkListTest.MergeGlobalPool
+[       OK ] CppgcWorkListTest.MergeGlobalPool (0 ms)
+[----------] 20 tests from CppgcWorkListTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 1 test suite ran. (5 ms total)
+[  PASSED  ] 20 tests.

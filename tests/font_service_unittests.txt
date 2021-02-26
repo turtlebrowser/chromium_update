@@ -1,0 +1,782 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[26804:26804:0225/233127.892408:122442084522:ERROR:test_launcher.cc(1090)] no test result for FontLoaderTest.RenderStyleForStrike
+[26804:26804:0225/233127.892465:122442084554:ERROR:test_launcher.cc(1090)] no test result for FontLoaderTest.PPAPIFallback
+[26804:26804:0225/233127.892476:122442084565:ERROR:test_launcher.cc(1090)] no test result for FontLoaderTest.LocalMatching
+[26804:26804:0225/233127.892485:122442084574:ERROR:test_launcher.cc(1090)] no test result for FontLoaderTest.LocalMatchingExpectNoMatchForFamilyNames
+[26804:26804:0225/233127.892494:122442084583:ERROR:test_launcher.cc(1090)] no test result for FontLoaderTest.RejectNonUtf8
+[ RUN      ] FontLoaderTest.BasicMatchingTest
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb02d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb02d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb02d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb02d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb02d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb02d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb02d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb02d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb02d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+[  FAILED  ] FontLoaderTest.BasicMatchingTest (49 ms)
+[1/9] FontLoaderTest.BasicMatchingTest (49 ms)
+[2/9] FontLoaderTest.NotFoundTest (43 ms)
+[ RUN      ] FontLoaderTest.EmptyFontName
+../../components/services/font/font_loader_unittest.cc:150: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb03b03 font_service::FontLoaderTest_EmptyFontName_Test::TestBody()
+
+[  FAILED  ] FontLoaderTest.EmptyFontName (43 ms)
+[3/9] FontLoaderTest.EmptyFontName (43 ms)
+[ RUN      ] FontLoaderTest.CharacterFallback
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb04279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb04279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb04279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb04279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb04279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5556abb04279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:175: Failure
+Value of: is_bold
+  Actual: true
+Expected: false
+Stack trace:
+#0 0x5556abb0406d font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:176: Failure
+Value of: is_italic
+  Actual: true
+Expected: false
+Stack trace:
+#0 0x5556abb04147 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+Received signal 11 SEGV_MAPERR 00000000001f
+#0 0x5556abea9c49 base::debug::CollectStackTrace()
+#1 0x5556abe57023 base::debug::StackTrace::StackTrace()
+#2 0x5556abea983f base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#3 0x7f8475287980 (/lib/x86_64-linux-gnu/libpthread-2.27.so+0x1297f)
+#4 0x5556abb042f8 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+#5 0x5556abddd8dd testing::Test::Run()
+#6 0x5556abdde16f testing::TestInfo::Run()
+#7 0x5556abddeb57 testing::TestSuite::Run()
+#8 0x5556abdec2d7 testing::internal::UnitTestImpl::RunAllTests()
+#9 0x5556abdebc3f testing::UnitTest::Run()
+#10 0x5556abecc0a4 base::TestSuite::Run()
+#11 0x5556abece3a7 base::(anonymous namespace)::LaunchUnitTestsInternal()
+#12 0x5556abece24f base::LaunchUnitTests()
+#13 0x5556abb13662 main
+#14 0x7f84743d0bf7 __libc_start_main
+#15 0x5556abb022ea _start
+  r8: 0000000000000000  r9: 00007f8475676800 r10: 0000000000000000 r11: 0000000000000000
+ r12: 00007ffc15e9f080 r13: aaaaaaaaaaaaaaaa r14: 00007ffc15e9f078 r15: 00007ffc15e9f100
+  di: 000005597fca4ea0  si: 000005597fd57900  bp: 00007ffc15e9f180  bx: 0000000000000000
+  dx: 000005597fd57900  ax: 0000000000000000  cx: 0000000000000000  sp: 00007ffc15e9efa0
+  ip: 00005556abb042f8 efl: 0000000000010246 cgf: 002b000000000033 erf: 0000000000000004
+ trp: 000000000000000e msk: 0000000000000000 cr2: 000000000000001f
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+[4/9] FontLoaderTest.CharacterFallback (CRASHED)
+[5/9] FontLoaderTest.RenderStyleForStrike (SKIPPED)
+[6/9] FontLoaderTest.PPAPIFallback (SKIPPED)
+[7/9] FontLoaderTest.LocalMatching (SKIPPED)
+[8/9] FontLoaderTest.LocalMatchingExpectNoMatchForFamilyNames (SKIPPED)
+[9/9] FontLoaderTest.RejectNonUtf8 (SKIPPED)
+Retrying 8 tests (retry #0)
+[ RUN      ] FontLoaderTest.BasicMatchingTest
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557814858d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557814858d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557814858d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557814858d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557814858d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557814858d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557814858d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557814858d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:120: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557814858d1a font_service::FontLoaderTest_BasicMatchingTest_Test::TestBody()
+
+[  FAILED  ] FontLoaderTest.BasicMatchingTest (41 ms)
+[10/17] FontLoaderTest.BasicMatchingTest (41 ms)
+[ RUN      ] FontLoaderTest.EmptyFontName
+../../components/services/font/font_loader_unittest.cc:150: Failure
+Value of: IsInTestFontDirectory(base::FilePath(font_identity.fString.c_str()))
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x558b43096b03 font_service::FontLoaderTest_EmptyFontName_Test::TestBody()
+
+[  FAILED  ] FontLoaderTest.EmptyFontName (44 ms)
+[11/17] FontLoaderTest.EmptyFontName (44 ms)
+[ RUN      ] FontLoaderTest.CharacterFallback
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557881549279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557881549279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557881549279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557881549279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557881549279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:178: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x557881549279 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:175: Failure
+Value of: is_bold
+  Actual: true
+Expected: false
+Stack trace:
+#0 0x55788154906d font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:176: Failure
+Value of: is_italic
+  Actual: true
+Expected: false
+Stack trace:
+#0 0x557881549147 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+
+Received signal 11 SEGV_MAPERR 00000000001f
+#0 0x5578818eec49 base::debug::CollectStackTrace()
+#1 0x55788189c023 base::debug::StackTrace::StackTrace()
+#2 0x5578818ee83f base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#3 0x7fdd4b825980 (/lib/x86_64-linux-gnu/libpthread-2.27.so+0x1297f)
+#4 0x5578815492f8 font_service::FontLoaderTest_CharacterFallback_Test::TestBody()
+#5 0x5578818228dd testing::Test::Run()
+#6 0x55788182316f testing::TestInfo::Run()
+#7 0x557881823b57 testing::TestSuite::Run()
+#8 0x5578818312d7 testing::internal::UnitTestImpl::RunAllTests()
+#9 0x557881830c3f testing::UnitTest::Run()
+#10 0x5578819110a4 base::TestSuite::Run()
+#11 0x5578819133a7 base::(anonymous namespace)::LaunchUnitTestsInternal()
+#12 0x55788191324f base::LaunchUnitTests()
+#13 0x557881558662 main
+#14 0x7fdd4a96ebf7 __libc_start_main
+#15 0x5578815472ea _start
+  r8: 0000000000000000  r9: 00007fdd4bc14800 r10: 0000000000000000 r11: 0000000000000000
+ r12: 00007ffd08070050 r13: aaaaaaaaaaaaaaaa r14: 00007ffd08070048 r15: 00007ffd080700d0
+  di: 0000000424fe9ea0  si: 000000042509c900  bp: 00007ffd08070150  bx: 0000000000000000
+  dx: 000000042509c900  ax: 0000000000000000  cx: 0000000000000000  sp: 00007ffd0806ff70
+  ip: 00005578815492f8 efl: 0000000000010246 cgf: 002b000000000033 erf: 0000000000000004
+ trp: 000000000000000e msk: 0000000000000000 cr2: 000000000000001f
+[end of stack trace]
+Calling _exit(1). Core file will not be generated.
+[12/17] FontLoaderTest.CharacterFallback (CRASHED)
+[13/17] FontLoaderTest.RenderStyleForStrike (44 ms)
+[14/17] FontLoaderTest.PPAPIFallback (52 ms)
+[ RUN      ] FontLoaderTest.LocalMatching
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d3992300 font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+../../components/services/font/font_loader_unittest.cc:328: Failure
+Value of: IsInTestFontDirectory(font_identity->filepath)
+  Actual: false
+Expected: true
+Stack trace:
+#0 0x5604d39926c6 _ZZN12font_service33FontLoaderTest_LocalMatching_Test8TestBodyEvENK3$_1clIA27_NSt3__112basic_stringIcNS3_11char_traitsIcEENS3_9allocatorIcEEEEEEDaRT_
+#1 0x5604d399230f font_service::FontLoaderTest_LocalMatching_Test::TestBody()
+
+[  FAILED  ] FontLoaderTest.LocalMatching (65 ms)
+[15/17] FontLoaderTest.LocalMatching (65 ms)
+[16/17] FontLoaderTest.LocalMatchingExpectNoMatchForFamilyNames (60 ms)
+[17/17] FontLoaderTest.RejectNonUtf8 (41 ms)
+3 tests failed:
+    FontLoaderTest.BasicMatchingTest (../../components/services/font/font_loader_unittest.cc:92)
+    FontLoaderTest.EmptyFontName (../../components/services/font/font_loader_unittest.cc:139)
+    FontLoaderTest.LocalMatching (../../components/services/font/font_loader_unittest.cc:263)
+1 test crashed:
+    FontLoaderTest.CharacterFallback (../../components/services/font/font_loader_unittest.cc:153)
+Tests took 1 seconds.

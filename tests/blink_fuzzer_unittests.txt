@@ -1,0 +1,34 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[1/26] SequenceManagerFuzzerProcessorTest.CreateTaskQueue (5 ms)
+[2/26] SequenceManagerFuzzerProcessorTest.CreateQueueVoter (31 ms)
+[3/26] SequenceManagerFuzzerProcessorTest.PostDelayedTaskWDuration (32 ms)
+[4/26] SequenceManagerFuzzerProcessorTest.SetQueuePriority (19 ms)
+[5/26] SequenceManagerFuzzerProcessorTest.SetQueueEnabled (16 ms)
+[6/26] SequenceManagerFuzzerProcessorTest.SetQueueEnabledWDelays (17 ms)
+[7/26] SequenceManagerFuzzerProcessorTest.MultipleVoters (16 ms)
+[8/26] SequenceManagerFuzzerProcessorTest.ShutdownTaskQueue (8 ms)
+[9/26] SequenceManagerFuzzerProcessorTest.ShutdownTaskQueueWhenOneQueueAvailable (15 ms)
+[10/26] SequenceManagerFuzzerProcessorTest.ShutdownPostingTaskQueue (13 ms)
+[11/26] SequenceManagerFuzzerProcessorTest.CancelParentTask (39 ms)
+[12/26] SequenceManagerFuzzerProcessorTest.CancelTask (35 ms)
+[13/26] SequenceManagerFuzzerProcessorTest.CancelTaskWhenNoneArePending (15 ms)
+[14/26] SequenceManagerFuzzerProcessorTest.TaskDurationBlocksOtherPendingTasksPostedFromOutsideOfTask (28 ms)
+[15/26] SequenceManagerFuzzerProcessorTest.TaskDurationBlocksOtherNonNestableTaskWhenPostedFromWithinTask (24 ms)
+[16/26] SequenceManagerFuzzerProcessorTest.PostNonEmptyTask (19 ms)
+[17/26] SequenceManagerFuzzerProcessorTest.OrderOfSimpleUnnestedExecutedActions (19 ms)
+[18/26] SequenceManagerFuzzerProcessorTest.InsertAndRemoveFence (16 ms)
+[19/26] SequenceManagerFuzzerProcessorTest.ThrottleTaskQueue (28 ms)
+[20/26] SequenceManagerFuzzerProcessorTest.MultipleThreadsButNotInteracting (158 ms)
+[21/26] SequenceManagerFuzzerProcessorTest.CreateThreadRecursively (78 ms)
+[22/26] SequenceManagerFuzzerProcessorTest.CrossThreadPostingOnlyOneThreadAvaible (11 ms)
+[23/26] SequenceManagerFuzzerProcessorTest.CrossThreadPosting (49 ms)
+[24/26] SequenceManagerFuzzerProcessorTest.AdvanceThreadsClockSynchronously (60 ms)
+[25/26] SequenceManagerFuzzerProcessorTest.AdvanceThreadClockByTaskDurationSynchronously (40 ms)
+[26/26] SequenceManagerFuzzerProcessorTest.CrossThreadPostFromChildThreads (2420 ms)
+SUCCESS: all tests passed.
+Tests took 2 seconds.

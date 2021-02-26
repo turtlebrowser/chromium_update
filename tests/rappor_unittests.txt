@@ -1,0 +1,53 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[20864:20864:0225/235852.847819:124087039932:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[20864:20864:0225/235852.856944:124087049034:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[20864:20864:0225/235852.857030:124087049119:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[1/42] BloomFilterTest.TinyFilter (0 ms)
+[2/42] BloomFilterTest.HugeFilter (0 ms)
+[3/42] BloomFilterTest.GetBloomBitsSmall (0 ms)
+[4/42] BloomFilterTest.GetBloomBitsLarge (0 ms)
+[5/42] ByteVectorTest.Uint64ToByteVectorSmall (16 ms)
+[6/42] ByteVectorTest.Uint64ToByteVectorLarge (0 ms)
+[7/42] ByteVectorTest.ByteVectorAnd (0 ms)
+[8/42] ByteVectorTest.ByteVectorOr (0 ms)
+[9/42] ByteVectorTest.ByteVectorMerge (0 ms)
+[10/42] ByteVectorTest.ByteVectorGenerator (0 ms)
+[11/42] ByteVectorTest.HmacByteVectorGenerator (0 ms)
+[12/42] ByteVectorTest.HmacNist (0 ms)
+[13/42] ByteVectorTest.WeightedRandomStatistics0 (0 ms)
+[14/42] ByteVectorTest.WeightedRandomStatistics100 (0 ms)
+[15/42] ByteVectorTest.WeightedRandomStatistics50 (0 ms)
+[16/42] ByteVectorTest.WeightedRandomStatistics75 (0 ms)
+[17/42] ByteVectorTest.HmacWeightedRandomStatistics50 (0 ms)
+[18/42] ByteVectorTest.HmacWeightedRandomStatistics75 (0 ms)
+[19/42] LogUploaderTest.Success (0 ms)
+[20/42] LogUploaderTest.Rejection (0 ms)
+[21/42] LogUploaderTest.Failure (3 ms)
+[22/42] LogUploaderTest.Backoff (0 ms)
+[23/42] RapporMetricTest.BasicMetric (0 ms)
+[24/42] RapporMetricTest.GetReport (0 ms)
+[25/42] RapporMetricTest.GetReportStatistics (0 ms)
+[26/42] RapporPrefsTest.EmptyCohort (1 ms)
+[27/42] RapporPrefsTest.LoadCohort (0 ms)
+[28/42] RapporPrefsTest.CorruptCohort (0 ms)
+[29/42] RapporPrefsTest.EmptySecret (0 ms)
+[30/42] RapporPrefsTest.LoadSecret (0 ms)
+[31/42] RapporPrefsTest.CorruptSecret (0 ms)
+[32/42] RapporPrefsTest.DecodableCorruptSecret (0 ms)
+[33/42] RapporServiceImplTest.Update (0 ms)
+[34/42] RapporServiceImplTest.RecordAndExportMetrics (0 ms)
+[35/42] RapporServiceImplTest.UmaRecordingGroup (0 ms)
+[36/42] RapporServiceImplTest.GetRecordedSampleForMetric (0 ms)
+[37/42] RapporServiceImplTest.Incognito (0 ms)
+[38/42] RapporServiceImplTest.RecordSample (0 ms)
+[39/42] RapporSamplingTest.GetDomainAndRegistrySampleFromGURLTest (0 ms)
+[40/42] RapporSamplingTest.SmokeTest (0 ms)
+[41/42] RapporSamplerTest.TestExport (0 ms)
+[42/42] RapporSamplerTest.TestNoNoise (0 ms)
+SUCCESS: all tests passed.
+Tests took 0 seconds.

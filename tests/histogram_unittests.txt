@@ -1,0 +1,52 @@
+Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.cc
+[==========] Running 20 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 12 tests from HistogramTest
+[ RUN      ] HistogramTest.WritesCorrectNameToProto
+[       OK ] HistogramTest.WritesCorrectNameToProto (0 ms)
+[ RUN      ] HistogramTest.WritesCorrectUnitToProto
+[       OK ] HistogramTest.WritesCorrectUnitToProto (0 ms)
+[ RUN      ] HistogramTest.WritesCorrectDescriptionToProto
+[       OK ] HistogramTest.WritesCorrectDescriptionToProto (0 ms)
+[ RUN      ] HistogramTest.WritesDiagnosticsToProto
+[       OK ] HistogramTest.WritesDiagnosticsToProto (0 ms)
+[ RUN      ] HistogramTest.WritesSmallNumberOfSamplesToProtoInOrder
+[       OK ] HistogramTest.WritesSmallNumberOfSamplesToProtoInOrder (0 ms)
+[ RUN      ] HistogramTest.StartsUniformlySamplingAfterReachingMaxNumSamples
+[       OK ] HistogramTest.StartsUniformlySamplingAfterReachingMaxNumSamples (0 ms)
+[ RUN      ] HistogramTest.WritesCorrectRunningStatisticsToProto
+[       OK ] HistogramTest.WritesCorrectRunningStatisticsToProto (0 ms)
+[ RUN      ] HistogramTest.DoesNotWriteMeanlogsIfNegativeSampleAdded
+[       OK ] HistogramTest.DoesNotWriteMeanlogsIfNegativeSampleAdded (0 ms)
+[ RUN      ] HistogramTest.WritesSummaryOptions
+[       OK ] HistogramTest.WritesSummaryOptions (0 ms)
+[ RUN      ] HistogramTest.UnitFromJsonUnitConvertsUnits
+[       OK ] HistogramTest.UnitFromJsonUnitConvertsUnits (0 ms)
+[ RUN      ] HistogramTest.UnitFromJsonUnitReturnsUnitlessOnWrongUnits
+[       OK ] HistogramTest.UnitFromJsonUnitReturnsUnitlessOnWrongUnits (0 ms)
+[ RUN      ] HistogramTest.UnitFromJsonUnitIgnoresImprovementDirection
+[       OK ] HistogramTest.UnitFromJsonUnitIgnoresImprovementDirection (0 ms)
+[----------] 12 tests from HistogramTest (0 ms total)
+
+[----------] 8 tests from RunningStatisticsUnittest
+[ RUN      ] RunningStatisticsUnittest.GetsCountRight
+[       OK ] RunningStatisticsUnittest.GetsCountRight (0 ms)
+[ RUN      ] RunningStatisticsUnittest.ComputesMean
+[       OK ] RunningStatisticsUnittest.ComputesMean (0 ms)
+[ RUN      ] RunningStatisticsUnittest.MeanIsInfiniteIfInfiniteSampleAdded
+[       OK ] RunningStatisticsUnittest.MeanIsInfiniteIfInfiniteSampleAdded (0 ms)
+[ RUN      ] RunningStatisticsUnittest.ComputesMaxAndMin
+[       OK ] RunningStatisticsUnittest.ComputesMaxAndMin (0 ms)
+[ RUN      ] RunningStatisticsUnittest.ComputesMeanLogs
+[       OK ] RunningStatisticsUnittest.ComputesMeanLogs (0 ms)
+[ RUN      ] RunningStatisticsUnittest.MeanlogsGoInvalidIfNegativeSampleAdded
+[       OK ] RunningStatisticsUnittest.MeanlogsGoInvalidIfNegativeSampleAdded (0 ms)
+[ RUN      ] RunningStatisticsUnittest.ComputesVariance
+[       OK ] RunningStatisticsUnittest.ComputesVariance (0 ms)
+[ RUN      ] RunningStatisticsUnittest.VarianceIsZeroForOneSample
+[       OK ] RunningStatisticsUnittest.VarianceIsZeroForOneSample (0 ms)
+[----------] 8 tests from RunningStatisticsUnittest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 2 test suites ran. (0 ms total)
+[  PASSED  ] 20 tests.

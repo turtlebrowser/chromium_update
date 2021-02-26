@@ -1,0 +1,29 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 8 parallel jobs.
+[1/21] FileImplTest.ClosingFileClearsLock (32 ms)
+[2/21] DirectoryImplTest.Read (36 ms)
+[3/21] DirectoryImplTest.BasicRenameDelete (47 ms)
+[4/21] DirectoryImplTest.CantOpenDirectoriesAsFiles (31 ms)
+[5/21] DirectoryImplTest.Clone (31 ms)
+[6/21] DirectoryImplTest.WriteFileReadFile (55 ms)
+[7/21] DirectoryImplTest.ReadEmptyFileIsNotFoundError (47 ms)
+[8/21] DirectoryImplTest.CantReadEntireFileOnADirectory (41 ms)
+[9/21] DirectoryImplTest.CantWriteFileOnADirectory (59 ms)
+[10/21] DirectoryImplTest.Flush (63 ms)
+[11/21] FileImplTest.CreateWriteCloseRenameOpenRead (51 ms)
+[12/21] FileImplTest.CantWriteInReadMode (36 ms)
+[13/21] FileImplTest.OpenInAppendMode (31 ms)
+[14/21] FileImplTest.OpenInTruncateMode (52 ms)
+[15/21] FileImplTest.StatTouch (32 ms)
+[16/21] FileImplTest.TellSeek (51 ms)
+[17/21] FileImplTest.Dup (55 ms)
+[18/21] FileImplTest.Truncate (35 ms)
+[19/21] FileImplTest.AsHandle (47 ms)
+[20/21] FileImplTest.SimpleLockUnlock (47 ms)
+[21/21] FileImplTest.CantDoubleLock (40 ms)
+SUCCESS: all tests passed.
+Tests took 0 seconds.

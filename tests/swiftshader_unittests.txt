@@ -1,0 +1,187 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 1 parallel jobs.
+Note: Google Test filter = SwiftShaderTest.Initalization:SwiftShaderTest.ClearIncomplete:SwiftShaderTest.UnrollLoop:SwiftShaderTest.DynamicLoop:SwiftShaderTest.DynamicIndexing:SwiftShaderTest.AttributeLocation:SwiftShaderTest.NegativeLocation:SwiftShaderTest.ClearDirtyTexture:SwiftShaderTest.CopyTexImage:SwiftShaderTest.CopyTexImageFromPixelBuffer:SwiftShaderTest.ReadHalfFloat:SwiftShaderTest.MatrixInStruct:SwiftShaderTest.TestMat4Uniform:SwiftShaderTest.SamplerArrayInStructArrayAsFunctionArg:SwiftShaderTest.AtanCornerCases:SwiftShaderTest.TransformFeedback_DrawArraysInstanced:SwiftShaderTest.TransformFeedback_BadViewport:SwiftShaderTest.OutOfMemory:SwiftShaderTest.ViewportBounds:SwiftShaderTest.TextureRectangle_TexImage2D:SwiftShaderTest.TextureRectangle_CompressedTexImage2DDisallowed:SwiftShaderTest.TextureRectangle_TexStorage2D:SwiftShaderTest.TextureRectangle_TexParameterRestriction:SwiftShaderTest.TextureRectangle_FramebufferTexture2DLevel:SwiftShaderTest.TextureRectangle_SamplingFromRectangle:SwiftShaderTest.TextureRectangle_SamplingFromRectangleESSL3:SwiftShaderTest.TextureRectangle_RenderToRectangle:SwiftShaderTest.TextureRectangle_DefaultSamplerParameters:SwiftShaderTest.TextureRectangle_CopyTexImage:SwiftShaderTest.TextureRectangle_CopyTexSubImage:SwiftShaderTest.BlitTest:SwiftShaderTest.InvalidEnum_TexImage2D:SwiftShaderTest.CompilerLimits_DeepNestedIfs:SwiftShaderTest.CompilerLimits_DeepNestedSwitches:SwiftShaderTest.CompilerLimits_DeepNestedLoops:SwiftShaderTest.CompilerLimits_DeepNestedCalls:SwiftShaderTest.CompilerLimits_ManyCallSites:SwiftShaderTest.CompilerLimits_DeepNestedCallsInUnusedFunction:SwiftShaderTest.CompilerLimits_SparseLabels:SwiftShaderTest.CompilerLimits_ArraySize:SwiftShaderTest.BadNegation:SwiftShaderTest.SwitchDefaultOnly:IOSurfaceClientBufferTest.RenderToBGRA8888IOSurface:IOSurfaceClientBufferTest.ReadFromBGRA8888IOSurface:IOSurfaceClientBufferTest.RenderToRGBX8888IOSurface:IOSurfaceClientBufferTest.ReadFromRGBX8888IOSurface:IOSurfaceClientBufferTest.RenderToRG88IOSurface:IOSurfaceClientBufferTest.ReadFromRG88IOSurface:IOSurfaceClientBufferTest.RenderToR8IOSurface:IOSurfaceClientBufferTest.ReadFromR8IOSurface:IOSurfaceClientBufferTest.RenderToR16IOSurface:IOSurfaceClientBufferTest.ReadFromR16IOSurface:IOSurfaceClientBufferTest.NegativeValidationMissingAttributes:IOSurfaceClientBufferTest.NegativeValidationBadAttributes:IOSurfaceClientBufferTest.MakeCurrentAllowed
+[==========] Running 55 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 42 tests from SwiftShaderTest
+[ RUN      ] SwiftShaderTest.Initalization
+[       OK ] SwiftShaderTest.Initalization (28 ms)
+[ RUN      ] SwiftShaderTest.ClearIncomplete
+[       OK ] SwiftShaderTest.ClearIncomplete (2 ms)
+[ RUN      ] SwiftShaderTest.UnrollLoop
+[       OK ] SwiftShaderTest.UnrollLoop (562 ms)
+[ RUN      ] SwiftShaderTest.DynamicLoop
+[       OK ] SwiftShaderTest.DynamicLoop (680 ms)
+[ RUN      ] SwiftShaderTest.DynamicIndexing
+[       OK ] SwiftShaderTest.DynamicIndexing (520 ms)
+[ RUN      ] SwiftShaderTest.AttributeLocation
+[       OK ] SwiftShaderTest.AttributeLocation (548 ms)
+[ RUN      ] SwiftShaderTest.NegativeLocation
+[       OK ] SwiftShaderTest.NegativeLocation (39 ms)
+[ RUN      ] SwiftShaderTest.ClearDirtyTexture
+[       OK ] SwiftShaderTest.ClearDirtyTexture (22 ms)
+[ RUN      ] SwiftShaderTest.CopyTexImage
+[       OK ] SwiftShaderTest.CopyTexImage (33 ms)
+[ RUN      ] SwiftShaderTest.CopyTexImageFromPixelBuffer
+[       OK ] SwiftShaderTest.CopyTexImageFromPixelBuffer (3 ms)
+[ RUN      ] SwiftShaderTest.ReadHalfFloat
+[       OK ] SwiftShaderTest.ReadHalfFloat (57 ms)
+[ RUN      ] SwiftShaderTest.MatrixInStruct
+[       OK ] SwiftShaderTest.MatrixInStruct (43 ms)
+[ RUN      ] SwiftShaderTest.TestMat4Uniform
+[       OK ] SwiftShaderTest.TestMat4Uniform (571 ms)
+[ RUN      ] SwiftShaderTest.SamplerArrayInStructArrayAsFunctionArg
+[       OK ] SwiftShaderTest.SamplerArrayInStructArrayAsFunctionArg (620 ms)
+[ RUN      ] SwiftShaderTest.AtanCornerCases
+[       OK ] SwiftShaderTest.AtanCornerCases (564 ms)
+[ RUN      ] SwiftShaderTest.TransformFeedback_DrawArraysInstanced
+[       OK ] SwiftShaderTest.TransformFeedback_DrawArraysInstanced (33 ms)
+[ RUN      ] SwiftShaderTest.TransformFeedback_BadViewport
+[       OK ] SwiftShaderTest.TransformFeedback_BadViewport (607 ms)
+[ RUN      ] SwiftShaderTest.OutOfMemory
+[       OK ] SwiftShaderTest.OutOfMemory (3 ms)
+[ RUN      ] SwiftShaderTest.ViewportBounds
+[       OK ] SwiftShaderTest.ViewportBounds (2361 ms)
+[ RUN      ] SwiftShaderTest.TextureRectangle_TexImage2D
+[       OK ] SwiftShaderTest.TextureRectangle_TexImage2D (2 ms)
+[ RUN      ] SwiftShaderTest.TextureRectangle_CompressedTexImage2DDisallowed
+[       OK ] SwiftShaderTest.TextureRectangle_CompressedTexImage2DDisallowed (35 ms)
+[ RUN      ] SwiftShaderTest.TextureRectangle_TexStorage2D
+[       OK ] SwiftShaderTest.TextureRectangle_TexStorage2D (2 ms)
+[ RUN      ] SwiftShaderTest.TextureRectangle_TexParameterRestriction
+[       OK ] SwiftShaderTest.TextureRectangle_TexParameterRestriction (2 ms)
+[ RUN      ] SwiftShaderTest.TextureRectangle_FramebufferTexture2DLevel
+[       OK ] SwiftShaderTest.TextureRectangle_FramebufferTexture2DLevel (2 ms)
+[ RUN      ] SwiftShaderTest.TextureRectangle_SamplingFromRectangle
+[       OK ] SwiftShaderTest.TextureRectangle_SamplingFromRectangle (549 ms)
+[ RUN      ] SwiftShaderTest.TextureRectangle_SamplingFromRectangleESSL3
+[       OK ] SwiftShaderTest.TextureRectangle_SamplingFromRectangleESSL3 (568 ms)
+[ RUN      ] SwiftShaderTest.TextureRectangle_RenderToRectangle
+[       OK ] SwiftShaderTest.TextureRectangle_RenderToRectangle (4 ms)
+[ RUN      ] SwiftShaderTest.TextureRectangle_DefaultSamplerParameters
+[       OK ] SwiftShaderTest.TextureRectangle_DefaultSamplerParameters (42 ms)
+[ RUN      ] SwiftShaderTest.TextureRectangle_CopyTexImage
+[       OK ] SwiftShaderTest.TextureRectangle_CopyTexImage (40 ms)
+[ RUN      ] SwiftShaderTest.TextureRectangle_CopyTexSubImage
+[       OK ] SwiftShaderTest.TextureRectangle_CopyTexSubImage (48 ms)
+[ RUN      ] SwiftShaderTest.BlitTest
+[       OK ] SwiftShaderTest.BlitTest (3 ms)
+[ RUN      ] SwiftShaderTest.InvalidEnum_TexImage2D
+[       OK ] SwiftShaderTest.InvalidEnum_TexImage2D (2 ms)
+[ RUN      ] SwiftShaderTest.CompilerLimits_DeepNestedIfs
+[       OK ] SwiftShaderTest.CompilerLimits_DeepNestedIfs (1168 ms)
+[ RUN      ] SwiftShaderTest.CompilerLimits_DeepNestedSwitches
+[       OK ] SwiftShaderTest.CompilerLimits_DeepNestedSwitches (1448 ms)
+[ RUN      ] SwiftShaderTest.CompilerLimits_DeepNestedLoops
+[       OK ] SwiftShaderTest.CompilerLimits_DeepNestedLoops (1456 ms)
+[ RUN      ] SwiftShaderTest.CompilerLimits_DeepNestedCalls
+[       OK ] SwiftShaderTest.CompilerLimits_DeepNestedCalls (1092 ms)
+[ RUN      ] SwiftShaderTest.CompilerLimits_ManyCallSites
+Still waiting for the following processes to finish:
+	./swiftshader_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.Ok4JlS/.org.chromium.Chromium.EeMR8g --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.Ok4JlS/HvKiKz/test_results.xml --test-launcher-retries-left=1
+[       OK ] SwiftShaderTest.CompilerLimits_ManyCallSites (2436 ms)
+[ RUN      ] SwiftShaderTest.CompilerLimits_DeepNestedCallsInUnusedFunction
+[       OK ] SwiftShaderTest.CompilerLimits_DeepNestedCallsInUnusedFunction (1048 ms)
+[ RUN      ] SwiftShaderTest.CompilerLimits_SparseLabels
+[       OK ] SwiftShaderTest.CompilerLimits_SparseLabels (1074 ms)
+[ RUN      ] SwiftShaderTest.CompilerLimits_ArraySize
+[       OK ] SwiftShaderTest.CompilerLimits_ArraySize (52 ms)
+[ RUN      ] SwiftShaderTest.BadNegation
+[       OK ] SwiftShaderTest.BadNegation (163 ms)
+[ RUN      ] SwiftShaderTest.SwitchDefaultOnly
+[       OK ] SwiftShaderTest.SwitchDefaultOnly (1090 ms)
+[----------] 42 tests from SwiftShaderTest (19701 ms total)
+
+[----------] 13 tests from IOSurfaceClientBufferTest
+[ RUN      ] IOSurfaceClientBufferTest.RenderToBGRA8888IOSurface
+[       OK ] IOSurfaceClientBufferTest.RenderToBGRA8888IOSurface (42 ms)
+[ RUN      ] IOSurfaceClientBufferTest.ReadFromBGRA8888IOSurface
+[       OK ] IOSurfaceClientBufferTest.ReadFromBGRA8888IOSurface (541 ms)
+[ RUN      ] IOSurfaceClientBufferTest.RenderToRGBX8888IOSurface
+[       OK ] IOSurfaceClientBufferTest.RenderToRGBX8888IOSurface (13 ms)
+[ RUN      ] IOSurfaceClientBufferTest.ReadFromRGBX8888IOSurface
+[       OK ] IOSurfaceClientBufferTest.ReadFromRGBX8888IOSurface (564 ms)
+[ RUN      ] IOSurfaceClientBufferTest.RenderToRG88IOSurface
+[       OK ] IOSurfaceClientBufferTest.RenderToRG88IOSurface (4 ms)
+[ RUN      ] IOSurfaceClientBufferTest.ReadFromRG88IOSurface
+[       OK ] IOSurfaceClientBufferTest.ReadFromRG88IOSurface (540 ms)
+[ RUN      ] IOSurfaceClientBufferTest.RenderToR8IOSurface
+[       OK ] IOSurfaceClientBufferTest.RenderToR8IOSurface (3 ms)
+[ RUN      ] IOSurfaceClientBufferTest.ReadFromR8IOSurface
+[       OK ] IOSurfaceClientBufferTest.ReadFromR8IOSurface (604 ms)
+[ RUN      ] IOSurfaceClientBufferTest.RenderToR16IOSurface
+[       OK ] IOSurfaceClientBufferTest.RenderToR16IOSurface (3 ms)
+[ RUN      ] IOSurfaceClientBufferTest.ReadFromR16IOSurface
+[       OK ] IOSurfaceClientBufferTest.ReadFromR16IOSurface (605 ms)
+[ RUN      ] IOSurfaceClientBufferTest.NegativeValidationMissingAttributes
+[       OK ] IOSurfaceClientBufferTest.NegativeValidationMissingAttributes (3 ms)
+[ RUN      ] IOSurfaceClientBufferTest.NegativeValidationBadAttributes
+[       OK ] IOSurfaceClientBufferTest.NegativeValidationBadAttributes (10 ms)
+[ RUN      ] IOSurfaceClientBufferTest.MakeCurrentAllowed
+[       OK ] IOSurfaceClientBufferTest.MakeCurrentAllowed (2 ms)
+[----------] 13 tests from IOSurfaceClientBufferTest (2958 ms total)
+
+[----------] Global test environment tear-down
+[==========] 55 tests from 2 test suites ran. (22659 ms total)
+[  PASSED  ] 55 tests.
+[1/55] SwiftShaderTest.Initalization (28 ms)
+[2/55] SwiftShaderTest.ClearIncomplete (2 ms)
+[3/55] SwiftShaderTest.UnrollLoop (562 ms)
+[4/55] SwiftShaderTest.DynamicLoop (680 ms)
+[5/55] SwiftShaderTest.DynamicIndexing (520 ms)
+[6/55] SwiftShaderTest.AttributeLocation (548 ms)
+[7/55] SwiftShaderTest.NegativeLocation (39 ms)
+[8/55] SwiftShaderTest.ClearDirtyTexture (22 ms)
+[9/55] SwiftShaderTest.CopyTexImage (33 ms)
+[10/55] SwiftShaderTest.CopyTexImageFromPixelBuffer (3 ms)
+[11/55] SwiftShaderTest.ReadHalfFloat (57 ms)
+[12/55] SwiftShaderTest.MatrixInStruct (43 ms)
+[13/55] SwiftShaderTest.TestMat4Uniform (571 ms)
+[14/55] SwiftShaderTest.SamplerArrayInStructArrayAsFunctionArg (620 ms)
+[15/55] SwiftShaderTest.AtanCornerCases (564 ms)
+[16/55] SwiftShaderTest.TransformFeedback_DrawArraysInstanced (33 ms)
+[17/55] SwiftShaderTest.TransformFeedback_BadViewport (607 ms)
+[18/55] SwiftShaderTest.OutOfMemory (3 ms)
+[19/55] SwiftShaderTest.ViewportBounds (2361 ms)
+[20/55] SwiftShaderTest.TextureRectangle_TexImage2D (2 ms)
+[21/55] SwiftShaderTest.TextureRectangle_CompressedTexImage2DDisallowed (35 ms)
+[22/55] SwiftShaderTest.TextureRectangle_TexStorage2D (2 ms)
+[23/55] SwiftShaderTest.TextureRectangle_TexParameterRestriction (2 ms)
+[24/55] SwiftShaderTest.TextureRectangle_FramebufferTexture2DLevel (2 ms)
+[25/55] SwiftShaderTest.TextureRectangle_SamplingFromRectangle (549 ms)
+[26/55] SwiftShaderTest.TextureRectangle_SamplingFromRectangleESSL3 (568 ms)
+[27/55] SwiftShaderTest.TextureRectangle_RenderToRectangle (4 ms)
+[28/55] SwiftShaderTest.TextureRectangle_DefaultSamplerParameters (42 ms)
+[29/55] SwiftShaderTest.TextureRectangle_CopyTexImage (40 ms)
+[30/55] SwiftShaderTest.TextureRectangle_CopyTexSubImage (48 ms)
+[31/55] SwiftShaderTest.BlitTest (3 ms)
+[32/55] SwiftShaderTest.InvalidEnum_TexImage2D (2 ms)
+[33/55] SwiftShaderTest.CompilerLimits_DeepNestedIfs (1168 ms)
+[34/55] SwiftShaderTest.CompilerLimits_DeepNestedSwitches (1448 ms)
+[35/55] SwiftShaderTest.CompilerLimits_DeepNestedLoops (1456 ms)
+[36/55] SwiftShaderTest.CompilerLimits_DeepNestedCalls (1092 ms)
+[37/55] SwiftShaderTest.CompilerLimits_ManyCallSites (2436 ms)
+[38/55] SwiftShaderTest.CompilerLimits_DeepNestedCallsInUnusedFunction (1048 ms)
+[39/55] SwiftShaderTest.CompilerLimits_SparseLabels (1074 ms)
+[40/55] SwiftShaderTest.CompilerLimits_ArraySize (52 ms)
+[41/55] SwiftShaderTest.BadNegation (163 ms)
+[42/55] SwiftShaderTest.SwitchDefaultOnly (1090 ms)
+[43/55] IOSurfaceClientBufferTest.RenderToBGRA8888IOSurface (42 ms)
+[44/55] IOSurfaceClientBufferTest.ReadFromBGRA8888IOSurface (541 ms)
+[45/55] IOSurfaceClientBufferTest.RenderToRGBX8888IOSurface (13 ms)
+[46/55] IOSurfaceClientBufferTest.ReadFromRGBX8888IOSurface (564 ms)
+[47/55] IOSurfaceClientBufferTest.RenderToRG88IOSurface (4 ms)
+[48/55] IOSurfaceClientBufferTest.ReadFromRG88IOSurface (540 ms)
+[49/55] IOSurfaceClientBufferTest.RenderToR8IOSurface (3 ms)
+[50/55] IOSurfaceClientBufferTest.ReadFromR8IOSurface (604 ms)
+[51/55] IOSurfaceClientBufferTest.RenderToR16IOSurface (3 ms)
+[52/55] IOSurfaceClientBufferTest.ReadFromR16IOSurface (605 ms)
+[53/55] IOSurfaceClientBufferTest.NegativeValidationMissingAttributes (3 ms)
+[54/55] IOSurfaceClientBufferTest.NegativeValidationBadAttributes (10 ms)
+[55/55] IOSurfaceClientBufferTest.MakeCurrentAllowed (2 ms)
+SUCCESS: all tests passed.
+Tests took 22 seconds.
