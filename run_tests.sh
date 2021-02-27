@@ -2,7 +2,11 @@
 set -e
 
 CHROMIUM_UPDATE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-WORK_DIR="/Code"
+if [ "$OSTYPE" = "msys" ] ; then
+    WORK_DIR="/c/Code"
+else
+    WORK_DIR="/Code"
+fi
 CHROMIUM_DIR="${WORK_DIR}/qt-everywhere-src-5.15.2/qtwebengine/src/3rdparty/chromium/"
 BUILD_DIR="$CHROMIUM_DIR/out/Default"
 DEPOT_TOOLS_DIR="${WORK_DIR}/depot_tools"
@@ -28,6 +32,7 @@ info() {
 
 build() {
     cd $CHROMIUM_DIR
+    export DEPOT_TOOLS_WIN_TOOLCHAIN=0
     BRANCH_NAME=$(git symbolic-ref -q HEAD)
     info "[Build] Run build on ${BRANCH_NAME}"
     autoninja -k 0 -C out/Default
