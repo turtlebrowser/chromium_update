@@ -4,25 +4,22 @@ own process. For debugging a test inside a debugger, use the
 --single-process-tests.
 Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
-[9349:9349:0226/000550.230826:124504422937:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
-[9349:9349:0226/000550.230871:124504422960:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
-[9349:9349:0226/000550.230882:124504422971:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[11864:11864:0227/103257.544971:248531737082:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[11864:11864:0227/103257.545019:248531737108:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[11864:11864:0227/103257.545032:248531737120:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
 Still waiting for the following processes to finish:
-	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.og0pfE/.org.chromium.Chromium.TdXHZ1 --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.og0pfE/kFMy7P/test_results.xml --test-launcher-retries-left=1
+	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.sMK3E3/.org.chromium.Chromium.dQwgLB --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.sMK3E3/ITS9Hk/test_results.xml --test-launcher-retries-left=1
 Still waiting for the following processes to finish:
-	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.og0pfE/.org.chromium.Chromium.TdXHZ1 --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.og0pfE/kFMy7P/test_results.xml --test-launcher-retries-left=1
-Still waiting for the following processes to finish:
-	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.og0pfE/.org.chromium.Chromium.TdXHZ1 --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.og0pfE/kFMy7P/test_results.xml --test-launcher-retries-left=1
+	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.sMK3E3/.org.chromium.Chromium.dQwgLB --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.sMK3E3/ITS9Hk/test_results.xml --test-launcher-retries-left=1
 [ RUN      ] ExamplesTest.TestViewsExamplesLaunches_DISABLED
 [1/1] ExamplesTest.TestViewsExamplesLaunches_DISABLED (TIMED OUT)
 Retrying 1 test (retry #0)
 Still waiting for the following processes to finish:
-	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.uGcNj2/.org.chromium.Chromium.VN2EdF --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.uGcNj2/3JTILQ/test_results.xml --test-launcher-retries-left=0
+	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.6CmLws/.org.chromium.Chromium.XgFyXB --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.6CmLws/TyF9e2/test_results.xml --test-launcher-retries-left=0
 Still waiting for the following processes to finish:
-	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.uGcNj2/.org.chromium.Chromium.VN2EdF --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.uGcNj2/3JTILQ/test_results.xml --test-launcher-retries-left=0
-Still waiting for the following processes to finish:
+	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.6CmLws/.org.chromium.Chromium.XgFyXB --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.6CmLws/TyF9e2/test_results.xml --test-launcher-retries-left=0
 [ RUN      ] ExamplesTest.TestViewsExamplesLaunches_DISABLED
 [2/2] ExamplesTest.TestViewsExamplesLaunches_DISABLED (TIMED OUT)
 1 test timed out:
     ExamplesTest.TestViewsExamplesLaunches_DISABLED (../../ui/views/examples/examples_unittest.cc:19)
-Tests took 96 seconds.
+Tests took 90 seconds.

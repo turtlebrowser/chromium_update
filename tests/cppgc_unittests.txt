@@ -2,42 +2,42 @@
 [----------] Global test environment set-up.
 [----------] 3 tests from MarkingVerifierDeathTest
 [ RUN      ] MarkingVerifierDeathTest.DieOnUnmarkedOnStackReference
-[       OK ] MarkingVerifierDeathTest.DieOnUnmarkedOnStackReference (218 ms)
+[       OK ] MarkingVerifierDeathTest.DieOnUnmarkedOnStackReference (100 ms)
 [ RUN      ] MarkingVerifierDeathTest.DieOnUnmarkedMember
-[       OK ] MarkingVerifierDeathTest.DieOnUnmarkedMember (206 ms)
+[       OK ] MarkingVerifierDeathTest.DieOnUnmarkedMember (95 ms)
 [ RUN      ] MarkingVerifierDeathTest.DieOnUnmarkedWeakMember
-[       OK ] MarkingVerifierDeathTest.DieOnUnmarkedWeakMember (144 ms)
-[----------] 3 tests from MarkingVerifierDeathTest (568 ms total)
+[       OK ] MarkingVerifierDeathTest.DieOnUnmarkedWeakMember (91 ms)
+[----------] 3 tests from MarkingVerifierDeathTest (286 ms total)
 
 [----------] 2 tests from GCInfoTableDeathTest
 [ RUN      ] GCInfoTableDeathTest.MoreThanMaxIndexInfos
-[       OK ] GCInfoTableDeathTest.MoreThanMaxIndexInfos (143 ms)
+[       OK ] GCInfoTableDeathTest.MoreThanMaxIndexInfos (90 ms)
 [ RUN      ] GCInfoTableDeathTest.OldTableAreaIsReadOnly
-[       OK ] GCInfoTableDeathTest.OldTableAreaIsReadOnly (133 ms)
-[----------] 2 tests from GCInfoTableDeathTest (276 ms total)
+[       OK ] GCInfoTableDeathTest.OldTableAreaIsReadOnly (90 ms)
+[----------] 2 tests from GCInfoTableDeathTest (180 ms total)
 
 [----------] 3 tests from PageMemoryRegionDeathTest
 [ RUN      ] PageMemoryRegionDeathTest.ReservationIsFreed
-[       OK ] PageMemoryRegionDeathTest.ReservationIsFreed (140 ms)
+[       OK ] PageMemoryRegionDeathTest.ReservationIsFreed (89 ms)
 [ RUN      ] PageMemoryRegionDeathTest.FrontGuardPageAccessCrashes
-[       OK ] PageMemoryRegionDeathTest.FrontGuardPageAccessCrashes (133 ms)
+[       OK ] PageMemoryRegionDeathTest.FrontGuardPageAccessCrashes (90 ms)
 [ RUN      ] PageMemoryRegionDeathTest.BackGuardPageAccessCrashes
-[       OK ] PageMemoryRegionDeathTest.BackGuardPageAccessCrashes (146 ms)
-[----------] 3 tests from PageMemoryRegionDeathTest (419 ms total)
+[       OK ] PageMemoryRegionDeathTest.BackGuardPageAccessCrashes (92 ms)
+[----------] 3 tests from PageMemoryRegionDeathTest (271 ms total)
 
 [----------] 1 test from PageBackendDeathTest
 [ RUN      ] PageBackendDeathTest.DestructingBackendDestroysPageMemory
-[       OK ] PageBackendDeathTest.DestructingBackendDestroysPageMemory (131 ms)
-[----------] 1 test from PageBackendDeathTest (131 ms total)
+[       OK ] PageBackendDeathTest.DestructingBackendDestroysPageMemory (90 ms)
+[----------] 1 test from PageBackendDeathTest (90 ms total)
 
 [----------] 3 tests from CrossThreadPersistentTest
 [ RUN      ] CrossThreadPersistentTest.RetainStronglyOnDifferentThread
-[       OK ] CrossThreadPersistentTest.RetainStronglyOnDifferentThread (28 ms)
+[       OK ] CrossThreadPersistentTest.RetainStronglyOnDifferentThread (1 ms)
 [ RUN      ] CrossThreadPersistentTest.RetainWeaklyOnDifferentThread
-[       OK ] CrossThreadPersistentTest.RetainWeaklyOnDifferentThread (15 ms)
+[       OK ] CrossThreadPersistentTest.RetainWeaklyOnDifferentThread (0 ms)
 [ RUN      ] CrossThreadPersistentTest.DestroyRacingWithGC
 [       OK ] CrossThreadPersistentTest.DestroyRacingWithGC (0 ms)
-[----------] 3 tests from CrossThreadPersistentTest (45 ms total)
+[----------] 3 tests from CrossThreadPersistentTest (1 ms total)
 
 [----------] 3 tests from TestWithHeapWithCustomSpaces
 [ RUN      ] TestWithHeapWithCustomSpaces.AllocateOnCustomSpaces
@@ -71,9 +71,9 @@
 
 [----------] 3 tests from GarbageCollectedTestWithHeap
 [ RUN      ] GarbageCollectedTestWithHeap.GetObjectStartReturnsCurrentAddress
-[       OK ] GarbageCollectedTestWithHeap.GetObjectStartReturnsCurrentAddress (0 ms)
+[       OK ] GarbageCollectedTestWithHeap.GetObjectStartReturnsCurrentAddress (1 ms)
 [ RUN      ] GarbageCollectedTestWithHeap.PostConstructionCallback
-[       OK ] GarbageCollectedTestWithHeap.PostConstructionCallback (1 ms)
+[       OK ] GarbageCollectedTestWithHeap.PostConstructionCallback (0 ms)
 [ RUN      ] GarbageCollectedTestWithHeap.PostConstructionCallbackForMixin
 [       OK ] GarbageCollectedTestWithHeap.PostConstructionCallbackForMixin (0 ms)
 [----------] 3 tests from GarbageCollectedTestWithHeap (1 ms total)
@@ -101,7 +101,7 @@
 [ RUN      ] PageTest.NormalPageIndexing
 [       OK ] PageTest.NormalPageIndexing (2 ms)
 [ RUN      ] PageTest.LargePageIndexing
-[       OK ] PageTest.LargePageIndexing (1 ms)
+[       OK ] PageTest.LargePageIndexing (0 ms)
 [ RUN      ] PageTest.HeapObjectHeaderOnBasePageIndexing
 [       OK ] PageTest.HeapObjectHeaderOnBasePageIndexing (1 ms)
 [ RUN      ] PageTest.HeapObjectHeaderOnLargePageIndexing
@@ -111,25 +111,25 @@
 [ RUN      ] PageTest.LargePageCreationDestruction
 [       OK ] PageTest.LargePageCreationDestruction (0 ms)
 [ RUN      ] PageTest.ObjectHeaderFromInnerAddress
-[       OK ] PageTest.ObjectHeaderFromInnerAddress (1 ms)
-[----------] 9 tests from PageTest (6 ms total)
+[       OK ] PageTest.ObjectHeaderFromInnerAddress (0 ms)
+[----------] 9 tests from PageTest (4 ms total)
 
 [----------] 5 tests from GCHeapTest
 [ RUN      ] GCHeapTest.PreciseGCReclaimsObjectOnStack
-[       OK ] GCHeapTest.PreciseGCReclaimsObjectOnStack (0 ms)
+[       OK ] GCHeapTest.PreciseGCReclaimsObjectOnStack (1 ms)
 [ RUN      ] GCHeapTest.ConservativeGCRetainsObjectOnStack
 [       OK ] GCHeapTest.ConservativeGCRetainsObjectOnStack (0 ms)
 [ RUN      ] GCHeapTest.ObjectPayloadSize
 [       OK ] GCHeapTest.ObjectPayloadSize (1 ms)
 [ RUN      ] GCHeapTest.AllocateWithAdditionalBytes
-[       OK ] GCHeapTest.AllocateWithAdditionalBytes (1 ms)
+[       OK ] GCHeapTest.AllocateWithAdditionalBytes (0 ms)
 [ RUN      ] GCHeapTest.AllocatedSizeDependOnAdditionalBytes
 [       OK ] GCHeapTest.AllocatedSizeDependOnAdditionalBytes (0 ms)
 [----------] 5 tests from GCHeapTest (2 ms total)
 
 [----------] 12 tests from MarkerTest
 [ RUN      ] MarkerTest.PersistentIsMarked
-[       OK ] MarkerTest.PersistentIsMarked (0 ms)
+[       OK ] MarkerTest.PersistentIsMarked (1 ms)
 [ RUN      ] MarkerTest.ReachableMemberIsMarked
 [       OK ] MarkerTest.ReachableMemberIsMarked (0 ms)
 [ RUN      ] MarkerTest.UnreachableMemberIsNotMarked
@@ -139,17 +139,17 @@
 [ RUN      ] MarkerTest.ObjectReachableOnlyFromStackIsNotMarkedIfStackIsEmpty
 [       OK ] MarkerTest.ObjectReachableOnlyFromStackIsNotMarkedIfStackIsEmpty (0 ms)
 [ RUN      ] MarkerTest.WeakReferenceToUnreachableObjectIsCleared
-[       OK ] MarkerTest.WeakReferenceToUnreachableObjectIsCleared (1 ms)
+[       OK ] MarkerTest.WeakReferenceToUnreachableObjectIsCleared (0 ms)
 [ RUN      ] MarkerTest.WeakReferenceToReachableObjectIsNotCleared
 [       OK ] MarkerTest.WeakReferenceToReachableObjectIsNotCleared (0 ms)
 [ RUN      ] MarkerTest.DeepHierarchyIsMarked
 [       OK ] MarkerTest.DeepHierarchyIsMarked (0 ms)
 [ RUN      ] MarkerTest.NestedObjectsOnStackAreMarked
-[       OK ] MarkerTest.NestedObjectsOnStackAreMarked (0 ms)
+[       OK ] MarkerTest.NestedObjectsOnStackAreMarked (1 ms)
 [ RUN      ] MarkerTest.InConstructionObjectIsEventuallyMarkedEmptyStack
 [       OK ] MarkerTest.InConstructionObjectIsEventuallyMarkedEmptyStack (0 ms)
 [ RUN      ] MarkerTest.InConstructionObjectIsEventuallyMarkedNonEmptyStack
-[       OK ] MarkerTest.InConstructionObjectIsEventuallyMarkedNonEmptyStack (1 ms)
+[       OK ] MarkerTest.InConstructionObjectIsEventuallyMarkedNonEmptyStack (0 ms)
 [ RUN      ] MarkerTest.SentinelNotClearedOnWeakPersistentHandling
 [       OK ] MarkerTest.SentinelNotClearedOnWeakPersistentHandling (0 ms)
 [----------] 12 tests from MarkerTest (2 ms total)
@@ -160,12 +160,12 @@
 [ RUN      ] IncrementalMarkingTest.MemberIsMarkedAfterMarkingSteps
 [       OK ] IncrementalMarkingTest.MemberIsMarkedAfterMarkingSteps (0 ms)
 [ RUN      ] IncrementalMarkingTest.MemberWithWriteBarrierIsMarkedAfterMarkingSteps
-[       OK ] IncrementalMarkingTest.MemberWithWriteBarrierIsMarkedAfterMarkingSteps (0 ms)
+[       OK ] IncrementalMarkingTest.MemberWithWriteBarrierIsMarkedAfterMarkingSteps (1 ms)
 [ RUN      ] IncrementalMarkingTest.IncrementalStepDuringAllocation
 [       OK ] IncrementalMarkingTest.IncrementalStepDuringAllocation (0 ms)
 [ RUN      ] IncrementalMarkingTest.MarkingRunsOutOfWorkEventually
 [       OK ] IncrementalMarkingTest.MarkingRunsOutOfWorkEventually (0 ms)
-[----------] 5 tests from IncrementalMarkingTest (0 ms total)
+[----------] 5 tests from IncrementalMarkingTest (1 ms total)
 
 [----------] 5 tests from MarkingVerifierTest
 [ RUN      ] MarkingVerifierTest.DoesntDieOnMarkedOnStackReference
@@ -177,7 +177,7 @@
 [ RUN      ] MarkingVerifierTest.DoesntDieOnInConstructionOnObject
 [       OK ] MarkingVerifierTest.DoesntDieOnInConstructionOnObject (0 ms)
 [ RUN      ] MarkingVerifierTest.DoesntDieOnInConstructionObjectWithWriteBarrier
-[       OK ] MarkingVerifierTest.DoesntDieOnInConstructionObjectWithWriteBarrier (0 ms)
+[       OK ] MarkingVerifierTest.DoesntDieOnInConstructionObjectWithWriteBarrier (1 ms)
 [----------] 5 tests from MarkingVerifierTest (1 ms total)
 
 [----------] 16 tests from MarkingVisitorTest
@@ -192,9 +192,9 @@
 [ RUN      ] MarkingVisitorTest.MarkPersistentMixin
 [       OK ] MarkingVisitorTest.MarkPersistentMixin (0 ms)
 [ RUN      ] MarkingVisitorTest.DontMarkWeakMember
-[       OK ] MarkingVisitorTest.DontMarkWeakMember (1 ms)
+[       OK ] MarkingVisitorTest.DontMarkWeakMember (0 ms)
 [ RUN      ] MarkingVisitorTest.DontMarkWeakMemberMixin
-[       OK ] MarkingVisitorTest.DontMarkWeakMemberMixin (0 ms)
+[       OK ] MarkingVisitorTest.DontMarkWeakMemberMixin (1 ms)
 [ RUN      ] MarkingVisitorTest.DontMarkWeakPersistent
 [       OK ] MarkingVisitorTest.DontMarkWeakPersistent (0 ms)
 [ RUN      ] MarkingVisitorTest.DontMarkWeakPersistentMixin
@@ -204,13 +204,13 @@
 [ RUN      ] MarkingVisitorTest.MarkMemberMixinInConstruction
 [       OK ] MarkingVisitorTest.MarkMemberMixinInConstruction (0 ms)
 [ RUN      ] MarkingVisitorTest.DontMarkWeakMemberInConstruction
-[       OK ] MarkingVisitorTest.DontMarkWeakMemberInConstruction (1 ms)
+[       OK ] MarkingVisitorTest.DontMarkWeakMemberInConstruction (0 ms)
 [ RUN      ] MarkingVisitorTest.DontMarkWeakMemberMixinInConstruction
 [       OK ] MarkingVisitorTest.DontMarkWeakMemberMixinInConstruction (0 ms)
 [ RUN      ] MarkingVisitorTest.MarkPersistentInConstruction
 [       OK ] MarkingVisitorTest.MarkPersistentInConstruction (0 ms)
 [ RUN      ] MarkingVisitorTest.MarkPersistentMixinInConstruction
-[       OK ] MarkingVisitorTest.MarkPersistentMixinInConstruction (0 ms)
+[       OK ] MarkingVisitorTest.MarkPersistentMixinInConstruction (1 ms)
 [ RUN      ] MarkingVisitorTest.StrongTracingMarksWeakMember
 [       OK ] MarkingVisitorTest.StrongTracingMarksWeakMember (0 ms)
 [----------] 16 tests from MarkingVisitorTest (2 ms total)
@@ -227,9 +227,9 @@
 [ RUN      ] MemberTest.Move
 [       OK ] MemberTest.Move (0 ms)
 [ RUN      ] MemberTest.HeterogeneousInterface
-[       OK ] MemberTest.HeterogeneousInterface (1 ms)
+[       OK ] MemberTest.HeterogeneousInterface (0 ms)
 [ RUN      ] MemberTest.PersistentConversion
-[       OK ] MemberTest.PersistentConversion (0 ms)
+[       OK ] MemberTest.PersistentConversion (1 ms)
 [ RUN      ] MemberTest.EqualityTest
 [       OK ] MemberTest.EqualityTest (0 ms)
 [ RUN      ] MemberTest.WriteBarrierTriggered
@@ -244,19 +244,19 @@
 [ RUN      ] PersistentTest.RawCtor
 [       OK ] PersistentTest.RawCtor (0 ms)
 [ RUN      ] PersistentTest.CopyCtor
-[       OK ] PersistentTest.CopyCtor (1 ms)
+[       OK ] PersistentTest.CopyCtor (0 ms)
 [ RUN      ] PersistentTest.MoveCtor
 [       OK ] PersistentTest.MoveCtor (0 ms)
 [ RUN      ] PersistentTest.MemberCtor
-[       OK ] PersistentTest.MemberCtor (0 ms)
+[       OK ] PersistentTest.MemberCtor (1 ms)
 [ RUN      ] PersistentTest.NullStateAssignemnt
 [       OK ] PersistentTest.NullStateAssignemnt (0 ms)
 [ RUN      ] PersistentTest.RawAssignment
 [       OK ] PersistentTest.RawAssignment (0 ms)
 [ RUN      ] PersistentTest.CopyAssignment
-[       OK ] PersistentTest.CopyAssignment (1 ms)
+[       OK ] PersistentTest.CopyAssignment (0 ms)
 [ RUN      ] PersistentTest.MoveAssignment
-[       OK ] PersistentTest.MoveAssignment (0 ms)
+[       OK ] PersistentTest.MoveAssignment (1 ms)
 [ RUN      ] PersistentTest.MemberAssignment
 [       OK ] PersistentTest.MemberAssignment (0 ms)
 [ RUN      ] PersistentTest.Clear
@@ -270,16 +270,16 @@
 [ RUN      ] PersistentTest.TraceWeak
 [       OK ] PersistentTest.TraceWeak (0 ms)
 [ RUN      ] PersistentTest.ClearOnHeapDestruction
-[       OK ] PersistentTest.ClearOnHeapDestruction (1 ms)
+[       OK ] PersistentTest.ClearOnHeapDestruction (0 ms)
 [ RUN      ] PersistentTest.LocalizedPersistent
-[       OK ] PersistentTest.LocalizedPersistent (0 ms)
+[       OK ] PersistentTest.LocalizedPersistent (1 ms)
 [ RUN      ] PersistentTest.PersistentTraceLocation
 [       OK ] PersistentTest.PersistentTraceLocation (0 ms)
-[----------] 18 tests from PersistentTest (4 ms total)
+[----------] 18 tests from PersistentTest (3 ms total)
 
 [----------] 5 tests from PrefinalizerTest
 [ RUN      ] PrefinalizerTest.PrefinalizerCalledOnDeadObject
-[       OK ] PrefinalizerTest.PrefinalizerCalledOnDeadObject (1 ms)
+[       OK ] PrefinalizerTest.PrefinalizerCalledOnDeadObject (0 ms)
 [ RUN      ] PrefinalizerTest.PrefinalizerNotCalledOnLiveObject
 [       OK ] PrefinalizerTest.PrefinalizerNotCalledOnLiveObject (0 ms)
 [ RUN      ] PrefinalizerTest.PrefinalizerCalledOnDeadMixinObject
@@ -300,9 +300,9 @@
 [ RUN      ] SweeperTest.DontSweepMarkedLargeObject
 [       OK ] SweeperTest.DontSweepMarkedLargeObject (0 ms)
 [ RUN      ] SweeperTest.SweepMultipleObjectsOnPage
-[       OK ] SweeperTest.SweepMultipleObjectsOnPage (0 ms)
+[       OK ] SweeperTest.SweepMultipleObjectsOnPage (1 ms)
 [ RUN      ] SweeperTest.SweepObjectsOnAllArenas
-[       OK ] SweeperTest.SweepObjectsOnAllArenas (1 ms)
+[       OK ] SweeperTest.SweepObjectsOnAllArenas (0 ms)
 [ RUN      ] SweeperTest.SweepMultiplePagesInSingleSpace
 [       OK ] SweeperTest.SweepMultiplePagesInSingleSpace (0 ms)
 [ RUN      ] SweeperTest.CoalesceFreeListEntries
@@ -311,7 +311,7 @@
 [       OK ] SweeperTest.SweepDoesNotTriggerRecursiveGC (0 ms)
 [ RUN      ] SweeperTest.UnmarkObjects
 [       OK ] SweeperTest.UnmarkObjects (1 ms)
-[----------] 10 tests from SweeperTest (3 ms total)
+[----------] 10 tests from SweeperTest (2 ms total)
 
 [----------] 6 tests from TraceTraitTest
 [ RUN      ] TraceTraitTest.GetObjectStartGCed
@@ -325,8 +325,8 @@
 [ RUN      ] TraceTraitTest.TraceGCedThroughTraceDescriptor
 [       OK ] TraceTraitTest.TraceGCedThroughTraceDescriptor (0 ms)
 [ RUN      ] TraceTraitTest.TraceGCedMixinThroughTraceDescriptor
-[       OK ] TraceTraitTest.TraceGCedMixinThroughTraceDescriptor (1 ms)
-[----------] 6 tests from TraceTraitTest (1 ms total)
+[       OK ] TraceTraitTest.TraceGCedMixinThroughTraceDescriptor (0 ms)
+[----------] 6 tests from TraceTraitTest (0 ms total)
 
 [----------] 7 tests from VisitorTest
 [ RUN      ] VisitorTest.DispatchTraceGCed
@@ -340,10 +340,10 @@
 [ RUN      ] VisitorTest.DispatchRegisterWeakCallback
 [       OK ] VisitorTest.DispatchRegisterWeakCallback (0 ms)
 [ RUN      ] VisitorTest.DispatchRegisterWeakCallbackMethod
-[       OK ] VisitorTest.DispatchRegisterWeakCallbackMethod (1 ms)
+[       OK ] VisitorTest.DispatchRegisterWeakCallbackMethod (0 ms)
 [ RUN      ] VisitorTest.DispatchToCompositeObject
 [       OK ] VisitorTest.DispatchToCompositeObject (0 ms)
-[----------] 7 tests from VisitorTest (1 ms total)
+[----------] 7 tests from VisitorTest (0 ms total)
 
 [----------] 9 tests from WriteBarrierTest
 [ RUN      ] WriteBarrierTest.EnableDisableIncrementalMarking
@@ -355,7 +355,7 @@
 [ RUN      ] WriteBarrierTest.MemberInitializingStoreNoBarrier
 [       OK ] WriteBarrierTest.MemberInitializingStoreNoBarrier (0 ms)
 [ RUN      ] WriteBarrierTest.MemberReferenceAssignMember
-[       OK ] WriteBarrierTest.MemberReferenceAssignMember (1 ms)
+[       OK ] WriteBarrierTest.MemberReferenceAssignMember (0 ms)
 [ RUN      ] WriteBarrierTest.MemberSetSentinelValueNoBarrier
 [       OK ] WriteBarrierTest.MemberSetSentinelValueNoBarrier (0 ms)
 [ RUN      ] WriteBarrierTest.MemberCopySentinelValueNoBarrier
@@ -363,7 +363,7 @@
 [ RUN      ] WriteBarrierTest.WriteBarrierOnUnmarkedMixinApplication
 [       OK ] WriteBarrierTest.WriteBarrierOnUnmarkedMixinApplication (0 ms)
 [ RUN      ] WriteBarrierTest.NoWriteBarrierOnMarkedMixinApplication
-[       OK ] WriteBarrierTest.NoWriteBarrierOnMarkedMixinApplication (0 ms)
+[       OK ] WriteBarrierTest.NoWriteBarrierOnMarkedMixinApplication (1 ms)
 [----------] 9 tests from WriteBarrierTest (1 ms total)
 
 [----------] 1 test from NoWriteBarrierTest
@@ -387,38 +387,38 @@
 [ RUN      ] CompactorTest.InteriorSlotToPreviousObject
 [       OK ] CompactorTest.InteriorSlotToPreviousObject (0 ms)
 [ RUN      ] CompactorTest.InteriorSlotToNextObject
-[       OK ] CompactorTest.InteriorSlotToNextObject (1 ms)
-[----------] 8 tests from CompactorTest (2 ms total)
+[       OK ] CompactorTest.InteriorSlotToNextObject (0 ms)
+[----------] 8 tests from CompactorTest (1 ms total)
 
 [----------] 5 tests from ConcurrentMarkingTest
 [ RUN      ] ConcurrentMarkingTest.MarkingObjects
 [       OK ] ConcurrentMarkingTest.MarkingObjects (0 ms)
 [ RUN      ] ConcurrentMarkingTest.MarkingInConstructionObjects
-[       OK ] ConcurrentMarkingTest.MarkingInConstructionObjects (0 ms)
+[       OK ] ConcurrentMarkingTest.MarkingInConstructionObjects (1 ms)
 [ RUN      ] ConcurrentMarkingTest.MarkingMixinObjects
 [       OK ] ConcurrentMarkingTest.MarkingMixinObjects (0 ms)
 [ RUN      ] ConcurrentMarkingTest.ConcurrentlyTraceableObjectIsTracedConcurrently
 [       OK ] ConcurrentMarkingTest.ConcurrentlyTraceableObjectIsTracedConcurrently (0 ms)
 [ RUN      ] ConcurrentMarkingTest.NotConcurrentlyTraceableObjectIsNotTracedConcurrently
-[       OK ] ConcurrentMarkingTest.NotConcurrentlyTraceableObjectIsNotTracedConcurrently (1 ms)
+[       OK ] ConcurrentMarkingTest.NotConcurrentlyTraceableObjectIsNotTracedConcurrently (0 ms)
 [----------] 5 tests from ConcurrentMarkingTest (1 ms total)
 
 [----------] 5 tests from ConcurrentSweeperTest
 [ RUN      ] ConcurrentSweeperTest.BackgroundSweepOfNormalPage
 [       OK ] ConcurrentSweeperTest.BackgroundSweepOfNormalPage (0 ms)
 [ RUN      ] ConcurrentSweeperTest.BackgroundSweepOfLargePage
-[       OK ] ConcurrentSweeperTest.BackgroundSweepOfLargePage (0 ms)
+[       OK ] ConcurrentSweeperTest.BackgroundSweepOfLargePage (1 ms)
 [ RUN      ] ConcurrentSweeperTest.DeferredFinalizationOfNormalPage
 [       OK ] ConcurrentSweeperTest.DeferredFinalizationOfNormalPage (0 ms)
 [ RUN      ] ConcurrentSweeperTest.DeferredFinalizationOfLargePage
 [       OK ] ConcurrentSweeperTest.DeferredFinalizationOfLargePage (0 ms)
 [ RUN      ] ConcurrentSweeperTest.IncrementalSweeping
-[       OK ] ConcurrentSweeperTest.IncrementalSweeping (1 ms)
+[       OK ] ConcurrentSweeperTest.IncrementalSweeping (0 ms)
 [----------] 5 tests from ConcurrentSweeperTest (1 ms total)
 
 [----------] 6 tests from FinalizerTrait
 [ RUN      ] FinalizerTrait.TypeWithoutDestructorHasNoFinalizer
-[       OK ] FinalizerTrait.TypeWithoutDestructorHasNoFinalizer (1 ms)
+[       OK ] FinalizerTrait.TypeWithoutDestructorHasNoFinalizer (0 ms)
 [ RUN      ] FinalizerTrait.TypeWithPrimitiveHasNoFinalizer
 [       OK ] FinalizerTrait.TypeWithPrimitiveHasNoFinalizer (0 ms)
 [ RUN      ] FinalizerTrait.FinalizerForTypeWithDestructor
@@ -429,7 +429,7 @@
 [       OK ] FinalizerTrait.FinalizerForCustomFinalizationMethod (0 ms)
 [ RUN      ] FinalizerTrait.FinalizerForCustomFinalizationMethodInBase
 [       OK ] FinalizerTrait.FinalizerForCustomFinalizationMethodInBase (0 ms)
-[----------] 6 tests from FinalizerTrait (1 ms total)
+[----------] 6 tests from FinalizerTrait (0 ms total)
 
 [----------] 8 tests from FreeListTest
 [ RUN      ] FreeListTest.Empty
@@ -441,23 +441,23 @@
 [ RUN      ] FreeListTest.Clear
 [       OK ] FreeListTest.Clear (0 ms)
 [ RUN      ] FreeListTest.Move
-[       OK ] FreeListTest.Move (0 ms)
+[       OK ] FreeListTest.Move (1 ms)
 [ RUN      ] FreeListTest.Append
 [       OK ] FreeListTest.Append (0 ms)
 [ RUN      ] FreeListTest.Contains
 [       OK ] FreeListTest.Contains (0 ms)
 [ RUN      ] FreeListTest.Allocate
 [       OK ] FreeListTest.Allocate (0 ms)
-[----------] 8 tests from FreeListTest (0 ms total)
+[----------] 8 tests from FreeListTest (1 ms total)
 
 [----------] 3 tests from GCInfoTableTest
 [ RUN      ] GCInfoTableTest.InitialEmpty
 [       OK ] GCInfoTableTest.InitialEmpty (0 ms)
 [ RUN      ] GCInfoTableTest.ResizeToMaxIndex
-[       OK ] GCInfoTableTest.ResizeToMaxIndex (1 ms)
+[       OK ] GCInfoTableTest.ResizeToMaxIndex (0 ms)
 [ RUN      ] GCInfoTableTest.MultiThreadedResizeToMaxIndex
-[       OK ] GCInfoTableTest.MultiThreadedResizeToMaxIndex (31 ms)
-[----------] 3 tests from GCInfoTableTest (32 ms total)
+[       OK ] GCInfoTableTest.MultiThreadedResizeToMaxIndex (2 ms)
+[----------] 3 tests from GCInfoTableTest (2 ms total)
 
 [----------] 3 tests from GCInfoTraitTest
 [ RUN      ] GCInfoTraitTest.IndexInBounds
@@ -476,10 +476,10 @@
 [ RUN      ] GCInvokerTest.ConservativeGCIsScheduledAsPreciseGCViaPlatform
 [       OK ] GCInvokerTest.ConservativeGCIsScheduledAsPreciseGCViaPlatform (0 ms)
 [ RUN      ] GCInvokerTest.ConservativeGCIsInvokedAsPreciseGCViaPlatform
-[       OK ] GCInvokerTest.ConservativeGCIsInvokedAsPreciseGCViaPlatform (25 ms)
+[       OK ] GCInvokerTest.ConservativeGCIsInvokedAsPreciseGCViaPlatform (0 ms)
 [ RUN      ] GCInvokerTest.IncrementalGCIsStarted
-[       OK ] GCInvokerTest.IncrementalGCIsStarted (1 ms)
-[----------] 5 tests from GCInvokerTest (26 ms total)
+[       OK ] GCInvokerTest.IncrementalGCIsStarted (0 ms)
+[----------] 5 tests from GCInvokerTest (0 ms total)
 
 [----------] 9 tests from HeapObjectHeaderTest
 [ RUN      ] HeapObjectHeaderTest.Constructor
@@ -499,12 +499,12 @@
 [ RUN      ] HeapObjectHeaderTest.Unmark
 [       OK ] HeapObjectHeaderTest.Unmark (0 ms)
 [ RUN      ] HeapObjectHeaderTest.ConstructionBitProtectsNonAtomicWrites
-[       OK ] HeapObjectHeaderTest.ConstructionBitProtectsNonAtomicWrites (23 ms)
-[----------] 9 tests from HeapObjectHeaderTest (23 ms total)
+[       OK ] HeapObjectHeaderTest.ConstructionBitProtectsNonAtomicWrites (0 ms)
+[----------] 9 tests from HeapObjectHeaderTest (1 ms total)
 
 [----------] 5 tests from IncrementalMarkingScheduleTest
 [ RUN      ] IncrementalMarkingScheduleTest.FirstStepReturnsDefaultDuration
-[       OK ] IncrementalMarkingScheduleTest.FirstStepReturnsDefaultDuration (1 ms)
+[       OK ] IncrementalMarkingScheduleTest.FirstStepReturnsDefaultDuration (0 ms)
 [ RUN      ] IncrementalMarkingScheduleTest.NoTimePassedReturnsMinimumDuration
 [       OK ] IncrementalMarkingScheduleTest.NoTimePassedReturnsMinimumDuration (0 ms)
 [ RUN      ] IncrementalMarkingScheduleTest.OracleDoesntExccedMaximumStepDuration
@@ -513,18 +513,18 @@
 [       OK ] IncrementalMarkingScheduleTest.AheadOfScheduleReturnsMinimumDuration (0 ms)
 [ RUN      ] IncrementalMarkingScheduleTest.BehindScheduleReturnsCorrectDuration
 [       OK ] IncrementalMarkingScheduleTest.BehindScheduleReturnsCorrectDuration (0 ms)
-[----------] 5 tests from IncrementalMarkingScheduleTest (1 ms total)
+[----------] 5 tests from IncrementalMarkingScheduleTest (0 ms total)
 
 [----------] 4 tests from LoggingTest
 [ RUN      ] LoggingTest.Pass
 [       OK ] LoggingTest.Pass (0 ms)
 [ RUN      ] LoggingTest.Fail
-[       OK ] LoggingTest.Fail (146 ms)
+[       OK ] LoggingTest.Fail (89 ms)
 [ RUN      ] LoggingTest.DontReportUnused
 [       OK ] LoggingTest.DontReportUnused (0 ms)
 [ RUN      ] LoggingTest.ConstexprContext
 [       OK ] LoggingTest.ConstexprContext (0 ms)
-[----------] 4 tests from LoggingTest (146 ms total)
+[----------] 4 tests from LoggingTest (89 ms total)
 
 [----------] 5 tests from NameTraitTest
 [ RUN      ] NameTraitTest.InternalNamesHiddenInOfficialBuild
@@ -546,7 +546,7 @@
 
 [----------] 13 tests from ObjectStartBitmapTest
 [ RUN      ] ObjectStartBitmapTest.MoreThanZeroEntriesPossible
-[       OK ] ObjectStartBitmapTest.MoreThanZeroEntriesPossible (1 ms)
+[       OK ] ObjectStartBitmapTest.MoreThanZeroEntriesPossible (0 ms)
 [ RUN      ] ObjectStartBitmapTest.InitialEmpty
 [       OK ] ObjectStartBitmapTest.InitialEmpty (0 ms)
 [ RUN      ] ObjectStartBitmapTest.SetBitImpliesNonEmpty
@@ -571,7 +571,7 @@
 [       OK ] ObjectStartBitmapTest.FindHeaderNextCell (0 ms)
 [ RUN      ] ObjectStartBitmapTest.FindHeaderSameCell
 [       OK ] ObjectStartBitmapTest.FindHeaderSameCell (0 ms)
-[----------] 13 tests from ObjectStartBitmapTest (1 ms total)
+[----------] 13 tests from ObjectStartBitmapTest (0 ms total)
 
 [----------] 3 tests from MemoryRegionTest
 [ RUN      ] MemoryRegionTest.Construct
@@ -616,14 +616,14 @@
 
 [----------] 4 tests from PageBackendTest
 [ RUN      ] PageBackendTest.AllocateNormalUsesPool
-[       OK ] PageBackendTest.AllocateNormalUsesPool (1 ms)
+[       OK ] PageBackendTest.AllocateNormalUsesPool (0 ms)
 [ RUN      ] PageBackendTest.AllocateLarge
 [       OK ] PageBackendTest.AllocateLarge (0 ms)
 [ RUN      ] PageBackendTest.LookupNormal
 [       OK ] PageBackendTest.LookupNormal (0 ms)
 [ RUN      ] PageBackendTest.LookupLarge
 [       OK ] PageBackendTest.LookupLarge (0 ms)
-[----------] 4 tests from PageBackendTest (1 ms total)
+[----------] 4 tests from PageBackendTest (0 ms total)
 
 [----------] 3 tests from SourceLocationTest
 [ RUN      ] SourceLocationTest.DefaultCtor
@@ -648,7 +648,7 @@
 [ RUN      ] GCStackTest.IteratePointersFindsParameterNesting1
 [       OK ] GCStackTest.IteratePointersFindsParameterNesting1 (0 ms)
 [ RUN      ] GCStackTest.IteratePointersFindsParameterNesting2
-[       OK ] GCStackTest.IteratePointersFindsParameterNesting2 (1 ms)
+[       OK ] GCStackTest.IteratePointersFindsParameterNesting2 (0 ms)
 [ RUN      ] GCStackTest.IteratePointersFindsParameterNesting3
 [       OK ] GCStackTest.IteratePointersFindsParameterNesting3 (0 ms)
 [ RUN      ] GCStackTest.IteratePointersFindsParameterNesting4
@@ -698,9 +698,9 @@
 [ RUN      ] WeakContainerTest.TraceableGCedTraced
 [       OK ] WeakContainerTest.TraceableGCedTraced (0 ms)
 [ RUN      ] WeakContainerTest.NonTraceableGCedNotTraced
-[       OK ] WeakContainerTest.NonTraceableGCedNotTraced (0 ms)
+[       OK ] WeakContainerTest.NonTraceableGCedNotTraced (1 ms)
 [ RUN      ] WeakContainerTest.NonTraceableGCedNotTracedConservatively
-[       OK ] WeakContainerTest.NonTraceableGCedNotTracedConservatively (1 ms)
+[       OK ] WeakContainerTest.NonTraceableGCedNotTracedConservatively (0 ms)
 [ RUN      ] WeakContainerTest.ConservativeGCTracesWeakContainer
 [       OK ] WeakContainerTest.ConservativeGCTracesWeakContainer (0 ms)
 [ RUN      ] WeakContainerTest.ConservativeGCTracesWeakContainerOnce
@@ -727,7 +727,7 @@
 [ RUN      ] CppgcWorkListTest.SegmentUpdate
 [       OK ] CppgcWorkListTest.SegmentUpdate (0 ms)
 [ RUN      ] CppgcWorkListTest.CreateEmpty
-[       OK ] CppgcWorkListTest.CreateEmpty (1 ms)
+[       OK ] CppgcWorkListTest.CreateEmpty (0 ms)
 [ RUN      ] CppgcWorkListTest.LocalPushPop
 [       OK ] CppgcWorkListTest.LocalPushPop (0 ms)
 [ RUN      ] CppgcWorkListTest.LocalPushStaysPrivate
@@ -750,8 +750,8 @@
 [       OK ] CppgcWorkListTest.MultipleSegmentsStolen (0 ms)
 [ RUN      ] CppgcWorkListTest.MergeGlobalPool
 [       OK ] CppgcWorkListTest.MergeGlobalPool (0 ms)
-[----------] 20 tests from CppgcWorkListTest (1 ms total)
+[----------] 20 tests from CppgcWorkListTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 301 tests from 50 test suites ran. (2227 ms total)
+[==========] 301 tests from 50 test suites ran. (960 ms total)
 [  PASSED  ] 301 tests.

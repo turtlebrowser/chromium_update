@@ -6,8 +6,8 @@ Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
 [1/5] LatencyInfoTest.AddTwoSeparateEvent (0 ms)
 [2/5] LatencyInfoTest.CoalesceTwoGSU (0 ms)
-[3/5] LatencyInfoParamTraitsTest.Basic (3 ms)
+[3/5] LatencyInfoParamTraitsTest.Basic (1 ms)
 [4/5] LatencyInfoParamTraitsTest.InvalidData (0 ms)
-[5/5] StructTraitsTest.LatencyInfo (20 ms)
+[5/5] StructTraitsTest.LatencyInfo (1 ms)
 SUCCESS: all tests passed.
 Tests took 0 seconds.

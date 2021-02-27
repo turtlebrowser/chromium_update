@@ -12,7 +12,7 @@
 [ RUN      ] CppgcWorkListTest.SegmentIsFull
 [       OK ] CppgcWorkListTest.SegmentIsFull (0 ms)
 [ RUN      ] CppgcWorkListTest.SegmentClear
-[       OK ] CppgcWorkListTest.SegmentClear (0 ms)
+[       OK ] CppgcWorkListTest.SegmentClear (1 ms)
 [ RUN      ] CppgcWorkListTest.SegmentUpdateFalse
 [       OK ] CppgcWorkListTest.SegmentUpdateFalse (0 ms)
 [ RUN      ] CppgcWorkListTest.SegmentUpdate
@@ -30,7 +30,7 @@
 [ RUN      ] CppgcWorkListTest.GlobalUpdate
 [       OK ] CppgcWorkListTest.GlobalUpdate (0 ms)
 [ RUN      ] CppgcWorkListTest.FlushToGlobalPushSegment
-[       OK ] CppgcWorkListTest.FlushToGlobalPushSegment (1 ms)
+[       OK ] CppgcWorkListTest.FlushToGlobalPushSegment (0 ms)
 [ RUN      ] CppgcWorkListTest.FlushToGlobalPopSegment
 [       OK ] CppgcWorkListTest.FlushToGlobalPopSegment (0 ms)
 [ RUN      ] CppgcWorkListTest.Clear
@@ -44,5 +44,5 @@
 [----------] 20 tests from CppgcWorkListTest (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 20 tests from 1 test suite ran. (5 ms total)
+[==========] 20 tests from 1 test suite ran. (1 ms total)
 [  PASSED  ] 20 tests.

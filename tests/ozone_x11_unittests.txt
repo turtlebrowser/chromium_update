@@ -4,15 +4,15 @@ own process. For debugging a test inside a debugger, use the
 --single-process-tests.
 Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
-[1/10] X11ScreenOzoneTest.AddRemoveListDisplays (29 ms)
-[2/10] X11ScreenOzoneTest.GetDisplayForWidgetSingleDisplay (39 ms)
-[3/10] X11ScreenOzoneTest.GetDisplayForWidgetTwoDisplays (39 ms)
-[4/10] X11ScreenOzoneTest.GetDisplayNearestPointTwoDisplays (27 ms)
-[5/10] X11ScreenOzoneTest.GetDisplayMatchingMultiple (13 ms)
-[6/10] X11WindowOzoneTest.SendPlatformEventToRightTarget (39 ms)
-[7/10] X11WindowOzoneTest.SendPlatformEventToCapturedWindow (55 ms)
-[8/10] X11WindowOzoneTest.GetWindowFromAcceleratedWigets (47 ms)
-[9/10] X11WindowOzoneTest.MouseEnterAndDelete (39 ms)
-[10/10] X11WindowOzoneTest.ToggleFullscreen (39 ms)
+[1/10] X11ScreenOzoneTest.AddRemoveListDisplays (2 ms)
+[2/10] X11ScreenOzoneTest.GetDisplayForWidgetSingleDisplay (3 ms)
+[3/10] X11ScreenOzoneTest.GetDisplayForWidgetTwoDisplays (3 ms)
+[4/10] X11ScreenOzoneTest.GetDisplayNearestPointTwoDisplays (0 ms)
+[5/10] X11ScreenOzoneTest.GetDisplayMatchingMultiple (0 ms)
+[6/10] X11WindowOzoneTest.SendPlatformEventToRightTarget (3 ms)
+[7/10] X11WindowOzoneTest.SendPlatformEventToCapturedWindow (4 ms)
+[8/10] X11WindowOzoneTest.GetWindowFromAcceleratedWigets (3 ms)
+[9/10] X11WindowOzoneTest.MouseEnterAndDelete (2 ms)
+[10/10] X11WindowOzoneTest.ToggleFullscreen (3 ms)
 SUCCESS: all tests passed.
 Tests took 0 seconds.

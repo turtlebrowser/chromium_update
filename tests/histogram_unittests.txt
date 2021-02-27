@@ -11,7 +11,7 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [ RUN      ] HistogramTest.WritesDiagnosticsToProto
 [       OK ] HistogramTest.WritesDiagnosticsToProto (0 ms)
 [ RUN      ] HistogramTest.WritesSmallNumberOfSamplesToProtoInOrder
-[       OK ] HistogramTest.WritesSmallNumberOfSamplesToProtoInOrder (0 ms)
+[       OK ] HistogramTest.WritesSmallNumberOfSamplesToProtoInOrder (1 ms)
 [ RUN      ] HistogramTest.StartsUniformlySamplingAfterReachingMaxNumSamples
 [       OK ] HistogramTest.StartsUniformlySamplingAfterReachingMaxNumSamples (0 ms)
 [ RUN      ] HistogramTest.WritesCorrectRunningStatisticsToProto
@@ -26,7 +26,7 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [       OK ] HistogramTest.UnitFromJsonUnitReturnsUnitlessOnWrongUnits (0 ms)
 [ RUN      ] HistogramTest.UnitFromJsonUnitIgnoresImprovementDirection
 [       OK ] HistogramTest.UnitFromJsonUnitIgnoresImprovementDirection (0 ms)
-[----------] 12 tests from HistogramTest (0 ms total)
+[----------] 12 tests from HistogramTest (1 ms total)
 
 [----------] 8 tests from RunningStatisticsUnittest
 [ RUN      ] RunningStatisticsUnittest.GetsCountRight
@@ -48,5 +48,5 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [----------] 8 tests from RunningStatisticsUnittest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 20 tests from 2 test suites ran. (0 ms total)
+[==========] 20 tests from 2 test suites ran. (1 ms total)
 [  PASSED  ] 20 tests.

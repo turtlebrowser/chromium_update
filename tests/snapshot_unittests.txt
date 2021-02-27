@@ -4,24 +4,22 @@ own process. For debugging a test inside a debugger, use the
 --single-process-tests.
 Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
-[5269:5269:0226/000145.701098:124259893209:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
-[5269:5269:0226/000145.711940:124259904030:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
-[5269:5269:0226/000145.711955:124259904044:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
-[1/14] All/SnapshotAuraTest.RotateAndUIScale/0 (2374 ms)
-[2/14] All/SnapshotAuraTest.RotateAndUIScale/1 (2099 ms)
-[3/14] All/SnapshotAuraTest.RotateAndUIScaleAndScaleFactor/0 (1808 ms)
-[4/14] All/SnapshotAuraTest.RotateAndUIScaleAndScaleFactor/1 (1724 ms)
-Still waiting for the following processes to finish:
-	./snapshot_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.y7eleF/.org.chromium.Chromium.s7EqrJ --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.y7eleF/ubrdH2/test_results.xml --test-launcher-retries-left=1
-[5/14] All/SnapshotAuraTest.FullScreenWindow/0 (9977 ms)
-[6/14] All/SnapshotAuraTest.FullScreenWindow/1 (9580 ms)
-[7/14] All/SnapshotAuraTest.PartialBounds/0 (1544 ms)
-[8/14] All/SnapshotAuraTest.PartialBounds/1 (1479 ms)
-[9/14] All/SnapshotAuraTest.Rotated/0 (1609 ms)
-[10/14] All/SnapshotAuraTest.Rotated/1 (1411 ms)
-[11/14] All/SnapshotAuraTest.UIScale/0 (1974 ms)
-[12/14] All/SnapshotAuraTest.UIScale/1 (2061 ms)
-[13/14] All/SnapshotAuraTest.DeviceScaleFactor/0 (1321 ms)
-[14/14] All/SnapshotAuraTest.DeviceScaleFactor/1 (1339 ms)
+[7920:7920:0227/103221.503979:248495696088:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[7920:7920:0227/103221.504022:248495696110:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[7920:7920:0227/103221.504031:248495696119:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[1/14] All/SnapshotAuraTest.RotateAndUIScale/0 (331 ms)
+[2/14] All/SnapshotAuraTest.RotateAndUIScale/1 (281 ms)
+[3/14] All/SnapshotAuraTest.RotateAndUIScaleAndScaleFactor/0 (252 ms)
+[4/14] All/SnapshotAuraTest.RotateAndUIScaleAndScaleFactor/1 (241 ms)
+[5/14] All/SnapshotAuraTest.FullScreenWindow/0 (1089 ms)
+[6/14] All/SnapshotAuraTest.FullScreenWindow/1 (986 ms)
+[7/14] All/SnapshotAuraTest.PartialBounds/0 (207 ms)
+[8/14] All/SnapshotAuraTest.PartialBounds/1 (213 ms)
+[9/14] All/SnapshotAuraTest.Rotated/0 (230 ms)
+[10/14] All/SnapshotAuraTest.Rotated/1 (211 ms)
+[11/14] All/SnapshotAuraTest.UIScale/0 (248 ms)
+[12/14] All/SnapshotAuraTest.UIScale/1 (263 ms)
+[13/14] All/SnapshotAuraTest.DeviceScaleFactor/0 (182 ms)
+[14/14] All/SnapshotAuraTest.DeviceScaleFactor/1 (183 ms)
 SUCCESS: all tests passed.
-Tests took 32 seconds.
+Tests took 3 seconds.

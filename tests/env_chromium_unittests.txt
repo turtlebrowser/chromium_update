@@ -2,9 +2,9 @@
 [----------] Global test environment set-up.
 [----------] 3 tests from ErrorEncoding
 [ RUN      ] ErrorEncoding.OnlyAMethod
-[       OK ] ErrorEncoding.OnlyAMethod (1 ms)
+[       OK ] ErrorEncoding.OnlyAMethod (0 ms)
 [ RUN      ] ErrorEncoding.FileError
-[       OK ] ErrorEncoding.FileError (0 ms)
+[       OK ] ErrorEncoding.FileError (1 ms)
 [ RUN      ] ErrorEncoding.NoEncodedMessage
 [       OK ] ErrorEncoding.NoEncodedMessage (0 ms)
 [----------] 3 tests from ErrorEncoding (1 ms total)
@@ -12,31 +12,31 @@
 [----------] 5 tests from ChromiumEnv
 [ RUN      ] ChromiumEnv.RemoveBackupTables
 Received signal 11 SEGV_MAPERR 000000000000
-#0 0x55b9010e0ef9 base::debug::CollectStackTrace()
-#1 0x55b901090e23 base::debug::StackTrace::StackTrace()
-#2 0x55b9010e0aef base::debug::(anonymous namespace)::StackDumpSignalHandler()
-#3 0x7efc1da9d980 (/lib/x86_64-linux-gnu/libpthread-2.27.so+0x1297f)
-#4 0x55b9010c566e base::ThreadPool::PostTask()
-#5 0x55b9010606d9 leveldb_env::ChromiumEnv::Schedule()
-#6 0x55b90106ad38 leveldb::DBImpl::MakeRoomForWrite()
-#7 0x55b90106a718 leveldb::DBImpl::Write()
-#8 0x55b901067ee2 leveldb::DBImpl::TEST_CompactMemTable()
-#9 0x55b901067e5e leveldb::DBImpl::CompactRange()
-#10 0x55b900fcf06f leveldb_env::ChromiumEnv_RemoveBackupTables_Test::TestBody()
-#11 0x55b901011c6d testing::Test::Run()
-#12 0x55b9010124ff testing::TestInfo::Run()
-#13 0x55b901012ea7 testing::TestSuite::Run()
-#14 0x55b9010205c7 testing::internal::UnitTestImpl::RunAllTests()
-#15 0x55b90101ff2f testing::UnitTest::Run()
-#16 0x55b901086b64 base::TestSuite::Run()
-#17 0x55b900fdbe31 main
-#18 0x7efc1cbe6bf7 __libc_start_main
-#19 0x55b900fcdcea _start
-  r8: 0000000000000000  r9: 0000000000000001 r10: 00007ffe2a94f050 r11: 0000000000000000
- r12: 000055b901068300 r13: 0000087bb775d2a0 r14: 0000087bb779cb80 r15: 00007ffe2a94f278
-  di: 0000000000000000  si: 00007ffe2a94f278  bp: 00007ffe2a94f260  bx: 00007ffe2a94f298
-  dx: 00007ffe2a94f298  ax: 000055b900f7dc92  cx: 0000087bb77642d0  sp: 00007ffe2a94f240
-  ip: 000055b9010c566e efl: 0000000000010202 cgf: 002b000000000033 erf: 0000000000000004
+#0 0x55d6f094cef9 base::debug::CollectStackTrace()
+#1 0x55d6f08fce23 base::debug::StackTrace::StackTrace()
+#2 0x55d6f094caef base::debug::(anonymous namespace)::StackDumpSignalHandler()
+#3 0x7f0eb2580980 (/lib/x86_64-linux-gnu/libpthread-2.27.so+0x1297f)
+#4 0x55d6f093166e base::ThreadPool::PostTask()
+#5 0x55d6f08cc6d9 leveldb_env::ChromiumEnv::Schedule()
+#6 0x55d6f08d6d38 leveldb::DBImpl::MakeRoomForWrite()
+#7 0x55d6f08d6718 leveldb::DBImpl::Write()
+#8 0x55d6f08d3ee2 leveldb::DBImpl::TEST_CompactMemTable()
+#9 0x55d6f08d3e5e leveldb::DBImpl::CompactRange()
+#10 0x55d6f083b06f leveldb_env::ChromiumEnv_RemoveBackupTables_Test::TestBody()
+#11 0x55d6f087dc6d testing::Test::Run()
+#12 0x55d6f087e4ff testing::TestInfo::Run()
+#13 0x55d6f087eea7 testing::TestSuite::Run()
+#14 0x55d6f088c5c7 testing::internal::UnitTestImpl::RunAllTests()
+#15 0x55d6f088bf2f testing::UnitTest::Run()
+#16 0x55d6f08f2b64 base::TestSuite::Run()
+#17 0x55d6f0847e31 main
+#18 0x7f0eb16c9bf7 __libc_start_main
+#19 0x55d6f0839cea _start
+  r8: 0000000000000000  r9: 0000000000000001 r10: 00007ffe154faf80 r11: 0000000000000000
+ r12: 000055d6f08d4300 r13: 00003cd2c15082a0 r14: 00003cd2c1547b80 r15: 00007ffe154fb1a8
+  di: 0000000000000000  si: 00007ffe154fb1a8  bp: 00007ffe154fb190  bx: 00007ffe154fb1c8
+  dx: 00007ffe154fb1c8  ax: 000055d6f07e9c92  cx: 00003cd2c150f2d0  sp: 00007ffe154fb170
+  ip: 000055d6f093166e efl: 0000000000010202 cgf: 002b000000000033 erf: 0000000000000004
  trp: 000000000000000e msk: 0000000000000000 cr2: 0000000000000000
 [end of stack trace]
 Calling _exit(1). Core file will not be generated.

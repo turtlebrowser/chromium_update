@@ -9,7 +9,7 @@ Note: Google Test filter = LRUCache.Empty:LRUCache.AddNoEviction:LRUCache.AddWit
 [----------] Global test environment set-up.
 [----------] 5 tests from LRUCache
 [ RUN      ] LRUCache.Empty
-[       OK ] LRUCache.Empty (0 ms)
+[       OK ] LRUCache.Empty (1 ms)
 [ RUN      ] LRUCache.AddNoEviction
 [       OK ] LRUCache.AddNoEviction (0 ms)
 [ RUN      ] LRUCache.AddWithEviction
@@ -18,7 +18,7 @@ Note: Google Test filter = LRUCache.Empty:LRUCache.AddNoEviction:LRUCache.AddWit
 [       OK ] LRUCache.AddClearAdd (0 ms)
 [ RUN      ] LRUCache.Reordering
 [       OK ] LRUCache.Reordering (0 ms)
-[----------] 5 tests from LRUCache (0 ms total)
+[----------] 5 tests from LRUCache (1 ms total)
 
 [----------] 5 tests from MemFd
 [ RUN      ] MemFd.DefaultConstructor
@@ -30,13 +30,13 @@ Note: Google Test filter = LRUCache.Empty:LRUCache.AddNoEviction:LRUCache.AddWit
 [ RUN      ] MemFd.Close
 [       OK ] MemFd.Close (0 ms)
 [ RUN      ] MemFd.ExportImportFd
-[       OK ] MemFd.ExportImportFd (1 ms)
-[----------] 5 tests from MemFd (1 ms total)
+[       OK ] MemFd.ExportImportFd (0 ms)
+[----------] 5 tests from MemFd (0 ms total)
 
 [----------] Global test environment tear-down
 [==========] 10 tests from 2 test suites ran. (1 ms total)
 [  PASSED  ] 10 tests.
-[1/10] LRUCache.Empty (0 ms)
+[1/10] LRUCache.Empty (1 ms)
 [2/10] LRUCache.AddNoEviction (0 ms)
 [3/10] LRUCache.AddWithEviction (0 ms)
 [4/10] LRUCache.AddClearAdd (0 ms)
@@ -45,6 +45,6 @@ Note: Google Test filter = LRUCache.Empty:LRUCache.AddNoEviction:LRUCache.AddWit
 [7/10] MemFd.AllocatingConstructor (0 ms)
 [8/10] MemFd.ExplicitAllocation (0 ms)
 [9/10] MemFd.Close (0 ms)
-[10/10] MemFd.ExportImportFd (1 ms)
+[10/10] MemFd.ExportImportFd (0 ms)
 SUCCESS: all tests passed.
 Tests took 0 seconds.

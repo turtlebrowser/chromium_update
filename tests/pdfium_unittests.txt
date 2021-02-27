@@ -4,16 +4,16 @@
 [ RUN      ] PdfiumSpanDeathTest.EmptySpanIndex
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] PdfiumSpanDeathTest.EmptySpanIndex (171 ms)
+[       OK ] PdfiumSpanDeathTest.EmptySpanIndex (93 ms)
 [ RUN      ] PdfiumSpanDeathTest.EmptySpanFront
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] PdfiumSpanDeathTest.EmptySpanFront (173 ms)
+[       OK ] PdfiumSpanDeathTest.EmptySpanFront (92 ms)
 [ RUN      ] PdfiumSpanDeathTest.EmptySpanBack
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] PdfiumSpanDeathTest.EmptySpanBack (145 ms)
-[----------] 3 tests from PdfiumSpanDeathTest (489 ms total)
+[       OK ] PdfiumSpanDeathTest.EmptySpanBack (91 ms)
+[----------] 3 tests from PdfiumSpanDeathTest (276 ms total)
 
 [----------] 28 tests from FXCRYPT
 [ RUN      ] FXCRYPT.CryptToBase16
@@ -23,11 +23,11 @@
 [ RUN      ] FXCRYPT.MD5GenerateOneByteData
 [       OK ] FXCRYPT.MD5GenerateOneByteData (0 ms)
 [ RUN      ] FXCRYPT.MD5GenerateLongData
-[       OK ] FXCRYPT.MD5GenerateLongData (26 ms)
+[       OK ] FXCRYPT.MD5GenerateLongData (24 ms)
 [ RUN      ] FXCRYPT.ContextWithEmptyData
 [       OK ] FXCRYPT.ContextWithEmptyData (0 ms)
 [ RUN      ] FXCRYPT.ContextWithLongData
-[       OK ] FXCRYPT.ContextWithLongData (26 ms)
+[       OK ] FXCRYPT.ContextWithLongData (23 ms)
 [ RUN      ] FXCRYPT.MD5StringTestSuite1
 [       OK ] FXCRYPT.MD5StringTestSuite1 (0 ms)
 [ RUN      ] FXCRYPT.MD5StringTestSuite2
@@ -37,7 +37,7 @@
 [ RUN      ] FXCRYPT.MD5StringTestSuite4
 [       OK ] FXCRYPT.MD5StringTestSuite4 (0 ms)
 [ RUN      ] FXCRYPT.MD5StringTestSuite5
-[       OK ] FXCRYPT.MD5StringTestSuite5 (1 ms)
+[       OK ] FXCRYPT.MD5StringTestSuite5 (0 ms)
 [ RUN      ] FXCRYPT.MD5StringTestSuite6
 [       OK ] FXCRYPT.MD5StringTestSuite6 (0 ms)
 [ RUN      ] FXCRYPT.MD5StringTestSuite7
@@ -72,26 +72,26 @@
 [       OK ] FXCRYPT.Sha512Test (0 ms)
 [ RUN      ] FXCRYPT.Sha512Pad112
 [       OK ] FXCRYPT.Sha512Pad112 (0 ms)
-[----------] 28 tests from FXCRYPT (53 ms total)
+[----------] 28 tests from FXCRYPT (47 ms total)
 
 [----------] 8 tests from CPDF_PageContentGeneratorTest
 [ RUN      ] CPDF_PageContentGeneratorTest.ProcessRect
-[       OK ] CPDF_PageContentGeneratorTest.ProcessRect (0 ms)
+[       OK ] CPDF_PageContentGeneratorTest.ProcessRect (2 ms)
 [ RUN      ] CPDF_PageContentGeneratorTest.BUG_937
 [       OK ] CPDF_PageContentGeneratorTest.BUG_937 (0 ms)
 [ RUN      ] CPDF_PageContentGeneratorTest.ProcessPath
 [       OK ] CPDF_PageContentGeneratorTest.ProcessPath (0 ms)
 [ RUN      ] CPDF_PageContentGeneratorTest.ProcessGraphics
-[       OK ] CPDF_PageContentGeneratorTest.ProcessGraphics (1 ms)
+[       OK ] CPDF_PageContentGeneratorTest.ProcessGraphics (0 ms)
 [ RUN      ] CPDF_PageContentGeneratorTest.ProcessStandardText
-[       OK ] CPDF_PageContentGeneratorTest.ProcessStandardText (24 ms)
+[       OK ] CPDF_PageContentGeneratorTest.ProcessStandardText (570 ms)
 [ RUN      ] CPDF_PageContentGeneratorTest.ProcessText
-[       OK ] CPDF_PageContentGeneratorTest.ProcessText (1 ms)
+[       OK ] CPDF_PageContentGeneratorTest.ProcessText (2 ms)
 [ RUN      ] CPDF_PageContentGeneratorTest.ProcessEmptyForm
 [       OK ] CPDF_PageContentGeneratorTest.ProcessEmptyForm (1 ms)
 [ RUN      ] CPDF_PageContentGeneratorTest.ProcessFormWithPath
 [       OK ] CPDF_PageContentGeneratorTest.ProcessFormWithPath (0 ms)
-[----------] 8 tests from CPDF_PageContentGeneratorTest (27 ms total)
+[----------] 8 tests from CPDF_PageContentGeneratorTest (575 ms total)
 
 [----------] 1 test from CPDF_CIDFontTest
 [ RUN      ] CPDF_CIDFontTest.BUG_920636
@@ -100,10 +100,10 @@
 
 [----------] 2 tests from cpdf_cmapparser
 [ RUN      ] cpdf_cmapparser.GetCode
-[       OK ] cpdf_cmapparser.GetCode (0 ms)
+[       OK ] cpdf_cmapparser.GetCode (1 ms)
 [ RUN      ] cpdf_cmapparser.GetCodeRange
 [       OK ] cpdf_cmapparser.GetCodeRange (0 ms)
-[----------] 2 tests from cpdf_cmapparser (0 ms total)
+[----------] 2 tests from cpdf_cmapparser (1 ms total)
 
 [----------] 2 tests from cpdf_tounicodemap
 [ RUN      ] cpdf_tounicodemap.StringToCode
@@ -134,13 +134,13 @@
 
 [----------] 1 test from CPDFPageObjectHolder
 [ RUN      ] CPDFPageObjectHolder.GraphicsDataAsKey
-[       OK ] CPDFPageObjectHolder.GraphicsDataAsKey (1 ms)
-[----------] 1 test from CPDFPageObjectHolder (1 ms total)
+[       OK ] CPDFPageObjectHolder.GraphicsDataAsKey (0 ms)
+[----------] 1 test from CPDFPageObjectHolder (0 ms total)
 
 [----------] 1 test from CPDF_PSProc
 [ RUN      ] CPDF_PSProc.AddOperator
 [       OK ] CPDF_PSProc.AddOperator (0 ms)
-[----------] 1 test from CPDF_PSProc (0 ms total)
+[----------] 1 test from CPDF_PSProc (1 ms total)
 
 [----------] 9 tests from CPDF_PSEngine
 [ RUN      ] CPDF_PSEngine.Basic
@@ -181,14 +181,14 @@
 [ RUN      ] cpdf_array.RemoveAt
 [       OK ] cpdf_array.RemoveAt (0 ms)
 [ RUN      ] cpdf_array.Clear
-[       OK ] cpdf_array.Clear (0 ms)
+[       OK ] cpdf_array.Clear (1 ms)
 [ RUN      ] cpdf_array.InsertAt
 [       OK ] cpdf_array.InsertAt (0 ms)
 [ RUN      ] cpdf_array.Clone
 [       OK ] cpdf_array.Clone (0 ms)
 [ RUN      ] cpdf_array.Iterator
 [       OK ] cpdf_array.Iterator (0 ms)
-[----------] 6 tests from cpdf_array (0 ms total)
+[----------] 6 tests from cpdf_array (1 ms total)
 
 [----------] 12 tests from CPDF_CrossRefAvailTest
 [ RUN      ] CPDF_CrossRefAvailTest.CheckCrossRefV4
@@ -196,7 +196,7 @@
 [ RUN      ] CPDF_CrossRefAvailTest.CheckCrossRefStream
 [       OK ] CPDF_CrossRefAvailTest.CheckCrossRefStream (0 ms)
 [ RUN      ] CPDF_CrossRefAvailTest.IncorrectStartOffset
-[       OK ] CPDF_CrossRefAvailTest.IncorrectStartOffset (1 ms)
+[       OK ] CPDF_CrossRefAvailTest.IncorrectStartOffset (0 ms)
 [ RUN      ] CPDF_CrossRefAvailTest.IncorrectPrevOffset
 [       OK ] CPDF_CrossRefAvailTest.IncorrectPrevOffset (0 ms)
 [ RUN      ] CPDF_CrossRefAvailTest.IncorrectPrevStreamOffset
@@ -215,7 +215,7 @@
 [       OK ] CPDF_CrossRefAvailTest.CrossRefV4WithEncryptRef (0 ms)
 [ RUN      ] CPDF_CrossRefAvailTest.CrossRefStreamWithEncryptRef
 [       OK ] CPDF_CrossRefAvailTest.CrossRefStreamWithEncryptRef (0 ms)
-[----------] 12 tests from CPDF_CrossRefAvailTest (1 ms total)
+[----------] 12 tests from CPDF_CrossRefAvailTest (0 ms total)
 
 [----------] 8 tests from cpdf_document_test
 [ RUN      ] cpdf_document_test.GetPages
@@ -247,11 +247,11 @@
 
 [----------] 4 tests from CPDF_IndirectObjectHolderTest
 [ RUN      ] CPDF_IndirectObjectHolderTest.RecursiveParseOfSameObject
-[       OK ] CPDF_IndirectObjectHolderTest.RecursiveParseOfSameObject (0 ms)
+[       OK ] CPDF_IndirectObjectHolderTest.RecursiveParseOfSameObject (1 ms)
 [ RUN      ] CPDF_IndirectObjectHolderTest.GetObjectMethods
 [       OK ] CPDF_IndirectObjectHolderTest.GetObjectMethods (0 ms)
 [ RUN      ] CPDF_IndirectObjectHolderTest.ParseInvalidObjNum
-[       OK ] CPDF_IndirectObjectHolderTest.ParseInvalidObjNum (1 ms)
+[       OK ] CPDF_IndirectObjectHolderTest.ParseInvalidObjNum (0 ms)
 [ RUN      ] CPDF_IndirectObjectHolderTest.ReplaceObjectWithInvalidObjNum
 [       OK ] CPDF_IndirectObjectHolderTest.ReplaceObjectWithInvalidObjNum (0 ms)
 [----------] 4 tests from CPDF_IndirectObjectHolderTest (1 ms total)
@@ -295,7 +295,7 @@
 [ RUN      ] PDFObjectsTest.GetDict
 [       OK ] PDFObjectsTest.GetDict (0 ms)
 [ RUN      ] PDFObjectsTest.GetNameFor
-[       OK ] PDFObjectsTest.GetNameFor (1 ms)
+[       OK ] PDFObjectsTest.GetNameFor (0 ms)
 [ RUN      ] PDFObjectsTest.GetArray
 [       OK ] PDFObjectsTest.GetArray (0 ms)
 [ RUN      ] PDFObjectsTest.Clone
@@ -310,13 +310,13 @@
 [       OK ] PDFObjectsTest.IsTypeAndAsType (0 ms)
 [ RUN      ] PDFObjectsTest.MakeReferenceGeneric
 [       OK ] PDFObjectsTest.MakeReferenceGeneric (0 ms)
-[----------] 13 tests from PDFObjectsTest (1 ms total)
+[----------] 13 tests from PDFObjectsTest (0 ms total)
 
 [----------] 9 tests from PDFArrayTest
 [ RUN      ] PDFArrayTest.GetMatrix
 [       OK ] PDFArrayTest.GetMatrix (0 ms)
 [ RUN      ] PDFArrayTest.GetRect
-[       OK ] PDFArrayTest.GetRect (0 ms)
+[       OK ] PDFArrayTest.GetRect (1 ms)
 [ RUN      ] PDFArrayTest.GetTypeAt
 [       OK ] PDFArrayTest.GetTypeAt (0 ms)
 [ RUN      ] PDFArrayTest.AddNumber
@@ -331,16 +331,16 @@
 [       OK ] PDFArrayTest.CloneDirectObject (0 ms)
 [ RUN      ] PDFArrayTest.ConvertIndirect
 [       OK ] PDFArrayTest.ConvertIndirect (0 ms)
-[----------] 9 tests from PDFArrayTest (0 ms total)
+[----------] 9 tests from PDFArrayTest (1 ms total)
 
 [----------] 3 tests from PDFStreamTest
 [ RUN      ] PDFStreamTest.SetData
-[       OK ] PDFStreamTest.SetData (1 ms)
+[       OK ] PDFStreamTest.SetData (0 ms)
 [ RUN      ] PDFStreamTest.SetDataAndRemoveFilter
 [       OK ] PDFStreamTest.SetDataAndRemoveFilter (0 ms)
 [ RUN      ] PDFStreamTest.LengthInDictionaryOnCreate
 [       OK ] PDFStreamTest.LengthInDictionaryOnCreate (0 ms)
-[----------] 3 tests from PDFStreamTest (1 ms total)
+[----------] 3 tests from PDFStreamTest (0 ms total)
 
 [----------] 3 tests from PDFDictionaryTest
 [ RUN      ] PDFDictionaryTest.CloneDirectObject
@@ -385,11 +385,11 @@
 [ RUN      ] cpdf_parser.RebuildCrossRefFailed
 [       OK ] cpdf_parser.RebuildCrossRefFailed (0 ms)
 [ RUN      ] cpdf_parser.LoadCrossRefV4
-[       OK ] cpdf_parser.LoadCrossRefV4 (2 ms)
+[       OK ] cpdf_parser.LoadCrossRefV4 (1 ms)
 [ RUN      ] cpdf_parser.ParseStartXRef
 [       OK ] cpdf_parser.ParseStartXRef (0 ms)
 [ RUN      ] cpdf_parser.ParseStartXRefWithHeaderOffset
-[       OK ] cpdf_parser.ParseStartXRefWithHeaderOffset (0 ms)
+[       OK ] cpdf_parser.ParseStartXRefWithHeaderOffset (1 ms)
 [ RUN      ] cpdf_parser.ParseLinearizedWithHeaderOffset
 [       OK ] cpdf_parser.ParseLinearizedWithHeaderOffset (0 ms)
 [ RUN      ] cpdf_parser.BadStartXrefShouldNotBuildCrossRefTable
@@ -410,8 +410,8 @@
 [ RUN      ] CPDF_ReadValidatorTest.SessionReset
 [       OK ] CPDF_ReadValidatorTest.SessionReset (0 ms)
 [ RUN      ] CPDF_ReadValidatorTest.CheckDataRangeAndRequestIfUnavailable
-[       OK ] CPDF_ReadValidatorTest.CheckDataRangeAndRequestIfUnavailable (1 ms)
-[----------] 7 tests from CPDF_ReadValidatorTest (1 ms total)
+[       OK ] CPDF_ReadValidatorTest.CheckDataRangeAndRequestIfUnavailable (0 ms)
+[----------] 7 tests from CPDF_ReadValidatorTest (0 ms total)
 
 [----------] 1 test from SimpleParserTest
 [ RUN      ] SimpleParserTest.GetWord
@@ -469,10 +469,10 @@
 [ RUN      ] CPDF_DocRenderDataTest.TransferFunctionOne
 [       OK ] CPDF_DocRenderDataTest.TransferFunctionOne (0 ms)
 [ RUN      ] CPDF_DocRenderDataTest.TransferFunctionArray
-[       OK ] CPDF_DocRenderDataTest.TransferFunctionArray (1 ms)
+[       OK ] CPDF_DocRenderDataTest.TransferFunctionArray (0 ms)
 [ RUN      ] CPDF_DocRenderDataTest.BadTransferFunctions
 [       OK ] CPDF_DocRenderDataTest.BadTransferFunctions (0 ms)
-[----------] 3 tests from CPDF_DocRenderDataTest (1 ms total)
+[----------] 3 tests from CPDF_DocRenderDataTest (0 ms total)
 
 [----------] 4 tests from CPDFAnnotTest
 [ RUN      ] CPDFAnnotTest.RectFromQuadPointsArray
@@ -499,14 +499,14 @@
 [ RUN      ] cpdf_filespec.EncodeDecodeFileName
 [       OK ] cpdf_filespec.EncodeDecodeFileName (0 ms)
 [ RUN      ] cpdf_filespec.GetFileName
-[       OK ] cpdf_filespec.GetFileName (0 ms)
+[       OK ] cpdf_filespec.GetFileName (1 ms)
 [ RUN      ] cpdf_filespec.SetFileName
 [       OK ] cpdf_filespec.SetFileName (0 ms)
 [ RUN      ] cpdf_filespec.GetFileStream
 [       OK ] cpdf_filespec.GetFileStream (0 ms)
 [ RUN      ] cpdf_filespec.GetParamsDict
 [       OK ] cpdf_filespec.GetParamsDict (0 ms)
-[----------] 5 tests from cpdf_filespec (0 ms total)
+[----------] 5 tests from cpdf_filespec (1 ms total)
 
 [----------] 2 tests from CPDF_FormFieldTest
 [ RUN      ] CPDF_FormFieldTest.GetFullNameForDict
@@ -517,7 +517,7 @@
 
 [----------] 8 tests from CPDF_MetadataTest
 [ RUN      ] CPDF_MetadataTest.CheckSharedFormEmailAtTopLevel
-[       OK ] CPDF_MetadataTest.CheckSharedFormEmailAtTopLevel (1 ms)
+[       OK ] CPDF_MetadataTest.CheckSharedFormEmailAtTopLevel (0 ms)
 [ RUN      ] CPDF_MetadataTest.CheckSharedFormAcrobatAtTopLevel
 [       OK ] CPDF_MetadataTest.CheckSharedFormAcrobatAtTopLevel (0 ms)
 [ RUN      ] CPDF_MetadataTest.CheckSharedFormFilesystemAtTopLevel
@@ -532,7 +532,7 @@
 [       OK ] CPDF_MetadataTest.CheckSharedFormWrongNamespace (0 ms)
 [ RUN      ] CPDF_MetadataTest.CheckSharedFormMultipleErrors
 [       OK ] CPDF_MetadataTest.CheckSharedFormMultipleErrors (0 ms)
-[----------] 8 tests from CPDF_MetadataTest (1 ms total)
+[----------] 8 tests from CPDF_MetadataTest (0 ms total)
 
 [----------] 5 tests from cpdf_nametree
 [ RUN      ] cpdf_nametree.GetUnicodeNameWithBOM
@@ -594,7 +594,7 @@
 [ RUN      ] fxcodec.JBig2ImageExpandExternalTooBig
 [       OK ] fxcodec.JBig2ImageExpandExternalTooBig (0 ms)
 [ RUN      ] fxcodec.JBig2EmptyImage
-[       OK ] fxcodec.JBig2EmptyImage (1 ms)
+[       OK ] fxcodec.JBig2EmptyImage (0 ms)
 [ RUN      ] fxcodec.JBig2SubImage
 [       OK ] fxcodec.JBig2SubImage (0 ms)
 [ RUN      ] fxcodec.JBig2CopyLine
@@ -614,7 +614,7 @@
 [ RUN      ] fxcodec.DecodeDataSeek
 [       OK ] fxcodec.DecodeDataSeek (0 ms)
 [ RUN      ] fxcodec.YUV420ToRGB
-[       OK ] fxcodec.YUV420ToRGB (0 ms)
+[       OK ] fxcodec.YUV420ToRGB (1 ms)
 [----------] 30 tests from fxcodec (2 ms total)
 
 [----------] 5 tests from JBig2_BitStream
@@ -654,7 +654,7 @@
 [ RUN      ] fxcrt.AutoRestorerRetainPtr
 [       OK ] fxcrt.AutoRestorerRetainPtr (0 ms)
 [ RUN      ] fxcrt.AutoRestorerRetainPtrNoOp
-[       OK ] fxcrt.AutoRestorerRetainPtrNoOp (1 ms)
+[       OK ] fxcrt.AutoRestorerRetainPtrNoOp (0 ms)
 [ RUN      ] fxcrt.AutoRestorerRetainPtrAbandon
 [       OK ] fxcrt.AutoRestorerRetainPtrAbandon (0 ms)
 [ RUN      ] fxcrt.BitStream
@@ -710,11 +710,11 @@
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] fxcrt.FX_AllocOverflow (342 ms)
+[       OK ] fxcrt.FX_AllocOverflow (180 ms)
 [ RUN      ] fxcrt.FX_AllocOverflow2D
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] fxcrt.FX_AllocOverflow2D (160 ms)
+[       OK ] fxcrt.FX_AllocOverflow2D (90 ms)
 [ RUN      ] fxcrt.AllocZeroesMemory
 [       OK ] fxcrt.AllocZeroesMemory (0 ms)
 [ RUN      ] fxcrt.FXAlign
@@ -736,27 +736,27 @@
 [ RUN      ] fxcrt.FXSYS_i64toa
 [       OK ] fxcrt.FXSYS_i64toa (0 ms)
 [ RUN      ] fxcrt.wcsftime
-[       OK ] fxcrt.wcsftime (2 ms)
+[       OK ] fxcrt.wcsftime (1 ms)
 [ RUN      ] fxcrt.FXSYS_atoi
 [       OK ] fxcrt.FXSYS_atoi (0 ms)
 [ RUN      ] fxcrt.FXSYS_atoi64
-[       OK ] fxcrt.FXSYS_atoi64 (0 ms)
+[       OK ] fxcrt.FXSYS_atoi64 (1 ms)
 [ RUN      ] fxcrt.FXSYS_wtoi
 [       OK ] fxcrt.FXSYS_wtoi (0 ms)
 [ RUN      ] fxcrt.FXSYS_atoui
 [       OK ] fxcrt.FXSYS_atoui (0 ms)
-[----------] 54 tests from fxcrt (505 ms total)
+[----------] 54 tests from fxcrt (272 ms total)
 
 [----------] 4 tests from ByteOrder
 [ RUN      ] ByteOrder.ByteSwapToLE16
-[       OK ] ByteOrder.ByteSwapToLE16 (1 ms)
+[       OK ] ByteOrder.ByteSwapToLE16 (0 ms)
 [ RUN      ] ByteOrder.ByteSwapToLE32
 [       OK ] ByteOrder.ByteSwapToLE32 (0 ms)
 [ RUN      ] ByteOrder.ByteSwapToBE16
-[       OK ] ByteOrder.ByteSwapToBE16 (1 ms)
+[       OK ] ByteOrder.ByteSwapToBE16 (0 ms)
 [ RUN      ] ByteOrder.ByteSwapToBE32
 [       OK ] ByteOrder.ByteSwapToBE32 (0 ms)
-[----------] 4 tests from ByteOrder (2 ms total)
+[----------] 4 tests from ByteOrder (0 ms total)
 
 [----------] 45 tests from ByteString
 [ RUN      ] ByteString.ElementAccess
@@ -768,7 +768,7 @@
 [ RUN      ] ByteString.OperatorLT
 [       OK ] ByteString.OperatorLT (0 ms)
 [ RUN      ] ByteString.OperatorEQ
-[       OK ] ByteString.OperatorEQ (0 ms)
+[       OK ] ByteString.OperatorEQ (1 ms)
 [ RUN      ] ByteString.OperatorNE
 [       OK ] ByteString.OperatorNE (0 ms)
 [ RUN      ] ByteString.OperatorPlus
@@ -792,7 +792,7 @@
 [ RUN      ] ByteString.First
 [       OK ] ByteString.First (0 ms)
 [ RUN      ] ByteString.Last
-[       OK ] ByteString.Last (1 ms)
+[       OK ] ByteString.Last (0 ms)
 [ RUN      ] ByteString.Find
 [       OK ] ByteString.Find (0 ms)
 [ RUN      ] ByteString.ReverseFind
@@ -800,7 +800,7 @@
 [ RUN      ] ByteString.UpperLower
 [       OK ] ByteString.UpperLower (0 ms)
 [ RUN      ] ByteString.Trim
-[       OK ] ByteString.Trim (0 ms)
+[       OK ] ByteString.Trim (1 ms)
 [ RUN      ] ByteString.TrimLeft
 [       OK ] ByteString.TrimLeft (0 ms)
 [ RUN      ] ByteString.TrimLeftCopies
@@ -849,11 +849,11 @@
 [       OK ] ByteString.FX_HashCode_Ascii (0 ms)
 [ RUN      ] ByteString.FX_HashCode_Wide
 [       OK ] ByteString.FX_HashCode_Wide (0 ms)
-[----------] 45 tests from ByteString (1 ms total)
+[----------] 45 tests from ByteString (2 ms total)
 
 [----------] 21 tests from ByteStringView
 [ RUN      ] ByteStringView.Null
-[       OK ] ByteStringView.Null (1 ms)
+[       OK ] ByteStringView.Null (0 ms)
 [ RUN      ] ByteStringView.NotNull
 [       OK ] ByteStringView.NotNull (0 ms)
 [ RUN      ] ByteStringView.FromChar
@@ -894,7 +894,7 @@
 [       OK ] ByteStringView.AnyAllNoneOf (0 ms)
 [ RUN      ] ByteStringView.OStreamOverload
 [       OK ] ByteStringView.OStreamOverload (0 ms)
-[----------] 21 tests from ByteStringView (1 ms total)
+[----------] 21 tests from ByteStringView (0 ms total)
 
 [----------] 1 test from CFX_BytrString
 [ RUN      ] CFX_BytrString.EqualNoCase
@@ -916,9 +916,9 @@
 
 [----------] 2 tests from CFX_Timer
 [ RUN      ] CFX_Timer.ValidTimers
-[       OK ] CFX_Timer.ValidTimers (1 ms)
+[       OK ] CFX_Timer.ValidTimers (0 ms)
 [ RUN      ] CFX_Timer.MisbehavingEmbedder
-[       OK ] CFX_Timer.MisbehavingEmbedder (0 ms)
+[       OK ] CFX_Timer.MisbehavingEmbedder (1 ms)
 [----------] 2 tests from CFX_Timer (1 ms total)
 
 [----------] 4 tests from WideTextBuf
@@ -985,12 +985,12 @@
 [       OK ] fxnumber.FromStringSigned (0 ms)
 [ RUN      ] fxnumber.FromStringFloat
 [       OK ] fxnumber.FromStringFloat (0 ms)
-[----------] 6 tests from fxnumber (1 ms total)
+[----------] 6 tests from fxnumber (0 ms total)
 
 [----------] 1 test from FX_Random
 [ RUN      ] FX_Random.GenerateMT3600times
-[       OK ] FX_Random.GenerateMT3600times (15 ms)
-[----------] 1 test from FX_Random (15 ms total)
+[       OK ] FX_Random.GenerateMT3600times (10 ms)
+[----------] 1 test from FX_Random (10 ms total)
 
 [----------] 17 tests from fxstring
 [ RUN      ] fxstring.FX_UTF8Encode
@@ -998,7 +998,7 @@
 [ RUN      ] fxstring.FX_UTF8Decode
 [       OK ] fxstring.FX_UTF8Decode (0 ms)
 [ RUN      ] fxstring.FX_UTF8EncodeDecodeConsistency
-[       OK ] fxstring.FX_UTF8EncodeDecodeConsistency (6 ms)
+[       OK ] fxstring.FX_UTF8EncodeDecodeConsistency (4 ms)
 [ RUN      ] fxstring.ByteStringToFloat
 [       OK ] fxstring.ByteStringToFloat (0 ms)
 [ RUN      ] fxstring.WideStringToFloat
@@ -1020,14 +1020,14 @@
 [ RUN      ] fxstring.SplitWideStringView
 [       OK ] fxstring.SplitWideStringView (0 ms)
 [ RUN      ] fxstring.ByteStringSplitEfficiency
-[       OK ] fxstring.ByteStringSplitEfficiency (2 ms)
+[       OK ] fxstring.ByteStringSplitEfficiency (1 ms)
 [ RUN      ] fxstring.ByteStringViewSplitEfficiency
-[       OK ] fxstring.ByteStringViewSplitEfficiency (2 ms)
+[       OK ] fxstring.ByteStringViewSplitEfficiency (1 ms)
 [ RUN      ] fxstring.WideStringSplitEfficiency
-[       OK ] fxstring.WideStringSplitEfficiency (2 ms)
+[       OK ] fxstring.WideStringSplitEfficiency (1 ms)
 [ RUN      ] fxstring.WideStringViewSplitEfficiency
-[       OK ] fxstring.WideStringViewSplitEfficiency (1 ms)
-[----------] 17 tests from fxstring (13 ms total)
+[       OK ] fxstring.WideStringViewSplitEfficiency (2 ms)
+[----------] 17 tests from fxstring (9 ms total)
 
 [----------] 6 tests from MaybeOwned
 [ RUN      ] MaybeOwned.Null
@@ -1056,7 +1056,7 @@
 [ RUN      ] ObservePtr.CopyAssign
 [       OK ] ObservePtr.CopyAssign (0 ms)
 [ RUN      ] ObservePtr.Vector
-[       OK ] ObservePtr.Vector (1 ms)
+[       OK ] ObservePtr.Vector (0 ms)
 [ RUN      ] ObservePtr.VectorAutoClear
 [       OK ] ObservePtr.VectorAutoClear (0 ms)
 [ RUN      ] ObservePtr.ResetNull
@@ -1073,7 +1073,7 @@
 [       OK ] ObservePtr.SelfObservable (0 ms)
 [ RUN      ] ObservePtr.PairwiseObservable
 [       OK ] ObservePtr.PairwiseObservable (0 ms)
-[----------] 14 tests from ObservePtr (1 ms total)
+[----------] 14 tests from ObservePtr (0 ms total)
 
 [----------] 2 tests from PdfiumSpan
 [ RUN      ] PdfiumSpan.EmptySpan
@@ -1118,9 +1118,9 @@
 [ RUN      ] RetainPtr.Bool
 [       OK ] RetainPtr.Bool (0 ms)
 [ RUN      ] RetainPtr.MakeRetained
-[       OK ] RetainPtr.MakeRetained (0 ms)
+[       OK ] RetainPtr.MakeRetained (1 ms)
 [ RUN      ] RetainPtr.VectorMove
-[       OK ] RetainPtr.VectorMove (1 ms)
+[       OK ] RetainPtr.VectorMove (0 ms)
 [----------] 19 tests from RetainPtr (1 ms total)
 
 [----------] 7 tests from RetainedTreeNode
@@ -1164,35 +1164,35 @@
 [ RUN      ] TreeNode.SelfAppendFirstChild
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] TreeNode.SelfAppendFirstChild (135 ms)
+[       OK ] TreeNode.SelfAppendFirstChild (91 ms)
 [ RUN      ] TreeNode.SelfAppendLastChild
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] TreeNode.SelfAppendLastChild (142 ms)
+[       OK ] TreeNode.SelfAppendLastChild (89 ms)
 [ RUN      ] TreeNode.SelfInsertBeforeOther
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] TreeNode.SelfInsertBeforeOther (155 ms)
+[       OK ] TreeNode.SelfInsertBeforeOther (89 ms)
 [ RUN      ] TreeNode.InsertOtherBeforeSelf
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] TreeNode.InsertOtherBeforeSelf (164 ms)
+[       OK ] TreeNode.InsertOtherBeforeSelf (88 ms)
 [ RUN      ] TreeNode.SelfInsertAfterOther
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] TreeNode.SelfInsertAfterOther (143 ms)
+[       OK ] TreeNode.SelfInsertAfterOther (89 ms)
 [ RUN      ] TreeNode.InsertOtherAfterSelf
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] TreeNode.InsertOtherAfterSelf (129 ms)
+[       OK ] TreeNode.InsertOtherAfterSelf (92 ms)
 [ RUN      ] TreeNode.RemoveParentless
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] TreeNode.RemoveParentless (157 ms)
+[       OK ] TreeNode.RemoveParentless (90 ms)
 [ RUN      ] TreeNode.RemoveFromWrongParent
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] TreeNode.RemoveFromWrongParent (139 ms)
+[       OK ] TreeNode.RemoveFromWrongParent (91 ms)
 [ RUN      ] TreeNode.SafeRemove
 [       OK ] TreeNode.SafeRemove (0 ms)
 [ RUN      ] TreeNode.SafeRemoveParentless
@@ -1205,7 +1205,7 @@
 [       OK ] TreeNode.AppendFirstChild (0 ms)
 [ RUN      ] TreeNode.RemoveChild
 [       OK ] TreeNode.RemoveChild (0 ms)
-[----------] 14 tests from TreeNode (1165 ms total)
+[----------] 14 tests from TreeNode (719 ms total)
 
 [----------] 13 tests from UnownedPtr
 [ RUN      ] UnownedPtr.PtrOk
@@ -1242,7 +1242,7 @@
 [ RUN      ] WeakPtr.NonNull
 [       OK ] WeakPtr.NonNull (0 ms)
 [ RUN      ] WeakPtr.ResetNull
-[       OK ] WeakPtr.ResetNull (1 ms)
+[       OK ] WeakPtr.ResetNull (0 ms)
 [ RUN      ] WeakPtr.ResetNonNull
 [       OK ] WeakPtr.ResetNonNull (0 ms)
 [ RUN      ] WeakPtr.DeleteObject
@@ -1251,13 +1251,13 @@
 [       OK ] WeakPtr.Cyclic (0 ms)
 [ RUN      ] WeakPtr.CyclicDeleteObject
 [       OK ] WeakPtr.CyclicDeleteObject (0 ms)
-[----------] 7 tests from WeakPtr (1 ms total)
+[----------] 7 tests from WeakPtr (0 ms total)
 
 [----------] 56 tests from WideString
 [ RUN      ] WideString.ElementAccess
 [       OK ] WideString.ElementAccess (0 ms)
 [ RUN      ] WideString.Construct
-[       OK ] WideString.Construct (0 ms)
+[       OK ] WideString.Construct (1 ms)
 [ RUN      ] WideString.Assign
 [       OK ] WideString.Assign (0 ms)
 [ RUN      ] WideString.OperatorLT
@@ -1281,7 +1281,7 @@
 [ RUN      ] WideString.InsertAtFrontAndInsertAtBack
 [       OK ] WideString.InsertAtFrontAndInsertAtBack (0 ms)
 [ RUN      ] WideString.Delete
-[       OK ] WideString.Delete (1 ms)
+[       OK ] WideString.Delete (0 ms)
 [ RUN      ] WideString.Substr
 [       OK ] WideString.Substr (0 ms)
 [ RUN      ] WideString.First
@@ -1305,7 +1305,7 @@
 [ RUN      ] WideString.TrimRightCopies
 [       OK ] WideString.TrimRightCopies (0 ms)
 [ RUN      ] WideString.Reserve
-[       OK ] WideString.Reserve (0 ms)
+[       OK ] WideString.Reserve (1 ms)
 [ RUN      ] WideString.GetBuffer
 [       OK ] WideString.GetBuffer (0 ms)
 [ RUN      ] WideString.ReleaseBuffer
@@ -1339,7 +1339,7 @@
 [ RUN      ] WideString.FromDefANSI
 [       OK ] WideString.FromDefANSI (0 ms)
 [ RUN      ] WideString.FormatWidth
-[       OK ] WideString.FormatWidth (1 ms)
+[       OK ] WideString.FormatWidth (0 ms)
 [ RUN      ] WideString.FormatPrecision
 [       OK ] WideString.FormatPrecision (0 ms)
 [ RUN      ] WideString.FormatOutOfRangeChar
@@ -1398,12 +1398,12 @@
 [ RUN      ] WideStringView.AnyAllNoneOf
 [       OK ] WideStringView.AnyAllNoneOf (0 ms)
 [ RUN      ] WideStringView.TrimmedRight
-[       OK ] WideStringView.TrimmedRight (1 ms)
+[       OK ] WideStringView.TrimmedRight (0 ms)
 [ RUN      ] WideStringView.OStreamOverload
 [       OK ] WideStringView.OStreamOverload (0 ms)
 [ RUN      ] WideStringView.WideOStreamOverload
 [       OK ] WideStringView.WideOStreamOverload (0 ms)
-[----------] 17 tests from WideStringView (1 ms total)
+[----------] 17 tests from WideStringView (0 ms total)
 
 [----------] 1 test from CFX_WidString
 [ RUN      ] CFX_WidString.InitializerList
@@ -1412,14 +1412,14 @@
 
 [----------] 4 tests from CFX_XMLCharDataTest
 [ RUN      ] CFX_XMLCharDataTest.GetType
-[       OK ] CFX_XMLCharDataTest.GetType (0 ms)
+[       OK ] CFX_XMLCharDataTest.GetType (1 ms)
 [ RUN      ] CFX_XMLCharDataTest.GetText
 [       OK ] CFX_XMLCharDataTest.GetText (0 ms)
 [ RUN      ] CFX_XMLCharDataTest.Clone
 [       OK ] CFX_XMLCharDataTest.Clone (0 ms)
 [ RUN      ] CFX_XMLCharDataTest.Save
 [       OK ] CFX_XMLCharDataTest.Save (0 ms)
-[----------] 4 tests from CFX_XMLCharDataTest (0 ms total)
+[----------] 4 tests from CFX_XMLCharDataTest (1 ms total)
 
 [----------] 2 tests from CFX_XMLDocumentTest
 [ RUN      ] CFX_XMLDocumentTest.Root
@@ -1465,7 +1465,7 @@
 
 [----------] 9 tests from CFX_XMLInstructionTest
 [ RUN      ] CFX_XMLInstructionTest.GetType
-[       OK ] CFX_XMLInstructionTest.GetType (1 ms)
+[       OK ] CFX_XMLInstructionTest.GetType (0 ms)
 [ RUN      ] CFX_XMLInstructionTest.AcrobatInstruction
 [       OK ] CFX_XMLInstructionTest.AcrobatInstruction (0 ms)
 [ RUN      ] CFX_XMLInstructionTest.OriginalXFAInstruction
@@ -1482,7 +1482,7 @@
 [       OK ] CFX_XMLInstructionTest.ParseAndReSave (0 ms)
 [ RUN      ] CFX_XMLInstructionTest.ParseAndReSaveInnerInstruction
 [       OK ] CFX_XMLInstructionTest.ParseAndReSaveInnerInstruction (0 ms)
-[----------] 9 tests from CFX_XMLInstructionTest (1 ms total)
+[----------] 9 tests from CFX_XMLInstructionTest (0 ms total)
 
 [----------] 10 tests from CFX_XMLNodeTest
 [ RUN      ] CFX_XMLNodeTest.GetParent
@@ -1506,8 +1506,8 @@
 [ RUN      ] CFX_XMLNodeTest.RemoveMissingChild
 
 [WARNING] ../../third_party/googletest/src/googletest/src/gtest-death-test.cc:1122:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test detected 8 threads. See https://github.com/google/googletest/blob/master/googletest/docs/advanced.md#death-tests-and-threads for more explanation and suggested solutions, especially if this is the last message you see before your test times out.
-[       OK ] CFX_XMLNodeTest.RemoveMissingChild (138 ms)
-[----------] 10 tests from CFX_XMLNodeTest (138 ms total)
+[       OK ] CFX_XMLNodeTest.RemoveMissingChild (92 ms)
+[----------] 10 tests from CFX_XMLNodeTest (92 ms total)
 
 [----------] 22 tests from CFX_XMLParserTest
 [ RUN      ] CFX_XMLParserTest.AttributesMustBeQuoted
@@ -1554,7 +1554,7 @@
 [       OK ] CFX_XMLParserTest.ParseInstruction (0 ms)
 [ RUN      ] CFX_XMLParserTest.BadEntity
 [       OK ] CFX_XMLParserTest.BadEntity (0 ms)
-[----------] 22 tests from CFX_XMLParserTest (1 ms total)
+[----------] 22 tests from CFX_XMLParserTest (0 ms total)
 
 [----------] 5 tests from CFX_XMLTextTest
 [ RUN      ] CFX_XMLTextTest.GetType
@@ -1567,7 +1567,7 @@
 [       OK ] CFX_XMLTextTest.Save (0 ms)
 [ RUN      ] CFX_XMLTextTest.SetText
 [       OK ] CFX_XMLTextTest.SetText (0 ms)
-[----------] 5 tests from CFX_XMLTextTest (0 ms total)
+[----------] 5 tests from CFX_XMLTextTest (1 ms total)
 
 [----------] 1 test from CFX_FolderFontInfoTest
 [ RUN      ] CFX_FolderFontInfoTest.TestFindFont
@@ -1581,8 +1581,8 @@
 
 [----------] 1 test from fxge
 [ RUN      ] fxge.CMYK_Rounding
-[       OK ] fxge.CMYK_Rounding (1096 ms)
-[----------] 1 test from fxge (1096 ms total)
+[       OK ] fxge.CMYK_Rounding (308 ms)
+[----------] 1 test from fxge (308 ms total)
 
 [----------] 5 tests from CFX_DIBBaseTest
 [ RUN      ] CFX_DIBBaseTest.GetOverlapRectTrivialOverlap
@@ -1592,10 +1592,10 @@
 [ RUN      ] CFX_DIBBaseTest.GetOverlapRectOverlapLimitedBySource
 [       OK ] CFX_DIBBaseTest.GetOverlapRectOverlapLimitedBySource (0 ms)
 [ RUN      ] CFX_DIBBaseTest.GetOverlapRectOverlapLimitedByDestination
-[       OK ] CFX_DIBBaseTest.GetOverlapRectOverlapLimitedByDestination (1 ms)
+[       OK ] CFX_DIBBaseTest.GetOverlapRectOverlapLimitedByDestination (0 ms)
 [ RUN      ] CFX_DIBBaseTest.GetOverlapRectBadInputs
 [       OK ] CFX_DIBBaseTest.GetOverlapRectBadInputs (0 ms)
-[----------] 5 tests from CFX_DIBBaseTest (1 ms total)
+[----------] 5 tests from CFX_DIBBaseTest (0 ms total)
 
 [----------] 4 tests from CFX_DIBitmap
 [ RUN      ] CFX_DIBitmap.Create
@@ -1608,40 +1608,40 @@ Value of: CFX_DIBitmap::CalculatePitchAndSize(1048576, 1024, FXDIB_Format::kArgb
   Actual: true
 Expected: false
 Stack trace:
-#0 0x55838d00a657 CFX_DIBitmap_CalculatePitchAndSizeBad_Test::TestBody()
+#0 0x56216dfe4657 CFX_DIBitmap_CalculatePitchAndSizeBad_Test::TestBody()
 
 ../../third_party/pdfium/core/fxge/dib/cfx_dibitmap_unittest.cpp:72: Failure
 Value of: CFX_DIBitmap::CalculatePitchAndSize(4194304, 1024, FXDIB_Format::k8bppRgb, 0)
   Actual: true
 Expected: false
 Stack trace:
-#0 0x55838d00a752 CFX_DIBitmap_CalculatePitchAndSizeBad_Test::TestBody()
+#0 0x56216dfe4752 CFX_DIBitmap_CalculatePitchAndSizeBad_Test::TestBody()
 
 ../../third_party/pdfium/core/fxge/dib/cfx_dibitmap_unittest.cpp:78: Failure
 Value of: CFX_DIBitmap::CalculatePitchAndSize( 1048576, 1024, FXDIB_Format::kArgb, 4194304)
   Actual: true
 Expected: false
 Stack trace:
-#0 0x55838d00a94e CFX_DIBitmap_CalculatePitchAndSizeBad_Test::TestBody()
+#0 0x56216dfe494e CFX_DIBitmap_CalculatePitchAndSizeBad_Test::TestBody()
 
 ../../third_party/pdfium/core/fxge/dib/cfx_dibitmap_unittest.cpp:80: Failure
 Value of: CFX_DIBitmap::CalculatePitchAndSize( 4194304, 1024, FXDIB_Format::k8bppRgb, 4194304)
   Actual: true
 Expected: false
 Stack trace:
-#0 0x55838d00aa4c CFX_DIBitmap_CalculatePitchAndSizeBad_Test::TestBody()
+#0 0x56216dfe4a4c CFX_DIBitmap_CalculatePitchAndSizeBad_Test::TestBody()
 
-[  FAILED  ] CFX_DIBitmap.CalculatePitchAndSizeBad (33 ms)
+[  FAILED  ] CFX_DIBitmap.CalculatePitchAndSizeBad (3 ms)
 [ RUN      ] CFX_DIBitmap.CalculatePitchAndSizeBoundary
 ../../third_party/pdfium/core/fxge/dib/cfx_dibitmap_unittest.cpp:101: Failure
 Value of: CFX_DIBitmap::CalculatePitchAndSize(68174085, 63, FXDIB_Format::k8bppRgb, 0)
   Actual: true
 Expected: false
 Stack trace:
-#0 0x55838d00b188 CFX_DIBitmap_CalculatePitchAndSizeBoundary_Test::TestBody()
+#0 0x56216dfe5188 CFX_DIBitmap_CalculatePitchAndSizeBoundary_Test::TestBody()
 
 [  FAILED  ] CFX_DIBitmap.CalculatePitchAndSizeBoundary (0 ms)
-[----------] 4 tests from CFX_DIBitmap (33 ms total)
+[----------] 4 tests from CFX_DIBitmap (3 ms total)
 
 [----------] 1 test from CStretchEngine
 [ RUN      ] CStretchEngine.OverflowInCtor
@@ -1652,9 +1652,9 @@ Stack trace:
 [ RUN      ] FXFontTest.PDF_UnicodeFromAdobeName
 [       OK ] FXFontTest.PDF_UnicodeFromAdobeName (0 ms)
 [ RUN      ] FXFontTest.PDF_AdobeNameFromUnicode
-[       OK ] FXFontTest.PDF_AdobeNameFromUnicode (1 ms)
+[       OK ] FXFontTest.PDF_AdobeNameFromUnicode (0 ms)
 [ RUN      ] FXFontTest.ReadFontNameFromMicrosoftEntries
-[       OK ] FXFontTest.ReadFontNameFromMicrosoftEntries (0 ms)
+[       OK ] FXFontTest.ReadFontNameFromMicrosoftEntries (1 ms)
 [----------] 3 tests from FXFontTest (1 ms total)
 
 [----------] 1 test from CPDFSDK_HelpersTest
@@ -1694,33 +1694,33 @@ Stack trace:
 
 [----------] 11 tests from CFXV8UnitTest
 [ RUN      ] CFXV8UnitTest.EmptyLocal
-[       OK ] CFXV8UnitTest.EmptyLocal (4 ms)
+[       OK ] CFXV8UnitTest.EmptyLocal (6 ms)
 [ RUN      ] CFXV8UnitTest.NewNull
 [       OK ] CFXV8UnitTest.NewNull (2 ms)
 [ RUN      ] CFXV8UnitTest.NewUndefined
-[       OK ] CFXV8UnitTest.NewUndefined (35 ms)
+[       OK ] CFXV8UnitTest.NewUndefined (2 ms)
 [ RUN      ] CFXV8UnitTest.NewBoolean
-[       OK ] CFXV8UnitTest.NewBoolean (3 ms)
+[       OK ] CFXV8UnitTest.NewBoolean (2 ms)
 [ RUN      ] CFXV8UnitTest.NewNumber
-[       OK ] CFXV8UnitTest.NewNumber (2 ms)
+[       OK ] CFXV8UnitTest.NewNumber (1 ms)
 [ RUN      ] CFXV8UnitTest.NewString
-[       OK ] CFXV8UnitTest.NewString (35 ms)
+[       OK ] CFXV8UnitTest.NewString (2 ms)
 [ RUN      ] CFXV8UnitTest.NewDate
-[       OK ] CFXV8UnitTest.NewDate (2 ms)
+[       OK ] CFXV8UnitTest.NewDate (4 ms)
 [ RUN      ] CFXV8UnitTest.NewArray
 [       OK ] CFXV8UnitTest.NewArray (3 ms)
 [ RUN      ] CFXV8UnitTest.NewObject
-[       OK ] CFXV8UnitTest.NewObject (35 ms)
+[       OK ] CFXV8UnitTest.NewObject (2 ms)
 [ RUN      ] CFXV8UnitTest.ThrowFromGetter
 [       OK ] CFXV8UnitTest.ThrowFromGetter (2 ms)
 [ RUN      ] CFXV8UnitTest.ThrowFromSetter
-[       OK ] CFXV8UnitTest.ThrowFromSetter (3 ms)
-[----------] 11 tests from CFXV8UnitTest (126 ms total)
+[       OK ] CFXV8UnitTest.ThrowFromSetter (2 ms)
+[----------] 11 tests from CFXV8UnitTest (28 ms total)
 
 [----------] 1 test from FXJSEngineUnitTest
 [ RUN      ] FXJSEngineUnitTest.GC
-[       OK ] FXJSEngineUnitTest.GC (49 ms)
-[----------] 1 test from FXJSEngineUnitTest (49 ms total)
+[       OK ] FXJSEngineUnitTest.GC (2 ms)
+[----------] 1 test from FXJSEngineUnitTest (2 ms total)
 
 [----------] 1 test from CJS_PublicMethods
 [ RUN      ] CJS_PublicMethods.IsNumber
@@ -1729,8 +1729,8 @@ Stack trace:
 
 [----------] 1 test from CJS_Util
 [ RUN      ] CJS_Util.ParseDataType
-[       OK ] CJS_Util.ParseDataType (0 ms)
-[----------] 1 test from CJS_Util (0 ms total)
+[       OK ] CJS_Util.ParseDataType (1 ms)
+[----------] 1 test from CJS_Util (1 ms total)
 
 [----------] 2 tests from FX_DateHelper
 [ RUN      ] FX_DateHelper.GetYearFromTime
@@ -1740,7 +1740,7 @@ Stack trace:
 [----------] 2 tests from FX_DateHelper (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 693 tests from 96 test suites ran. (3774 ms total)
+[==========] 693 tests from 96 test suites ran. (2382 ms total)
 [  PASSED  ] 691 tests.
 [  FAILED  ] 2 tests, listed below:
 [  FAILED  ] CFX_DIBitmap.CalculatePitchAndSizeBad
