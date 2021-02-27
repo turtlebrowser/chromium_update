@@ -30,7 +30,7 @@ build() {
     cd $CHROMIUM_DIR
     BRANCH_NAME=$(git symbolic-ref -q HEAD)
     info "[Build] Run build on ${BRANCH_NAME}"
-    autoninja -C out/Default
+    autoninja -k 0 -C out/Default
     subheader "[Build] Finished"
 }
 
