@@ -18,11 +18,11 @@ jobs:
             os: ubuntu-latest,
             work_dir: "$HOME"
           }
-        - {
-            name: "Ubuntu 20.04",
-            os: ubuntu-20.04,
-            work_dir: "$HOME"
-          }
+#        - {
+#            name: "Ubuntu 20.04",
+#            os: ubuntu-20.04,
+#            work_dir: "$HOME"
+#          }
         - {
             name: "Windows Latest",
             os: windows-latest,
