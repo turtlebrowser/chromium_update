@@ -171,7 +171,7 @@ run_unittests() {
 
     cd ${CHROMIUM_UPDATE_DIR}/tests
     git add .
-    git commit -m "[TestRun] Results after running unittests on branch: ${BRANCH_NAME}"
+    git commit -m "[TestRun] Results after running unittests on branch: ${BRANCH_NAME} on platform : ${OSTYPE}"
 }
 
 header "Build and Run Tests"
