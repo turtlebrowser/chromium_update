@@ -37,6 +37,7 @@ show_help() {
     info "-x external, does not require rights (Default off)"
     info "-s skip actual build steps (Default off)"
     info "-r only build release (Default off)"
+    info "-t build tests (Default off)"
 
     header "Workflow Options - only one of the below at a time"
     info "-d Developer      Workflow: (Default) Building the current branch Qt+Chromium"
@@ -81,6 +82,9 @@ BUILD_SKIP=false
 # r) Build release only
 BUILD_RELEASE=false
 
+# t) Build tests
+BUILD_TESTS=false
+
 # 4) Root work directory (WORK_DIR)
 if [ "$OSTYPE" = "msys" ] ; then
     WORK_DIR="/c/Code"
@@ -91,7 +95,7 @@ fi
 # Process commandline 
 OPTIND=1
 
-while getopts "h?vkxsrj:w:dupeqc" opt; do
+while getopts "h?vkxsrtj:w:dupeqc" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -117,6 +121,8 @@ while getopts "h?vkxsrj:w:dupeqc" opt; do
         ;;
     r)  BUILD_RELEASE=true
         ;;
+    t)  BUILD_TESTS=true
+        ;;
     s)  BUILD_SKIP=true
         ;;
     j)  BUILD_JOBS=$OPTARG
@@ -135,6 +141,7 @@ info "Continue:   $BUILD_CONTINUE"
 info "Skip build: $BUILD_SKIP"
 info "External:   $BUILD_EXTERNAL"
 info "Release:    $BUILD_RELEASE"
+info "With tests: $BUILD_TESTS"
 info "Jobs:       $BUILD_JOBS"
 info "Workflow:   $WORKFLOW"
 info "Work dir:   $WORK_DIR"
@@ -149,7 +156,7 @@ OLD_TAG="88.0.4324.150"
 
 # 7) New tag and branch (NEW_TAG, NEW_BRANCH)
 NEW_TAG="88.0.4324.182"
-NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_testing_1"
+NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}"
 CURRENT_BRANCH=$NEW_BRANCH
 
 if [ "$BUILD_EXTERNAL" = true ] ; then
@@ -199,7 +206,11 @@ export NINJAFLAGS=${NINJAFLAGS}
 export NINJAJOBS=${NINJAFLAGS}
 
 # https://github.com/qt/qtbase/blob/5.15.2/config_help.txt
-COMMON_CONFIGURE_FLAGS="-opensource -confirm-license -nomake examples -nomake tests"
+COMMON_CONFIGURE_FLAGS="-opensource -confirm-license -nomake examples"
+
+if [ "$BUILD_TESTS" = false ] ; then
+    COMMON_CONFIGURE_FLAGS="${COMMON_CONFIGURE_FLAGS} -nomake tests"
+fi
 
 if [ "$BUILD_VERBOSE" = true ] ; then
     COMMON_CONFIGURE_FLAGS="${COMMON_CONFIGURE_FLAGS} -verbose"
