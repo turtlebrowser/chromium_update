@@ -12,7 +12,7 @@
 [ RUN      ] CppgcWorkListTest.SegmentIsFull
 [       OK ] CppgcWorkListTest.SegmentIsFull (0 ms)
 [ RUN      ] CppgcWorkListTest.SegmentClear
-[       OK ] CppgcWorkListTest.SegmentClear (1 ms)
+[       OK ] CppgcWorkListTest.SegmentClear (0 ms)
 [ RUN      ] CppgcWorkListTest.SegmentUpdateFalse
 [       OK ] CppgcWorkListTest.SegmentUpdateFalse (0 ms)
 [ RUN      ] CppgcWorkListTest.SegmentUpdate
@@ -32,7 +32,7 @@
 [ RUN      ] CppgcWorkListTest.FlushToGlobalPushSegment
 [       OK ] CppgcWorkListTest.FlushToGlobalPushSegment (0 ms)
 [ RUN      ] CppgcWorkListTest.FlushToGlobalPopSegment
-[       OK ] CppgcWorkListTest.FlushToGlobalPopSegment (0 ms)
+[       OK ] CppgcWorkListTest.FlushToGlobalPopSegment (1 ms)
 [ RUN      ] CppgcWorkListTest.Clear
 [       OK ] CppgcWorkListTest.Clear (0 ms)
 [ RUN      ] CppgcWorkListTest.SingleSegmentSteal

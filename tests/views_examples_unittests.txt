@@ -4,20 +4,20 @@ own process. For debugging a test inside a debugger, use the
 --single-process-tests.
 Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
-[11864:11864:0227/103257.544971:248531737082:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
-[11864:11864:0227/103257.545019:248531737108:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
-[11864:11864:0227/103257.545032:248531737120:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[23194:23194:0304/005055.625353:45195389379:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[23194:23194:0304/005055.625389:45195389398:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[23194:23194:0304/005055.625397:45195389405:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
 Still waiting for the following processes to finish:
-	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.sMK3E3/.org.chromium.Chromium.dQwgLB --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.sMK3E3/ITS9Hk/test_results.xml --test-launcher-retries-left=1
+	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.lATxDj/.org.chromium.Chromium.GRuPz7 --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.lATxDj/v3BGBI/test_results.xml --test-launcher-retries-left=1
 Still waiting for the following processes to finish:
-	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.sMK3E3/.org.chromium.Chromium.dQwgLB --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.sMK3E3/ITS9Hk/test_results.xml --test-launcher-retries-left=1
+	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.lATxDj/.org.chromium.Chromium.GRuPz7 --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.lATxDj/v3BGBI/test_results.xml --test-launcher-retries-left=1
 [ RUN      ] ExamplesTest.TestViewsExamplesLaunches_DISABLED
 [1/1] ExamplesTest.TestViewsExamplesLaunches_DISABLED (TIMED OUT)
 Retrying 1 test (retry #0)
 Still waiting for the following processes to finish:
-	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.6CmLws/.org.chromium.Chromium.XgFyXB --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.6CmLws/TyF9e2/test_results.xml --test-launcher-retries-left=0
+	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.tEVLbe/.org.chromium.Chromium.2qAntD --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.tEVLbe/nFyzPV/test_results.xml --test-launcher-retries-left=0
 Still waiting for the following processes to finish:
-	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.6CmLws/.org.chromium.Chromium.XgFyXB --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.6CmLws/TyF9e2/test_results.xml --test-launcher-retries-left=0
+	./views_examples_unittests --gtest_flagfile=/tmp/.org.chromium.Chromium.tEVLbe/.org.chromium.Chromium.2qAntD --single-process-tests --test-launcher-output=/tmp/.org.chromium.Chromium.tEVLbe/nFyzPV/test_results.xml --test-launcher-retries-left=0
 [ RUN      ] ExamplesTest.TestViewsExamplesLaunches_DISABLED
 [2/2] ExamplesTest.TestViewsExamplesLaunches_DISABLED (TIMED OUT)
 1 test timed out:

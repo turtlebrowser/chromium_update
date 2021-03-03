@@ -4,56 +4,143 @@ own process. For debugging a test inside a debugger, use the
 --single-process-tests.
 Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
-[10414:10414:0227/103242.955034:248517147194:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
-[10414:10414:0227/103242.955136:248517147227:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
-[10414:10414:0227/103242.955155:248517147244:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
-[1/48] AppSourceUrlRecorderTest.CheckArc (2 ms)
+[22111:22111:0304/005041.140979:45180905037:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[22111:22111:0304/005041.141053:45180905062:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[22111:22111:0304/005041.141061:45180905070:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[1/48] AppSourceUrlRecorderTest.CheckArc (1 ms)
 [2/48] AppSourceUrlRecorderTest.CheckPWA (1 ms)
 [3/48] UkmConsentStateObserverTest.NoProfiles (0 ms)
-[4/48] UkmConsentStateObserverTest.NotActive (1 ms)
+[4/48] UkmConsentStateObserverTest.NotActive (0 ms)
 [5/48] UkmConsentStateObserverTest.OneEnabled (0 ms)
 [6/48] UkmConsentStateObserverTest.MixedProfiles (0 ms)
 [7/48] UkmConsentStateObserverTest.TwoEnabled (0 ms)
 [8/48] UkmConsentStateObserverTest.OneAddRemove (0 ms)
 [9/48] UkmConsentStateObserverTest.PurgeOnDisable (0 ms)
 [10/48] UkmRecorderImplTest.IsSampledIn (0 ms)
-[11/48] UkmServiceTest.AddEntryWithEmptyMetrics (4 ms)
+[11/48] UkmServiceTest.AddEntryWithEmptyMetrics (1 ms)
 [12/48] UkmServiceTest.MetricsProviderTest (1 ms)
-[13/48] UkmServiceTest.SystemProfileTest (2 ms)
-[14/48] UkmServiceTest.AddUserDemograhicsWhenAvailableAndFeatureEnabled (2 ms)
+[13/48] UkmServiceTest.SystemProfileTest (0 ms)
+[14/48] UkmServiceTest.AddUserDemograhicsWhenAvailableAndFeatureEnabled (1 ms)
 [15/48] UkmServiceTest.DontAddUserDemograhicsWhenNotAvailableAndFeatureEnabled (1 ms)
-[16/48] UkmServiceTest.DontAddUserDemograhicsWhenFeatureDisabled (2 ms)
-[17/48] UkmServiceTest.LogsRotation (4 ms)
-[18/48] UkmServiceTest.LogsUploadedOnlyWhenHavingSourcesOrEntries (3 ms)
-[19/48] UkmServiceTest.GetNewSourceID (1 ms)
-[20/48] UkmServiceTest.RecordRedirectedUrl (2 ms)
-[21/48] UkmRecorderImplTest.PurgeExtensionRecordings (2 ms)
-[22/48] UkmRecorderImplTest.WebApkSourceUrl (1 ms)
-[23/48] UkmRecorderImplTest.PaymentAppScopeUrl (2 ms)
-[24/48] UkmServiceTest.ClientIdMigration (1 ms)
-[25/48] UkmServiceTest.ClientIdClonedInstall (1 ms)
-[26/48] UkmServiceTest.EnableDisableSchedule (1 ms)
-[27/48] UkmServiceTest.PersistAndPurge (2 ms)
-[28/48] UkmServiceTest.Purge (2 ms)
-[29/48] UkmServiceTest.PurgeExtensionDataFromUnsentLogStore (2 ms)
-[30/48] UkmServiceTest.SourceSerialization (2 ms)
-[31/48] UkmServiceTest.SupportedSchemesNoExtensions (2 ms)
-[32/48] UkmServiceTest.SanitizeUrlAuthParams (2 ms)
-[33/48] UkmServiceTest.SanitizeChromeUrlParams (11 ms)
-[34/48] UkmServiceTest.MarkSourceForDeletion (3 ms)
-[35/48] UkmServiceTest.PurgeNonNavigationSources (2 ms)
-[36/48] UkmServiceTest.IdentifiabilityMetricsDontExplode (2 ms)
-[37/48] UkmServiceTest.FilterCanRemoveMetrics (2 ms)
-[38/48] UkmServiceTest.FilterRejectsEvent (2 ms)
-[39/48] UkmServiceTest.RestrictToWhitelistedSourceIds (5 ms)
-[40/48] UkmServiceTest.RecordSessionId (2 ms)
-[41/48] UkmServiceTest.SourceSize (2 ms)
-[42/48] UkmServiceTest.PurgeMidUpload (2 ms)
-[43/48] UkmServiceTest.WhitelistEntryTest (2 ms)
-[44/48] UkmServiceTest.SourceURLLength (3 ms)
-[45/48] UkmServiceTest.UnreferencedNonWhitelistedSources (16 ms)
-[46/48] UkmServiceTest.NonWhitelistedUrls (8 ms)
-[47/48] UkmServiceTest.WhitelistIdType (7 ms)
-[48/48] UkmServiceTest.SupportedSchemes (1 ms)
+[16/48] UkmServiceTest.DontAddUserDemograhicsWhenFeatureDisabled (0 ms)
+[17/48] UkmServiceTest.LogsRotation (2 ms)
+[18/48] UkmServiceTest.LogsUploadedOnlyWhenHavingSourcesOrEntries (1 ms)
+[19/48] UkmServiceTest.GetNewSourceID (0 ms)
+[20/48] UkmServiceTest.RecordRedirectedUrl (0 ms)
+[21/48] UkmServiceTest.SupportedSchemesNoExtensions (1 ms)
+[22/48] UkmServiceTest.SanitizeUrlAuthParams (1 ms)
+[23/48] UkmServiceTest.SanitizeChromeUrlParams (5 ms)
+[24/48] UkmServiceTest.MarkSourceForDeletion (1 ms)
+[25/48] UkmServiceTest.PurgeNonNavigationSources (1 ms)
+[26/48] UkmServiceTest.IdentifiabilityMetricsDontExplode (0 ms)
+[27/48] UkmServiceTest.FilterCanRemoveMetrics (1 ms)
+[28/48] UkmServiceTest.FilterRejectsEvent (1 ms)
+[29/48] UkmRecorderImplTest.PurgeExtensionRecordings (1 ms)
+[30/48] UkmRecorderImplTest.WebApkSourceUrl (0 ms)
+[31/48] UkmRecorderImplTest.PaymentAppScopeUrl (1 ms)
+[32/48] UkmServiceTest.ClientIdMigration (0 ms)
+[33/48] UkmServiceTest.ClientIdClonedInstall (1 ms)
+[34/48] UkmServiceTest.EnableDisableSchedule (0 ms)
+[35/48] UkmServiceTest.PersistAndPurge (1 ms)
+[36/48] UkmServiceTest.Purge (0 ms)
+[37/48] UkmServiceTest.PurgeExtensionDataFromUnsentLogStore (1 ms)
+[38/48] UkmServiceTest.SourceSerialization (0 ms)
+[39/48] UkmServiceTest.RestrictToWhitelistedSourceIds (2 ms)
+[40/48] UkmServiceTest.RecordSessionId (1 ms)
+[ RUN      ] UkmServiceTest.SourceSize
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: ProvideSyncedUserNoisedBirthYearAndGenderToReport(0x7ffc7ae74bd0)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+../../components/ukm/ukm_service_unittest.cc:786: Failure
+Expected equality of these values:
+  2
+  proto_report.sources_size()
+    Which is: 3
+Stack trace:
+#0 0x55f91d0b2f51 ukm::UkmServiceTest_SourceSize_Test::TestBody()
+
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: ProvideSyncedUserNoisedBirthYearAndGenderToReport(0x7ffc7ae74bc0)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+[  FAILED  ] UkmServiceTest.SourceSize (1 ms)
+[41/48] UkmServiceTest.SourceSize (1 ms)
+[42/48] UkmServiceTest.PurgeMidUpload (1 ms)
+[43/48] UkmServiceTest.WhitelistEntryTest (1 ms)
+[44/48] UkmServiceTest.SourceURLLength (1 ms)
+[ RUN      ] UkmServiceTest.UnreferencedNonWhitelistedSources
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: ProvideSyncedUserNoisedBirthYearAndGenderToReport(0x7ffc7ae74a80)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: ProvideSyncedUserNoisedBirthYearAndGenderToReport(0x7ffc7ae74a80)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: ProvideSyncedUserNoisedBirthYearAndGenderToReport(0x7ffc7ae74a70)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: ProvideSyncedUserNoisedBirthYearAndGenderToReport(0x7ffc7ae74a80)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+../../components/ukm/ukm_service_unittest.cc:952: Failure
+Expected equality of these values:
+  3
+  proto_report.source_counts().deferred_sources()
+    Which is: 6
+Stack trace:
+#0 0x55f91d0b5c3b ukm::UkmServiceTest_UnreferencedNonWhitelistedSources_Test::TestBody()
+
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: ProvideSyncedUserNoisedBirthYearAndGenderToReport(0x7ffc7ae74a80)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+../../components/ukm/ukm_service_unittest.cc:994: Failure
+Expected equality of these values:
+  1
+  proto_report.source_counts().deferred_sources()
+    Which is: 3
+Stack trace:
+#0 0x55f91d0b6e53 ukm::UkmServiceTest_UnreferencedNonWhitelistedSources_Test::TestBody()
+
+../../components/ukm/ukm_service_unittest.cc:996: Failure
+Expected equality of these values:
+  3
+  proto_report.source_counts().carryover_sources()
+    Which is: 6
+Stack trace:
+#0 0x55f91d0b6f6d ukm::UkmServiceTest_UnreferencedNonWhitelistedSources_Test::TestBody()
+
+../../components/ukm/ukm_service_unittest.cc:999: Failure
+Expected equality of these values:
+  2
+  proto_report.sources_size()
+    Which is: 5
+Stack trace:
+#0 0x55f91d0b75e3 ukm::UkmServiceTest_UnreferencedNonWhitelistedSources_Test::TestBody()
+
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: ProvideSyncedUserNoisedBirthYearAndGenderToReport(0x7ffc7ae74a70)
+NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/googlemock/docs/cook_book.md#knowing-when-to-expect for details.
+[  FAILED  ] UkmServiceTest.UnreferencedNonWhitelistedSources (14 ms)
+[45/48] UkmServiceTest.UnreferencedNonWhitelistedSources (14 ms)
+[46/48] UkmServiceTest.NonWhitelistedUrls (3 ms)
+[47/48] UkmServiceTest.WhitelistIdType (3 ms)
+[48/48] UkmServiceTest.SupportedSchemes (0 ms)
+Retrying 2 tests (retry #0)
+[49/50] UkmServiceTest.SourceSize (0 ms)
+[50/50] UkmServiceTest.UnreferencedNonWhitelistedSources (16 ms)
 SUCCESS: all tests passed.
 Tests took 0 seconds.

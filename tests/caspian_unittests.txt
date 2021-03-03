@@ -1,7 +1,7 @@
 Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.cc
-[==========] Running 45 tests from 5 test suites.
+[==========] Running 47 tests from 5 test suites.
 [----------] Global test environment set-up.
-[----------] 14 tests from DiffTest
+[----------] 15 tests from DiffTest
 [ RUN      ] DiffTest.TestIdentity
 Matched 6 symbols in matching pass 1
 Matched 0 symbols in matching pass 2
@@ -13,7 +13,7 @@ Matched 5 symbols in matching pass 1
 Matched 0 symbols in matching pass 2
 Matched 0 symbols in matching pass 3
 Matched 0 symbols in matching pass 4
-[       OK ] DiffTest.TestSimpleAdd (1 ms)
+[       OK ] DiffTest.TestSimpleAdd (0 ms)
 [ RUN      ] DiffTest.TestSimpleDelete
 Matched 5 symbols in matching pass 1
 Matched 0 symbols in matching pass 2
@@ -31,7 +31,13 @@ Matched 6 symbols in matching pass 1
 Matched 0 symbols in matching pass 2
 Matched 0 symbols in matching pass 3
 Matched 0 symbols in matching pass 4
-[       OK ] DiffTest.TestDontMatchAcrossSections (0 ms)
+[       OK ] DiffTest.TestDontMatchAcrossSections (1 ms)
+[ RUN      ] DiffTest.TestDontMatchAcrossContainers
+Matched 5 symbols in matching pass 1
+Matched 0 symbols in matching pass 2
+Matched 0 symbols in matching pass 3
+Matched 0 symbols in matching pass 4
+[       OK ] DiffTest.TestDontMatchAcrossContainers (0 ms)
 [ RUN      ] DiffTest.TestAliasesRemove
 Matched 3 symbols in matching pass 1
 Matched 3 symbols in matching pass 2
@@ -86,7 +92,7 @@ Matched 0 symbols in matching pass 2
 Matched 0 symbols in matching pass 3
 Matched 0 symbols in matching pass 4
 [       OK ] DiffTest.TestChangedPathsChangedParams (0 ms)
-[----------] 14 tests from DiffTest (1 ms total)
+[----------] 15 tests from DiffTest (1 ms total)
 
 [----------] 8 tests from AnalyzeTest
 [ RUN      ] AnalyzeTest.StringSplit
@@ -121,16 +127,16 @@ Matched 0 symbols in matching pass 4
 [ RUN      ] PathTest.TestNoSplitOnAngleBracketInGroup
 [       OK ] PathTest.TestNoSplitOnAngleBracketInGroup (0 ms)
 [ RUN      ] PathTest.TestIsTopLevelPath
-[       OK ] PathTest.TestIsTopLevelPath (1 ms)
+[       OK ] PathTest.TestIsTopLevelPath (0 ms)
 [ RUN      ] PathTest.TestComparison
 [       OK ] PathTest.TestComparison (0 ms)
 [ RUN      ] PathTest.TestShortname
 [       OK ] PathTest.TestShortname (0 ms)
-[----------] 9 tests from PathTest (1 ms total)
+[----------] 9 tests from PathTest (0 ms total)
 
-[----------] 9 tests from LensTest
+[----------] 10 tests from LensTest
 [ RUN      ] LensTest.TestGeneratedLensRegisterJNI
-[       OK ] LensTest.TestGeneratedLensRegisterJNI (0 ms)
+[       OK ] LensTest.TestGeneratedLensRegisterJNI (1 ms)
 [ RUN      ] LensTest.TestGeneratedLensGlBindings
 [       OK ] LensTest.TestGeneratedLensGlBindings (0 ms)
 [ RUN      ] LensTest.TestGeneratedLensNotGenerated
@@ -141,22 +147,15 @@ Matched 0 symbols in matching pass 4
 [       OK ] LensTest.TestGeneratedLensJavaProto (0 ms)
 [ RUN      ] LensTest.TestGeneratedLensCppProto
 [       OK ] LensTest.TestGeneratedLensCppProto (0 ms)
-[ RUN      ] LensTest.TestGeneratedLensMojo
-../../tools/binary_size/libsupersize/caspian/lens_test.cc:67: Failure
-Expected equality of these values:
-  "Mojo"
-    Which is: 0x556fb3b6349e
-  GeneratedLens().ParentName(sym)
-    Which is: { 'G' (71, 0x47), 'e' (101, 0x65), 'n' (110, 0x6E), 'e' (101, 0x65), 'r' (114, 0x72), 'a' (97, 0x61), 't' (116, 0x74), 'e' (101, 0x65), 'd' (100, 0x64), ' ' (32, 0x20), '(' (40, 0x28), 'o' (111, 0x6F), 't' (116, 0x74), 'h' (104, 0x68), 'e' (101, 0x65), 'r' (114, 0x72), ')' (41, 0x29) }
-Stack trace:
-#0 0x556fb3bad563 caspian::LensTest_TestGeneratedLensMojo_Test::TestBody()
-
-[  FAILED  ] LensTest.TestGeneratedLensMojo (0 ms)
+[ RUN      ] LensTest.TestGeneratedLensMojo1
+[       OK ] LensTest.TestGeneratedLensMojo1 (0 ms)
+[ RUN      ] LensTest.TestGeneratedLensMojo2
+[       OK ] LensTest.TestGeneratedLensMojo2 (0 ms)
 [ RUN      ] LensTest.TestGeneratedLensDevTools
 [       OK ] LensTest.TestGeneratedLensDevTools (0 ms)
 [ RUN      ] LensTest.TestGeneratedLensBlinkBindings
-[       OK ] LensTest.TestGeneratedLensBlinkBindings (1 ms)
-[----------] 9 tests from LensTest (1 ms total)
+[       OK ] LensTest.TestGeneratedLensBlinkBindings (0 ms)
+[----------] 10 tests from LensTest (1 ms total)
 
 [----------] 5 tests from TreeBuilderTest
 [ RUN      ] TreeBuilderTest.TestIdPathLens
@@ -172,9 +171,5 @@ Stack trace:
 [----------] 5 tests from TreeBuilderTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 45 tests from 5 test suites ran. (3 ms total)
-[  PASSED  ] 44 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] LensTest.TestGeneratedLensMojo
-
- 1 FAILED TEST
+[==========] 47 tests from 5 test suites ran. (2 ms total)
+[  PASSED  ] 47 tests.

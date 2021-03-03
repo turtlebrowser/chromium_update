@@ -11,7 +11,7 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [ RUN      ] HistogramTest.WritesDiagnosticsToProto
 [       OK ] HistogramTest.WritesDiagnosticsToProto (0 ms)
 [ RUN      ] HistogramTest.WritesSmallNumberOfSamplesToProtoInOrder
-[       OK ] HistogramTest.WritesSmallNumberOfSamplesToProtoInOrder (1 ms)
+[       OK ] HistogramTest.WritesSmallNumberOfSamplesToProtoInOrder (0 ms)
 [ RUN      ] HistogramTest.StartsUniformlySamplingAfterReachingMaxNumSamples
 [       OK ] HistogramTest.StartsUniformlySamplingAfterReachingMaxNumSamples (0 ms)
 [ RUN      ] HistogramTest.WritesCorrectRunningStatisticsToProto
@@ -23,7 +23,7 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [ RUN      ] HistogramTest.UnitFromJsonUnitConvertsUnits
 [       OK ] HistogramTest.UnitFromJsonUnitConvertsUnits (0 ms)
 [ RUN      ] HistogramTest.UnitFromJsonUnitReturnsUnitlessOnWrongUnits
-[       OK ] HistogramTest.UnitFromJsonUnitReturnsUnitlessOnWrongUnits (0 ms)
+[       OK ] HistogramTest.UnitFromJsonUnitReturnsUnitlessOnWrongUnits (1 ms)
 [ RUN      ] HistogramTest.UnitFromJsonUnitIgnoresImprovementDirection
 [       OK ] HistogramTest.UnitFromJsonUnitIgnoresImprovementDirection (0 ms)
 [----------] 12 tests from HistogramTest (1 ms total)

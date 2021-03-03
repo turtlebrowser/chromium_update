@@ -4,15 +4,15 @@ own process. For debugging a test inside a debugger, use the
 --single-process-tests.
 Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
-[28450:28450:0227/103518.867603:248673059726:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
-[28450:28450:0227/103518.867669:248673059758:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
-[28450:28450:0227/103518.867681:248673059769:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
-[1/11] SiteIsolationPolicyTest.IsolatedOriginsContainPreloadedOrigins (3 ms)
-[2/11] FaviconBackendWrapperTest.BasicExpire (26 ms)
-[3/11] FaviconBackendWrapperTest.ExpireWithOneRemaining (29 ms)
-[4/11] ProfileDiskOperationsTest.IsValidNameForNonIncognitoProfile (0 ms)
+[8252:8252:0304/005313.469574:45333233757:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[8252:8252:0304/005313.469835:45333233845:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[8252:8252:0304/005313.469847:45333233856:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[1/11] SiteIsolationPolicyTest.IsolatedOriginsContainPreloadedOrigins (1 ms)
+[2/11] FaviconBackendWrapperTest.BasicExpire (31 ms)
+[3/11] FaviconBackendWrapperTest.ExpireWithOneRemaining (30 ms)
+[4/11] ProfileDiskOperationsTest.IsValidNameForNonIncognitoProfile (1 ms)
 [5/11] ProfileDiskOperationsTest.CheckDirnameAndExtractName (0 ms)
-[6/11] ProfileDiskOperationsTest.BasicListProfileNames (2 ms)
+[6/11] ProfileDiskOperationsTest.BasicListProfileNames (1 ms)
 [7/11] ProfileDiskOperationsTest.MarkProfileAsDeleted (1 ms)
 [8/11] ProfileDiskOperationsTest.ReuseProfileName (2 ms)
 [9/11] ProfileDiskOperationsTest.NukeProfile (2 ms)

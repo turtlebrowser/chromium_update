@@ -6,8 +6,8 @@ Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
 [1/5] MojoCoreTest.SanityCheck (0 ms)
 [2/5] MojoCoreMultiprocessTest.BasicMultiprocess/0 (13 ms)
-[3/5] MojoCoreMultiprocessTest.BasicMultiprocess/1 (14 ms)
-[4/5] MojoCoreMultiprocessTest.BasicMultiprocess/2 (10 ms)
+[3/5] MojoCoreMultiprocessTest.BasicMultiprocess/1 (13 ms)
+[4/5] MojoCoreMultiprocessTest.BasicMultiprocess/2 (11 ms)
 [5/5] MojoCoreMultiprocessTest.BasicMultiprocess/3 (10 ms)
 SUCCESS: all tests passed.
 Tests took 0 seconds.

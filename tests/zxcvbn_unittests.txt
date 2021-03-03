@@ -9,17 +9,17 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [ RUN      ] ZxcvbnTest.L33tMatching
 [       OK ] ZxcvbnTest.L33tMatching (0 ms)
 [ RUN      ] ZxcvbnTest.SpatialMatching
-[       OK ] ZxcvbnTest.SpatialMatching (0 ms)
+[       OK ] ZxcvbnTest.SpatialMatching (1 ms)
 [ RUN      ] ZxcvbnTest.SequenceMatching
 [       OK ] ZxcvbnTest.SequenceMatching (0 ms)
 [ RUN      ] ZxcvbnTest.RepeatMatching
-[       OK ] ZxcvbnTest.RepeatMatching (3 ms)
+[       OK ] ZxcvbnTest.RepeatMatching (4 ms)
 [ RUN      ] ZxcvbnTest.RegexMatching
 [       OK ] ZxcvbnTest.RegexMatching (0 ms)
 [ RUN      ] ZxcvbnTest.DateMatching
 [       OK ] ZxcvbnTest.DateMatching (1 ms)
 [ RUN      ] ZxcvbnTest.Omnimatch
-[       OK ] ZxcvbnTest.Omnimatch (0 ms)
+[       OK ] ZxcvbnTest.Omnimatch (1 ms)
 [ RUN      ] ZxcvbnTest.nCk
 [       OK ] ZxcvbnTest.nCk (0 ms)
 [ RUN      ] ZxcvbnTest.Search
@@ -33,7 +33,7 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [ RUN      ] ZxcvbnTest.RegexGuesses
 [       OK ] ZxcvbnTest.RegexGuesses (0 ms)
 [ RUN      ] ZxcvbnTest.DateGuesses
-[       OK ] ZxcvbnTest.DateGuesses (0 ms)
+[       OK ] ZxcvbnTest.DateGuesses (1 ms)
 [ RUN      ] ZxcvbnTest.SpatialGuesses
 [       OK ] ZxcvbnTest.SpatialGuesses (0 ms)
 [ RUN      ] ZxcvbnTest.DictionaryGuesses
@@ -42,8 +42,8 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [       OK ] ZxcvbnTest.UppercaseVariants (0 ms)
 [ RUN      ] ZxcvbnTest.L33tVariations
 [       OK ] ZxcvbnTest.L33tVariations (0 ms)
-[----------] 20 tests from ZxcvbnTest (4 ms total)
+[----------] 20 tests from ZxcvbnTest (8 ms total)
 
 [----------] Global test environment tear-down
-[==========] 20 tests from 1 test suite ran. (5 ms total)
+[==========] 20 tests from 1 test suite ran. (9 ms total)
 [  PASSED  ] 20 tests.

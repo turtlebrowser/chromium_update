@@ -4,9 +4,9 @@ own process. For debugging a test inside a debugger, use the
 --single-process-tests.
 Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
-[14256:14256:0227/102228.654968:247902847073:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
-[14256:14256:0227/102228.655002:247902847090:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
-[14256:14256:0227/102228.655010:247902847098:INFO:test_launcher.cc(1571)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
-[1/1] ResourcesTest.CriticalMessagesContainNoExtraWhitespaces (3 ms)
+[29767:29767:0304/004301.354845:44721118883:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[29767:29767:0304/004301.354891:44721118901:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[29767:29767:0304/004301.354899:44721118909:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[1/1] ResourcesTest.CriticalMessagesContainNoExtraWhitespaces (2 ms)
 SUCCESS: all tests passed.
 Tests took 0 seconds.
