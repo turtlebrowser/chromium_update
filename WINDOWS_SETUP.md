@@ -16,6 +16,12 @@ Choose: "Desktop development with C++"
 
 Inividual Components: search for 10.0.19041.0 select "Windows 10 SDK (10.0.19041.0)"
 
+## Windows SDK
+
+Install https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/
+
+Select the option: "Debugging Tools for Windows"
+
 ## Python
 
 Install python2 https://www.python.org/downloads/release/python-2718/
