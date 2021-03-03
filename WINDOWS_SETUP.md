@@ -28,6 +28,10 @@ Install python2 https://www.python.org/downloads/release/python-2718/
 
 Select add to PATH
 
+## Node.js
+
+Install Node.js https://nodejs.org/en/
+
 ## Set up GitHub keys
 
 Make ssh key
