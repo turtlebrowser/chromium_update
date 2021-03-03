@@ -16,11 +16,11 @@ Choose: "Desktop development with C++"
 
 Inividual Components: search for 10.0.19041.0 select "Windows 10 SDK (10.0.19041.0)"
 
-## Windows SDK
+## Windows WDK
 
-Install https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/
+Install https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk
 
-Select the option: "Debugging Tools for Windows"
+Step 2: Install Refreshed WDK for Windows 10, version 2004
 
 ## Python
 
