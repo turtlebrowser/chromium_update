@@ -4,35 +4,35 @@ own process. For debugging a test inside a debugger, use the
 --single-process-tests.
 Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
-[1260:1260:0304/004011.693745:44551457855:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
-[1260:1260:0304/004011.693866:44551457875:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
-[1260:1260:0304/004011.693873:44551457882:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[16920:16920:0304/093441.692886:76621457069:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[16920:16920:0304/093441.693184:76621457194:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[16920:16920:0304/093441.693211:76621457220:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
 [1/27] ShellKeepAliveRequesterTest.PlatformAppNoWindow (2 ms)
 [2/27] ShellKeepAliveRequesterTest.PlatformAppReload (1 ms)
-[3/27] ShellKeepAliveRequesterTest.PlatformAppReloadFailure (1 ms)
+[3/27] ShellKeepAliveRequesterTest.PlatformAppReloadFailure (0 ms)
 [4/27] ShellKeepAliveRequesterTest.PlatformAppNoWindowReload (1 ms)
 [5/27] ShellKeepAliveRequesterTest.PlatformAppReloadNoWindow (2 ms)
 [6/27] ShellPrefsTest.CreateLocalState (1 ms)
 [7/27] ShellPrefsTest.CreateUserPrefService (0 ms)
 [8/27] ShellSystemLogsFetcherTest.TestLogSources (5 ms)
-[9/27] RootWindowControllerTest.Basic (21 ms)
-[10/27] RootWindowControllerTest.FillLayout (25 ms)
+[9/27] RootWindowControllerTest.Basic (20 ms)
+[10/27] RootWindowControllerTest.FillLayout (21 ms)
 [11/27] ShellContentBrowserClientTest.UserAgentFormat (0 ms)
 [12/27] ShellExtensionLoaderTest.NotFound (2 ms)
 [13/27] ShellExtensionLoaderTest.Extension (2 ms)
 [14/27] ShellExtensionLoaderTest.LoadAfterReloadFailure (1 ms)
 [15/27] ShellExtensionLoaderTest.LoadDisabledExtension (1 ms)
-[16/27] ShellExtensionLoaderTestAura.AppLaunch (22 ms)
-[17/27] ShellExtensionLoaderTestAura.AppLaunchAndReload (24 ms)
-[18/27] ShellExtensionLoaderTestAura.ReloadFailure (19 ms)
-[19/27] ShellKeepAliveRequesterTest.Extension (4 ms)
+[16/27] ShellExtensionLoaderTestAura.AppLaunch (26 ms)
+[17/27] ShellExtensionLoaderTestAura.AppLaunchAndReload (19 ms)
+[18/27] ShellExtensionLoaderTestAura.ReloadFailure (21 ms)
+[19/27] ShellKeepAliveRequesterTest.Extension (2 ms)
 [20/27] ShellKeepAliveRequesterTest.PlatformApp (1 ms)
-[21/27] RootWindowControllerTest.AppWindows (20 ms)
-[22/27] RootWindowControllerTest.Multiple (18 ms)
+[21/27] RootWindowControllerTest.AppWindows (25 ms)
+[22/27] RootWindowControllerTest.Multiple (21 ms)
 [23/27] ShellDesktopControllerAuraTest.InputEvents (20 ms)
-[24/27] ShellDesktopControllerAuraTest.CloseAppWindows (20 ms)
-[25/27] ShellDesktopControllerAuraTest.OnAppWindowClose (19 ms)
-[26/27] ShellDesktopControllerAuraTest.MultipleDisplays (19 ms)
-[27/27] ShellNativeAppWindowAuraTest.Bounds (5 ms)
+[24/27] ShellDesktopControllerAuraTest.CloseAppWindows (19 ms)
+[25/27] ShellDesktopControllerAuraTest.OnAppWindowClose (16 ms)
+[26/27] ShellDesktopControllerAuraTest.MultipleDisplays (18 ms)
+[27/27] ShellNativeAppWindowAuraTest.Bounds (4 ms)
 SUCCESS: all tests passed.
 Tests took 0 seconds.

@@ -14,8 +14,8 @@
 [ RUN      ] OneEuroFilterTest.CloneTest
 [       OK ] OneEuroFilterTest.CloneTest (0 ms)
 [ RUN      ] OneEuroFilterTest.TestResetting
-[       OK ] OneEuroFilterTest.TestResetting (0 ms)
-[----------] 7 tests from OneEuroFilterTest (0 ms total)
+[       OK ] OneEuroFilterTest.TestResetting (1 ms)
+[----------] 7 tests from OneEuroFilterTest (1 ms total)
 
 [----------] Global test environment tear-down
 [==========] 7 tests from 1 test suite ran. (1 ms total)

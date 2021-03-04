@@ -4,17 +4,17 @@ own process. For debugging a test inside a debugger, use the
 --single-process-tests.
 Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
-[8252:8252:0304/005313.469574:45333233757:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
-[8252:8252:0304/005313.469835:45333233845:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
-[8252:8252:0304/005313.469847:45333233856:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[17081:17081:0304/094327.972776:77147736851:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[17081:17081:0304/094327.972864:77147736873:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[17081:17081:0304/094327.972872:77147736881:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
 [1/11] SiteIsolationPolicyTest.IsolatedOriginsContainPreloadedOrigins (1 ms)
-[2/11] FaviconBackendWrapperTest.BasicExpire (31 ms)
-[3/11] FaviconBackendWrapperTest.ExpireWithOneRemaining (30 ms)
-[4/11] ProfileDiskOperationsTest.IsValidNameForNonIncognitoProfile (1 ms)
+[2/11] FaviconBackendWrapperTest.BasicExpire (35 ms)
+[3/11] FaviconBackendWrapperTest.ExpireWithOneRemaining (34 ms)
+[4/11] ProfileDiskOperationsTest.IsValidNameForNonIncognitoProfile (0 ms)
 [5/11] ProfileDiskOperationsTest.CheckDirnameAndExtractName (0 ms)
-[6/11] ProfileDiskOperationsTest.BasicListProfileNames (1 ms)
+[6/11] ProfileDiskOperationsTest.BasicListProfileNames (2 ms)
 [7/11] ProfileDiskOperationsTest.MarkProfileAsDeleted (1 ms)
-[8/11] ProfileDiskOperationsTest.ReuseProfileName (2 ms)
+[8/11] ProfileDiskOperationsTest.ReuseProfileName (1 ms)
 [9/11] ProfileDiskOperationsTest.NukeProfile (2 ms)
 [10/11] SiteIsolationPolicyTest.NoIsolationBelowMemoryThreshold (1 ms)
 [11/11] SiteIsolationPolicyTest.IsolationAboveMemoryThreshold (1 ms)

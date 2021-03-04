@@ -15,10 +15,10 @@ Note: Google Test filter = LRUCache.Empty:LRUCache.AddNoEviction:LRUCache.AddWit
 [ RUN      ] LRUCache.AddWithEviction
 [       OK ] LRUCache.AddWithEviction (0 ms)
 [ RUN      ] LRUCache.AddClearAdd
-[       OK ] LRUCache.AddClearAdd (0 ms)
+[       OK ] LRUCache.AddClearAdd (1 ms)
 [ RUN      ] LRUCache.Reordering
 [       OK ] LRUCache.Reordering (0 ms)
-[----------] 5 tests from LRUCache (0 ms total)
+[----------] 5 tests from LRUCache (1 ms total)
 
 [----------] 5 tests from MemFd
 [ RUN      ] MemFd.DefaultConstructor
@@ -30,8 +30,8 @@ Note: Google Test filter = LRUCache.Empty:LRUCache.AddNoEviction:LRUCache.AddWit
 [ RUN      ] MemFd.Close
 [       OK ] MemFd.Close (0 ms)
 [ RUN      ] MemFd.ExportImportFd
-[       OK ] MemFd.ExportImportFd (0 ms)
-[----------] 5 tests from MemFd (0 ms total)
+[       OK ] MemFd.ExportImportFd (1 ms)
+[----------] 5 tests from MemFd (2 ms total)
 
 [----------] 8 tests from EventCounter
 [ RUN      ] EventCounter.ConstructUnsignalled
@@ -45,33 +45,33 @@ Note: Google Test filter = LRUCache.Empty:LRUCache.AddNoEviction:LRUCache.AddWit
 [ RUN      ] EventCounter.AddDoneUnsignalled
 [       OK ] EventCounter.AddDoneUnsignalled (0 ms)
 [ RUN      ] EventCounter.Wait
-[       OK ] EventCounter.Wait (0 ms)
+[       OK ] EventCounter.Wait (1 ms)
 [ RUN      ] EventCounter.WaitNoTimeout
 [       OK ] EventCounter.WaitNoTimeout (0 ms)
 [ RUN      ] EventCounter.WaitTimeout
-[       OK ] EventCounter.WaitTimeout (2 ms)
-[----------] 8 tests from EventCounter (2 ms total)
+[       OK ] EventCounter.WaitTimeout (1 ms)
+[----------] 8 tests from EventCounter (3 ms total)
 
 [----------] Global test environment tear-down
-[==========] 18 tests from 3 test suites ran. (2 ms total)
+[==========] 18 tests from 3 test suites ran. (7 ms total)
 [  PASSED  ] 18 tests.
 [1/18] LRUCache.Empty (0 ms)
 [2/18] LRUCache.AddNoEviction (0 ms)
 [3/18] LRUCache.AddWithEviction (0 ms)
-[4/18] LRUCache.AddClearAdd (0 ms)
+[4/18] LRUCache.AddClearAdd (1 ms)
 [5/18] LRUCache.Reordering (0 ms)
 [6/18] MemFd.DefaultConstructor (0 ms)
 [7/18] MemFd.AllocatingConstructor (0 ms)
 [8/18] MemFd.ExplicitAllocation (0 ms)
 [9/18] MemFd.Close (0 ms)
-[10/18] MemFd.ExportImportFd (0 ms)
+[10/18] MemFd.ExportImportFd (1 ms)
 [11/18] EventCounter.ConstructUnsignalled (0 ms)
 [12/18] EventCounter.ConstructSignalled (0 ms)
 [13/18] EventCounter.Reset (0 ms)
 [14/18] EventCounter.AddUnsignalled (0 ms)
 [15/18] EventCounter.AddDoneUnsignalled (0 ms)
-[16/18] EventCounter.Wait (0 ms)
+[16/18] EventCounter.Wait (1 ms)
 [17/18] EventCounter.WaitNoTimeout (0 ms)
-[18/18] EventCounter.WaitTimeout (2 ms)
+[18/18] EventCounter.WaitTimeout (1 ms)
 SUCCESS: all tests passed.
 Tests took 0 seconds.

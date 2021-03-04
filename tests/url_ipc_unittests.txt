@@ -4,6 +4,6 @@ own process. For debugging a test inside a debugger, use the
 --single-process-tests.
 Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
-[1/1] IPCMessageTest.Serialize (9 ms)
+[1/1] IPCMessageTest.Serialize (17 ms)
 SUCCESS: all tests passed.
 Tests took 0 seconds.

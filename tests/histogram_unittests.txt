@@ -23,10 +23,10 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [ RUN      ] HistogramTest.UnitFromJsonUnitConvertsUnits
 [       OK ] HistogramTest.UnitFromJsonUnitConvertsUnits (0 ms)
 [ RUN      ] HistogramTest.UnitFromJsonUnitReturnsUnitlessOnWrongUnits
-[       OK ] HistogramTest.UnitFromJsonUnitReturnsUnitlessOnWrongUnits (1 ms)
+[       OK ] HistogramTest.UnitFromJsonUnitReturnsUnitlessOnWrongUnits (0 ms)
 [ RUN      ] HistogramTest.UnitFromJsonUnitIgnoresImprovementDirection
 [       OK ] HistogramTest.UnitFromJsonUnitIgnoresImprovementDirection (0 ms)
-[----------] 12 tests from HistogramTest (1 ms total)
+[----------] 12 tests from HistogramTest (0 ms total)
 
 [----------] 8 tests from RunningStatisticsUnittest
 [ RUN      ] RunningStatisticsUnittest.GetsCountRight
@@ -48,5 +48,5 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [----------] 8 tests from RunningStatisticsUnittest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 20 tests from 2 test suites ran. (1 ms total)
+[==========] 20 tests from 2 test suites ran. (0 ms total)
 [  PASSED  ] 20 tests.

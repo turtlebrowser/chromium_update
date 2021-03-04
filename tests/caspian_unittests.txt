@@ -31,7 +31,7 @@ Matched 6 symbols in matching pass 1
 Matched 0 symbols in matching pass 2
 Matched 0 symbols in matching pass 3
 Matched 0 symbols in matching pass 4
-[       OK ] DiffTest.TestDontMatchAcrossSections (1 ms)
+[       OK ] DiffTest.TestDontMatchAcrossSections (0 ms)
 [ RUN      ] DiffTest.TestDontMatchAcrossContainers
 Matched 5 symbols in matching pass 1
 Matched 0 symbols in matching pass 2
@@ -92,7 +92,7 @@ Matched 0 symbols in matching pass 2
 Matched 0 symbols in matching pass 3
 Matched 0 symbols in matching pass 4
 [       OK ] DiffTest.TestChangedPathsChangedParams (0 ms)
-[----------] 15 tests from DiffTest (1 ms total)
+[----------] 15 tests from DiffTest (0 ms total)
 
 [----------] 8 tests from AnalyzeTest
 [ RUN      ] AnalyzeTest.StringSplit
@@ -110,8 +110,8 @@ Matched 0 symbols in matching pass 4
 [ RUN      ] AnalyzeTest.ParseJavaFunctionSignature
 [       OK ] AnalyzeTest.ParseJavaFunctionSignature (0 ms)
 [ RUN      ] AnalyzeTest.ParseFunctionSignature
-[       OK ] AnalyzeTest.ParseFunctionSignature (0 ms)
-[----------] 8 tests from AnalyzeTest (0 ms total)
+[       OK ] AnalyzeTest.ParseFunctionSignature (1 ms)
+[----------] 8 tests from AnalyzeTest (1 ms total)
 
 [----------] 9 tests from PathTest
 [ RUN      ] PathTest.TestBasic
@@ -136,7 +136,7 @@ Matched 0 symbols in matching pass 4
 
 [----------] 10 tests from LensTest
 [ RUN      ] LensTest.TestGeneratedLensRegisterJNI
-[       OK ] LensTest.TestGeneratedLensRegisterJNI (1 ms)
+[       OK ] LensTest.TestGeneratedLensRegisterJNI (0 ms)
 [ RUN      ] LensTest.TestGeneratedLensGlBindings
 [       OK ] LensTest.TestGeneratedLensGlBindings (0 ms)
 [ RUN      ] LensTest.TestGeneratedLensNotGenerated
@@ -155,11 +155,11 @@ Matched 0 symbols in matching pass 4
 [       OK ] LensTest.TestGeneratedLensDevTools (0 ms)
 [ RUN      ] LensTest.TestGeneratedLensBlinkBindings
 [       OK ] LensTest.TestGeneratedLensBlinkBindings (0 ms)
-[----------] 10 tests from LensTest (1 ms total)
+[----------] 10 tests from LensTest (0 ms total)
 
 [----------] 5 tests from TreeBuilderTest
 [ RUN      ] TreeBuilderTest.TestIdPathLens
-[       OK ] TreeBuilderTest.TestIdPathLens (0 ms)
+[       OK ] TreeBuilderTest.TestIdPathLens (1 ms)
 [ RUN      ] TreeBuilderTest.TestComponentLens
 [       OK ] TreeBuilderTest.TestComponentLens (0 ms)
 [ RUN      ] TreeBuilderTest.TestTemplateLens
@@ -168,7 +168,7 @@ Matched 0 symbols in matching pass 4
 [       OK ] TreeBuilderTest.TestNoNameUnderGroup (0 ms)
 [ RUN      ] TreeBuilderTest.TestJoinDexMethodClasses
 [       OK ] TreeBuilderTest.TestJoinDexMethodClasses (0 ms)
-[----------] 5 tests from TreeBuilderTest (0 ms total)
+[----------] 5 tests from TreeBuilderTest (1 ms total)
 
 [----------] Global test environment tear-down
 [==========] 47 tests from 5 test suites ran. (2 ms total)

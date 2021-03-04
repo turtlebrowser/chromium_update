@@ -3,26 +3,26 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [----------] Global test environment set-up.
 [----------] 10 tests from CJPEGTest
 [ RUN      ] CJPEGTest.RGBISlow
-[       OK ] CJPEGTest.RGBISlow (10 ms)
+[       OK ] CJPEGTest.RGBISlow (5 ms)
 [ RUN      ] CJPEGTest.IFastOpt422
 [       OK ] CJPEGTest.IFastOpt422 (1 ms)
 [ RUN      ] CJPEGTest.IFastProg420Q100
-[       OK ] CJPEGTest.IFastProg420Q100 (2 ms)
+[       OK ] CJPEGTest.IFastProg420Q100 (1 ms)
 [ RUN      ] CJPEGTest.GrayISlow
-[       OK ] CJPEGTest.GrayISlow (1 ms)
+[       OK ] CJPEGTest.GrayISlow (0 ms)
 [ RUN      ] CJPEGTest.IFastOpt420S
-[       OK ] CJPEGTest.IFastOpt420S (0 ms)
+[       OK ] CJPEGTest.IFastOpt420S (1 ms)
 [ RUN      ] CJPEGTest.FloatProg3x2
 [       OK ] CJPEGTest.FloatProg3x2 (2 ms)
 [ RUN      ] CJPEGTest.IFastProg3x2
 [       OK ] CJPEGTest.IFastProg3x2 (1 ms)
 [ RUN      ] CJPEGTest.ISlowProg420
-[       OK ] CJPEGTest.ISlowProg420 (2 ms)
+[       OK ] CJPEGTest.ISlowProg420 (1 ms)
 [ RUN      ] CJPEGTest.ISlow444
 [       OK ] CJPEGTest.ISlow444 (0 ms)
 [ RUN      ] CJPEGTest.ISlowProg444
-[       OK ] CJPEGTest.ISlowProg444 (3 ms)
-[----------] 10 tests from CJPEGTest (22 ms total)
+[       OK ] CJPEGTest.ISlowProg444 (2 ms)
+[----------] 10 tests from CJPEGTest (14 ms total)
 
 [----------] 24 tests from DJPEGTest
 [ RUN      ] DJPEGTest.ISlow420256
@@ -34,27 +34,27 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [ RUN      ] DJPEGTest.ISlow420M565
 [       OK ] DJPEGTest.ISlow420M565 (1 ms)
 [ RUN      ] DJPEGTest.ISlow420M565D
-[       OK ] DJPEGTest.ISlow420M565D (1 ms)
+[       OK ] DJPEGTest.ISlow420M565D (0 ms)
 [ RUN      ] DJPEGTest.ISlow420Skip1531
-[       OK ] DJPEGTest.ISlow420Skip1531 (0 ms)
+[       OK ] DJPEGTest.ISlow420Skip1531 (1 ms)
 [ RUN      ] DJPEGTest.RGBISlow
-[       OK ] DJPEGTest.RGBISlow (4 ms)
+[       OK ] DJPEGTest.RGBISlow (3 ms)
 [ RUN      ] DJPEGTest.RGBISlow565
 [       OK ] DJPEGTest.RGBISlow565 (1 ms)
 [ RUN      ] DJPEGTest.RGBISlow565D
-[       OK ] DJPEGTest.RGBISlow565D (1 ms)
+[       OK ] DJPEGTest.RGBISlow565D (0 ms)
 [ RUN      ] DJPEGTest.IFast422
 [       OK ] DJPEGTest.IFast422 (1 ms)
 [ RUN      ] DJPEGTest.IFast422M
-[       OK ] DJPEGTest.IFast422M (0 ms)
+[       OK ] DJPEGTest.IFast422M (1 ms)
 [ RUN      ] DJPEGTest.IFast422M565
-[       OK ] DJPEGTest.IFast422M565 (1 ms)
+[       OK ] DJPEGTest.IFast422M565 (0 ms)
 [ RUN      ] DJPEGTest.IFast422M565D
-[       OK ] DJPEGTest.IFast422M565D (0 ms)
+[       OK ] DJPEGTest.IFast422M565D (1 ms)
 [ RUN      ] DJPEGTest.IFastProg420Q100
 [       OK ] DJPEGTest.IFastProg420Q100 (1 ms)
 [ RUN      ] DJPEGTest.IFastProg420MQ100
-[       OK ] DJPEGTest.IFastProg420MQ100 (1 ms)
+[       OK ] DJPEGTest.IFastProg420MQ100 (0 ms)
 [ RUN      ] DJPEGTest.GrayISlow
 [       OK ] DJPEGTest.GrayISlow (0 ms)
 [ RUN      ] DJPEGTest.GrayISlowRGB
@@ -72,8 +72,8 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [ RUN      ] DJPEGTest.ISlow444Skip16
 [       OK ] DJPEGTest.ISlow444Skip16 (1 ms)
 [ RUN      ] DJPEGTest.ISlowProg444Crop98x981313
-[       OK ] DJPEGTest.ISlowProg444Crop98x981313 (1 ms)
-[----------] 24 tests from DJPEGTest (22 ms total)
+[       OK ] DJPEGTest.ISlowProg444Crop98x981313 (0 ms)
+[----------] 24 tests from DJPEGTest (19 ms total)
 
 [----------] 2 tests from JPEGTranTest
 [ RUN      ] JPEGTranTest.ICC
@@ -88,7 +88,7 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [ RUN      ] TestScalingDCT/DJPEGTestScalingDCT.Test/1
 [       OK ] TestScalingDCT/DJPEGTestScalingDCT.Test/1 (1 ms)
 [ RUN      ] TestScalingDCT/DJPEGTestScalingDCT.Test/2
-[       OK ] TestScalingDCT/DJPEGTestScalingDCT.Test/2 (1 ms)
+[       OK ] TestScalingDCT/DJPEGTestScalingDCT.Test/2 (2 ms)
 [ RUN      ] TestScalingDCT/DJPEGTestScalingDCT.Test/3
 [       OK ] TestScalingDCT/DJPEGTestScalingDCT.Test/3 (1 ms)
 [ RUN      ] TestScalingDCT/DJPEGTestScalingDCT.Test/4
@@ -100,14 +100,14 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [ RUN      ] TestScalingDCT/DJPEGTestScalingDCT.Test/7
 [       OK ] TestScalingDCT/DJPEGTestScalingDCT.Test/7 (0 ms)
 [ RUN      ] TestScalingDCT/DJPEGTestScalingDCT.Test/8
-[       OK ] TestScalingDCT/DJPEGTestScalingDCT.Test/8 (0 ms)
+[       OK ] TestScalingDCT/DJPEGTestScalingDCT.Test/8 (1 ms)
 [ RUN      ] TestScalingDCT/DJPEGTestScalingDCT.Test/9
-[       OK ] TestScalingDCT/DJPEGTestScalingDCT.Test/9 (1 ms)
+[       OK ] TestScalingDCT/DJPEGTestScalingDCT.Test/9 (0 ms)
 [ RUN      ] TestScalingDCT/DJPEGTestScalingDCT.Test/10
 [       OK ] TestScalingDCT/DJPEGTestScalingDCT.Test/10 (0 ms)
 [ RUN      ] TestScalingDCT/DJPEGTestScalingDCT.Test/11
 [       OK ] TestScalingDCT/DJPEGTestScalingDCT.Test/11 (0 ms)
-[----------] 12 tests from TestScalingDCT/DJPEGTestScalingDCT (8 ms total)
+[----------] 12 tests from TestScalingDCT/DJPEGTestScalingDCT (9 ms total)
 
 [----------] 20 tests from TestTileBaseline/TJBenchTest
 
@@ -118,75 +118,75 @@ All performance values in Mpixels/sec
 Bitmap     JPEG     JPEG  Tile   Tile    Comp    Comp    Decomp  
 Format     Subsamp  Qual  Width  Height  Perf    Ratio   Perf    
 
-RGB  (TD)  GRAY     95    8      8       18.20   0.5340  33.68   
-RGB  (TD)  GRAY     95    16     16      53.59   1.769   80.22   
-RGB  (TD)  GRAY     95    32     32      135.5   4.838   146.4   
-RGB  (TD)  GRAY     95    64     64      236.4   8.673   195.5   
-RGB  (TD)  GRAY     95    128    128     308.9   11.24   228.4   
-RGB  (TD)  GRAY     95    227    149     363.1   12.60   247.1   
+RGB  (TD)  GRAY     95    8      8       17.60   0.5340  33.46   
+RGB  (TD)  GRAY     95    16     16      53.75   1.769   82.69   
+RGB  (TD)  GRAY     95    32     32      136.6   4.838   146.0   
+RGB  (TD)  GRAY     95    64     64      239.3   8.673   199.4   
+RGB  (TD)  GRAY     95    128    128     321.2   11.24   232.4   
+RGB  (TD)  GRAY     95    227    149     361.1   12.60   247.4   
 
-RGB  (TD)  4:2:0    95    8      8       8.615   0.2812  14.70   
-RGB  (TD)  4:2:0    95    16     16      28.50   0.9785  43.86   
-RGB  (TD)  4:2:0    95    32     32      80.86   2.917   96.71   
-RGB  (TD)  4:2:0    95    64     64      149.6   5.878   148.3   
-RGB  (TD)  4:2:0    95    128    128     209.1   8.279   188.3   
-RGB  (TD)  4:2:0    95    227    149     247.1   9.791   214.4   
+RGB  (TD)  4:2:0    95    8      8       8.342   0.2812  14.49   
+RGB  (TD)  4:2:0    95    16     16      29.45   0.9785  43.89   
+RGB  (TD)  4:2:0    95    32     32      81.99   2.917   97.65   
+RGB  (TD)  4:2:0    95    64     64      153.3   5.878   150.8   
+RGB  (TD)  4:2:0    95    128    128     211.8   8.279   182.2   
+RGB  (TD)  4:2:0    95    227    149     248.0   9.791   214.3   
 
-RGB  (TD)  4:2:2    95    8      8       8.445   0.2822  14.73   
-RGB  (TD)  4:2:2    95    16     16      27.84   0.9665  41.86   
-RGB  (TD)  4:2:2    95    32     32      74.03   2.812   88.20   
-RGB  (TD)  4:2:2    95    64     64      130.4   5.457   132.2   
-RGB  (TD)  4:2:2    95    128    128     171.8   7.459   157.8   
-RGB  (TD)  4:2:2    95    227    149     203.5   8.690   182.4   
+RGB  (TD)  4:2:2    95    8      8       8.480   0.2822  14.81   
+RGB  (TD)  4:2:2    95    16     16      28.01   0.9665  41.27   
+RGB  (TD)  4:2:2    95    32     32      72.97   2.812   84.74   
+RGB  (TD)  4:2:2    95    64     64      128.9   5.457   129.5   
+RGB  (TD)  4:2:2    95    128    128     169.3   7.459   156.4   
+RGB  (TD)  4:2:2    95    227    149     197.2   8.690   177.4   
 
-RGB  (TD)  4:4:4    95    8      8       8.804   0.2829  16.09   
-RGB  (TD)  4:4:4    95    16     16      26.76   0.9450  42.63   
-RGB  (TD)  4:4:4    95    32     32      66.11   2.640   79.44   
-RGB  (TD)  4:4:4    95    64     64      106.7   4.851   112.1   
-RGB  (TD)  4:4:4    95    128    128     132.3   6.389   133.3   
-RGB  (TD)  4:4:4    95    227    149     145.1   7.283   145.6   
+RGB  (TD)  4:4:4    95    8      8       8.800   0.2829  16.12   
+RGB  (TD)  4:4:4    95    16     16      26.61   0.9450  42.14   
+RGB  (TD)  4:4:4    95    32     32      65.60   2.640   80.40   
+RGB  (TD)  4:4:4    95    64     64      107.1   4.851   99.04   
+RGB  (TD)  4:4:4    95    128    128     134.2   6.389   131.6   
+RGB  (TD)  4:4:4    95    227    149     148.8   7.283   144.3   
 
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/0
 [       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/0 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/1
-[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/1 (0 ms)
+[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/1 (1 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/2
 [       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/2 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/3
-[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/3 (1 ms)
+[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/3 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/4
 [       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/4 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/5
-[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/5 (0 ms)
+[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/5 (1 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/6
 [       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/6 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/7
-[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/7 (1 ms)
+[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/7 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/8
 [       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/8 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/9
-[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/9 (0 ms)
+[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/9 (1 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/10
 [       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/10 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/11
 [       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/11 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/12
-[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/12 (1 ms)
+[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/12 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/13
-[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/13 (0 ms)
+[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/13 (1 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/14
 [       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/14 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/15
 [       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/15 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/16
-[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/16 (1 ms)
+[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/16 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/17
-[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/17 (0 ms)
+[       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/17 (1 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/18
 [       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/18 (0 ms)
 [ RUN      ] TestTileBaseline/TJBenchTest.TestTileBaseline/19
 [       OK ] TestTileBaseline/TJBenchTest.TestTileBaseline/19 (0 ms)
-[----------] 20 tests from TestTileBaseline/TJBenchTest (4 ms total)
+[----------] 20 tests from TestTileBaseline/TJBenchTest (5 ms total)
 
 [----------] 10 tests from TestTileMerged/TJBenchTestMerged
 
@@ -199,33 +199,33 @@ All performance values in Mpixels/sec
 Bitmap     JPEG     JPEG  Tile   Tile    Comp    Comp    Decomp  
 Format     Subsamp  Qual  Width  Height  Perf    Ratio   Perf    
 
-RGB  (TD)  GRAY     95    8      8       17.96   0.5340  33.31   
-RGB  (TD)  GRAY     95    16     16      55.04   1.769   82.64   
-RGB  (TD)  GRAY     95    32     32      139.8   4.838   146.4   
-RGB  (TD)  GRAY     95    64     64      241.4   8.673   198.8   
-RGB  (TD)  GRAY     95    128    128     318.8   11.24   233.1   
-RGB  (TD)  GRAY     95    227    149     366.8   12.60   257.0   
+RGB  (TD)  GRAY     95    8      8       17.85   0.5340  33.57   
+RGB  (TD)  GRAY     95    16     16      52.75   1.769   81.24   
+RGB  (TD)  GRAY     95    32     32      137.7   4.838   150.3   
+RGB  (TD)  GRAY     95    64     64      237.3   8.673   198.6   
+RGB  (TD)  GRAY     95    128    128     316.3   11.24   235.3   
+RGB  (TD)  GRAY     95    227    149     370.4   12.60   260.8   
 
-RGB  (TD)  4:2:0    95    8      8       8.540   0.2812  14.05   
-RGB  (TD)  4:2:0    95    16     16      29.95   0.9785  44.45   
-RGB  (TD)  4:2:0    95    32     32      82.61   2.917   103.0   
-RGB  (TD)  4:2:0    95    64     64      153.8   5.878   155.5   
-RGB  (TD)  4:2:0    95    128    128     211.8   8.279   195.4   
-RGB  (TD)  4:2:0    95    227    149     244.2   9.791   222.7   
+RGB  (TD)  4:2:0    95    8      8       8.571   0.2812  14.03   
+RGB  (TD)  4:2:0    95    16     16      29.10   0.9785  44.63   
+RGB  (TD)  4:2:0    95    32     32      81.32   2.917   103.3   
+RGB  (TD)  4:2:0    95    64     64      153.5   5.878   160.5   
+RGB  (TD)  4:2:0    95    128    128     208.6   8.279   195.1   
+RGB  (TD)  4:2:0    95    227    149     250.7   9.791   224.9   
 
-RGB  (TD)  4:2:2    95    8      8       8.413   0.2822  14.20   
-RGB  (TD)  4:2:2    95    16     16      26.94   0.9665  42.47   
-RGB  (TD)  4:2:2    95    32     32      71.64   2.812   92.36   
-RGB  (TD)  4:2:2    95    64     64      125.6   5.457   138.5   
-RGB  (TD)  4:2:2    95    128    128     164.3   7.459   153.6   
-RGB  (TD)  4:2:2    95    227    149     193.6   8.690   190.4   
+RGB  (TD)  4:2:2    95    8      8       8.473   0.2822  14.25   
+RGB  (TD)  4:2:2    95    16     16      26.59   0.9665  42.65   
+RGB  (TD)  4:2:2    95    32     32      71.87   2.812   91.72   
+RGB  (TD)  4:2:2    95    64     64      127.4   5.457   136.3   
+RGB  (TD)  4:2:2    95    128    128     167.3   7.459   168.8   
+RGB  (TD)  4:2:2    95    227    149     196.1   8.690   189.3   
 
-RGB  (TD)  4:4:4    95    8      8       8.750   0.2829  15.88   
-RGB  (TD)  4:4:4    95    16     16      26.33   0.9450  41.63   
-RGB  (TD)  4:4:4    95    32     32      64.06   2.640   80.40   
-RGB  (TD)  4:4:4    95    64     64      103.8   4.851   110.0   
-RGB  (TD)  4:4:4    95    128    128     129.9   6.389   128.4   
-RGB  (TD)  4:4:4    95    227    149     145.8   7.283   141.1   
+RGB  (TD)  4:4:4    95    8      8       8.695   0.2829  15.88   
+RGB  (TD)  4:4:4    95    16     16      25.85   0.9450  41.85   
+RGB  (TD)  4:4:4    95    32     32      62.45   2.640   80.36   
+RGB  (TD)  4:4:4    95    64     64      99.76   4.851   107.8   
+RGB  (TD)  4:4:4    95    128    128     128.9   6.389   128.6   
+RGB  (TD)  4:4:4    95    227    149     144.1   7.283   140.1   
 
 [ RUN      ] TestTileMerged/TJBenchTestMerged.TestTileMerged/0
 [       OK ] TestTileMerged/TJBenchTestMerged.TestTileMerged/0 (0 ms)
@@ -831,7 +831,7 @@ CMYK Top-Down BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Top-Down PPM (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up PPM (row alignment = 8 bytes)  ...  OK.
-[       OK ] TJUnitTests/TJUnitTest.BMP/2 (14 ms)
+[       OK ] TJUnitTests/TJUnitTest.BMP/2 (15 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BMP/3
 RGB Top-Down BMP (row alignment = 1 bytes)  ...  OK.
 RGB Top-Down PPM (row alignment = 1 bytes)  ...  OK.
@@ -1025,7 +1025,7 @@ CMYK Top-Down BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Top-Down PPM (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up PPM (row alignment = 8 bytes)  ...  OK.
-[       OK ] TJUnitTests/TJUnitTest.BMP/3 (15 ms)
+[       OK ] TJUnitTests/TJUnitTest.BMP/3 (14 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BMP/4
 RGB Top-Down BMP (row alignment = 1 bytes)  ...  OK.
 RGB Top-Down PPM (row alignment = 1 bytes)  ...  OK.
@@ -1219,7 +1219,7 @@ CMYK Top-Down BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Top-Down PPM (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up PPM (row alignment = 8 bytes)  ...  OK.
-[       OK ] TJUnitTests/TJUnitTest.BMP/4 (14 ms)
+[       OK ] TJUnitTests/TJUnitTest.BMP/4 (15 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BMP/5
 RGB Top-Down BMP (row alignment = 1 bytes)  ...  OK.
 RGB Top-Down PPM (row alignment = 1 bytes)  ...  OK.
@@ -1413,7 +1413,7 @@ CMYK Top-Down BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Top-Down PPM (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up PPM (row alignment = 8 bytes)  ...  OK.
-[       OK ] TJUnitTests/TJUnitTest.BMP/5 (15 ms)
+[       OK ] TJUnitTests/TJUnitTest.BMP/5 (14 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BMP/6
 RGB Top-Down BMP (row alignment = 1 bytes)  ...  OK.
 RGB Top-Down PPM (row alignment = 1 bytes)  ...  OK.
@@ -1607,7 +1607,7 @@ CMYK Top-Down BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Top-Down PPM (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up PPM (row alignment = 8 bytes)  ...  OK.
-[       OK ] TJUnitTests/TJUnitTest.BMP/6 (15 ms)
+[       OK ] TJUnitTests/TJUnitTest.BMP/6 (14 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BMP/7
 RGB Top-Down BMP (row alignment = 1 bytes)  ...  OK.
 RGB Top-Down PPM (row alignment = 1 bytes)  ...  OK.
@@ -1801,7 +1801,7 @@ CMYK Top-Down BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Top-Down PPM (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up BMP (row alignment = 8 bytes)  ...  OK.
 CMYK Bottom-Up PPM (row alignment = 8 bytes)  ...  OK.
-[       OK ] TJUnitTests/TJUnitTest.BMP/7 (14 ms)
+[       OK ] TJUnitTests/TJUnitTest.BMP/7 (13 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte444/0
 RGB Top-Down  -> 4:4:4 Q100 ... Done.
   Result in test_enc_RGB_TD_444_Q100.jpg
@@ -2041,7 +2041,7 @@ JPEG -> BGR Bottom-Up 1/8 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte444/2 (2 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte444/2 (3 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte444/3
 RGB Top-Down  -> 4:4:4 Q100 ... Done.
   Result in test_enc_RGB_TD_444_Q100.jpg
@@ -2713,7 +2713,7 @@ YUV 4:4:4 -> BGR Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte444/7 (5 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte444/7 (4 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte444/0
 RGBX Top-Down  -> 4:4:4 Q100 ... Done.
   Result in test_enc_RGBX_TD_444_Q100.jpg
@@ -3043,7 +3043,7 @@ JPEG -> CMYK Bottom-Up 1/8 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte444/0 (14 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte444/0 (15 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte444/1
 RGBX Top-Down  -> 4:4:4 Q100 ... Done.
   Result in test_enc_RGBX_TD_444_Q100.jpg
@@ -3703,7 +3703,7 @@ JPEG -> CMYK Bottom-Up 1/8 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte444/2 (14 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte444/2 (13 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte444/3
 RGBX Top-Down  -> 4:4:4 Q100 ... Done.
   Result in test_enc_RGBX_TD_444_Q100.jpg
@@ -4589,7 +4589,7 @@ YUV 4:4:4 -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte444/4 (18 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte444/4 (19 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte444/5
 RGBX Top-Down  -> YUV 4:4:4 ... Passed.
 YUV 4:4:4 Top-Down  -> JPEG Q100 ... Done.
@@ -5145,7 +5145,7 @@ YUV 4:4:4 -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte444/5 (19 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte444/5 (18 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte444/6
 RGBX Top-Down  -> YUV 4:4:4 ... Passed.
 YUV 4:4:4 Top-Down  -> JPEG Q100 ... Done.
@@ -5701,7 +5701,7 @@ YUV 4:4:4 -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte444/6 (18 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte444/6 (19 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte444/7
 RGBX Top-Down  -> YUV 4:4:4 ... Passed.
 YUV 4:4:4 Top-Down  -> JPEG Q100 ... Done.
@@ -6257,7 +6257,7 @@ YUV 4:4:4 -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte444/7 (19 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte444/7 (18 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte422/0
 RGB Top-Down  -> 4:2:2 Q100 ... Done.
   Result in test_enc_RGB_TD_422_Q100.jpg
@@ -6285,7 +6285,7 @@ JPEG -> BGR Bottom-Up 1/4 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte422/0 (0 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte422/0 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte422/1
 RGB Top-Down  -> 4:2:2 Q100 ... Done.
   Result in test_enc_RGB_TD_422_Q100.jpg
@@ -6313,7 +6313,7 @@ JPEG -> BGR Bottom-Up 1/4 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte422/1 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte422/1 (0 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte422/2
 RGB Top-Down  -> 4:2:2 Q100 ... Done.
   Result in test_enc_RGB_TD_422_Q100.jpg
@@ -6341,7 +6341,7 @@ JPEG -> BGR Bottom-Up 1/4 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte422/2 (0 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte422/2 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte422/3
 RGB Top-Down  -> 4:2:2 Q100 ... Done.
   Result in test_enc_RGB_TD_422_Q100.jpg
@@ -6369,7 +6369,7 @@ JPEG -> BGR Bottom-Up 1/4 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte422/3 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte422/3 (0 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte422/4
 RGB Top-Down  -> YUV 4:2:2 ... Passed.
 YUV 4:2:2 Top-Down  -> JPEG Q100 ... Done.
@@ -6413,7 +6413,7 @@ YUV 4:2:2 -> BGR Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte422/4 (0 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte422/4 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte422/5
 RGB Top-Down  -> YUV 4:2:2 ... Passed.
 YUV 4:2:2 Top-Down  -> JPEG Q100 ... Done.
@@ -6833,7 +6833,7 @@ JPEG -> CMYK Bottom-Up 1/4 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte422/2 (2 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte422/2 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte422/3
 RGBX Top-Down  -> 4:2:2 Q100 ... Done.
   Result in test_enc_RGBX_TD_422_Q100.jpg
@@ -6929,7 +6929,7 @@ JPEG -> CMYK Bottom-Up 1/4 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte422/3 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte422/3 (2 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte422/4
 RGBX Top-Down  -> YUV 4:2:2 ... Passed.
 YUV 4:2:2 Top-Down  -> JPEG Q100 ... Done.
@@ -7209,7 +7209,7 @@ YUV 4:2:2 -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte422/5 (3 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte422/5 (2 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte422/6
 RGBX Top-Down  -> YUV 4:2:2 ... Passed.
 YUV 4:2:2 Top-Down  -> JPEG Q100 ... Done.
@@ -7489,7 +7489,7 @@ YUV 4:2:2 -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte422/7 (2 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte422/7 (3 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte420/0
 RGB Top-Down  -> 4:2:0 Q100 ... Done.
   Result in test_enc_RGB_TD_420_Q100.jpg
@@ -7645,7 +7645,7 @@ YUV 4:2:0 -> BGR Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte420/4 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte420/4 (0 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte420/5
 RGB Top-Down  -> YUV 4:2:0 ... Passed.
 YUV 4:2:0 Top-Down  -> JPEG Q100 ... Done.
@@ -7689,7 +7689,7 @@ YUV 4:2:0 -> BGR Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte420/5 (0 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte420/5 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte420/6
 RGB Top-Down  -> YUV 4:2:0 ... Passed.
 YUV 4:2:0 Top-Down  -> JPEG Q100 ... Done.
@@ -7777,7 +7777,7 @@ YUV 4:2:0 -> BGR Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte420/7 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte420/7 (0 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte420/0
 RGBX Top-Down  -> 4:2:0 Q100 ... Done.
   Result in test_enc_RGBX_TD_420_Q100.jpg
@@ -7873,7 +7873,7 @@ JPEG -> CMYK Bottom-Up 1/4 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte420/0 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte420/0 (2 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte420/1
 RGBX Top-Down  -> 4:2:0 Q100 ... Done.
   Result in test_enc_RGBX_TD_420_Q100.jpg
@@ -8833,7 +8833,7 @@ JPEG -> BGR Bottom-Up 1/4 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte440/3 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte440/3 (0 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte440/4
 RGB Top-Down  -> YUV 4:4:0 ... Passed.
 YUV 4:4:0 Top-Down  -> JPEG Q100 ... Done.
@@ -8877,7 +8877,7 @@ YUV 4:4:0 -> BGR Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte440/4 (0 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte440/4 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte440/5
 RGB Top-Down  -> YUV 4:4:0 ... Passed.
 YUV 4:4:0 Top-Down  -> JPEG Q100 ... Done.
@@ -9393,7 +9393,7 @@ JPEG -> CMYK Bottom-Up 1/4 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte440/3 (2 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte440/3 (3 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte440/4
 RGBX Top-Down  -> YUV 4:4:0 ... Passed.
 YUV 4:4:0 Top-Down  -> JPEG Q100 ... Done.
@@ -9533,7 +9533,7 @@ YUV 4:4:0 -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte440/4 (3 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte440/4 (2 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte440/5
 RGBX Top-Down  -> YUV 4:4:0 ... Passed.
 YUV 4:4:0 Top-Down  -> JPEG Q100 ... Done.
@@ -9977,7 +9977,7 @@ JPEG -> BGR Bottom-Up 1/2 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/0 (0 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/0 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte411/1
 RGB Top-Down  -> 4:1:1 Q100 ... Done.
   Result in test_enc_RGB_TD_411_Q100.jpg
@@ -10001,7 +10001,7 @@ JPEG -> BGR Bottom-Up 1/2 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/1 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/1 (0 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte411/2
 RGB Top-Down  -> 4:1:1 Q100 ... Done.
   Result in test_enc_RGB_TD_411_Q100.jpg
@@ -10025,7 +10025,7 @@ JPEG -> BGR Bottom-Up 1/2 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/2 (0 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/2 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte411/3
 RGB Top-Down  -> 4:1:1 Q100 ... Done.
   Result in test_enc_RGB_TD_411_Q100.jpg
@@ -10049,7 +10049,7 @@ JPEG -> BGR Bottom-Up 1/2 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/3 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/3 (0 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte411/4
 RGB Top-Down  -> YUV 4:1:1 ... Passed.
 YUV 4:1:1 Top-Down  -> JPEG Q100 ... Done.
@@ -10085,7 +10085,7 @@ YUV 4:1:1 -> BGR Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/4 (0 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/4 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte411/5
 RGB Top-Down  -> YUV 4:1:1 ... Passed.
 YUV 4:1:1 Top-Down  -> JPEG Q100 ... Done.
@@ -10121,7 +10121,7 @@ YUV 4:1:1 -> BGR Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/5 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByte411/5 (0 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByte411/6
 RGB Top-Down  -> YUV 4:1:1 ... Passed.
 YUV 4:1:1 Top-Down  -> JPEG Q100 ... Done.
@@ -10271,7 +10271,7 @@ JPEG -> CMYK Bottom-Up 1/2 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte411/0 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte411/0 (2 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte411/1
 RGBX Top-Down  -> 4:1:1 Q100 ... Done.
   Result in test_enc_RGBX_TD_411_Q100.jpg
@@ -10349,7 +10349,7 @@ JPEG -> CMYK Bottom-Up 1/2 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte411/1 (2 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte411/1 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte411/2
 RGBX Top-Down  -> 4:1:1 Q100 ... Done.
   Result in test_enc_RGBX_TD_411_Q100.jpg
@@ -10427,7 +10427,7 @@ JPEG -> CMYK Bottom-Up 1/2 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte411/2 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte411/2 (2 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte411/3
 RGBX Top-Down  -> 4:1:1 Q100 ... Done.
   Result in test_enc_RGBX_TD_411_Q100.jpg
@@ -10505,7 +10505,7 @@ JPEG -> CMYK Bottom-Up 1/2 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte411/3 (2 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte411/3 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte411/4
 RGBX Top-Down  -> YUV 4:1:1 ... Passed.
 YUV 4:1:1 Top-Down  -> JPEG Q100 ... Done.
@@ -10613,7 +10613,7 @@ YUV 4:1:1 -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte411/4 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte411/4 (2 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte411/5
 RGBX Top-Down  -> YUV 4:1:1 ... Passed.
 YUV 4:1:1 Top-Down  -> JPEG Q100 ... Done.
@@ -10721,7 +10721,7 @@ YUV 4:1:1 -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte411/5 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte411/5 (2 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte411/6
 RGBX Top-Down  -> YUV 4:1:1 ... Passed.
 YUV 4:1:1 Top-Down  -> JPEG Q100 ... Done.
@@ -10829,7 +10829,7 @@ YUV 4:1:1 -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByte411/6 (2 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByte411/6 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByte411/7
 RGBX Top-Down  -> YUV 4:1:1 ... Passed.
 YUV 4:1:1 Top-Down  -> JPEG Q100 ... Done.
@@ -11257,7 +11257,7 @@ YUV GRAY -> Grayscale Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.OnlyGray/5 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.OnlyGray/5 (2 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.OnlyGray/6
 Grayscale Top-Down  -> YUV GRAY ... Passed.
 YUV GRAY Top-Down  -> JPEG Q100 ... Done.
@@ -11333,7 +11333,7 @@ YUV GRAY -> Grayscale Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.OnlyGray/6 (2 ms)
+[       OK ] TJUnitTests/TJUnitTest.OnlyGray/6 (1 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.OnlyGray/7
 Grayscale Top-Down  -> YUV GRAY ... Passed.
 YUV GRAY Top-Down  -> JPEG Q100 ... Done.
@@ -11409,7 +11409,7 @@ YUV GRAY -> Grayscale Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.OnlyGray/7 (1 ms)
+[       OK ] TJUnitTests/TJUnitTest.OnlyGray/7 (2 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByteGray/0
 RGB Top-Down  -> GRAY Q100 ... Done.
   Result in test_enc_RGB_TD_GRAY_Q100.jpg
@@ -12025,7 +12025,7 @@ YUV GRAY -> BGR Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.ThreeByteGray/5 (3 ms)
+[       OK ] TJUnitTests/TJUnitTest.ThreeByteGray/5 (2 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.ThreeByteGray/6
 RGB Top-Down  -> YUV GRAY ... Passed.
 YUV GRAY Top-Down  -> JPEG Q100 ... Done.
@@ -12613,7 +12613,7 @@ JPEG -> ARGB Bottom-Up 1/8 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByteGray/0 (7 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByteGray/0 (8 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByteGray/1
 RGBX Top-Down  -> GRAY Q100 ... Done.
   Result in test_enc_RGBX_TD_GRAY_Q100.jpg
@@ -13197,7 +13197,7 @@ JPEG -> ARGB Bottom-Up 1/8 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByteGray/2 (8 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByteGray/2 (7 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByteGray/3
 RGBX Top-Down  -> GRAY Q100 ... Done.
   Result in test_enc_RGBX_TD_GRAY_Q100.jpg
@@ -13489,7 +13489,7 @@ JPEG -> ARGB Bottom-Up 1/8 ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByteGray/3 (7 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByteGray/3 (8 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByteGray/4
 RGBX Top-Down  -> YUV GRAY ... Passed.
 YUV GRAY Top-Down  -> JPEG Q100 ... Done.
@@ -14045,7 +14045,7 @@ YUV GRAY -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByteGray/4 (11 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByteGray/4 (10 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByteGray/5
 RGBX Top-Down  -> YUV GRAY ... Passed.
 YUV GRAY Top-Down  -> JPEG Q100 ... Done.
@@ -14601,7 +14601,7 @@ YUV GRAY -> ARGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTests/TJUnitTest.FourByteGray/5 (10 ms)
+[       OK ] TJUnitTests/TJUnitTest.FourByteGray/5 (11 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.FourByteGray/6
 RGBX Top-Down  -> YUV GRAY ... Passed.
 YUV GRAY Top-Down  -> JPEG Q100 ... Done.
@@ -15717,36 +15717,36 @@ YUV GRAY -> ARGB Bottom-Up ... Passed.
 [ RUN      ] TJUnitTests/TJUnitTest.BufSize/0
 Buffer size regression test
 0001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 2000Done.      
-[       OK ] TJUnitTests/TJUnitTest.BufSize/0 (3811 ms)
+[       OK ] TJUnitTests/TJUnitTest.BufSize/0 (3817 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BufSize/1
 Buffer size regression test
 0001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 2000Done.      
-[       OK ] TJUnitTests/TJUnitTest.BufSize/1 (3700 ms)
+[       OK ] TJUnitTests/TJUnitTest.BufSize/1 (3738 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BufSize/2
 Buffer size regression test
 0001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 2000Done.      
-[       OK ] TJUnitTests/TJUnitTest.BufSize/2 (3802 ms)
+[       OK ] TJUnitTests/TJUnitTest.BufSize/2 (3831 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BufSize/3
 Buffer size regression test
 0001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 2000Done.      
-[       OK ] TJUnitTests/TJUnitTest.BufSize/3 (3743 ms)
+[       OK ] TJUnitTests/TJUnitTest.BufSize/3 (3736 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BufSize/4
 Buffer size regression test
 0001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 2000Done.      
-[       OK ] TJUnitTests/TJUnitTest.BufSize/4 (2559 ms)
+[       OK ] TJUnitTests/TJUnitTest.BufSize/4 (2571 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BufSize/5
 Buffer size regression test
 0001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 2000Done.      
-[       OK ] TJUnitTests/TJUnitTest.BufSize/5 (2556 ms)
+[       OK ] TJUnitTests/TJUnitTest.BufSize/5 (2562 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BufSize/6
 Buffer size regression test
 0001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 2000Done.      
-[       OK ] TJUnitTests/TJUnitTest.BufSize/6 (2561 ms)
+[       OK ] TJUnitTests/TJUnitTest.BufSize/6 (2554 ms)
 [ RUN      ] TJUnitTests/TJUnitTest.BufSize/7
 Buffer size regression test
 0001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 20000001 x 01000001 x 02000001 x 03000001 x 04000001 x 05000001 x 06000001 x 07000001 x 08000001 x 09000001 x 10000001 x 11000001 x 12000001 x 13000001 x 14000001 x 15000001 x 16000001 x 17000001 x 18000001 x 19000001 x 2000Done.      
-[       OK ] TJUnitTests/TJUnitTest.BufSize/7 (2561 ms)
-[----------] 120 tests from TJUnitTests/TJUnitTest (25748 ms total)
+[       OK ] TJUnitTests/TJUnitTest.BufSize/7 (2546 ms)
+[----------] 120 tests from TJUnitTests/TJUnitTest (25809 ms total)
 
 [----------] 28 tests from TJUnitTestsYUV/TJUnitTestYUV
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB444/0
@@ -16076,7 +16076,7 @@ YUV 4:2:2 -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB422/0 (0 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB422/0 (1 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB422/1
 RGB Top-Down  -> YUV 4:2:2 ... Passed.
 YUV 4:2:2 Top-Down  -> JPEG Q100 ... Done.
@@ -16100,7 +16100,7 @@ YUV 4:2:2 -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB422/1 (1 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB422/1 (0 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB422/2
 RGB Top-Down  -> YUV 4:2:2 ... Passed.
 YUV 4:2:2 Top-Down  -> JPEG Q100 ... Done.
@@ -16124,7 +16124,7 @@ YUV 4:2:2 -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB422/2 (0 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB422/2 (1 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB422/3
 RGB Top-Down  -> YUV 4:2:2 ... Passed.
 YUV 4:2:2 Top-Down  -> JPEG Q100 ... Done.
@@ -16172,7 +16172,7 @@ YUV 4:2:0 -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB420/0 (1 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB420/0 (0 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB420/1
 RGB Top-Down  -> YUV 4:2:0 ... Passed.
 YUV 4:2:0 Top-Down  -> JPEG Q100 ... Done.
@@ -16196,7 +16196,7 @@ YUV 4:2:0 -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB420/1 (0 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB420/1 (1 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB420/2
 RGB Top-Down  -> YUV 4:2:0 ... Passed.
 YUV 4:2:0 Top-Down  -> JPEG Q100 ... Done.
@@ -16220,7 +16220,7 @@ YUV 4:2:0 -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB420/2 (1 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB420/2 (0 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB420/3
 RGB Top-Down  -> YUV 4:2:0 ... Passed.
 YUV 4:2:0 Top-Down  -> JPEG Q100 ... Done.
@@ -16244,7 +16244,7 @@ YUV 4:2:0 -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB420/3 (0 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB420/3 (1 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB440/0
 RGB Top-Down  -> YUV 4:4:0 ... Passed.
 YUV 4:4:0 Top-Down  -> JPEG Q100 ... Done.
@@ -16268,7 +16268,7 @@ YUV 4:4:0 -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB440/0 (1 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB440/0 (0 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB440/1
 RGB Top-Down  -> YUV 4:4:0 ... Passed.
 YUV 4:4:0 Top-Down  -> JPEG Q100 ... Done.
@@ -16292,7 +16292,7 @@ YUV 4:4:0 -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB440/1 (0 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB440/1 (1 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB440/2
 RGB Top-Down  -> YUV 4:4:0 ... Passed.
 YUV 4:4:0 Top-Down  -> JPEG Q100 ... Done.
@@ -16380,7 +16380,7 @@ YUV 4:1:1 -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB411/1 (1 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB411/1 (0 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB411/2
 RGB Top-Down  -> YUV 4:1:1 ... Passed.
 YUV 4:1:1 Top-Down  -> JPEG Q100 ... Done.
@@ -16400,7 +16400,7 @@ YUV 4:1:1 -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB411/2 (0 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB411/2 (1 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGB411/3
 RGB Top-Down  -> YUV 4:1:1 ... Passed.
 YUV 4:1:1 Top-Down  -> JPEG Q100 ... Done.
@@ -16724,7 +16724,7 @@ YUV GRAY -> RGB Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGBGray/3 (2 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyRGBGray/3 (1 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyGrayGray/0
 Grayscale Top-Down  -> YUV GRAY ... Passed.
 YUV GRAY Top-Down  -> JPEG Q100 ... Done.
@@ -16876,7 +16876,7 @@ YUV GRAY -> Grayscale Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyGrayGray/1 (1 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyGrayGray/1 (2 ms)
 [ RUN      ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyGrayGray/2
 Grayscale Top-Down  -> YUV GRAY ... Passed.
 YUV GRAY Top-Down  -> JPEG Q100 ... Done.
@@ -17028,9 +17028,9 @@ YUV GRAY -> Grayscale Bottom-Up ... Passed.
 
 --------------------
 
-[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyGrayGray/3 (2 ms)
+[       OK ] TJUnitTestsYUV/TJUnitTestYUV.YUVOnlyGrayGray/3 (1 ms)
 [----------] 28 tests from TJUnitTestsYUV/TJUnitTestYUV (33 ms total)
 
 [----------] Global test environment tear-down
-[==========] 226 tests from 8 test suites ran. (26955 ms total)
+[==========] 226 tests from 8 test suites ran. (27004 ms total)
 [  PASSED  ] 226 tests.

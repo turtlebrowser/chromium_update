@@ -4,22 +4,22 @@ own process. For debugging a test inside a debugger, use the
 --single-process-tests.
 Using sharding settings from environment. This is shard 0/1
 Using 8 parallel jobs.
-[20179:20179:0304/005024.717502:45164481529:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
-[20179:20179:0304/005024.717543:45164481552:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
-[20179:20179:0304/005024.717551:45164481560:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
-[1/14] All/SnapshotAuraTest.RotateAndUIScale/0 (324 ms)
-[2/14] All/SnapshotAuraTest.RotateAndUIScale/1 (291 ms)
-[3/14] All/SnapshotAuraTest.RotateAndUIScaleAndScaleFactor/0 (258 ms)
-[4/14] All/SnapshotAuraTest.RotateAndUIScaleAndScaleFactor/1 (238 ms)
-[5/14] All/SnapshotAuraTest.FullScreenWindow/0 (1147 ms)
-[6/14] All/SnapshotAuraTest.FullScreenWindow/1 (1069 ms)
-[7/14] All/SnapshotAuraTest.PartialBounds/0 (218 ms)
-[8/14] All/SnapshotAuraTest.PartialBounds/1 (220 ms)
-[9/14] All/SnapshotAuraTest.Rotated/0 (241 ms)
-[10/14] All/SnapshotAuraTest.Rotated/1 (207 ms)
-[11/14] All/SnapshotAuraTest.UIScale/0 (261 ms)
-[12/14] All/SnapshotAuraTest.UIScale/1 (271 ms)
-[13/14] All/SnapshotAuraTest.DeviceScaleFactor/0 (190 ms)
-[14/14] All/SnapshotAuraTest.DeviceScaleFactor/1 (183 ms)
+[6758:6758:0304/094229.883721:77089647750:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageCopyTest>
+[6758:6758:0304/094229.883760:77089647770:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageOddSizeTest>
+[6758:6758:0304/094229.883771:77089647780:INFO:test_launcher.cc(1572)] The following parameterized test case is not instantiated: UninstantiatedTypeParamaterizedTestSuite<GLImageTest>
+[1/14] All/SnapshotAuraTest.RotateAndUIScale/0 (329 ms)
+[2/14] All/SnapshotAuraTest.RotateAndUIScale/1 (292 ms)
+[3/14] All/SnapshotAuraTest.RotateAndUIScaleAndScaleFactor/0 (275 ms)
+[4/14] All/SnapshotAuraTest.RotateAndUIScaleAndScaleFactor/1 (245 ms)
+[5/14] All/SnapshotAuraTest.FullScreenWindow/0 (1176 ms)
+[6/14] All/SnapshotAuraTest.FullScreenWindow/1 (1082 ms)
+[7/14] All/SnapshotAuraTest.PartialBounds/0 (235 ms)
+[8/14] All/SnapshotAuraTest.PartialBounds/1 (253 ms)
+[9/14] All/SnapshotAuraTest.Rotated/0 (266 ms)
+[10/14] All/SnapshotAuraTest.Rotated/1 (214 ms)
+[11/14] All/SnapshotAuraTest.UIScale/0 (282 ms)
+[12/14] All/SnapshotAuraTest.UIScale/1 (266 ms)
+[13/14] All/SnapshotAuraTest.DeviceScaleFactor/0 (218 ms)
+[14/14] All/SnapshotAuraTest.DeviceScaleFactor/1 (188 ms)
 SUCCESS: all tests passed.
 Tests took 4 seconds.

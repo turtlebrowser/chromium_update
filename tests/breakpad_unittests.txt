@@ -3,100 +3,100 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [----------] Global test environment set-up.
 [----------] 28 tests from ExceptionHandlerTest
 [ RUN      ] ExceptionHandlerTest.SimpleWithPath
-[       OK ] ExceptionHandlerTest.SimpleWithPath (0 ms)
+[       OK ] ExceptionHandlerTest.SimpleWithPath (1 ms)
 [ RUN      ] ExceptionHandlerTest.SimpleWithFD
 [       OK ] ExceptionHandlerTest.SimpleWithFD (0 ms)
 [ RUN      ] ExceptionHandlerTest.ChildCrashWithPath
-[       OK ] ExceptionHandlerTest.ChildCrashWithPath (113 ms)
+[       OK ] ExceptionHandlerTest.ChildCrashWithPath (130 ms)
 [ RUN      ] ExceptionHandlerTest.ChildCrashWithFD
-[       OK ] ExceptionHandlerTest.ChildCrashWithFD (90 ms)
+[       OK ] ExceptionHandlerTest.ChildCrashWithFD (94 ms)
 [ RUN      ] ExceptionHandlerTest.ParallelChildCrashesDontHang
 [       OK ] ExceptionHandlerTest.ParallelChildCrashesDontHang (1002 ms)
 [ RUN      ] ExceptionHandlerTest.RedeliveryOnFilterCallbackFalse
 [       OK ] ExceptionHandlerTest.RedeliveryOnFilterCallbackFalse (1 ms)
 [ RUN      ] ExceptionHandlerTest.RedeliveryOnDoneCallbackFalse
-[       OK ] ExceptionHandlerTest.RedeliveryOnDoneCallbackFalse (10 ms)
+[       OK ] ExceptionHandlerTest.RedeliveryOnDoneCallbackFalse (8 ms)
 [ RUN      ] ExceptionHandlerTest.NoRedeliveryOnDoneCallbackTrue
-[       OK ] ExceptionHandlerTest.NoRedeliveryOnDoneCallbackTrue (96 ms)
+[       OK ] ExceptionHandlerTest.NoRedeliveryOnDoneCallbackTrue (93 ms)
 [ RUN      ] ExceptionHandlerTest.NoRedeliveryOnFilterCallbackTrue
-[       OK ] ExceptionHandlerTest.NoRedeliveryOnFilterCallbackTrue (91 ms)
+[       OK ] ExceptionHandlerTest.NoRedeliveryOnFilterCallbackTrue (93 ms)
 [ RUN      ] ExceptionHandlerTest.RedeliveryToDefaultHandler
-[       OK ] ExceptionHandlerTest.RedeliveryToDefaultHandler (89 ms)
+[       OK ] ExceptionHandlerTest.RedeliveryToDefaultHandler (91 ms)
 [ RUN      ] ExceptionHandlerTest.RedeliveryOnBadSignalHandlerFlag
-[       OK ] ExceptionHandlerTest.RedeliveryOnBadSignalHandlerFlag (5 ms)
+[       OK ] ExceptionHandlerTest.RedeliveryOnBadSignalHandlerFlag (4 ms)
 [ RUN      ] ExceptionHandlerTest.StackedHandlersDeliveredToTop
-[       OK ] ExceptionHandlerTest.StackedHandlersDeliveredToTop (4 ms)
+[       OK ] ExceptionHandlerTest.StackedHandlersDeliveredToTop (5 ms)
 [ RUN      ] ExceptionHandlerTest.StackedHandlersNotDeliveredToBottom
-[       OK ] ExceptionHandlerTest.StackedHandlersNotDeliveredToBottom (92 ms)
+[       OK ] ExceptionHandlerTest.StackedHandlersNotDeliveredToBottom (95 ms)
 [ RUN      ] ExceptionHandlerTest.StackedHandlersFilteredToBottom
-[       OK ] ExceptionHandlerTest.StackedHandlersFilteredToBottom (6 ms)
+[       OK ] ExceptionHandlerTest.StackedHandlersFilteredToBottom (5 ms)
 [ RUN      ] ExceptionHandlerTest.StackedHandlersUnhandledToBottom
 [       OK ] ExceptionHandlerTest.StackedHandlersUnhandledToBottom (9 ms)
 [ RUN      ] ExceptionHandlerTest.FirstChanceHandlerRuns
 [       OK ] ExceptionHandlerTest.FirstChanceHandlerRuns (0 ms)
 [ RUN      ] ExceptionHandlerTest.InstructionPointerMemory
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.17Vbvu/86065d9a-ea25-4a99-56c60398-ba7aa275.dmp
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:474: INFO: MinidumpContext: looks like AMD64 context
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
-[       OK ] ExceptionHandlerTest.InstructionPointerMemory (93 ms)
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.IfDARn/3e02704e-9fa2-49b8-0919deac-9f87db18.dmp
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:474: INFO: MinidumpContext: looks like AMD64 context
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
+[       OK ] ExceptionHandlerTest.InstructionPointerMemory (92 ms)
 [ RUN      ] ExceptionHandlerTest.InstructionPointerMemoryMinBound
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.e5ZePl/0dc2f7a3-e6f8-489e-f3a21c93-1bc367f7.dmp
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:474: INFO: MinidumpContext: looks like AMD64 context
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
-[       OK ] ExceptionHandlerTest.InstructionPointerMemoryMinBound (91 ms)
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.h3dlip/dd74c58b-9bc6-4aa9-85502b86-d3ec7833.dmp
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:474: INFO: MinidumpContext: looks like AMD64 context
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
+[       OK ] ExceptionHandlerTest.InstructionPointerMemoryMinBound (94 ms)
 [ RUN      ] ExceptionHandlerTest.InstructionPointerMemoryMaxBound
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.ILH8qd/85499657-b83e-4650-691833bb-f731bca1.dmp
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:474: INFO: MinidumpContext: looks like AMD64 context
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
-[       OK ] ExceptionHandlerTest.InstructionPointerMemoryMaxBound (93 ms)
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.lRPA1q/ff2eff07-e4a4-4f2f-cd4245b1-2d5c8acc.dmp
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:474: INFO: MinidumpContext: looks like AMD64 context
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
+[       OK ] ExceptionHandlerTest.InstructionPointerMemoryMaxBound (91 ms)
 [ RUN      ] ExceptionHandlerTest.InstructionPointerMemoryNullPointer
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.L3ynl5/7dfdd70b-544d-4baf-d7455c92-1e9e9a6d.dmp
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:474: INFO: MinidumpContext: looks like AMD64 context
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
-[       OK ] ExceptionHandlerTest.InstructionPointerMemoryNullPointer (93 ms)
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.KWTG2s/31305ac4-1e2f-4db9-c20d9bb5-9e6045e2.dmp
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:474: INFO: MinidumpContext: looks like AMD64 context
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
+[       OK ] ExceptionHandlerTest.InstructionPointerMemoryNullPointer (95 ms)
 [ RUN      ] ExceptionHandlerTest.ModuleInfo
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.u2DXxX/63c472ef-9a60-4d01-f5c90792-2d8dcf52.dmp
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.Z7KAmv/82c79ee5-f667-48cc-db282188-9524a18b.dmp
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
 [       OK ] ExceptionHandlerTest.ModuleInfo (6 ms)
 [ RUN      ] ExceptionHandlerTest.ExternalDumper
-[       OK ] ExceptionHandlerTest.ExternalDumper (94 ms)
+[       OK ] ExceptionHandlerTest.ExternalDumper (96 ms)
 [ RUN      ] ExceptionHandlerTest.WriteMinidumpExceptionStream
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.pk0OhI/6b9f733e-1d64-4def-f8630ebc-b0babab5.dmp
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.sujslA/4b541b02-1935-4e59-de5902a1-2730dd3a.dmp
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
 [       OK ] ExceptionHandlerTest.WriteMinidumpExceptionStream (5 ms)
 [ RUN      ] ExceptionHandlerTest.GenerateMultipleDumpsWithFD
-[       OK ] ExceptionHandlerTest.GenerateMultipleDumpsWithFD (9 ms)
+[       OK ] ExceptionHandlerTest.GenerateMultipleDumpsWithFD (8 ms)
 [ RUN      ] ExceptionHandlerTest.GenerateMultipleDumpsWithPath
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.njy9Ul/c8f10747-623b-4ae3-2d155aa8-3cc49c76.dmp
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.njy9Ul/26031617-7475-4b9c-866ce192-8b81b9db.dmp
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
-[       OK ] ExceptionHandlerTest.GenerateMultipleDumpsWithPath (8 ms)
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.9aDwlI/ed9c8b41-1ad2-49bf-b54ea8b5-a4bca524.dmp
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.9aDwlI/254d0243-960b-4ab4-06b700ba-52e40211.dmp
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
+[       OK ] ExceptionHandlerTest.GenerateMultipleDumpsWithPath (9 ms)
 [ RUN      ] ExceptionHandlerTest.AdditionalMemory
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.QGlHve/bdb023ce-c624-45f1-632fcd9b-d351aaaf.dmp
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.EjUI3K/0c412333-f390-4e36-bc805386-703129bb.dmp
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
 [       OK ] ExceptionHandlerTest.AdditionalMemory (5 ms)
 [ RUN      ] ExceptionHandlerTest.AdditionalMemoryRemove
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.E39c76/6c63b986-64f7-4b76-6b355ab7-abad9e36.dmp
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:3118: INFO: MinidumpMemoryList has no memory region at 0xbb45f9da000
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
-[       OK ] ExceptionHandlerTest.AdditionalMemoryRemove (5 ms)
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.HwkRMN/a9f02925-1362-4817-43e37787-18e7bc8e.dmp
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:3118: INFO: MinidumpMemoryList has no memory region at 0x18cb1e2d000
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
+[       OK ] ExceptionHandlerTest.AdditionalMemoryRemove (4 ms)
 [ RUN      ] ExceptionHandlerTest.WriteMinidumpForChild
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.cdNBJZ/fb432d4f-adfe-4633-48e88983-b6bff7e7.dmp
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
-[       OK ] ExceptionHandlerTest.WriteMinidumpForChild (5 ms)
-[----------] 28 tests from ExceptionHandlerTest (2116 ms total)
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.2FzTwQ/271de79f-bc5a-4063-41a2bbb6-917be54c.dmp
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
+[       OK ] ExceptionHandlerTest.WriteMinidumpForChild (6 ms)
+[----------] 28 tests from ExceptionHandlerTest (2143 ms total)
 
 [----------] 10 tests from CpuSetTest
 [ RUN      ] CpuSetTest.EmptyCount
@@ -118,7 +118,7 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [ RUN      ] CpuSetTest.SelfIntersection
 [       OK ] CpuSetTest.SelfIntersection (0 ms)
 [ RUN      ] CpuSetTest.EmptyIntersection
-[       OK ] CpuSetTest.EmptyIntersection (0 ms)
+[       OK ] CpuSetTest.EmptyIntersection (1 ms)
 [----------] 10 tests from CpuSetTest (1 ms total)
 
 [----------] 1 test from DirectoryReaderTest
@@ -141,7 +141,7 @@ Running main() from ../../third_party/googletest/src/googletest/src/gtest_main.c
 [       OK ] LineReaderTest.MaxLength (0 ms)
 [ RUN      ] LineReaderTest.TooLong
 [       OK ] LineReaderTest.TooLong (0 ms)
-[----------] 7 tests from LineReaderTest (1 ms total)
+[----------] 7 tests from LineReaderTest (0 ms total)
 
 [----------] 4 tests from LinuxCoreDumperTest
 [ RUN      ] LinuxCoreDumperTest.GetMappingAbsolutePath
@@ -153,22 +153,22 @@ LinuxCoreDumperTest.VerifyDumpWithMultipleThreads test is skipped due to non-def
 [       OK ] LinuxCoreDumperTest.VerifyDumpWithMultipleThreads (0 ms)
 [ RUN      ] LinuxCoreDumperTest.VerifyExceptionDetails
 LinuxCoreDumperTest.VerifyDumpWithMultipleThreads test is skipped due to non-default core pattern
-[       OK ] LinuxCoreDumperTest.VerifyExceptionDetails (0 ms)
-[----------] 4 tests from LinuxCoreDumperTest (0 ms total)
+[       OK ] LinuxCoreDumperTest.VerifyExceptionDetails (1 ms)
+[----------] 4 tests from LinuxCoreDumperTest (1 ms total)
 
 [----------] 7 tests from LinuxPtraceDumperChildTest
 [ RUN      ] LinuxPtraceDumperChildTest.Setup
 [       OK ] LinuxPtraceDumperChildTest.Setup (0 ms)
 [ RUN      ] LinuxPtraceDumperChildTest.FindMappings
-[       OK ] LinuxPtraceDumperChildTest.FindMappings (1 ms)
+[       OK ] LinuxPtraceDumperChildTest.FindMappings (0 ms)
 [ RUN      ] LinuxPtraceDumperChildTest.ThreadList
-[       OK ] LinuxPtraceDumperChildTest.ThreadList (0 ms)
+[       OK ] LinuxPtraceDumperChildTest.ThreadList (1 ms)
 [ RUN      ] LinuxPtraceDumperChildTest.BuildProcPath
 [       OK ] LinuxPtraceDumperChildTest.BuildProcPath (0 ms)
 [ RUN      ] LinuxPtraceDumperChildTest.MappingsIncludeLinuxGate
-[       OK ] LinuxPtraceDumperChildTest.MappingsIncludeLinuxGate (1 ms)
+[       OK ] LinuxPtraceDumperChildTest.MappingsIncludeLinuxGate (0 ms)
 [ RUN      ] LinuxPtraceDumperChildTest.LinuxGateMappingID
-[       OK ] LinuxPtraceDumperChildTest.LinuxGateMappingID (1 ms)
+[       OK ] LinuxPtraceDumperChildTest.LinuxGateMappingID (2 ms)
 [ RUN      ] LinuxPtraceDumperChildTest.FileIDsMatch
 [       OK ] LinuxPtraceDumperChildTest.FileIDsMatch (0 ms)
 [----------] 7 tests from LinuxPtraceDumperChildTest (3 ms total)
@@ -180,10 +180,10 @@ LinuxCoreDumperTest.VerifyDumpWithMultipleThreads test is skipped due to non-def
 
 [----------] 2 tests from LinuxPtraceDumperTest
 [ RUN      ] LinuxPtraceDumperTest.VerifyStackReadWithMultipleThreads
-[       OK ] LinuxPtraceDumperTest.VerifyStackReadWithMultipleThreads (116 ms)
+[       OK ] LinuxPtraceDumperTest.VerifyStackReadWithMultipleThreads (101 ms)
 [ RUN      ] LinuxPtraceDumperTest.SanitizeStackCopy
-[       OK ] LinuxPtraceDumperTest.SanitizeStackCopy (102 ms)
-[----------] 2 tests from LinuxPtraceDumperTest (218 ms total)
+[       OK ] LinuxPtraceDumperTest.SanitizeStackCopy (101 ms)
+[----------] 2 tests from LinuxPtraceDumperTest (202 ms total)
 
 [----------] 12 tests from MinidumpWriterTest
 [ RUN      ] MinidumpWriterTest.SetupWithPath
@@ -191,60 +191,60 @@ LinuxCoreDumperTest.VerifyDumpWithMultipleThreads test is skipped due to non-def
 [ RUN      ] MinidumpWriterTest.SetupWithFD
 [       OK ] MinidumpWriterTest.SetupWithFD (3 ms)
 [ RUN      ] MinidumpWriterTest.MappingInfo
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.T7QxAi/minidump-writer-unittest
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
-[       OK ] MinidumpWriterTest.MappingInfo (4 ms)
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.X5y03T/minidump-writer-unittest
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
+[       OK ] MinidumpWriterTest.MappingInfo (5 ms)
 [ RUN      ] MinidumpWriterTest.MinidumpSkippedIfRequested
-[       OK ] MinidumpWriterTest.MinidumpSkippedIfRequested (1 ms)
+[       OK ] MinidumpWriterTest.MinidumpSkippedIfRequested (0 ms)
 [ RUN      ] MinidumpWriterTest.MinidumpStacksSkippedIfRequested
-2021-03-04 00:41:37: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.KFzXl5/minidump-writer-unittest
-2021-03-04 00:41:37: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:37: minidump.cc:5061: INFO: Minidump closing minidump
-[       OK ] MinidumpWriterTest.MinidumpStacksSkippedIfRequested (4 ms)
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.WERKY0/minidump-writer-unittest
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
+[       OK ] MinidumpWriterTest.MinidumpStacksSkippedIfRequested (5 ms)
 [ RUN      ] MinidumpWriterTest.StacksAreSanitizedIfRequested
-2021-03-04 00:41:38: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.tu2AKY/minidump-writer-unittest
-2021-03-04 00:41:38: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:38: minidump.cc:5061: INFO: Minidump closing minidump
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.gKY2r4/minidump-writer-unittest
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
 [       OK ] MinidumpWriterTest.StacksAreSanitizedIfRequested (4 ms)
 [ RUN      ] MinidumpWriterTest.BuildIDLong
-2021-03-04 00:41:38: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.qqW29R/minidump-writer-unittest
-2021-03-04 00:41:38: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:38: minidump.cc:5061: INFO: Minidump closing minidump
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.jU6bW7/minidump-writer-unittest
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
 [       OK ] MinidumpWriterTest.BuildIDLong (4 ms)
 [ RUN      ] MinidumpWriterTest.MappingInfoContained
-2021-03-04 00:41:38: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.WxJiAL/minidump-writer-unittest
-2021-03-04 00:41:38: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:38: minidump.cc:5061: INFO: Minidump closing minidump
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.pGCarb/minidump-writer-unittest
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
 [       OK ] MinidumpWriterTest.MappingInfoContained (4 ms)
 [ RUN      ] MinidumpWriterTest.DeletedBinary
-2021-03-04 00:41:38: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.boff1E/minidump-writer-unittest
-2021-03-04 00:41:38: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:38: minidump.cc:5061: INFO: Minidump closing minidump
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.kF9QWe/minidump-writer-unittest
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
 [       OK ] MinidumpWriterTest.DeletedBinary (4 ms)
 [ RUN      ] MinidumpWriterTest.AdditionalMemory
-2021-03-04 00:41:38: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.Dq45sy/minidump-writer-unittest
-2021-03-04 00:41:38: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:38: minidump.cc:5061: INFO: Minidump closing minidump
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.T1bmti/minidump-writer-unittest
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
 [       OK ] MinidumpWriterTest.AdditionalMemory (5 ms)
 [ RUN      ] MinidumpWriterTest.InvalidStackPointer
-2021-03-04 00:41:38: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.1sGRVr/minidump-writer-unittest
-2021-03-04 00:41:38: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:38: minidump.cc:5061: INFO: Minidump closing minidump
+2021-03-04 09:35:58: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.A0iN0l/minidump-writer-unittest
+2021-03-04 09:35:58: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:58: minidump.cc:5061: INFO: Minidump closing minidump
 [       OK ] MinidumpWriterTest.InvalidStackPointer (3 ms)
 [ RUN      ] MinidumpWriterTest.MinidumpSizeLimit
-2021-03-04 00:41:38: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.aCgr0l/minidump-writer-unittest.dmp
-2021-03-04 00:41:38: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:38: minidump.cc:5061: INFO: Minidump closing minidump
-2021-03-04 00:41:39: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.aCgr0l/minidump-writer-unittest-limit.dmp
-2021-03-04 00:41:39: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
-2021-03-04 00:41:39: minidump.cc:5061: INFO: Minidump closing minidump
-[       OK ] MinidumpWriterTest.MinidumpSizeLimit (1511 ms)
-[----------] 12 tests from MinidumpWriterTest (1551 ms total)
+2021-03-04 09:35:59: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.G4596p/minidump-writer-unittest.dmp
+2021-03-04 09:35:59: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:35:59: minidump.cc:5061: INFO: Minidump closing minidump
+2021-03-04 09:36:00: minidump.cc:5089: INFO: Minidump opened minidump /tmp/breakpad.G4596p/minidump-writer-unittest-limit.dmp
+2021-03-04 09:36:00: minidump.cc:5219: INFO: Minidump not byte-swapping minidump
+2021-03-04 09:36:00: minidump.cc:5061: INFO: Minidump closing minidump
+[       OK ] MinidumpWriterTest.MinidumpSizeLimit (1311 ms)
+[----------] 12 tests from MinidumpWriterTest (1352 ms total)
 
 [----------] 10 tests from ProcCpuInfoReaderTest
 [ RUN      ] ProcCpuInfoReaderTest.EmptyFile
-[       OK ] ProcCpuInfoReaderTest.EmptyFile (0 ms)
+[       OK ] ProcCpuInfoReaderTest.EmptyFile (1 ms)
 [ RUN      ] ProcCpuInfoReaderTest.OneLineTerminated
 [       OK ] ProcCpuInfoReaderTest.OneLineTerminated (0 ms)
 [ RUN      ] ProcCpuInfoReaderTest.OneLine
@@ -276,15 +276,15 @@ LinuxCoreDumperTest.VerifyDumpWithMultipleThreads test is skipped due to non-def
 [ RUN      ] ElfCoreDumpTest.DefaultConstructor
 [       OK ] ElfCoreDumpTest.DefaultConstructor (0 ms)
 [ RUN      ] ElfCoreDumpTest.TestElfHeader
-[       OK ] ElfCoreDumpTest.TestElfHeader (1 ms)
+[       OK ] ElfCoreDumpTest.TestElfHeader (2 ms)
 [ RUN      ] ElfCoreDumpTest.ValidCoreFile
 ElfCoreDumpTest.ValidCoreFile test is skipped due to non-default core pattern[       OK ] ElfCoreDumpTest.ValidCoreFile (0 ms)
-[----------] 3 tests from ElfCoreDumpTest (1 ms total)
+[----------] 3 tests from ElfCoreDumpTest (2 ms total)
 
 [----------] 1 test from FileIDStripTest
 [ RUN      ] FileIDStripTest.StripSelf
-[       OK ] FileIDStripTest.StripSelf (43 ms)
-[----------] 1 test from FileIDStripTest (43 ms total)
+[       OK ] FileIDStripTest.StripSelf (40 ms)
+[----------] 1 test from FileIDStripTest (40 ms total)
 
 [----------] 8 tests from FileIDTest/0, where TypeParam = <type>
 [ RUN      ] FileIDTest/0.ElfClass
@@ -292,7 +292,7 @@ ElfCoreDumpTest.ValidCoreFile test is skipped due to non-default core pattern[  
 [ RUN      ] FileIDTest/0.BuildID
 [       OK ] FileIDTest/0.BuildID (0 ms)
 [ RUN      ] FileIDTest/0.BuildIDShort
-[       OK ] FileIDTest/0.BuildIDShort (0 ms)
+[       OK ] FileIDTest/0.BuildIDShort (1 ms)
 [ RUN      ] FileIDTest/0.BuildIDLong
 [       OK ] FileIDTest/0.BuildIDLong (0 ms)
 [ RUN      ] FileIDTest/0.BuildIDPH
@@ -300,14 +300,14 @@ ElfCoreDumpTest.ValidCoreFile test is skipped due to non-default core pattern[  
 [ RUN      ] FileIDTest/0.BuildIDMultiplePH
 [       OK ] FileIDTest/0.BuildIDMultiplePH (0 ms)
 [ RUN      ] FileIDTest/0.UniqueHashes
-[       OK ] FileIDTest/0.UniqueHashes (0 ms)
+[       OK ] FileIDTest/0.UniqueHashes (1 ms)
 [ RUN      ] FileIDTest/0.ConvertIdentifierToString
 [       OK ] FileIDTest/0.ConvertIdentifierToString (0 ms)
-[----------] 8 tests from FileIDTest/0 (0 ms total)
+[----------] 8 tests from FileIDTest/0 (2 ms total)
 
 [----------] 8 tests from FileIDTest/1, where TypeParam = <type>
 [ RUN      ] FileIDTest/1.ElfClass
-[       OK ] FileIDTest/1.ElfClass (1 ms)
+[       OK ] FileIDTest/1.ElfClass (0 ms)
 [ RUN      ] FileIDTest/1.BuildID
 [       OK ] FileIDTest/1.BuildID (0 ms)
 [ RUN      ] FileIDTest/1.BuildIDShort
@@ -330,7 +330,7 @@ ElfCoreDumpTest.ValidCoreFile test is skipped due to non-default core pattern[  
 [ RUN      ] LinuxLibcSupportTest.strcmp
 [       OK ] LinuxLibcSupportTest.strcmp (0 ms)
 [ RUN      ] LinuxLibcSupportTest.strtoui
-[       OK ] LinuxLibcSupportTest.strtoui (0 ms)
+[       OK ] LinuxLibcSupportTest.strtoui (1 ms)
 [ RUN      ] LinuxLibcSupportTest.uint_len
 [       OK ] LinuxLibcSupportTest.uint_len (0 ms)
 [ RUN      ] LinuxLibcSupportTest.uitos
@@ -345,16 +345,16 @@ ElfCoreDumpTest.ValidCoreFile test is skipped due to non-default core pattern[  
 [       OK ] LinuxLibcSupportTest.read_hex_ptr (0 ms)
 [ RUN      ] LinuxLibcSupportTest.read_decimal_ptr
 [       OK ] LinuxLibcSupportTest.read_decimal_ptr (0 ms)
-[----------] 10 tests from LinuxLibcSupportTest (0 ms total)
+[----------] 10 tests from LinuxLibcSupportTest (1 ms total)
 
 [----------] 3 tests from PageAllocatorTest
 [ RUN      ] PageAllocatorTest.Setup
 [       OK ] PageAllocatorTest.Setup (0 ms)
 [ RUN      ] PageAllocatorTest.SmallObjects
-[       OK ] PageAllocatorTest.SmallObjects (1 ms)
+[       OK ] PageAllocatorTest.SmallObjects (2 ms)
 [ RUN      ] PageAllocatorTest.LargeObject
 [       OK ] PageAllocatorTest.LargeObject (0 ms)
-[----------] 3 tests from PageAllocatorTest (1 ms total)
+[----------] 3 tests from PageAllocatorTest (2 ms total)
 
 [----------] 4 tests from WastefulVectorTest
 [ RUN      ] WastefulVectorTest.Setup
@@ -371,7 +371,7 @@ ElfCoreDumpTest.ValidCoreFile test is skipped due to non-default core pattern[  
 [ RUN      ] NonAllocatingMapTest.Entry
 [       OK ] NonAllocatingMapTest.Entry (0 ms)
 [ RUN      ] NonAllocatingMapTest.SimpleStringDictionary
-[       OK ] NonAllocatingMapTest.SimpleStringDictionary (0 ms)
+[       OK ] NonAllocatingMapTest.SimpleStringDictionary (1 ms)
 [ RUN      ] NonAllocatingMapTest.CopyAndAssign
 [       OK ] NonAllocatingMapTest.CopyAndAssign (0 ms)
 [ RUN      ] NonAllocatingMapTest.Iterator
@@ -384,13 +384,13 @@ ElfCoreDumpTest.ValidCoreFile test is skipped due to non-default core pattern[  
 [       OK ] NonAllocatingMapTest.OutOfSpace (0 ms)
 [ RUN      ] NonAllocatingMapTest.ByIndex
 [       OK ] NonAllocatingMapTest.ByIndex (0 ms)
-[----------] 8 tests from NonAllocatingMapTest (0 ms total)
+[----------] 8 tests from NonAllocatingMapTest (1 ms total)
 
 [----------] 11 tests from MinidumpMemoryRangeTest
 [ RUN      ] MinidumpMemoryRangeTest.DefaultConstructor
 [       OK ] MinidumpMemoryRangeTest.DefaultConstructor (0 ms)
 [ RUN      ] MinidumpMemoryRangeTest.ConstructorWithDataAndLength
-[       OK ] MinidumpMemoryRangeTest.ConstructorWithDataAndLength (0 ms)
+[       OK ] MinidumpMemoryRangeTest.ConstructorWithDataAndLength (1 ms)
 [ RUN      ] MinidumpMemoryRangeTest.Reset
 [       OK ] MinidumpMemoryRangeTest.Reset (0 ms)
 [ RUN      ] MinidumpMemoryRangeTest.Set
@@ -409,8 +409,8 @@ ElfCoreDumpTest.ValidCoreFile test is skipped due to non-default core pattern[  
 [       OK ] MinidumpMemoryRangeTest.GetArrayElmentWithTemplateType (0 ms)
 [ RUN      ] MinidumpMemoryRangeTest.GetAsciiMDString
 [       OK ] MinidumpMemoryRangeTest.GetAsciiMDString (0 ms)
-[----------] 11 tests from MinidumpMemoryRangeTest (0 ms total)
+[----------] 11 tests from MinidumpMemoryRangeTest (2 ms total)
 
 [----------] Global test environment tear-down
-[==========] 140 tests from 20 test suites ran. (3938 ms total)
+[==========] 140 tests from 20 test suites ran. (3755 ms total)
 [  PASSED  ] 140 tests.

@@ -32,7 +32,7 @@
 [ RUN      ] CppgcWorkListTest.FlushToGlobalPushSegment
 [       OK ] CppgcWorkListTest.FlushToGlobalPushSegment (0 ms)
 [ RUN      ] CppgcWorkListTest.FlushToGlobalPopSegment
-[       OK ] CppgcWorkListTest.FlushToGlobalPopSegment (1 ms)
+[       OK ] CppgcWorkListTest.FlushToGlobalPopSegment (0 ms)
 [ RUN      ] CppgcWorkListTest.Clear
 [       OK ] CppgcWorkListTest.Clear (0 ms)
 [ RUN      ] CppgcWorkListTest.SingleSegmentSteal
@@ -41,8 +41,8 @@
 [       OK ] CppgcWorkListTest.MultipleSegmentsStolen (0 ms)
 [ RUN      ] CppgcWorkListTest.MergeGlobalPool
 [       OK ] CppgcWorkListTest.MergeGlobalPool (0 ms)
-[----------] 20 tests from CppgcWorkListTest (1 ms total)
+[----------] 20 tests from CppgcWorkListTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 20 tests from 1 test suite ran. (1 ms total)
+[==========] 20 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 20 tests.
