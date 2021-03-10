@@ -608,7 +608,7 @@ clean_qt_build() {
         ;;
 
     "darwin19")
-        ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -platform macx-clang
+        ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -no-framework -platform macx-clang
         ;;
 
     esac
