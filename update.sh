@@ -54,7 +54,8 @@ show_help() {
 # 8) Windows Toolchain (DEPOT_TOOLS_WIN_TOOLCHAIN ++)
 
 # 0) Compile jobs
-BUILD_JOBS=8
+DEFAULT_BUILD_JOBS=8
+BUILD_JOBS=$DEFAULT_BUILD_JOBS
 
 # dupeqc) Workfolw type (WORKFLOW)
 # workflow selects which options are available
@@ -195,21 +196,22 @@ if [ "$OSTYPE" != "darwin19" ] ; then
 PATH="${CHROMIUM_DIR}/third_party/llvm-build/Release+Asserts/bin/:$PATH"
 fi
 
-# Build flags passed to both Qt and Chromium builds
-NINJAFLAGS="-j $BUILD_JOBS"
+NINJAJOBS=""
+if [ $BUILD_JOBS != $DEFAULT_BUILD_JOBS ] ; then
+    NINJAJOBS="-j $BUILD_JOBS"
+fi
+
 if [ "$BUILD_VERBOSE" = true ] ; then
-    NINJAFLAGS="$NINJAFLAGS -v"
+    NINJAJOBS="$NINJAJOBS -v"
 fi
 
 CONTINUE_FLAG=""
 if [ "$BUILD_CONTINUE" = true ] ; then
-    NINJAFLAGS="$NINJAFLAGS -k 0"
+    NINJAJOBS="$NINJAJOBS -k 0"
     CONTINUE_FLAG="-k"
 fi
 
-# NINJAFLAGS have to be set before configure is run to affect Qt builds, and cannot be changed after
-export NINJAFLAGS=${NINJAFLAGS}
-export NINJAJOBS=${NINJAFLAGS}
+export NINJAJOBS=${NINJAJOBS}
 
 # https://github.com/qt/qtbase/blob/5.15.2/config_help.txt
 COMMON_CONFIGURE_FLAGS="-opensource -confirm-license -nomake examples"
@@ -578,7 +580,7 @@ build_chromium() {
       return
     fi
 
-    time autoninja $NINJAFLAGS -C out/Default chrome || {
+    time autoninja $NINJAJOBS -C out/Default chrome || {
         info "[Chromium] Continue on error"
     }
     subheader "[Chromium] built successfully"
@@ -598,7 +600,7 @@ clean_qt_build() {
     case $OSTYPE in
 
     "msys")
-        $CHROMIUM_UPDATE_DIR/configure_qt.bat "${QT_DIR}" "${NINJAFLAGS}" "${CHROMIUM_WINDOWS_SDK_VERSION}" "${COMMON_CONFIGURE_FLAGS}"
+        $CHROMIUM_UPDATE_DIR/configure_qt.bat "${QT_DIR}" "" "${CHROMIUM_WINDOWS_SDK_VERSION}" "${COMMON_CONFIGURE_FLAGS}"
         ;;
 
     "linux-gnu")
@@ -624,7 +626,7 @@ build_qt() {
     fi
 
     if [ "$OSTYPE" = "msys" ] ; then
-        time $CHROMIUM_UPDATE_DIR/build_qt.bat "${QT_DIR}" "${NINJAFLAGS}" "${CHROMIUM_WINDOWS_SDK_VERSION}" $BUILD_JOBS "$CONTINUE_FLAG" || {
+        time $CHROMIUM_UPDATE_DIR/build_qt.bat "${QT_DIR}" "${NINJAJOBS}" "${CHROMIUM_WINDOWS_SDK_VERSION}" $BUILD_JOBS "$CONTINUE_FLAG" || {
             info "[Qt] Continue on error"
         }
         # https://bugreports.qt.io/browse/QTBUG-36463
