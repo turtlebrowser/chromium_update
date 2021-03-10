@@ -152,11 +152,11 @@ QT_VERSION="5.15.2"
 QT_PACKAGE_NAME="qt-everywhere-src-${QT_VERSION}"
 
 # 6) Previous tag and branch (OLD_TAG, OLD_BRANCH)
-OLD_TAG="88.0.4324.150"
+OLD_TAG="88.0.4324.182"
 
 # 7) New tag and branch (NEW_TAG, NEW_BRANCH)
-NEW_TAG="88.0.4324.182"
-NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}"
+NEW_TAG="89.0.4389.72"
+NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_testing"
 CURRENT_BRANCH=$NEW_BRANCH
 
 if [ "$BUILD_EXTERNAL" = true ] ; then
@@ -169,7 +169,7 @@ else
   QT_WEBENGINE_ORIGIN_URL="git@github.com:turtlebrowser/qtwebengine.git"
 fi
 
-OLD_BRANCH="$BRANCH_REMOTE/turtlebrowser_integration_chromium_88.0.4324.150_qt_5.15.2"
+OLD_BRANCH="$BRANCH_REMOTE/turtlebrowser_integration_chromium_${OLD_TAG}_qt_${QT_VERSION}_prep_for_89"
 README_FILENAME="turtlebrowser_readme_${OLD_TAG}.txt"
 
 # 8) Windows Toolchain (DEPOT_TOOLS_WIN_TOOLCHAIN ++)
