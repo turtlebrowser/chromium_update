@@ -189,7 +189,11 @@ THIRD_PARTY_DIR="$WEB_ENGINE_DIR/src/3rdparty/"
 CHROMIUM_DIR="$THIRD_PARTY_DIR/chromium"
 
 PATH="$PATH:${DEPOT_TOOLS_DIR}"
+
+# Not using the Chromium Clang on MacOS yet
+if [ "$OSTYPE" != "darwin19" ] ; then
 PATH="${CHROMIUM_DIR}/third_party/llvm-build/Release+Asserts/bin/:$PATH"
+fi
 
 # Build flags passed to both Qt and Chromium builds
 NINJAFLAGS="-j $BUILD_JOBS"
