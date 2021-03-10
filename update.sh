@@ -601,6 +601,10 @@ clean_qt_build() {
         ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -platform linux-clang-libc++
         ;;
 
+    "darwin19")
+        ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -platform macx-clang
+        ;;
+
     esac
 
     subheader "[Qt] CLEANED build successfully : $QT_BUILD_DIR"
