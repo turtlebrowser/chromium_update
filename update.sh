@@ -88,6 +88,8 @@ BUILD_TESTS=false
 # 4) Root work directory (WORK_DIR)
 if [ "$OSTYPE" = "msys" ] ; then
     WORK_DIR="/c/Code"
+elif [ "$OSTYPE" = "darwin19" ] ; then
+    WORK_DIR="$HOME/Work"
 else
     WORK_DIR="/Code"
 fi

@@ -4,6 +4,8 @@ set -e
 CHROMIUM_UPDATE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 if [ "$OSTYPE" = "msys" ] ; then
     WORK_DIR="/c/Code"
+elif [ "$OSTYPE" = "darwin19" ] ; then
+    WORK_DIR="$HOME/Work"
 else
     WORK_DIR="/Code"
 fi
