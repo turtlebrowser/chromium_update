@@ -46,6 +46,7 @@ show_help() {
     info "-p Patching       Workflow: Applying the patches to an update branch"
     info "-q Qt build       Workflow: Just build Qt (Assumes setup has been done)"
     info "-c Chromium build Workflow: Just build Chromium (Assumes setup has been done)"
+    info "-l LLVM build     Workflow: Build LLVM (Only supported on Windows currently)"
 }
 
 # 5) Qt version (QT_VERSION)
@@ -65,6 +66,7 @@ WORKFLOW_UPD="Update"           # -u
 WORKFLOW_PCH="Patching"         # -p
 WORKFLOW_QT="BuildQt"           # -q
 WORKFLOW_CHR="BuildChromium"    # -c
+WORKFLOW_LLVM="BuildLLVM"       # -l
 
 WORKFLOW=$WORKFLOW_DEV
 
@@ -98,7 +100,7 @@ fi
 # Process commandline 
 OPTIND=1
 
-while getopts "h?vkxsrtj:w:dupeqc" opt; do
+while getopts "h?vkxsrtj:w:dupeqcl" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -115,6 +117,8 @@ while getopts "h?vkxsrtj:w:dupeqc" opt; do
     q)  WORKFLOW=$WORKFLOW_QT
         ;;
     c)  WORKFLOW=$WORKFLOW_CHR
+        ;;
+    l)  WORKFLOW=$WORKFLOW_LLVM
         ;;
     v)  BUILD_VERBOSE=true
         ;;
@@ -182,6 +186,7 @@ export DEPOT_TOOLS_WIN_TOOLCHAIN=0
 CHROMIUM_WINDOWS_SDK_VERSION="10.0.19041.0"
 
 # Paths
+LLVM_DIR="$WORK_DIR/llvm-project"
 DEPOT_TOOLS_DIR="$WORK_DIR/depot_tools"
 QT_DIR="$WORK_DIR/${QT_PACKAGE_NAME}"
 QT_BUILD_DIR="$WORK_DIR/qt5-build"
@@ -241,6 +246,48 @@ confirm() {
         *)
             false
             ;;
+    esac
+}
+
+get_llvm() {
+    cd $WORK_DIR
+    info "[LLVM] Retrieve"
+    if [ -d "$LLVM_DIR" ]
+    then
+      subheader "[LLVM] Checkout found at : $LLVM_DIR"
+    else
+      git clone --config core.autocrlf=false https://github.com/llvm/llvm-project.git
+      subheader "[LLVM] Cloned at : $LLVM_DIR"
+    fi
+}
+
+clean_llvm_build() {
+    cd $LLVM_DIR
+    info "[LLVM] Build"
+
+    if [ -d "build" ]
+    then
+        mv build build_old
+        info "[LLVM] Existing build moved to : ${LLVM_DIR}/build_old"
+    fi
+
+    mkdir build
+    cd build
+
+    case $OSTYPE in
+
+    "msys")
+        time $CHROMIUM_UPDATE_DIR/build_llvm.bat
+        ;;
+
+    "linux-gnu")
+        info "[LLVM] Build not supported on Linux yet"
+        ;;
+
+    "darwin19")
+        info "[LLVM] Build not supported on MacOS yet"
+        ;;
+
     esac
 }
 
@@ -660,6 +707,15 @@ case $WORKFLOW in
     header "Build Chromium Workflow"
 
     confirm "1.  Build Chromium [y/N]" && build_chromium
+
+    ;;
+
+  $WORKFLOW_LLVM)
+    header "Build LLVM Workflow"
+
+    confirm "1.  Make work directory? [y/N]" && make_work_dir
+    confirm "2.  Get LLVM? [y/N]" && get_llvm
+    confirm "3.  CLEAN Build LLVM? [y/N]" && clean_llvm_build
 
     ;;
 
