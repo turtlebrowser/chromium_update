@@ -162,8 +162,8 @@ QT_PACKAGE_NAME="qt-everywhere-src-${QT_VERSION}"
 OLD_TAG="88.0.4324.182"
 
 # 7) New tag and branch (NEW_TAG, NEW_BRANCH)
-NEW_TAG="89.0.4389.72"
-NEW_BRANCH="turtlebrowser_integration_chromium_${NEW_TAG}_qt_${QT_VERSION}_testing"
+NEW_TAG="88.0.4324.182"
+NEW_BRANCH="turtlebrowser_integration_chromium_88.0.4324.182_qt_5.15.2_prep_for_89"
 CURRENT_BRANCH=$NEW_BRANCH
 
 if [ "$BUILD_EXTERNAL" = true ] ; then
