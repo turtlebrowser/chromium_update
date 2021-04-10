@@ -14,25 +14,25 @@ jobs:
         # shell: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#using-a-specific-shell
         config:
         - {
-            name: "Ubuntu Latest",
-            os: ubuntu-latest,
+            name: "Ubuntu 18.04",
+            os: ubuntu-18.04,
             work_dir: "$HOME"
           }
-#        - {
-#            name: "Ubuntu 20.04",
-#            os: ubuntu-20.04,
-#            work_dir: "$HOME"
-#          }
+        - {
+            name: "Ubuntu 20.04",
+            os: ubuntu-20.04,
+            work_dir: "$HOME"
+          }
         - {
             name: "Windows Latest",
             os: windows-latest,
             work_dir: "/c/Code"
           }
-        # - {
-        #     name: "MacOS Latest",
-        #     os: macos-latest,
-        #     work_dir: "$HOME"
-        #   }
+        - {
+            name: "MacOS Latest",
+            os: macos-latest,
+            work_dir: "$HOME"
+          }
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
     env:
