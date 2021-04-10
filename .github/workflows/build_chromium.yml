@@ -24,13 +24,13 @@ jobs:
             work_dir: "$HOME"
           }
         - {
-            name: "Windows Latest",
-            os: windows-latest,
+            name: "Windows 2019",
+            os: windows-2019,
             work_dir: "/c/Code"
           }
         - {
-            name: "MacOS Latest",
-            os: macos-latest,
+            name: "MacOS 11.0",
+            os: macos-11.0,
             work_dir: "$HOME"
           }
     name: ${{ matrix.config.name }}
