@@ -1,4 +1,4 @@
-name: Build Qt
+name: Configure Qt
 
 on:
   push:
