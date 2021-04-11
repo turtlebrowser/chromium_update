@@ -42,6 +42,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Using the builtin GitHub Cache Action for the work dir
+        id: github-cache-conan
+        uses: actions/cache@v1
+        env:
+          cache-name: cache-work-dir
+        with:
+          path: ${{ matrix.config.work_dir }}
+          key: host-${{ runner.os }}-target-${{ runner.os }}-${{ matrix.config.os }}-${{ hashFiles('update.sh') }}
+
       - name: 0.  [All] Print environment
         shell: bash
         run: |
