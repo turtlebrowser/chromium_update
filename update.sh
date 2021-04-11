@@ -194,12 +194,12 @@ WEB_ENGINE_DIR="$QT_DIR/qtwebengine"
 THIRD_PARTY_DIR="$WEB_ENGINE_DIR/src/3rdparty/"
 CHROMIUM_DIR="$THIRD_PARTY_DIR/chromium"
 
-PATH="$PATH:${DEPOT_TOOLS_DIR}"
+export PATH="$PATH:${DEPOT_TOOLS_DIR}"
 
 # Not using the Chromium Clang on MacOS yet
-if [ "$OSTYPE" != "darwin19" ] ; then
-PATH="${CHROMIUM_DIR}/third_party/llvm-build/Release+Asserts/bin/:$PATH"
-fi
+#if [ "$OSTYPE" != "darwin19" ] ; then
+#PATH="${CHROMIUM_DIR}/third_party/llvm-build/Release+Asserts/bin/:$PATH"
+#fi
 
 NINJAJOBS=""
 if [ $BUILD_JOBS != $DEFAULT_BUILD_JOBS ] ; then
@@ -651,10 +651,16 @@ clean_qt_build() {
         ;;
 
     "linux-gnu")
+        info "[Qt] Clang version in use"
+        clang --version
+        info "[Qt] Starting configure step"
         ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -platform linux-clang-libc++
         ;;
 
     "darwin19")
+        info "[Qt] Clang version in use"
+        clang --version
+        info "[Qt] Starting configure step"
         ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -no-framework -platform macx-clang
         ;;
 
