@@ -126,9 +126,9 @@ jobs:
 
       - name: 3.  [All] Clean Work Directory
         shell: bash
-        working-directory: ${{ matrix.config.work_dir }}
+        working-directory: ${{ matrix.config.cache_dir }}
         run: |
-          rm -rf ./qt-everywhere-src-5.15.2/qtwebengine/src/3rdparty/chromium/.git
+          rm -rf qt-everywhere-src-5.15.2/qtwebengine/src/3rdparty/chromium/.git
 
       - name: 3.  [Linux] Check disk usage
         if: startsWith(matrix.config.os, 'ubuntu')
