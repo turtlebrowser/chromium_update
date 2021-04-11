@@ -28,11 +28,11 @@ jobs:
             os: windows-2019,
             work_dir: "/c/Code"
           }
-        - {
-            name: "MacOS 11.0",
-            os: macos-11.0,
-            work_dir: "$HOME"
-          }
+#        - {
+#            name: "MacOS 11.0",
+#            os: macos-11.0,
+#            work_dir: "$HOME"
+#          }
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
     env:
