@@ -130,6 +130,8 @@ jobs:
         run: |
           find -name .git
           du -h -d 2
+          rm -rf ./qt-everywhere-src-5.15.2/qtwebengine/src/3rdparty/chromium/.git
+          du -h -d 2
 
 #      - name: 4.  [All] Build Chromium
 #        shell: bash
