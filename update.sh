@@ -369,6 +369,11 @@ get_chromium() {
 checkout_current_branch() {
     cd $CHROMIUM_DIR
     info "[Chromium] Update"
+    if [ ! -d "$CHROMIUM_DIR/.git" ]; then
+      subheader "[Chromium] Not a git repo : $CHROMIUM_DIR"
+      return
+    fi
+
     BRANCH="$(git rev-parse --abbrev-ref HEAD)"
     if [[ "$BRANCH" != "$CURRENT_BRANCH" ]]; then
       git checkout -t ${BRANCH_REMOTE}/${CURRENT_BRANCH}
