@@ -29,7 +29,7 @@ jobs:
             name: "Windows 2019",
             os: windows-2019,
             work_dir: "/c/Code",
-            cache_dir: "C\:\\Code"
+            cache_dir: "C:\Code"
           }
 #        - {
 #            name: "MacOS 11.0",
