@@ -16,17 +16,20 @@ jobs:
         - {
             name: "Ubuntu 18.04",
             os: ubuntu-18.04,
-            work_dir: "/home/runner/work/work_dir"
+            work_dir: "/home/runner/work/work_dir",
+            cache_dir: "/home/runner/work/work_dir"
           }
         - {
             name: "Ubuntu 20.04",
             os: ubuntu-20.04,
-            work_dir: "/home/runner/work/work_dir"
+            work_dir: "/home/runner/work/work_dir",
+            cache_dir: "/home/runner/work/work_dir"
           }
         - {
             name: "Windows 2019",
             os: windows-2019,
-            work_dir: "/c/Code"
+            work_dir: "/c/Code",
+            cache_dir: "C\:\\Code"
           }
 #        - {
 #            name: "MacOS 11.0",
@@ -48,7 +51,7 @@ jobs:
         env:
           cache-name: cache-work-dir
         with:
-          path: ${{ matrix.config.work_dir }}
+          path: ${{ matrix.config.cache_dir }}
           key: host-${{ runner.os }}-target-${{ runner.os }}-${{ matrix.config.os }}-${{ hashFiles('update.sh') }}
 
       - name: 0.  [All] Print environment
@@ -123,7 +126,7 @@ jobs:
 
       - name: 3.  [Linux] Check disk usage
         if: startsWith(matrix.config.os, 'ubuntu')
-        working-directory: ${{ matrix.config.work_dir }}
+        working-directory: ${{ matrix.config.cache_dir }}
         run: |
           find -name .git
           du -h -d 2
