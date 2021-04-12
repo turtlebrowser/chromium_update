@@ -141,7 +141,11 @@ jobs:
         with:
           python-version: '2.7'
 
-#          echo "C:\directory\to\add\to\path" >> $GITHUB_PATH
+      - name: 4.  [Windows] Add Python 2 to the PATH
+        if: startsWith(matrix.config.os, 'windows')
+        run: |
+          echo "C:\hostedtoolcache\windows\Python\2.7.18\x64\" >> $GITHUB_PATH
+
       - name: 4.  [All] Build Chromium
         shell: bash
         run: |
