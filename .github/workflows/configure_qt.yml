@@ -136,22 +136,17 @@ jobs:
 #        run: |
 #          du -h -d 2
 
-      - name: 4.  [All] Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '2.7'
+#      - name: 4.  [All] Set up Python
+#        uses: actions/setup-python@v2
+#        with:
+#          python-version: '2.7'
 
-      - name: 4.  [Windows] Add Python 2 to the PATH
-        if: startsWith(matrix.config.os, 'windows')
-        run: |
-          echo "C:\hostedtoolcache\windows\Python\2.7.18\x64\" >> $GITHUB_PATH
-
-      - name: 4.  [All] Build Chromium
-        shell: bash
-        run: |
-          python --version
-          which python
-          bash -c "yes || true" | bash update.sh -c -x -w ${{ matrix.config.work_dir }}
+#      - name: 4.  [All] Build Chromium
+#        shell: bash
+#        run: |
+#          python --version
+#          which python
+#          bash -c "yes || true" | bash update.sh -c -x -w ${{ matrix.config.work_dir }}
 
 #      - name: 3.  [All] Build Qt
 #        shell: bash
