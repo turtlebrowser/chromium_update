@@ -141,12 +141,12 @@ jobs:
         with:
           python-version: '2.7'
 
+#          echo "C:\directory\to\add\to\path" >> $GITHUB_PATH
       - name: 4.  [All] Build Chromium
         shell: bash
         run: |
           python --version
           which python
-#          echo "C:\directory\to\add\to\path" >> $GITHUB_PATH
           bash -c "yes || true" | bash update.sh -c -x -w ${{ matrix.config.work_dir }}
 
 #      - name: 3.  [All] Build Qt
