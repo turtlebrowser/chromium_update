@@ -284,8 +284,30 @@ clean_llvm_build() {
         info "[LLVM] Build not supported on Linux yet"
         ;;
 
-    "darwin19")
+    "darwin19" | "darwin20")
         info "[LLVM] Build not supported on MacOS yet"
+        ;;
+
+    esac
+}
+
+install_platform_deps() {
+    info "[Init] Install platform dependencies"
+
+    case $OSTYPE in
+
+    "msys")
+        info "[Init] No Windows dependencies"
+        ;;
+
+    "linux-gnu")
+        info "[Init] No Linux dependencies"
+        ;;
+
+    "darwin19" | "darwin20")
+        info "[Init] Install gnu-sed"
+        brew install gnu-sed
+        export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
         ;;
 
     esac
@@ -662,7 +684,7 @@ clean_qt_build() {
         ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -platform linux-clang-libc++
         ;;
 
-    "darwin19")
+    "darwin19" | "darwin20")
         info "[Qt] Clang version in use"
         clang --version
         info "[Qt] Starting configure step"
@@ -742,6 +764,7 @@ case $WORKFLOW in
   $WORKFLOW_ENV)
     header "Dev Environment Bring Up Workflow"
 
+    confirm "0.  Install platform deps [y/N]" && install_platform_deps
     confirm "1.  Make work directory? [y/N]" && make_work_dir
     confirm "2.  Get Depot Tools? [y/N]" && get_depot_tools
     confirm "3.  Get Qt? [y/N]" && get_qt
