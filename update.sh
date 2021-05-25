@@ -8,7 +8,7 @@ header() {
     if [ "$OSTYPE" = "darwin19" ] ; then
       echo -e "$1"
     else
-      echo -e "\e[35m$1\e[0m"
+      echo -e "\x1B[35m$1\x1B[0m"
     fi
 }
 
@@ -16,7 +16,7 @@ subheader() {
     if [ "$OSTYPE" = "darwin19" ] ; then
       echo -e "$1"
     else
-      echo -e "\e[36m$1\e[0m"
+      echo -e "\x1B[36m$1\x1B[0m"
     fi
 }
 
@@ -24,7 +24,7 @@ info() {
     if [ "$OSTYPE" = "darwin19" ] ; then
       echo -e "$1"
     else
-      echo -e "\e[34m$1\e[0m"
+      echo -e "\x1B[34m$1\x1B[0m"
     fi
 }
 
