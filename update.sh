@@ -38,6 +38,7 @@ show_help() {
     info "-s skip actual build steps (Default off)"
     info "-r only build release (Default off)"
     info "-t build tests (Default off)"
+    info "-y say yes"
 
     header "Workflow Options - only one of the below at a time"
     info "-d Developer      Workflow: (Default) Building the current branch Qt+Chromium"
@@ -90,6 +91,9 @@ BUILD_RELEASE=false
 # t) Build tests
 BUILD_TESTS=false
 
+# y) Say yes
+SAY_YES=false
+
 # 4) Root work directory (WORK_DIR)
 if [ "$OSTYPE" = "msys" ] ; then
     WORK_DIR="/c/Code"
@@ -102,7 +106,7 @@ fi
 # Process commandline 
 OPTIND=1
 
-while getopts "h?vkxsrtj:w:dupeqcli" opt; do
+while getopts "h?vkxsyrtj:w:dupeqcli" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -135,6 +139,8 @@ while getopts "h?vkxsrtj:w:dupeqcli" opt; do
     t)  BUILD_TESTS=true
         ;;
     s)  BUILD_SKIP=true
+        ;;
+    y)  SAY_YES=true
         ;;
     j)  BUILD_JOBS=$OPTARG
         ;;
@@ -242,7 +248,12 @@ else
 fi
 
 confirm() {
-    read -r -p "${1:-Are you sure? [y/N]} " response
+    if [ "$SAY_YES" = true ] ; then
+        response="y"
+    else
+        read -r -p "${1:-Are you sure? [y/N]} " response
+    fi
+
     case "$response" in
         [yY][eE][sS]|[yY]) 
             true
