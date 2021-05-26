@@ -446,6 +446,19 @@ get_upstream_chromium() {
     subheader "[Chromium] sync'ed at : $CHROMIUM_DIR"
 }
 
+add_remote() {
+    local name=$1
+    local url=$2
+    subheader "[Git] Checking remote $name"
+    git ls-remote --exit-code $name &>/dev/null
+    if test $? != 0; then
+        info "[Git] Add remote $name : $url"
+        git remote add $name $url
+    else
+        info "[Git] Add remote $name : already added"
+    fi
+}
+
 add_remotes() {
     cd $CHROMIUM_DIR
     info "[Chromium] Add remotes"
@@ -455,13 +468,8 @@ add_remotes() {
       return
     fi
 
-    subheader "[Chromium] Checking remote old"
-    info "[Chromium] Add remote old : git@github.com:turtlebrowser/chromium.git"
-    git remote add old git@github.com:turtlebrowser/chromium.git
-
-    subheader "[Chromium] Checking remote qt"
-    info "[Chromium] Add remote qt : https://code.qt.io/qt/qtwebengine-chromium.git"
-    git remote add qt https://code.qt.io/qt/qtwebengine-chromium.git
+    add_remote old git@github.com:turtlebrowser/chromium.git
+    add_remote qt https://code.qt.io/qt/qtwebengine-chromium.git
 
     subheader "[Chromium] Remotes added : qt, old"
 }
