@@ -504,19 +504,21 @@ create_script() {
     cd "$CHROMIUM_DIR"
     info "[Chromium] Create patch script"
     # Get the tags
-    OLD_TAG_SHA=`git log -1 --format=format:"%H" ${OLD_TAG}`
-    HEAD_SHA=`git log -1 --format=format:"%H" HEAD`
+    OLD_TAG_SHA=$(git log -1 --format=format:"%H" ${OLD_TAG})
+    HEAD_SHA=$(git log -1 --format=format:"%H" HEAD)
 
     # Get all the commits
-    git log --ancestry-path ${OLD_TAG_SHA}..${HEAD_SHA} --pretty=format:"git cherry-pick --strategy=recursive -X patience %h%x09 # %ae%x09%ad%x09%s" > commit_log.txt
+    git log --ancestry-path "${OLD_TAG_SHA}".."${HEAD_SHA}" --pretty=format:"git cherry-pick --strategy=recursive -X patience %h%x09 # %ae%x09%ad%x09%s" > commit_log.txt
     echo -e '\n' >> commit_log.txt
     tac commit_log.txt > cherry_pick_log.txt
 
     # Create the readme script
-    echo -e '#!/bin/bash' > $README_FILENAME
-    echo -e 'set -e\n' >> $README_FILENAME
-    echo -e "# Based on branch: ${OLD_BRANCH}" >> $README_FILENAME
-    cat cherry_pick_log.txt >> $README_FILENAME
+    {
+        echo -e '#!/bin/bash'
+        echo -e 'set -e\n'
+        echo -e "# Based on branch: ${OLD_BRANCH}"
+        cat cherry_pick_log.txt
+    } > $README_FILENAME
 
     rm commit_log.txt cherry_pick_log.txt
     mv $README_FILENAME "${CHROMIUM_UPDATE_DIR}"/updates/${README_FILENAME}
