@@ -121,8 +121,8 @@ jobs:
         if: startsWith(matrix.config.os, 'ubuntu-20.04')
         shell: bash
         run: |
-          sudo apt-get install clang-11 clang-tools-11 clang-11-doc libclang-common-11-dev libclang-11-dev libclang1-11 clang-format-11 clangd-11
-          sudo apt-get install libc++-11-dev libc++abi-11-dev
+          sudo apt-get install clang clang-11 clang-tools-11 clang-11-doc libclang-common-11-dev libclang-11-dev libclang1-11 clang-format-11 clangd-11
+          sudo apt-get install libc++ libc++-11 libc++-11-dev libc++abi-11-dev
 
       - name: 1.  [All] Install Dependencies
         shell: bash
