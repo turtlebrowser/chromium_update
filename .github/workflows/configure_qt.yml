@@ -125,9 +125,9 @@ jobs:
   #        sudo apt-get install clang clang-11 clang-tools-11 clang-11-doc libclang-common-11-dev libclang-11-dev libclang1-11 clang-format-11 clangd-11
   #        sudo apt-get install libc++ libc++-11-dev libc++abi-11-dev
 
-      - name: 1.  [All] Install Dependencies
+      - name: 1.  [MacOS] Install Dependencies
         if: startsWith(matrix.config.os, 'macos')
-        shell: bash
+        #shell: bash
         run: /bin/bash -c "yes | ./update.sh -i -w ${{ matrix.config.work_dir }}"
 
       - name: 1.  [MacOS] Fix Path
@@ -137,7 +137,7 @@ jobs:
 
       - name: 2.  [MacOS] Build up the environment
         if: startsWith(matrix.config.os, 'macos')
-        shell: bash
+        #shell: bash
         run: /bin/bash -c "yes | ./update.sh -e -x -r -s -w ${{ matrix.config.work_dir }}"
 
       - name: 2.  [All] Build up the environment
