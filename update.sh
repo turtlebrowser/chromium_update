@@ -47,6 +47,7 @@ show_help() {
     info "-q Qt build       Workflow: Just build Qt (Assumes setup has been done)"
     info "-c Chromium build Workflow: Just build Chromium (Assumes setup has been done)"
     info "-l LLVM build     Workflow: Build LLVM (Only supported on Windows currently)"
+    info "-i Install Deps   Workflow: Install Dependencies"
 }
 
 # 5) Qt version (QT_VERSION)
@@ -67,6 +68,7 @@ WORKFLOW_PCH="Patching"         # -p
 WORKFLOW_QT="BuildQt"           # -q
 WORKFLOW_CHR="BuildChromium"    # -c
 WORKFLOW_LLVM="BuildLLVM"       # -l
+WORKFLOW_INSTALL="BuildInstall" # -i
 
 WORKFLOW=$WORKFLOW_DEV
 
@@ -100,7 +102,7 @@ fi
 # Process commandline 
 OPTIND=1
 
-while getopts "h?vkxsrtj:w:dupeqcl" opt; do
+while getopts "h?vkxsrtj:w:dupeqcli" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -119,6 +121,8 @@ while getopts "h?vkxsrtj:w:dupeqcl" opt; do
     c)  WORKFLOW=$WORKFLOW_CHR
         ;;
     l)  WORKFLOW=$WORKFLOW_LLVM
+        ;;
+    i)  WORKFLOW=$WORKFLOW_INSTALL
         ;;
     v)  BUILD_VERBOSE=true
         ;;
@@ -747,6 +751,13 @@ apply_patches() {
 }
 
 case $WORKFLOW in
+
+  "$WORKFLOW_INSTALL")
+    header "Install Dependencies Workflow"
+
+    confirm "1.  Install Dependencies [y/N]" && install_platform_deps
+
+    ;;
 
   "$WORKFLOW_QT")
     header "Build Qt Workflow"

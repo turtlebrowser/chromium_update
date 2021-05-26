@@ -117,13 +117,14 @@ jobs:
           sudo apt-get install libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdbus-1-dev libfontconfig1-dev libcap-dev libxtst-dev libpulse-dev libudev-dev libpci-dev libnss3-dev libasound2-dev libxss-dev libegl1-mesa-dev gperf bison
           sudo apt-get install libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
 
-        # gnu-sed: needed for the update.sh script
-      - name: 1.  [MacOS] Add Build Dependencies
+      - name: 1.  [All] Install Dependencies
+        shell: bash
+        run: bash -c "yes || true" | bash update.sh -i -w ${{ matrix.config.work_dir }}
+
+      - name: 1.  [MacOS] Fix Path
         if: startsWith(matrix.config.os, 'macos')
         shell: bash
-        run: |
-          brew install gnu-sed
-          echo "/usr/local/opt/gnu-sed/libexec/gnubin" >> $GITHUB_PATH
+        run: echo "/usr/local/opt/gnu-sed/libexec/gnubin" >> $GITHUB_PATH
 
       - name: 2.  [All] Build up the environment
         shell: bash
