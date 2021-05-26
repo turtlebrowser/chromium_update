@@ -700,14 +700,14 @@ clean_qt_build() {
         info "[Qt] Clang version in use"
         clang --version
         info "[Qt] Starting configure step"
-        ../qt-everywhere-src-5.15.2/configure "${COMMON_CONFIGURE_FLAGS}" -platform linux-clang-libc++
+        ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -platform linux-clang-libc++
         ;;
 
     "darwin19" | "darwin20")
         info "[Qt] Clang version in use"
         clang --version
         info "[Qt] Starting configure step"
-        ../qt-everywhere-src-5.15.2/configure "${COMMON_CONFIGURE_FLAGS}" -no-framework -platform macx-clang
+        ../qt-everywhere-src-5.15.2/configure $COMMON_CONFIGURE_FLAGS -no-framework -platform macx-clang
         ;;
 
     esac
