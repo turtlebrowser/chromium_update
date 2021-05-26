@@ -125,25 +125,18 @@ jobs:
   #        sudo apt-get install clang clang-11 clang-tools-11 clang-11-doc libclang-common-11-dev libclang-11-dev libclang1-11 clang-format-11 clangd-11
   #        sudo apt-get install libc++ libc++-11-dev libc++abi-11-dev
 
-      - name: 1.  [MacOS] Install Dependencies
-        if: startsWith(matrix.config.os, 'macos')
-        #shell: bash
-        run: /bin/bash -c "yes | ./update.sh -i -w ${{ matrix.config.work_dir }}"
+      - name: 1.  [All] Install Dependencies
+        shell: bash
+        run: ./update.sh -y -i -w ${{ matrix.config.work_dir }}
 
       - name: 1.  [MacOS] Fix Path
         if: startsWith(matrix.config.os, 'macos')
         shell: bash
         run: echo "/usr/local/opt/gnu-sed/libexec/gnubin" >> $GITHUB_PATH
 
-      - name: 2.  [MacOS] Build up the environment
-        if: startsWith(matrix.config.os, 'macos')
-        #shell: bash
-        run: /bin/bash -c "yes | ./update.sh -e -x -r -s -w ${{ matrix.config.work_dir }}"
-
       - name: 2.  [All] Build up the environment
-        if: startsWith(matrix.config.os, 'macos') == false
         shell: bash
-        run: bash -c "yes || true" | bash update.sh -e -x -r -s -w ${{ matrix.config.work_dir }}
+        run: ./update.sh -y -e -x -r -s -w ${{ matrix.config.work_dir }}
 
 #      - name: 3.  [All] Clean Work Directory
 #        shell: bash
@@ -167,11 +160,11 @@ jobs:
 #        run: |
 #          python --version
 #          which python
-#          bash -c "yes || true" | bash update.sh -c -x -w ${{ matrix.config.work_dir }}
+#          ./update.sh -y -c -x -w ${{ matrix.config.work_dir }}
 
 #      - name: 3.  [All] Build Qt
 #        shell: bash
-#        run: bash -c "yes || true" | bash update.sh -q -x -r -j 4 -w ${{ matrix.config.work_dir }}
+#        run: ./update.sh -y -q -x -r -j 4 -w ${{ matrix.config.work_dir }}
 
 #      - name: 5.  [Windows] Make SDK toolchain zip
 #        if: startsWith(matrix.config.os, 'windows') && steps.github-cache.outputs.cache-hit != 'true'
