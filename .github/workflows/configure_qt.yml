@@ -136,6 +136,11 @@ jobs:
             echo "/usr/local/opt/gnu-sed/libexec/gnubin" >> $GITHUB_PATH
             echo "/usr/local/opt/coreutils/libexec/gnubin" >> $GITHUB_PATH
 
+      - name: 1.  [Linux] dpkg -S type_traits
+        if: startsWith(matrix.config.os, 'ubuntu')
+        shell: bash
+        run: dpkg -S type_traits
+
       - name: 2.  [All] Build up the environment
         shell: bash
         run: ./update.sh -y -e -x -r -s -w ${{ matrix.config.work_dir }}
