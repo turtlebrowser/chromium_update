@@ -152,7 +152,7 @@ info "With tests: $BUILD_TESTS"
 info "Jobs:       $BUILD_JOBS"
 info "Workflow:   $WORKFLOW"
 info "Work dir:   $WORK_DIR"
-echo "Leftovers:  $@"
+echo "Leftovers: " "$@"
 
 # 5) Qt version (QT_VERSION)
 QT_VERSION="5.15.2"
@@ -202,7 +202,7 @@ export PATH="$PATH:${DEPOT_TOOLS_DIR}"
 #fi
 
 NINJAJOBS=""
-if [ $BUILD_JOBS != $DEFAULT_BUILD_JOBS ] ; then
+if [ "$BUILD_JOBS" != $DEFAULT_BUILD_JOBS ] ; then
     NINJAJOBS="-j $BUILD_JOBS"
 fi
 
@@ -250,7 +250,7 @@ confirm() {
 }
 
 get_llvm() {
-    cd $WORK_DIR
+    cd "$WORK_DIR"
     info "[LLVM] Retrieve"
     if [ -d "$LLVM_DIR" ]
     then
@@ -262,7 +262,7 @@ get_llvm() {
 }
 
 clean_llvm_build() {
-    cd $LLVM_DIR
+    cd "$LLVM_DIR"
     info "[LLVM] Build"
 
     if [ -d "build" ]
@@ -277,7 +277,7 @@ clean_llvm_build() {
     case $OSTYPE in
 
     "msys")
-        time $CHROMIUM_UPDATE_DIR/build_llvm.bat
+        time "$CHROMIUM_UPDATE_DIR"/build_llvm.bat
         ;;
 
     "linux-gnu")
@@ -315,12 +315,12 @@ install_platform_deps() {
 
 make_work_dir() {
     info "[Init] Make work directory"
-    mkdir -p $WORK_DIR
+    mkdir -p "$WORK_DIR"
     subheader "[Init] Work directory created : $WORK_DIR"
 }
 
 get_depot_tools() {
-    cd $WORK_DIR
+    cd "$WORK_DIR"
     info "[Depot tools] Retrieve"
     if [ -d "$DEPOT_TOOLS_DIR" ]
     then
@@ -332,7 +332,7 @@ get_depot_tools() {
 }
 
 get_qt() {
-    cd $WORK_DIR
+    cd "$WORK_DIR"
     info "[Qt] Retrieve"
     if [ -d "$QT_DIR" ]
     then
@@ -342,13 +342,13 @@ get_qt() {
       time tar xf ${QT_PACKAGE_NAME}.tar.xz
       rm ${QT_PACKAGE_NAME}.tar.xz
       info "[Qt] Deleting ${QT_DIR}/qtwebengine"
-      rm -rf ${QT_DIR}/qtwebengine
+      rm -rf "${QT_DIR}"/qtwebengine
       subheader "[Qt] Directory extracted at : $QT_DIR"
     fi
 }
 
 get_webengine() {
-    cd $QT_DIR
+    cd "$QT_DIR"
     info "[QtWebEngine] Retrieve"
     if [ -d "$WEB_ENGINE_DIR" ]
     then
@@ -360,7 +360,7 @@ get_webengine() {
 }
 
 update_webengine() {
-    cd $WEB_ENGINE_DIR
+    cd "$WEB_ENGINE_DIR"
     info "[QtWebEngine] Update"
     WEB_ENGINE_BRANCH="turtlebrowser_integration_5.15"
 
@@ -377,7 +377,7 @@ update_webengine() {
 }
 
 get_chromium() {
-    cd $THIRD_PARTY_DIR
+    cd "$THIRD_PARTY_DIR"
     info "[Chromium] Retrieve"
     if [ -d "$CHROMIUM_DIR" ]
     then
@@ -389,7 +389,7 @@ get_chromium() {
 }
 
 checkout_current_branch() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Update"
     if [ ! -d "$CHROMIUM_DIR/.git" ]; then
       subheader "[Chromium] Not a git repo : $CHROMIUM_DIR"
@@ -409,20 +409,20 @@ checkout_current_branch() {
 }
 
 make_platform_gclient() {
-    cd $THIRD_PARTY_DIR
+    cd "$THIRD_PARTY_DIR"
     info "[Chromium] Configure for this platform"
     if [ "$OSTYPE" = "msys" ] ; then
-        sed -i 's/target_os.*/target_os = ["win"]/g' ${THIRD_PARTY_DIR}/.gclient
+        sed -i 's/target_os.*/target_os = ["win"]/g' "${THIRD_PARTY_DIR}"/.gclient
     elif [ "$OSTYPE" = "darwin19" ] ; then
-        sed -i 's/target_os.*/target_os = ["mac"]/g' ${THIRD_PARTY_DIR}/.gclient
+        sed -i 's/target_os.*/target_os = ["mac"]/g' "${THIRD_PARTY_DIR}"/.gclient
     else
-        sed -i 's/target_os.*/target_os = ["linux"]/g' ${THIRD_PARTY_DIR}/.gclient
+        sed -i 's/target_os.*/target_os = ["linux"]/g' "${THIRD_PARTY_DIR}"/.gclient
     fi
     subheader "[Chromium] Modified : ${THIRD_PARTY_DIR}/.gclient"
 }
 
 run_gclient_runhooks() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Run gclient runhooks"
     gclient runhooks
     rmdir out
@@ -430,7 +430,7 @@ run_gclient_runhooks() {
 }
 
 get_upstream_chromium() {
-    cd $THIRD_PARTY_DIR
+    cd "$THIRD_PARTY_DIR"
     info "[Chromium] Run gclient config"
     gclient config --verbose --name chromium --unmanaged --custom-var checkout_nacl=False https://github.com/chromium/chromium.git
     info "[Chromium] Add platforms"
@@ -450,17 +450,17 @@ add_remote() {
     local name=$1
     local url=$2
     subheader "[Git] Checking remote $name"
-    git ls-remote --exit-code $name &>/dev/null
+    git ls-remote --exit-code "$name" &>/dev/null
     if test $? != 0; then
         info "[Git] Add remote $name : $url"
-        git remote add $name $url
+        git remote add "$name" "$url"
     else
         info "[Git] Add remote $name : already added"
     fi
 }
 
 add_remotes() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Add remotes"
 
     if [ "$BUILD_EXTERNAL" = true ] ; then
@@ -475,7 +475,7 @@ add_remotes() {
 }
 
 fetch_remotes() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Fetch remotes"
 
     if [ "$BUILD_EXTERNAL" = true ] ; then
@@ -488,14 +488,14 @@ fetch_remotes() {
 }
 
 get_old_branch() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Get the old branch $OLD_BRANCH"
     time git checkout -t $OLD_BRANCH
     subheader "[Chromium] branch checked out: $OLD_BRANCH"
 }
 
 create_script() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Create patch script"
     # Get the tags
     OLD_TAG_SHA=`git log -1 --format=format:"%H" ${OLD_TAG}`
@@ -513,27 +513,27 @@ create_script() {
     cat cherry_pick_log.txt >> $README_FILENAME
 
     rm commit_log.txt cherry_pick_log.txt
-    mv $README_FILENAME ${CHROMIUM_UPDATE_DIR}/updates/${README_FILENAME}
+    mv $README_FILENAME "${CHROMIUM_UPDATE_DIR}"/updates/${README_FILENAME}
 
     subheader "[Chromium] Script found at: ${CHROMIUM_UPDATE_DIR}/updates/${README_FILENAME}"
 }
 
 get_new_tag() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Check out new tag"
     git checkout tags/${NEW_TAG}
     subheader "[Chromium] Checked out new tag: ${NEW_TAG}"
 }
 
 create_new_branch() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Check out new branch"
     git checkout -b $NEW_BRANCH
     subheader "[Chromium] Checked out new branch: ${NEW_BRANCH}"
 }
 
 fix_DEPS_file() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Fix DEPS file before update"
     sed -i '1 i\use_relative_paths = True' DEPS
     sed -i "s+'src/+'+g" DEPS # 'src/ -> '
@@ -544,7 +544,7 @@ fix_DEPS_file() {
 }
 
 get_chromium_deps() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Get dependencies"
     time gclient sync --with_branch_heads --with_tags -vvv --force
     gclient runhooks
@@ -552,7 +552,7 @@ get_chromium_deps() {
 }
 
 unignore_chromium_cipd() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Un-ignore CIPD modules"
     # TODO Doesn't really work
     for cipd_dir in $(find ./ -name cipd.yaml | rev | cut -d"/" -f2- | rev | sort --unique)
@@ -565,8 +565,8 @@ unignore_chromium_cipd() {
             commentme=$(git check-ignore --verbose "$cipd_dir" | cut -d: -f1,2 || true)
             if [ -n "$commentme" ]
             then
-                file=$(echo $commentme | cut -d: -f1)
-                line=$(echo $commentme | cut -d: -f2)
+                file=$(echo "$commentme" | cut -d: -f1)
+                line=$(echo "$commentme" | cut -d: -f2)
                 info "[Chromium] CIPD directory needs to be un-ignored : $cipd_dir in .gitignore $file"
                 sed -i "$line s/^/###/" "$file"
                 commented=true
@@ -577,7 +577,7 @@ unignore_chromium_cipd() {
 }
 
 unignore_chromium_deps() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Un-ignore Git modules"
     # HARDCODED cipd packages we need
     sed -i 's=^/shaka-player/dist/=###&=' third_party/.gitignore
@@ -593,8 +593,8 @@ unignore_chromium_deps() {
             commentme=$(git check-ignore --verbose "$gitdir" | cut -d: -f1,2 || true)
             if [ -n "$commentme" ]
             then
-                file=$(echo $commentme | cut -d: -f1)
-                line=$(echo $commentme | cut -d: -f2)
+                file=$(echo "$commentme" | cut -d: -f1)
+                line=$(echo "$commentme" | cut -d: -f2)
                 sed -i "$line s/^/###/" "$file"
                 commented=true
             fi
@@ -607,7 +607,7 @@ unignore_chromium_deps() {
 }
 
 commit_dot_ignore_files() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Commit .gitignore files"
     git add -u .
     git commit -m "Unignore modules"
@@ -615,7 +615,7 @@ commit_dot_ignore_files() {
 }
 
 add_chromium_modules() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Check in all modules"
     git add .
     git commit -m "Add all modules"
@@ -623,7 +623,7 @@ add_chromium_modules() {
 }
 
 add_generated_files() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Add required generated files"
     git add --force build/config/gclient_args.gni # TODO : Not sure what makes this?
     git add --force build/util/LASTCHANGE*
@@ -634,14 +634,14 @@ add_generated_files() {
 }
 
 push_branch_remotes() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Push new branch"
     git push -u old $NEW_BRANCH
     subheader "[Chromium] Branch pushed to remotes"
 }
 
 clean_chromium_build() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Prepare clean build"
     if [ -d "out" ]
     then
@@ -654,7 +654,7 @@ clean_chromium_build() {
 }
 
 build_chromium() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Build"
 
     if [ "$BUILD_SKIP" = true ] ; then
@@ -662,41 +662,41 @@ build_chromium() {
       return
     fi
 
-    time autoninja $NINJAJOBS -C out/Default chrome || {
+    time autoninja "$NINJAJOBS" -C out/Default chrome || {
         info "[Chromium] Continue on error"
     }
     subheader "[Chromium] built successfully"
 }
 
 clean_qt_build() {
-    cd $WORK_DIR
+    cd "$WORK_DIR"
     info "[Qt] Prepare clean build"
     if [ -d "$QT_BUILD_DIR" ]
     then
-        mv ${QT_BUILD_DIR} ${QT_BUILD_DIR}_old
+        mv "${QT_BUILD_DIR}" "${QT_BUILD_DIR}"_old
         info "[Qt] Existing build moved to : ${QT_BUILD_DIR}_old"
     fi
-    mkdir -p ${QT_BUILD_DIR}
-    cd $QT_BUILD_DIR
+    mkdir -p "${QT_BUILD_DIR}"
+    cd "$QT_BUILD_DIR"
 
     case $OSTYPE in
 
     "msys")
-        $CHROMIUM_UPDATE_DIR/configure_qt.bat "${QT_DIR}" "" "${CHROMIUM_WINDOWS_SDK_VERSION}" "${COMMON_CONFIGURE_FLAGS}"
+        "$CHROMIUM_UPDATE_DIR"/configure_qt.bat "${QT_DIR}" "" "${CHROMIUM_WINDOWS_SDK_VERSION}" "${COMMON_CONFIGURE_FLAGS}"
         ;;
 
     "linux-gnu")
         info "[Qt] Clang version in use"
         clang --version
         info "[Qt] Starting configure step"
-        ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -platform linux-clang-libc++
+        ../qt-everywhere-src-5.15.2/configure "${COMMON_CONFIGURE_FLAGS}" -platform linux-clang-libc++
         ;;
 
     "darwin19" | "darwin20")
         info "[Qt] Clang version in use"
         clang --version
         info "[Qt] Starting configure step"
-        ../qt-everywhere-src-5.15.2/configure ${COMMON_CONFIGURE_FLAGS} -no-framework -platform macx-clang
+        ../qt-everywhere-src-5.15.2/configure "${COMMON_CONFIGURE_FLAGS}" -no-framework -platform macx-clang
         ;;
 
     esac
@@ -705,7 +705,7 @@ clean_qt_build() {
 }
 
 build_qt() {
-    cd $QT_BUILD_DIR
+    cd "$QT_BUILD_DIR"
     info "[Qt] Build"
 
     if [ "$BUILD_SKIP" = true ] ; then
@@ -714,14 +714,14 @@ build_qt() {
     fi
 
     if [ "$OSTYPE" = "msys" ] ; then
-        time $CHROMIUM_UPDATE_DIR/build_qt.bat "${QT_DIR}" "${NINJAJOBS}" "${CHROMIUM_WINDOWS_SDK_VERSION}" $BUILD_JOBS "$CONTINUE_FLAG" || {
+        time "$CHROMIUM_UPDATE_DIR"/build_qt.bat "${QT_DIR}" "${NINJAJOBS}" "${CHROMIUM_WINDOWS_SDK_VERSION}" "$BUILD_JOBS" "$CONTINUE_FLAG" || {
             info "[Qt] Continue on error"
         }
         # https://bugreports.qt.io/browse/QTBUG-36463
         mkdir -p qtbase/include/QtAngle/
-        cp -r ${QT_DIR}/qtbase/src/3rdparty/angle/include/* qtbase/include/QtAngle/
+        cp -r "${QT_DIR}"/qtbase/src/3rdparty/angle/include/* qtbase/include/QtAngle/
     else
-        time make $CONTINUE_FLAG -j $BUILD_JOBS || {
+        time make $CONTINUE_FLAG -j "$BUILD_JOBS" || {
             info "[Qt] Continue on error"
         }
     fi
@@ -729,29 +729,29 @@ build_qt() {
 }
 
 apply_patches() {
-    cd $CHROMIUM_DIR
+    cd "$CHROMIUM_DIR"
     info "[Chromium] Apply Patches"
-    cp ${CHROMIUM_UPDATE_DIR}/updates/${README_FILENAME} apply_patches.sh && bash apply_patches.sh
+    cp "${CHROMIUM_UPDATE_DIR}"/updates/${README_FILENAME} apply_patches.sh && bash apply_patches.sh
     subheader "[Chromium] Patches Applied"
 }
 
 case $WORKFLOW in
 
-  $WORKFLOW_QT)
+  "$WORKFLOW_QT")
     header "Build Qt Workflow"
 
     confirm "1.  Build Qt [y/N]" && build_qt
 
     ;;
 
-  $WORKFLOW_CHR)
+  "$WORKFLOW_CHR")
     header "Build Chromium Workflow"
 
     confirm "1.  Build Chromium [y/N]" && build_chromium
 
     ;;
 
-  $WORKFLOW_LLVM)
+  "$WORKFLOW_LLVM")
     header "Build LLVM Workflow"
 
     confirm "1.  Make work directory? [y/N]" && make_work_dir
@@ -760,7 +760,7 @@ case $WORKFLOW in
 
     ;;
 
-  $WORKFLOW_DEV)
+  "$WORKFLOW_DEV")
     header "Dev Workflow"
 
     confirm "1.  Build both Qt and Chromium? [y/N]" && (build_qt && build_chromium)
@@ -769,7 +769,7 @@ case $WORKFLOW in
 
     ;;
 
-  $WORKFLOW_ENV)
+  "$WORKFLOW_ENV")
     header "Dev Environment Bring Up Workflow"
 
     confirm "0.  Install platform deps [y/N]" && install_platform_deps
@@ -790,7 +790,7 @@ case $WORKFLOW in
 
     ;;
 
-  $WORKFLOW_UPD)
+  "$WORKFLOW_UPD")
     header "Chromium Update Workflow"
 
     confirm "1.  Make work directory? [y/N]" && make_work_dir
@@ -821,7 +821,7 @@ case $WORKFLOW in
 
     ;;
 
-  $WORKFLOW_PCH)
+  "$WORKFLOW_PCH")
     header "Chromium Cherry-Pick Workflow"
 
     confirm "1.  Apply Patches? [y/N]" && apply_patches
