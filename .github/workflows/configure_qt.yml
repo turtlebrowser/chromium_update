@@ -32,15 +32,15 @@ jobs:
             cache_dir: "C:\\Code"
           }
         - {
-            name: "MacOS 11.0",
-            os: macos-11.0,
-            work_dir: "$HOME"
-          }
-        - {
             name: "MacOS 10.15",
             os: macos-10.15,
             work_dir: "$HOME"
           }
+#        - {
+#            name: "MacOS 11.0",
+#            os: macos-11.0,
+#            work_dir: "$HOME"
+#          }
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
     env:
@@ -126,8 +126,9 @@ jobs:
   #        sudo apt-get install libc++ libc++-11-dev libc++abi-11-dev
 
       - name: 1.  [All] Install Dependencies
+        if: startsWith(matrix.config.os, 'macos')
         shell: bash
-        run: bash -c "yes || true" | bash update.sh -i -w ${{ matrix.config.work_dir }}
+        run: true | ./update.sh -i -w ${{ matrix.config.work_dir }}
 
       - name: 1.  [MacOS] Fix Path
         if: startsWith(matrix.config.os, 'macos')
