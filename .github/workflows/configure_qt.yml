@@ -128,7 +128,7 @@ jobs:
       - name: 1.  [All] Install Dependencies
         if: startsWith(matrix.config.os, 'macos')
         shell: bash
-        run: /bin/bash -c "yes | ./update.sh -i -w ${{ matrix.config.work_dir }}"
+        run: bash -c "yes | ./update.sh -i -w ${{ matrix.config.work_dir }}"
 
       - name: 1.  [MacOS] Fix Path
         if: startsWith(matrix.config.os, 'macos')
