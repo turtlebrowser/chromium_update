@@ -128,14 +128,20 @@ jobs:
       - name: 1.  [All] Install Dependencies
         if: startsWith(matrix.config.os, 'macos')
         shell: bash
-        run: bash -c "yes | ./update.sh -i -w ${{ matrix.config.work_dir }}"
+        run: /bin/bash -c "yes | ./update.sh -i -w ${{ matrix.config.work_dir }}"
 
       - name: 1.  [MacOS] Fix Path
         if: startsWith(matrix.config.os, 'macos')
         shell: bash
         run: echo "/usr/local/opt/gnu-sed/libexec/gnubin" >> $GITHUB_PATH
 
+      - name: 2.  [MacOS] Build up the environment
+        if: startsWith(matrix.config.os, 'macos')
+        shell: bash
+        run: /bin/bash -c "yes | ./update.sh -e -x -r -s -w ${{ matrix.config.work_dir }}"
+
       - name: 2.  [All] Build up the environment
+        if: startsWith(matrix.config.os, 'macos') == false
         shell: bash
         run: bash -c "yes || true" | bash update.sh -e -x -r -s -w ${{ matrix.config.work_dir }}
 
