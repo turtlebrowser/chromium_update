@@ -196,10 +196,10 @@ CHROMIUM_DIR="$THIRD_PARTY_DIR/chromium"
 
 export PATH="$PATH:${DEPOT_TOOLS_DIR}"
 
-# Not using the Chromium Clang on MacOS yet
-#if [ "$OSTYPE" != "darwin19" ] ; then
-#PATH="${CHROMIUM_DIR}/third_party/llvm-build/Release+Asserts/bin/:$PATH"
-#fi
+# Use Chromium Clang on Linux
+if [ "$OSTYPE" == "linux-gnu" ] ; then
+    PATH="${CHROMIUM_DIR}/third_party/llvm-build/Release+Asserts/bin/:$PATH"
+fi
 
 NINJAJOBS=""
 if [ "$BUILD_JOBS" != $DEFAULT_BUILD_JOBS ] ; then
