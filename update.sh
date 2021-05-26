@@ -424,8 +424,14 @@ make_platform_gclient() {
 run_gclient_runhooks() {
     cd "$CHROMIUM_DIR"
     info "[Chromium] Run gclient runhooks"
+
+    local out_present=0
+    [ -d out ] && out_present=1
+
     gclient runhooks
-    rmdir out
+
+    (($out_present == 0)) && rmdir out
+
     subheader "[Chromium] Ran gclient runhooks"
 }
 
