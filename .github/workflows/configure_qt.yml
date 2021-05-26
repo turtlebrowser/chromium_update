@@ -113,11 +113,16 @@ jobs:
           sudo sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
           sudo apt-get update
           sudo apt-get build-dep qt5-default
-          sudo apt-get install clang-11 clang-tools-11 clang-11-doc libclang-common-11-dev libclang-11-dev libclang1-11 clang-format-11 python-clang-11 clangd-11
-          sudo apt-get install libc++-11-dev libc++abi-11-dev
           sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
           sudo apt-get install libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdbus-1-dev libfontconfig1-dev libcap-dev libxtst-dev libpulse-dev libudev-dev libpci-dev libnss3-dev libasound2-dev libxss-dev libegl1-mesa-dev gperf bison
           sudo apt-get install libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+
+      - name: 1.  [Linux] Add Build Dependencies
+        if: startsWith(matrix.config.os, 'ubuntu-20.04')
+        shell: bash
+        run: |
+          sudo apt-get install clang-11 clang-tools-11 clang-11-doc libclang-common-11-dev libclang-11-dev libclang1-11 clang-format-11 clangd-11
+          sudo apt-get install libc++-11-dev libc++abi-11-dev
 
       - name: 1.  [All] Install Dependencies
         shell: bash
