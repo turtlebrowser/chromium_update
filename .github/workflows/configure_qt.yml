@@ -132,7 +132,9 @@ jobs:
       - name: 1.  [MacOS] Fix Path
         if: startsWith(matrix.config.os, 'macos')
         shell: bash
-        run: echo "/usr/local/opt/gnu-sed/libexec/gnubin" >> $GITHUB_PATH
+        run: |
+            echo "/usr/local/opt/gnu-sed/libexec/gnubin" >> $GITHUB_PATH
+            echo "/usr/local/opt/coreutils/libexec/gnubin" >> $GITHUB_PATH
 
       - name: 2.  [All] Build up the environment
         shell: bash

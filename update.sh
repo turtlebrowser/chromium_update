@@ -322,10 +322,11 @@ install_platform_deps() {
     "darwin19" | "darwin20")
         info "[Init] Install gnu-sed"
         brew install gnu-sed
-        export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+        export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
         info "[Init] Install coreutils"
         brew install coreutils
+        export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
         ;;
 
     esac
