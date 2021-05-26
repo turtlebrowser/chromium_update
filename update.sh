@@ -430,7 +430,7 @@ run_gclient_runhooks() {
 
     gclient runhooks
 
-    (($out_present == 0)) && rmdir out
+    ((out_present == 0)) && rmdir out
 
     subheader "[Chromium] Ran gclient runhooks"
 }
