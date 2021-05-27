@@ -316,7 +316,18 @@ install_platform_deps() {
         ;;
 
     "linux-gnu")
-        info "[Init] No Linux dependencies"
+        info "[Init] Install Qt Source Dependencies"
+        sudo sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
+        sudo apt-get -y update
+        sudo apt-get -y build-dep qt5-default
+        info "[Init] Install Libxcb Dependencies"
+        sudo apt-get -y install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+        info "[Init] Install Qt WebEngine Dependencies"
+        sudo apt-get -y install libssl-dev libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdbus-1-dev libfontconfig1-dev libcap-dev libxtst-dev libpulse-dev libudev-dev libpci-dev libnss3-dev libasound2-dev libxss-dev libegl1-mesa-dev gperf bison
+        info "[Init] Install Qt Multimedia Dependencies - using GStreamer 1.0"
+        sudo apt-get -y install libasound2-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+        info "[Init] Install QDoc Documentation Generator Tool Dependencies"
+        sudo apt-get -y install libclang-6.0-dev llvm-6.0
         ;;
 
     "darwin19" | "darwin20")
